@@ -1,0 +1,121 @@
+/* Summate Learning — design tokens (from the Summate Learning Design System) */
+:root {
+  /* color */
+  --su-primary: #0052ff;
+  --su-primary-active: #003ecc;
+  --su-primary-disabled: #a8b8cc;
+  --su-primary-soft: #eaf0ff;
+  --su-ink: #0a0b0d;
+  --su-body: #5b616e;
+  --su-body-strong: #0a0b0d;
+  --su-muted: #7c828a;
+  --su-muted-soft: #a8acb3;
+  --su-hairline: #dee1e6;
+  --su-hairline-soft: #eef0f3;
+  --su-canvas: #ffffff;
+  --su-surface-soft: #f7f7f7;
+  --su-surface-strong: #eef0f3;
+  --su-surface-dark: #0a0b0d;
+  --su-surface-dark-elevated: #16181c;
+  --su-on-primary: #ffffff;
+  --su-on-dark: #ffffff;
+  --su-on-dark-soft: #a8acb3;
+  --su-success: #05b169;
+  --su-success-soft: #e5f7ee;
+  --su-warning: #f4b000;
+  --su-warning-soft: #fdf3dc;
+  --su-danger: #cf202f;
+  --su-danger-soft: #fbe9ea;
+
+  /* type */
+  --su-font-display: 'Inter', -apple-system, system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --su-font-body: 'Inter', -apple-system, system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --su-font-mono: 'JetBrains Mono', 'Inter', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* spacing */
+  --su-space-xxs: 4px;
+  --su-space-xs: 8px;
+  --su-space-sm: 12px;
+  --su-space-base: 16px;
+  --su-space-md: 20px;
+  --su-space-lg: 24px;
+  --su-space-xl: 32px;
+  --su-space-xxl: 48px;
+  --su-space-section: 96px;
+
+  /* radius */
+  --su-radius-none: 0px;
+  --su-radius-xs: 4px;
+  --su-radius-sm: 8px;
+  --su-radius-md: 12px;
+  --su-radius-lg: 16px;
+  --su-radius-xl: 24px;
+  --su-radius-pill: 100px;
+  --su-radius-full: 9999px;
+
+  /* shadow */
+  --su-shadow-soft: 0 4px 12px rgba(0, 0, 0, .04);
+  --su-shadow-card: 0 2px 8px rgba(10, 11, 13, .06);
+  --su-shadow-focus: 0 0 0 3px rgba(0, 82, 255, .18);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
+
+body {
+  margin: 0;
+  font-family: var(--su-font-body);
+  color: var(--su-ink);
+  background: var(--su-canvas);
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--su-primary); text-decoration: none; }
+a:hover { color: var(--su-primary-active); }
+
+:focus-visible {
+  outline: none;
+  box-shadow: var(--su-shadow-focus);
+  border-radius: var(--su-radius-xs);
+}
+
+img { max-width: 100%; display: block; }
+
+/* ---- design system type scale ---- */
+.su-text-display-mega { font-family: var(--su-font-display); font-size: 80px; font-weight: 400; line-height: 1; letter-spacing: -2px; }
+.su-text-display-xl { font-family: var(--su-font-display); font-size: 64px; font-weight: 400; line-height: 1; letter-spacing: -1.6px; }
+.su-text-display-lg { font-family: var(--su-font-display); font-size: 52px; font-weight: 400; line-height: 1.03; letter-spacing: -1.3px; }
+.su-text-display-md { font-family: var(--su-font-display); font-size: 44px; font-weight: 400; line-height: 1.09; letter-spacing: -1px; }
+.su-text-display-sm { font-family: var(--su-font-body); font-size: 36px; font-weight: 400; line-height: 1.11; letter-spacing: -.5px; }
+.su-text-title-lg { font-family: var(--su-font-body); font-size: 32px; font-weight: 400; line-height: 1.13; letter-spacing: -.4px; }
+.su-text-title-md { font-family: var(--su-font-body); font-size: 18px; font-weight: 600; line-height: 1.33; }
+.su-text-title-sm { font-family: var(--su-font-body); font-size: 16px; font-weight: 600; line-height: 1.25; }
+.su-text-body-md { font-family: var(--su-font-body); font-size: 16px; font-weight: 400; line-height: 1.5; }
+.su-text-body-strong { font-family: var(--su-font-body); font-size: 16px; font-weight: 700; line-height: 1.5; }
+.su-text-body-sm { font-family: var(--su-font-body); font-size: 14px; font-weight: 400; line-height: 1.5; }
+.su-text-caption { font-family: var(--su-font-body); font-size: 13px; font-weight: 400; line-height: 1.5; }
+.su-text-caption-strong { font-family: var(--su-font-body); font-size: 12px; font-weight: 600; line-height: 1.5; letter-spacing: .3px; text-transform: uppercase; }
+.su-text-number { font-family: var(--su-font-mono); font-size: 16px; font-weight: 500; line-height: 1.4; }
+
+h1, h2, h3, p { margin: 0; text-wrap: pretty; }
+h1, h2, h3 { text-wrap: balance; font-weight: 400; }
+
+/* ---- layout helpers ---- */
+.su-wrap { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+.su-wrap--narrow { max-width: 760px; }
+
+.su-section { padding: 96px 0; }
+.su-section--tight { padding: 64px 0; }
+
+@media (max-width: 768px) {
+  .su-wrap { padding: 0 20px; }
+  .su-section { padding: 64px 0; }
+  .su-text-display-lg { font-size: 38px; letter-spacing: -1px; }
+  .su-text-display-md { font-size: 32px; letter-spacing: -.6px; }
+  .su-text-display-sm { font-size: 27px; }
+}
