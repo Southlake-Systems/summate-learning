@@ -1,54 +1,30 @@
+import Image from "next/image";
 import Link from "next/link";
 import Icon from "@/components/ui/Icon";
+import PhilosophyCards from "@/components/ui/philosophy-cards";
+import { Avatar } from "@/components/ui/primitives";
+import { useState } from "react";
 
-import Image from "next/image";
-import {
-  Badge,
-  Card,
-  IconPlate,
-  Avatar,
-  SectionHeader,
-  PlaceholderChip,
-  PlaceholderImage,
-} from "@/components/ui/primitives";
-import {
-  StoryIllustration,
-  CommunityIllustration,
-} from "@/components/Illustrations";
 import {
   hero,
   partners,
-  personas,
-  whyIntro,
-  features,
-  program,
-  comparison,
-  tools,
-  steps,
   community,
   mentors,
   founders,
   insights,
-  batchBenefits,
-  finalCta,
   banners,
 } from "@/lib/siteContent";
 
-/* ---------------- Hero ---------------- */
-
+/* ---------------- 01. Hero ---------------- */
 export function Hero() {
   return (
-    <section className="relative overflow-hidden border-b border-slate-100 bg-white pt-10 pb-16 lg:pt-16 lg:pb-24">
+    <section className="relative overflow-hidden bg-white pt-10 pb-16 lg:pt-16 lg:pb-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-8">
-
-          {/* Left: Punchy Editorial Copy */}
+          
+          {/* Left Column */}
           <div className="flex flex-col items-start lg:col-span-6">
-            <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-3.5 py-1 text-xs font-semibold text-slate-700">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#1E3ABA]" />
-              Founding Batch · Live Online · September 2026
-            </div>
-
+      
             <h1 className="mt-6 text-4xl font-extrabold leading-[1.08] tracking-tight text-slate-950 sm:text-5xl lg:text-[58px]">
               You are more than <br />
               <span className="text-slate-950">what you already know.</span>
@@ -70,41 +46,53 @@ export function Hero() {
               </Link>
 
               <Link
-                href="/#program"
+                href="/#tracks"
                 className="inline-flex items-center rounded-full border border-slate-200 bg-white px-6 py-3.5 text-sm font-semibold text-slate-700 transition hover:bg-slate-50"
               >
-                Explore Syllabus
+                Explore Tracks
               </Link>
             </div>
 
             {/* Spec Bar */}
-            <div className="mt-12 flex flex-wrap items-center gap-6 border-t border-slate-100 pt-8 text-xs font-semibold text-slate-600">
-              <div className="flex items-center gap-2">
-                <Icon name="Users" size={16} className="text-slate-500" strokeWidth={2} />
-                <span>Live Online</span>
-              </div>
-              <div className="h-3 w-px bg-slate-200 hidden sm:block" />
-              <div className="flex items-center gap-2">
-                <Icon name="Calendar" size={16} className="text-slate-500" strokeWidth={2} />
-                <span>12 Weeks</span>
-              </div>
-              <div className="h-3 w-px bg-slate-200 hidden sm:block" />
-              <div className="flex items-center gap-2">
-                <Icon name="Laptop" size={16} className="text-slate-500" strokeWidth={2} />
-                <span>Project Driven</span>
-              </div>
-              <div className="h-3 w-px bg-slate-200 hidden sm:block" />
-              <div className="flex items-center gap-2">
-                <Icon name="Sparkles" size={16} className="text-slate-500" strokeWidth={2} />
-                <span>AI Assisted</span>
-              </div>
-            </div>
+           <div className="mt-12 border-t border-slate-100 pt-7">
+  <div className="flex flex-wrap items-center gap-2 sm:gap-2.5">
+    {/* Live Online */}
+    <div className="group flex items-center gap-2 rounded-xl border border-slate-200/70 bg-white/80 px-3.5 py-2 shadow-2xs backdrop-blur-xs transition-all duration-200 hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-xs">
+      <span className="flex h-6 w-6 items-center justify-center rounded-lg bg-blue-50 text-summate-cobalt transition-colors group-hover:bg-summate-cobalt group-hover:text-white">
+        <Icon name="Users" size={13} strokeWidth={2.2} />
+      </span>
+      <span className="text-xs font-semibold text-slate-800">Live Online</span>
+    </div>
+
+    {/* 12 Weeks */}
+    <div className="group flex items-center gap-2 rounded-xl border border-slate-200/70 bg-white/80 px-3.5 py-2 shadow-2xs backdrop-blur-xs transition-all duration-200 hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-xs">
+      <span className="flex h-6 w-6 items-center justify-center rounded-lg bg-purple-50 text-summate-purple transition-colors group-hover:bg-summate-purple group-hover:text-white">
+        <Icon name="Calendar" size={13} strokeWidth={2.2} />
+      </span>
+      <span className="text-xs font-semibold text-slate-800">12 Weeks</span>
+    </div>
+
+    {/* Project Driven */}
+    <div className="group flex items-center gap-2 rounded-xl border border-slate-200/70 bg-white/80 px-3.5 py-2 shadow-2xs backdrop-blur-xs transition-all duration-200 hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-xs">
+      <span className="flex h-6 w-6 items-center justify-center rounded-lg bg-amber-50 text-summate-orange transition-colors group-hover:bg-summate-orange group-hover:text-white">
+        <Icon name="Laptop" size={13} strokeWidth={2.2} />
+      </span>
+      <span className="text-xs font-semibold text-slate-800">Project Driven</span>
+    </div>
+
+    {/* AI Assisted */}
+    <div className="group flex items-center gap-2 rounded-xl border border-slate-200/70 bg-white/80 px-3.5 py-2 shadow-2xs backdrop-blur-xs transition-all duration-200 hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-xs">
+      <span className="flex h-6 w-6 items-center justify-center rounded-lg bg-pink-50 text-summate-magenta transition-colors group-hover:bg-summate-magenta group-hover:text-white">
+        <Icon name="Sparkles" size={13} strokeWidth={2.2} />
+      </span>
+      <span className="text-xs font-semibold text-slate-800">AI Assisted</span>
+    </div>
+  </div>
+</div>
           </div>
 
-          {/* Right: Student Image with Floating Glass Chips */}
+          {/* Right Column: Hero Visual with Glass Badges */}
           <div className="relative flex min-h-[460px] items-center justify-center lg:col-span-6 lg:min-h-[540px]">
-
-            {/* Cutout Image */}
             <div className="relative z-10 w-full max-w-[420px]">
               <Image
                 src="/hero_right.png"
@@ -116,7 +104,6 @@ export function Hero() {
               />
             </div>
 
-            {/* Floating Card 1 (Top Left) */}
             <div className="absolute left-0 top-[18%] z-20 flex items-center gap-3 rounded-2xl border border-slate-200/90 bg-white/95 px-4 py-3 shadow-md shadow-slate-900/5 backdrop-blur-sm transition-transform hover:-translate-y-0.5">
               <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-slate-100 text-slate-800">
                 <Icon name="Code2" size={17} strokeWidth={2} />
@@ -127,7 +114,6 @@ export function Hero() {
               </div>
             </div>
 
-            {/* Floating Card 2 (Bottom Left) */}
             <div className="absolute left-2 bottom-[14%] z-20 flex items-center gap-3 rounded-2xl border border-slate-200/90 bg-white/95 px-4 py-3 shadow-md shadow-slate-900/5 backdrop-blur-sm transition-transform hover:-translate-y-0.5">
               <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-slate-100 text-slate-800">
                 <Icon name="Brain" size={17} strokeWidth={2} />
@@ -138,7 +124,6 @@ export function Hero() {
               </div>
             </div>
 
-            {/* Floating Card 3 (Top Right) */}
             <div className="absolute right-0 top-[26%] z-20 flex items-center gap-3 rounded-2xl border border-slate-200/90 bg-white/95 px-4 py-3 shadow-md shadow-slate-900/5 backdrop-blur-sm transition-transform hover:-translate-y-0.5">
               <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-slate-100 text-slate-800">
                 <Icon name="TrendingUp" size={17} strokeWidth={2} />
@@ -149,7 +134,6 @@ export function Hero() {
               </div>
             </div>
 
-            {/* Floating Card 4 (Bottom Right) */}
             <div className="absolute right-2 bottom-[20%] z-20 flex items-center gap-3 rounded-2xl border border-slate-200/90 bg-white/95 px-4 py-3 shadow-md shadow-slate-900/5 backdrop-blur-sm transition-transform hover:-translate-y-0.5">
               <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-slate-100 text-slate-800">
                 <Icon name="Rocket" size={17} strokeWidth={2} />
@@ -159,7 +143,6 @@ export function Hero() {
                 <p className="text-[11px] text-slate-500">Skills</p>
               </div>
             </div>
-
           </div>
 
         </div>
@@ -168,31 +151,705 @@ export function Hero() {
   );
 }
 
-/* ---------------- LogoMarquee ---------------- */
-export function LogoMarquee() {
-  const row = [...(partners?.logos ?? []), ...(partners?.logos ?? [])];
+/* ---------------- 02. Logo Marquee ---------------- */
+// export function LogoMarquee() {
+//   const row = [...(partners?.logos ?? []), ...(partners?.logos ?? [])];
+//   return (
+//     <section className="border-y border-slate-100 bg-[#FAFBFF] py-8">
+//       <div className="mx-auto max-w-7xl px-6 lg:px-8">
+//         <p className="text-center text-xs font-medium text-slate-400">
+//           {partners?.label}
+//         </p>
+//         <div className="relative mt-5 flex overflow-hidden">
+//           <div className="flex animate-marquee gap-10 whitespace-nowrap text-sm font-medium text-slate-500">
+//             {row.map((name, i) => (
+//               <span key={i} className="inline-flex items-center gap-2">
+//                 <Icon name="Building2" size={15} className="text-slate-400" />
+//                 {name}
+//               </span>
+//             ))}
+//           </div>
+//         </div>
+//       </div>
+//     </section>
+//   );
+// }
+
+export function WhySummate() {
+  const gaps = [
+    {
+      num: "01",
+      text: "A learner can finish a course without knowing how to solve a problem they haven't seen before.",
+      icon: "FileText",
+    },
+    {
+      num: "02",
+      text: "Collect certificates without knowing how to demonstrate the skill behind them.",
+      icon: "Award",
+    },
+    {
+      num: "03",
+      text: "Learn ten tools without understanding which one to reach for.",
+      icon: "Layers",
+    },
+    {
+      num: "04",
+      text: "Spend months preparing for a career without ever being asked to think like someone already in it.",
+      icon: "UserCheck",
+    },
+  ];
+
+  const pillars = [
+    {
+      num: "01",
+      icon: "BookOpen",
+      title: "Beyond the Syllabus",
+      subtitle:
+        "Learning is not a checklist of things you have completed.",
+      body:
+        "Summate goes beyond “here is the concept, here is the assignment, next chapter.” We focus on understanding, applying, questioning, making mistakes and figuring things out because that's how knowledge becomes a skill.",
+    },
+    {
+      num: "02",
+      icon: "ArrowUpRight",
+      title: "Skills Need Somewhere to Go",
+      subtitle:
+        "A skill becomes valuable when you can actually use it.",
+      body:
+        "What you learn should have somewhere to land — a project, a problem, a conversation, an interview, a workplace or the next opportunity you are choosing to pursue.",
+    },
+    {
+      num: "03",
+      icon: "Zap",
+      title: "Work is Changing. Learning Must Too.",
+      subtitle:
+        "The way we work is changing. Learning has to change with it.",
+      body:
+        "Technology, AI and workplaces are moving faster than traditional curricula can sometimes keep up. We want learners to understand the tool, think around it, work with it and adapt when the tool changes.",
+    },
+  ];
+
   return (
-    <section className="border-b border-slate-100 bg-white py-8">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <p className="text-center text-xs font-medium text-slate-400">
-          {partners?.label}
-        </p>
-        <div className="relative mt-5 flex overflow-hidden">
-          <div className="flex animate-marquee gap-10 whitespace-nowrap text-sm font-medium text-slate-500">
-            {row.map((name, i) => (
-              <span key={i} className="inline-flex items-center gap-2">
-                <Icon name="Building2" size={15} className="text-slate-400" />
-                {name}
+    <section
+      id="why-summate"
+      className="relative overflow-hidden border-t border-slate-100 bg-white"
+    >
+      {/* Very subtle background detail */}
+      <div className="pointer-events-none absolute -right-40 top-24 h-[420px] w-[420px] rounded-full bg-[#EEF3FF] opacity-60 blur-3xl" />
+
+      <div className="relative mx-auto max-w-7xl px-6 py-24 lg:px-8 lg:py-32">
+
+        {/* =====================================================
+            HEADER
+        ===================================================== */}
+        <div className="grid gap-10 lg:grid-cols-[1fr_0.8fr] lg:items-end">
+          <div>
+            <div className="mb-6 flex items-center gap-3">
+              <span className="h-px w-10 bg-[#1E3ABA]" />
+
+              <span className="text-[11px] font-bold uppercase tracking-[0.18em] text-[#1E3ABA]">
+                Why Summate
               </span>
-            ))}
+            </div>
+
+            <h2 className="max-w-4xl text-4xl font-extrabold leading-[1.04] tracking-[-0.045em] text-[#0D1222] sm:text-5xl lg:text-[56px]">
+              Because learning shouldn't stop
+              <br className="hidden sm:block" />
+              where the syllabus ends.
+            </h2>
           </div>
+
+          <p className="max-w-lg text-[16px] font-medium leading-7 text-slate-500 lg:pb-1">
+            There are courses, certificates, tutorials, bootcamps and
+            promises of “job-ready” skills everywhere. But knowing something
+            is not the same as knowing what to do with it.
+          </p>
+        </div>
+
+        {/* =====================================================
+            THE GAP
+        ===================================================== */}
+        <div className="mt-20 border-y border-slate-200">
+          <div className="grid lg:grid-cols-[240px_1fr]">
+
+            {/* Label */}
+            <div className="border-b border-slate-200 py-7 lg:border-b-0 lg:border-r lg:pr-10">
+              <p className="text-xs font-bold uppercase tracking-[0.16em] text-slate-400">
+                The gap
+              </p>
+
+              <p className="mt-3 max-w-[180px] text-sm font-semibold leading-6 text-[#0D1222]">
+                Where knowing something isn't enough.
+              </p>
+            </div>
+
+            {/* Gap items */}
+            <div className="grid sm:grid-cols-2">
+              {gaps.map((gap, index) => (
+                <div
+                  key={gap.num}
+                  className={`group relative flex gap-5 px-1 py-7 sm:px-7 ${
+                    index < 2 ? "sm:border-b border-slate-200" : ""
+                  } ${
+                    index % 2 === 0
+                      ? "sm:border-r border-slate-200"
+                      : ""
+                  }`}
+                >
+                  {/* Number */}
+                  <div className="shrink-0">
+                    <span className="font-mono text-[11px] font-semibold tracking-wider text-[#1E3ABA]">
+                      {gap.num}
+                    </span>
+                  </div>
+
+                  {/* Content */}
+                  <div className="flex-1">
+                    <p className="max-w-md text-sm font-semibold leading-6 text-slate-700 transition-colors duration-200 group-hover:text-[#0D1222]">
+                      {gap.text}
+                    </p>
+                  </div>
+
+                  {/* Arrow */}
+                  <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-slate-200 text-slate-300 transition-all duration-200 group-hover:border-[#1E3ABA]/30 group-hover:bg-[#EEF3FF] group-hover:text-[#1E3ABA]">
+                    <Icon
+                      name="ArrowUpRight"
+                      size={13}
+                      strokeWidth={2}
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* =====================================================
+            CORE PILLARS
+        ===================================================== */}
+        <div className="mt-24">
+
+          <div className="mb-10 flex items-end justify-between gap-6">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.16em] text-slate-400">
+                What we believe
+              </p>
+
+              <h3 className="mt-3 text-2xl font-extrabold tracking-[-0.03em] text-[#0D1222] sm:text-3xl">
+                Three ideas behind how we teach.
+              </h3>
+            </div>
+
+            <div className="hidden h-px max-w-[260px] flex-1 bg-slate-200 sm:block" />
+          </div>
+
+          <PhilosophyCards />
+        </div>
+
+        {/* =====================================================
+            CLOSING STATEMENT
+        ===================================================== */}
+        <div className="relative mt-20 overflow-hidden rounded-[28px] bg-[#0D1222] px-7 py-9 sm:px-10 sm:py-10">
+          <div className="relative z-10 flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
+
+            <div className="max-w-2xl">
+              <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-slate-500">
+                The Summate philosophy
+              </p>
+
+              <p className="mt-3 text-xl font-semibold leading-8 tracking-[-0.02em] text-white sm:text-2xl">
+                The goal isn't simply to know more.
+                <span className="text-slate-400">
+                  {" "}
+                  It's to know what to do with what you know.
+                </span>
+              </p>
+            </div>
+
+            {/* Brand signature — NOT a tab/pill */}
+            <div className="flex shrink-0 items-center gap-3 text-xs font-bold uppercase tracking-[0.18em]">
+              <span className="text-white">LEARN</span>
+
+              <span className="text-slate-600">→</span>
+
+              <span className="text-white">APPLY</span>
+
+              <span className="text-slate-600">→</span>
+
+              <span className="text-white">ACHIEVE</span>
+            </div>
+          </div>
+
+          {/* Decorative glow */}
+          <div className="pointer-events-none absolute -right-24 -top-32 h-72 w-72 rounded-full bg-[#1E3ABA] opacity-30 blur-3xl" />
         </div>
       </div>
     </section>
   );
 }
+export function TrackCatalog() {
+  const tracks = [
+    {
+      id: "full-stack",
+      number: "01",
+      badge: "Flagship Program",
+      title: "AI-Augmented Full-Stack Developer",
+      tagline:
+        "Build production-ready applications while learning how to work effectively with modern AI tools.",
+      duration: "12 Weeks",
+      format: "Live Online",
+      accent: "#1E3ABA",
+      soft: "#EEF2FF",
+      skills: [
+        "Next.js",
+        "TypeScript",
+        "Python",
+        "APIs",
+        "AI Workflows",
+      ],
+      seats: "Founding Cohort",
+      featured: true,
+    },
+    {
+      id: "data-eng",
+      number: "02",
+      badge: "Coming Soon",
+      title: "Modern Data Engineering",
+      tagline:
+        "Build practical data systems and develop the engineering habits needed for production environments.",
+      duration: "12 Weeks",
+      format: "Live Online",
+      accent: "#7C3AED",
+      soft: "#F3EFFF",
+      skills: [
+        "Python",
+        "Data Pipelines",
+        "SQL",
+        "Cloud",
+        "Analytics",
+      ],
+      seats: "Coming Soon",
+      featured: false,
+    },
+    {
+      id: "growth-marketing",
+      number: "03",
+      badge: "Coming Soon",
+      title: "Performance & Digital Marketing",
+      tagline:
+        "Learn how modern marketing teams use experimentation, analytics and technology to drive growth.",
+      duration: "10 Weeks",
+      format: "Live Online",
+      accent: "#FF2D75",
+      soft: "#FFF0F5",
+      skills: [
+        "Analytics",
+        "CRO",
+        "Campaigns",
+        "Attribution",
+        "Growth",
+      ],
+      seats: "Coming Soon",
+      featured: false,
+    },
+    {
+      id: "ai-mech",
+      number: "04",
+      badge: "Interdisciplinary",
+      title: "AI & Embedded Systems",
+      tagline:
+        "Explore the intersection of intelligent software, hardware and real-world systems.",
+      duration: "12 Weeks",
+      format: "Live Online",
+      accent: "#FF8A00",
+      soft: "#FFF6E9",
+      skills: [
+        "Computer Vision",
+        "Edge AI",
+        "Embedded",
+        "Sensors",
+        "Python",
+      ],
+      seats: "Coming Soon",
+      featured: false,
+    },
+  ];
 
-/* ---------------- PersonaCards ---------------- */
+  return (
+    <section
+      id="programs"
+      className="relative overflow-hidden bg-[#FAFBFF] py-24 lg:py-32"
+    >
+      {/* =========================================================
+          BACKGROUND DETAILS
+      ========================================================= */}
+
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute left-[8%] top-20 h-72 w-72 rounded-full bg-[#1E3ABA]/[0.035] blur-3xl" />
+        <div className="absolute bottom-0 right-[5%] h-80 w-80 rounded-full bg-[#7C3AED]/[0.025] blur-3xl" />
+
+        <div
+          className="absolute inset-0 opacity-[0.35]"
+          style={{
+            backgroundImage:
+              "radial-gradient(#CBD5E1 0.7px, transparent 0.7px)",
+            backgroundSize: "24px 24px",
+            maskImage:
+              "linear-gradient(to bottom, black, transparent 75%)",
+            WebkitMaskImage:
+              "linear-gradient(to bottom, black, transparent 75%)",
+          }}
+        />
+      </div>
+
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+        {/* =========================================================
+            HEADER
+        ========================================================= */}
+
+        <div className="flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
+          <div className="max-w-3xl">
+            <div className="mb-5 flex items-center gap-3">
+              <span className="h-px w-10 bg-[#1E3ABA]" />
+
+              <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#1E3ABA]">
+                Programs
+              </span>
+            </div>
+
+            <h2 className="text-[38px] font-extrabold leading-[1.05] tracking-[-0.045em] text-[#0D1222] sm:text-[48px] lg:text-[58px]">
+              Learning that leads
+              <br />
+              <span className="text-slate-400">
+                somewhere.
+              </span>
+            </h2>
+
+            <p className="mt-6 max-w-2xl text-base leading-7 text-slate-600 lg:text-lg">
+              Programs designed around practical learning, real work
+              and the skills you need for what comes next.
+            </p>
+          </div>
+
+          {/* Small count */}
+          <div className="hidden shrink-0 lg:block">
+            <div className="flex items-end gap-3">
+              <span className="text-5xl font-extrabold tracking-[-0.06em] text-[#0D1222]">
+                04
+              </span>
+
+              <span className="mb-1 max-w-[100px] text-[10px] font-bold uppercase leading-4 tracking-[0.15em] text-slate-400">
+                Learning paths
+                <br />
+                and programs
+              </span>
+            </div>
+          </div>
+        </div>
+
+        {/* =========================================================
+            FEATURED PROGRAM
+        ========================================================= */}
+
+        <div className="mt-16">
+          {tracks
+            .filter((track) => track.featured)
+            .map((track) => (
+              <Link
+                key={track.id}
+                href="/apply"
+                className="group relative block overflow-hidden rounded-[32px] border border-[#1E3ABA]/15 bg-white transition-all duration-500 hover:-translate-y-1 hover:border-[#1E3ABA]/30 hover:shadow-[0_30px_80px_rgba(30,58,186,0.12)]"
+              >
+                {/* Accent edge */}
+                <div
+                  className="absolute bottom-0 left-0 top-0 w-1.5"
+                  style={{ backgroundColor: track.accent }}
+                />
+
+                {/* Decorative number */}
+                <div
+                  className="pointer-events-none absolute -right-5 -top-16 select-none text-[240px] font-extrabold leading-none tracking-[-0.1em]"
+                  style={{ color: track.soft }}
+                >
+                  {track.number}
+                </div>
+
+                {/* Hover orb */}
+                <div
+                  className="pointer-events-none absolute -right-24 bottom-[-100px] h-64 w-64 rounded-full opacity-0 blur-3xl transition-all duration-700 group-hover:opacity-60"
+                  style={{ backgroundColor: track.accent }}
+                />
+
+                <div className="relative grid lg:grid-cols-[1fr_320px]">
+                  {/* Main */}
+                  <div className="p-8 sm:p-10 lg:p-12">
+                    <div className="flex flex-wrap items-center gap-3">
+                      <span
+                        className="rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-[0.12em]"
+                        style={{
+                          backgroundColor: track.soft,
+                          color: track.accent,
+                        }}
+                      >
+                        {track.badge}
+                      </span>
+
+                      <span className="text-[11px] font-semibold text-slate-400">
+                        {track.number} / 04
+                      </span>
+                    </div>
+
+                    <h3 className="mt-7 max-w-3xl text-3xl font-extrabold leading-[1.08] tracking-[-0.045em] text-[#0D1222] transition-colors duration-300 group-hover:text-[#1E3ABA] sm:text-4xl lg:text-[46px]">
+                      {track.title}
+                    </h3>
+
+                    <p className="mt-5 max-w-2xl text-sm leading-7 text-slate-600 sm:text-base">
+                      {track.tagline}
+                    </p>
+
+                    {/* Skills */}
+                    <div className="mt-8 flex flex-wrap gap-2">
+                      {track.skills.map((skill) => (
+                        <span
+                          key={skill}
+                          className="rounded-lg border border-slate-200 bg-slate-50 px-3 py-1.5 text-[11px] font-semibold text-slate-600 transition-colors duration-300 group-hover:border-slate-300 group-hover:bg-white"
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Side panel */}
+                  <div className="flex flex-col justify-between border-t border-slate-100 bg-[#FAFBFF] p-8 lg:border-l lg:border-t-0 lg:p-10">
+                    <div>
+                      <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-slate-400">
+                        Program format
+                      </p>
+
+                      <div className="mt-5 space-y-4">
+                        <div className="flex items-center gap-3">
+                          <span
+                            className="flex h-9 w-9 items-center justify-center rounded-xl"
+                            style={{
+                              backgroundColor: track.soft,
+                              color: track.accent,
+                            }}
+                          >
+                            <Icon
+                              name="Calendar"
+                              size={16}
+                              strokeWidth={1.8}
+                            />
+                          </span>
+
+                          <div>
+                            <p className="text-xs font-bold text-[#0D1222]">
+                              {track.duration}
+                            </p>
+                            <p className="text-[11px] text-slate-400">
+                              Structured program
+                            </p>
+                          </div>
+                        </div>
+
+                        <div className="flex items-center gap-3">
+                          <span
+                            className="flex h-9 w-9 items-center justify-center rounded-xl"
+                            style={{
+                              backgroundColor: track.soft,
+                              color: track.accent,
+                            }}
+                          >
+                            <Icon
+                              name="Monitor"
+                              size={16}
+                              strokeWidth={1.8}
+                            />
+                          </span>
+
+                          <div>
+                            <p className="text-xs font-bold text-[#0D1222]">
+                              {track.format}
+                            </p>
+                            <p className="text-[11px] text-slate-400">
+                              Learn from anywhere
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="mt-10 flex items-center justify-between border-t border-slate-200 pt-6">
+                      <div>
+                        <p className="text-[10px] font-bold uppercase tracking-[0.15em] text-slate-400">
+                          Availability
+                        </p>
+
+                        <p className="mt-1 text-xs font-bold text-emerald-600">
+                          ● {track.seats}
+                        </p>
+                      </div>
+
+                      <span
+                        className="flex h-11 w-11 items-center justify-center rounded-full text-white transition-all duration-300 group-hover:translate-x-1 group-hover:scale-105"
+                        style={{ backgroundColor: track.accent }}
+                      >
+                        <Icon
+                          name="ArrowUpRight"
+                          size={18}
+                          strokeWidth={2}
+                        />
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            ))}
+        </div>
+
+        {/* =========================================================
+            OTHER PROGRAMS
+        ========================================================= */}
+
+        <div className="mt-12">
+          <div className="mb-5 flex items-center justify-between">
+            <div>
+              <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-slate-400">
+                More programs
+              </p>
+            </div>
+
+            <div className="hidden h-px flex-1 bg-slate-200/80 sm:ml-6 sm:block" />
+          </div>
+
+          <div className="grid gap-4 md:grid-cols-3">
+            {tracks
+              .filter((track) => !track.featured)
+              .map((track) => (
+                <Link
+                  key={track.id}
+                  href="/apply"
+                  className="group relative overflow-hidden rounded-[24px] border border-slate-200 bg-white p-7 transition-all duration-500 hover:-translate-y-1 hover:border-slate-300 hover:shadow-[0_22px_50px_rgba(13,18,34,0.08)]"
+                >
+                  {/* Number */}
+                  <div
+                    className="absolute -right-2 -top-8 select-none text-[110px] font-extrabold leading-none tracking-[-0.08em] opacity-70 transition-transform duration-500 group-hover:translate-x-2 group-hover:-translate-y-1"
+                    style={{ color: track.soft }}
+                  >
+                    {track.number}
+                  </div>
+
+                  {/* Top */}
+                  <div className="relative flex items-center justify-between">
+                    <span
+                      className="rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-[0.12em]"
+                      style={{
+                        backgroundColor: track.soft,
+                        color: track.accent,
+                      }}
+                    >
+                      {track.badge}
+                    </span>
+
+                    <span
+                      className="flex h-8 w-8 items-center justify-center rounded-full border border-slate-200 text-slate-400 transition-all duration-300 group-hover:border-slate-300 group-hover:text-[#0D1222]"
+                    >
+                      <Icon
+                        name="ArrowUpRight"
+                        size={14}
+                        strokeWidth={2}
+                      />
+                    </span>
+                  </div>
+
+                  {/* Content */}
+                  <div className="relative mt-8">
+                    <p className="mb-2 font-mono text-[10px] font-bold tracking-[0.15em] text-slate-400">
+                      PROGRAM {track.number}
+                    </p>
+
+                    <h3 className="text-xl font-extrabold leading-[1.15] tracking-[-0.035em] text-[#0D1222] transition-colors duration-300 group-hover:text-[#1E3ABA]">
+                      {track.title}
+                    </h3>
+
+                    <p className="mt-3 text-xs leading-6 text-slate-500">
+                      {track.tagline}
+                    </p>
+                  </div>
+
+                  {/* Skills */}
+                  <div className="relative mt-6 flex flex-wrap gap-1.5">
+                    {track.skills.slice(0, 4).map((skill) => (
+                      <span
+                        key={skill}
+                        className="rounded-md bg-slate-50 px-2 py-1 text-[10px] font-medium text-slate-500"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Bottom */}
+                  <div className="relative mt-7 flex items-center justify-between border-t border-slate-100 pt-5">
+                    <div>
+                      <p className="text-[9px] font-bold uppercase tracking-[0.15em] text-slate-400">
+                        Format
+                      </p>
+
+                      <p className="mt-1 text-[11px] font-semibold text-slate-600">
+                        {track.duration} · {track.format}
+                      </p>
+                    </div>
+
+                    <span
+                      className="text-[10px] font-bold uppercase tracking-[0.12em] transition-colors duration-300"
+                      style={{ color: track.accent }}
+                    >
+                      Explore
+                    </span>
+                  </div>
+
+                  {/* Bottom accent */}
+                  <div
+                    className="absolute bottom-0 left-0 h-0.5 w-0 transition-all duration-500 group-hover:w-full"
+                    style={{ backgroundColor: track.accent }}
+                  />
+                </Link>
+              ))}
+          </div>
+        </div>
+
+        {/* =========================================================
+            CLOSING LINE
+        ========================================================= */}
+
+        <div className="mt-12 flex flex-col items-start justify-between gap-5 border-t border-slate-200 pt-7 sm:flex-row sm:items-center">
+          <p className="max-w-xl text-sm leading-6 text-slate-500">
+            Every program is designed to help you move from knowing
+            something to being able to use it.
+          </p>
+
+          <Link
+            href="/apply"
+            className="group inline-flex items-center gap-2 text-sm font-bold text-[#0D1222]"
+          >
+            <span>Start with Batch 01</span>
+
+            <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#1E3ABA] text-white transition-transform duration-300 group-hover:translate-x-1">
+              <Icon
+                name="ArrowRight"
+                size={14}
+                strokeWidth={2}
+              />
+            </span>
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
+}
+/* ---------------- 05. Persona Cards ---------------- */
 export function PersonaCards() {
   const cards = [
     {
@@ -201,12 +858,22 @@ export function PersonaCards() {
       title: "Starting Out",
       desc: "You have the qualification. Now it's time to build what's next.",
       quote: "From learning to doing.",
-      image: "/personalcard1.png", // Ensure this exists in public/
-      btnStyle: "bg-[#1E3ABA] text-white hover:bg-[#152882]",
+      image: "/personalcard1.png",
+      accent: "#1E3ABA",
+      soft: "#EEF2FF",
       features: [
-        { label: "Recent graduates", icon: "Sparkles", color: "text-[#1E3ABA]", bg: "bg-blue-50/80" },
-        { label: "Early career professionals", icon: "Sparkles", color: "text-[#1E3ABA]", bg: "bg-blue-50/80" },
-        { label: "Build real-world skills", icon: "Sparkles", color: "text-[#1E3ABA]", bg: "bg-blue-50/80" },
+        {
+          label: "Recent graduates",
+          icon: "Sparkles",
+        },
+        {
+          label: "Early career professionals",
+          icon: "Sparkles",
+        },
+        {
+          label: "Build real-world skills",
+          icon: "Sparkles",
+        },
       ],
     },
     {
@@ -214,13 +881,23 @@ export function PersonaCards() {
       tagline: "Keep Growing",
       title: "Moving Forward",
       desc: "You're working, but you want to grow, switch roles or stay ahead.",
-      quote: "Better Skills. Bigger Opportunities.",
-      image: "/personalcard2.png", // Ensure this exists in public/
-      btnStyle: "border border-slate-200 bg-white text-slate-800 hover:bg-slate-50",
+      quote: "Better skills. Bigger opportunities.",
+      image: "/personalcard2.png",
+      accent: "#7C3AED",
+      soft: "#F3EFFF",
       features: [
-        { label: "Working professionals", icon: "Sparkles", color: "text-[#7C3AED]", bg: "bg-purple-50/80" },
-        { label: "Upskilling & career growth", icon: "Sparkles", color: "text-[#7C3AED]", bg: "bg-purple-50/80" },
-        { label: "Move into tech roles", icon: "Sparkles", color: "text-[#7C3AED]", bg: "bg-purple-50/80" },
+        {
+          label: "Working professionals",
+          icon: "Sparkles",
+        },
+        {
+          label: "Upskilling & career growth",
+          icon: "Sparkles",
+        },
+        {
+          label: "Move into tech roles",
+          icon: "Sparkles",
+        },
       ],
     },
     {
@@ -228,319 +905,827 @@ export function PersonaCards() {
       tagline: "A Fresh Start",
       title: "Changing Course",
       desc: "A different direction is possible. It's never too late to start again.",
-      quote: "New Skills. New Possibilities.",
-      image: "/personalcard3.png", // Ensure this exists in public/
-      btnStyle: "border border-slate-200 bg-white text-slate-800 hover:bg-slate-50",
+      quote: "New skills. New possibilities.",
+      image: "/personalcard3.png",
+      accent: "#FF8A00",
+      soft: "#FFF5E8",
       features: [
-        { label: "Career changers", icon: "Sparkles", color: "text-[#FF8A00]", bg: "bg-amber-50/80" },
-        { label: "Returning after a break", icon: "Users", color: "text-[#FF8A00]", bg: "bg-amber-50/80" },
-        { label: "Explore new opportunities", icon: "Sparkles", color: "text-[#FF8A00]", bg: "bg-amber-50/80" },
+        {
+          label: "Career changers",
+          icon: "Sparkles",
+        },
+        {
+          label: "Returning after a break",
+          icon: "Users",
+        },
+        {
+          label: "Explore new opportunities",
+          icon: "Sparkles",
+        },
       ],
     },
   ];
 
   return (
-    <section className="relative overflow-hidden bg-[#FAFBFF] py-20 lg:py-28" id="who-it-is-for">
+    <section
+      id="who-it-is-for"
+      className="relative overflow-hidden bg-white py-24 lg:py-32"
+    >
+      {/* =========================================================
+          BACKGROUND
+      ========================================================= */}
+
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute left-[10%] top-32 h-72 w-72 rounded-full bg-[#1E3ABA]/[0.025] blur-3xl" />
+
+        <div className="absolute bottom-20 right-[8%] h-80 w-80 rounded-full bg-[#7C3AED]/[0.025] blur-3xl" />
+      </div>
+
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-        
-        {/* Header */}
+        {/* =========================================================
+            HEADER
+        ========================================================= */}
+
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="text-3xl font-extrabold tracking-tight text-[#0F172A] sm:text-4xl lg:text-[46px] lg:leading-[1.18]">
-            There’s No Single <br />
+          <div className="mb-5 flex items-center justify-center gap-3">
+            <span className="h-px w-8 bg-slate-300" />
+
+            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">
+              Who It's For
+            </span>
+
+            <span className="h-px w-8 bg-slate-300" />
+          </div>
+
+          <h2 className="text-[38px] font-extrabold leading-[1.08] tracking-[-0.045em] text-[#0D1222] sm:text-[48px] lg:text-[56px]">
+            There’s No Single
+            <br />
             Starting Point for Learning.
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-slate-500 sm:text-base">
-            Starting out, starting over, or ready for something more. Summate Learning is designed for different points in the journey.
+
+          <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-slate-500 sm:text-base">
+            Starting out, starting over, or ready for something more.
+            Summate Learning is designed for different points in the
+            journey.
           </p>
         </div>
 
-        {/* 3 Large Persona Cards */}
-        <div className="mt-14 grid grid-cols-1 gap-6 lg:grid-cols-3">
-          {cards.map((c) => (
-            <div
-              key={c.title}
-              className="relative flex flex-col justify-between overflow-hidden rounded-3xl border border-slate-200/90 bg-white shadow-sm transition-all duration-300 hover:border-slate-300 hover:shadow-xl"
-            >
-              {/* Header inside Card: Number + Handwritten Tagline */}
-              <div className="flex items-center justify-between px-7 pt-6">
-                <span className="select-none font-sans text-5xl font-black text-slate-100">
-                  {c.num}
-                </span>
-                <span className="font-serif italic text-xs text-slate-400">
-                  {c.tagline}
-                </span>
-              </div>
+        {/* =========================================================
+            JOURNEY INDICATOR
+        ========================================================= */}
 
-              {/* Main Content Grid: Left Details, Right Large Portrait */}
-              <div className="relative grid grid-cols-1 items-end gap-2 px-7 pb-7 pt-4 sm:grid-cols-[1.15fr_0.85fr]">
-                
-                {/* Left: Text, Chips, CTA */}
-                <div className="relative z-10 flex flex-col justify-between">
-                  <div>
-                    <h3 className="text-xl font-extrabold text-[#0F172A]">{c.title}</h3>
-                    <p className="mt-2 text-xs leading-relaxed text-slate-500">
-                      {c.desc}
-                    </p>
+        <div className="mx-auto mt-12 hidden max-w-xl items-center justify-center md:flex">
+          <div className="flex items-center">
+            <span className="font-mono text-[10px] font-bold tracking-[0.15em] text-[#1E3ABA]">
+              STARTING OUT
+            </span>
 
-                    {/* Feature Chips */}
-                    <div className="mt-6 space-y-2.5">
-                      {c.features.map((f) => (
-                        <div
-                          key={f.label}
-                          className="flex items-center gap-2.5 rounded-full border border-slate-100 bg-slate-50/80 px-3 py-2 shadow-2xs"
-                        >
-                          <span className={`${f.color} flex shrink-0`}>
-                            <Icon name={f.icon} size={13} strokeWidth={2.2} />
-                          </span>
-                          <span className="text-[11px] font-semibold text-slate-700 truncate">
-                            {f.label}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
+            <span className="mx-4 h-px w-16 bg-slate-200" />
 
-                  {/* Explore Button */}
-                  <div className="mt-8">
-                    <Link
-                      href="/apply"
-                      className={`inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-xs font-bold shadow-sm transition-all active:scale-95 ${c.btnStyle}`}
-                    >
-                      <span>Explore</span>
-                      <Icon name="ArrowRight" size={13} strokeWidth={2.5} />
-                    </Link>
-                  </div>
+            <span className="font-mono text-[10px] font-bold tracking-[0.15em] text-slate-400">
+              MOVING FORWARD
+            </span>
+
+            <span className="mx-4 h-px w-16 bg-slate-200" />
+
+            <span className="font-mono text-[10px] font-bold tracking-[0.15em] text-slate-400">
+              CHANGING COURSE
+            </span>
+          </div>
+        </div>
+
+        {/* =========================================================
+            CARDS
+        ========================================================= */}
+
+        <div className="mt-14 grid gap-5 lg:grid-cols-3 lg:items-start">
+          {cards.map((card, index) => {
+            const isMiddle = index === 1;
+
+            return (
+              <article
+                key={card.title}
+                className={`
+                  group relative overflow-hidden rounded-[30px]
+                  border border-slate-200 bg-white
+                  transition-all duration-500 ease-out
+                  hover:-translate-y-2
+                  hover:border-slate-300
+                  hover:shadow-[0_30px_70px_rgba(13,18,34,0.10)]
+                  ${
+                    isMiddle
+                      ? "lg:mt-[-20px]"
+                      : "lg:mt-6"
+                  }
+                `}
+              >
+                {/* =================================================
+                    TOP NUMBER / TAG
+                ================================================= */}
+
+                <div className="relative flex items-start justify-between px-7 pt-7 sm:px-8 sm:pt-8">
+                  {/* Number */}
+                  <span
+                    className="
+                      select-none font-mono text-[13px]
+                      font-bold tracking-[0.15em]
+                      text-slate-300 transition-colors duration-300
+                      group-hover:text-slate-400
+                    "
+                  >
+                    {card.num}
+                  </span>
+
+                  {/* Tagline */}
+                  <span
+                    className="
+                      rounded-full border border-slate-100
+                      bg-slate-50 px-3 py-1
+                      font-serif text-[11px] italic
+                      text-slate-500
+                    "
+                  >
+                    {card.tagline}
+                  </span>
                 </div>
 
-                {/* Right: Full Height Visual Frame */}
-                <div className="relative -mr-7 -mb-7 flex h-[340px] items-end justify-center">
-                  
-                  {/* Subtle curved background blob behind student */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-100/90 via-slate-50/50 to-transparent rounded-bl-[48px]" />
+                {/* =================================================
+                    TITLE
+                ================================================= */}
 
-                  {/* High-res Cutout / Portrait */}
-                  <div className="relative z-10 h-full w-full">
+                <div className="relative px-7 pt-7 sm:px-8">
+                  <h3 className="text-[29px] font-extrabold leading-[1.05] tracking-[-0.045em] text-[#0D1222] transition-colors duration-300 group-hover:text-[#1E3ABA]">
+                    {card.title}
+                  </h3>
+
+                  <p className="mt-4 max-w-sm text-sm leading-6 text-slate-500">
+                    {card.desc}
+                  </p>
+                </div>
+
+                {/* =================================================
+                    IMAGE
+                ================================================= */}
+
+                <div
+                  className={`
+                    relative mt-7 overflow-hidden
+                    ${
+                      isMiddle
+                        ? "h-[390px]"
+                        : "h-[350px]"
+                    }
+                  `}
+                >
+                  {/* Image background */}
+                  <div
+                    className="absolute inset-x-0 bottom-0 h-[85%] transition-all duration-500 group-hover:h-[92%]"
+                    style={{
+                      backgroundColor: card.soft,
+                    }}
+                  />
+
+                  {/* Soft accent shape */}
+                  <div
+                    className="
+                      absolute bottom-[-80px] left-1/2
+                      h-64 w-64 -translate-x-1/2
+                      rounded-full opacity-50 blur-3xl
+                      transition-all duration-700
+                      group-hover:scale-125
+                    "
+                    style={{
+                      backgroundColor: card.accent,
+                    }}
+                  />
+
+                  {/* Person / artwork */}
+                  <div className="absolute inset-x-0 bottom-0 top-2 transition-transform duration-700 ease-out group-hover:scale-[1.04]">
                     <Image
-                      src={c.image}
-                      alt={c.title}
+                      src={card.image}
+                      alt={card.title}
                       fill
                       className="object-contain object-bottom"
-                      sizes="(max-width: 768px) 100vw, 30vw"
-                      priority
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      priority={index === 0}
                     />
                   </div>
 
-                  {/* Floating Quote Badge */}
-                  {c.quote && (
-                    <div className="absolute bottom-4 left-2 right-4 z-20 rounded-2xl border border-white/80 bg-white/95 px-3 py-2 text-center shadow-lg shadow-slate-900/5 backdrop-blur-md">
-                      <p className="text-[10px] font-medium italic text-slate-700">
-                        “{c.quote}”
+                  {/* Quote */}
+                  <div
+                    className="
+                      absolute bottom-5 left-5 right-5
+                      rounded-2xl border border-white/80
+                      bg-white/90 px-4 py-3
+                      shadow-[0_10px_30px_rgba(13,18,34,0.08)]
+                      backdrop-blur-md
+                      transition-all duration-500
+                      group-hover:-translate-y-1
+                    "
+                  >
+                    <div className="flex items-center justify-between gap-3">
+                      <p className="text-[11px] font-semibold italic text-slate-700">
+                        “{card.quote}”
                       </p>
+
+                      <span
+                        className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-white"
+                        style={{
+                          backgroundColor: card.accent,
+                        }}
+                      >
+                        <Icon
+                          name="ArrowUpRight"
+                          size={13}
+                          strokeWidth={2}
+                        />
+                      </span>
                     </div>
-                  )}
+                  </div>
                 </div>
 
-              </div>
+                {/* =================================================
+                    FEATURES
+                ================================================= */}
 
-            </div>
-          ))}
+                <div className="px-7 pb-7 pt-6 sm:px-8 sm:pb-8">
+                  <div className="space-y-2">
+                    {card.features.map((feature) => (
+                      <div
+                        key={feature.label}
+                        className="
+                          flex items-center gap-3
+                          rounded-xl border border-slate-100
+                          bg-slate-50/70 px-3.5 py-2.5
+                          transition-all duration-300
+                          group-hover:bg-white
+                          group-hover:border-slate-200
+                        "
+                      >
+                        <span
+                          className="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg"
+                          style={{
+                            backgroundColor: card.soft,
+                            color: card.accent,
+                          }}
+                        >
+                          <Icon
+                            name={feature.icon}
+                            size={12}
+                            strokeWidth={2.2}
+                          />
+                        </span>
+
+                        <span className="text-[11px] font-semibold text-slate-600">
+                          {feature.label}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* =================================================
+                      CTA
+                  ================================================= */}
+
+                  <Link
+                    href="/apply"
+                    className="
+                      mt-6 flex w-full items-center
+                      justify-between rounded-xl
+                      border border-slate-200
+                      bg-white px-4 py-3
+                      text-xs font-bold text-[#0D1222]
+                      transition-all duration-300
+                      hover:border-slate-300
+                      hover:bg-slate-50
+                    "
+                  >
+                    <span>Explore this path</span>
+
+                    <span
+                      className="
+                        flex h-7 w-7 items-center
+                        justify-center rounded-full
+                        text-white transition-transform
+                        duration-300
+                        group-hover:translate-x-1
+                      "
+                      style={{
+                        backgroundColor: card.accent,
+                      }}
+                    >
+                      <Icon
+                        name="ArrowRight"
+                        size={13}
+                        strokeWidth={2.3}
+                      />
+                    </span>
+                  </Link>
+                </div>
+
+                {/* =================================================
+                    BOTTOM ACCENT
+                ================================================= */}
+
+                <div
+                  className="
+                    absolute bottom-0 left-0 h-1
+                    w-0 transition-all duration-500
+                    group-hover:w-full
+                  "
+                  style={{
+                    backgroundColor: card.accent,
+                  }}
+                />
+              </article>
+            );
+          })}
         </div>
 
-        {/* Bottom Philosophy Strip */}
-        <div className="relative mt-8 flex flex-col items-center justify-between gap-6 rounded-2xl border border-slate-200/90 bg-white px-8 py-5 shadow-sm sm:flex-row">
-          <div className="flex items-center gap-4">
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-[#1E3ABA]">
-              <Icon name="Compass" size={20} strokeWidth={2} />
-            </div>
-            <div>
-              <p className="text-xs font-semibold text-[#0F172A]">No matter where you are now,</p>
-              <p className="text-xs text-slate-500">
-                Summate is a place to learn with purpose, apply what you learn, and build a future that feels right for you.
-              </p>
-            </div>
+        {/* =========================================================
+            BOTTOM STATEMENT
+        ========================================================= */}
+
+        <div className="mt-14 flex flex-col items-start justify-between gap-5 border-t border-slate-200 pt-7 sm:flex-row sm:items-center">
+          <div className="flex items-center gap-3">
+            <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#EEF2FF] text-[#1E3ABA]">
+              <Icon
+                name="ArrowDownRight"
+                size={14}
+                strokeWidth={2}
+              />
+            </span>
+
+            <p className="text-sm font-medium text-slate-500">
+              Wherever you're starting, there's somewhere to go next.
+            </p>
           </div>
 
-          <div className="flex items-center gap-6 text-xs font-bold tracking-wider text-slate-600 shrink-0">
-            <div className="flex items-center gap-1.5">
-              <Icon name="BookOpen" size={15} className="text-[#1E3ABA]" />
-              <span>LEARN</span>
-            </div>
-            <span className="text-slate-300">|</span>
-            <div className="flex items-center gap-1.5">
-              <Icon name="Cog" size={15} className="text-[#FF2D75]" />
-              <span>APPLY</span>
-            </div>
-            <span className="text-slate-300">|</span>
-            <div className="flex items-center gap-1.5">
-              <Icon name="BarChart2" size={15} className="text-[#FF8A00]" />
-              <span>ACHIEVE</span>
-            </div>
-          </div>
+          <Link
+            href="/apply"
+            className="
+              group inline-flex items-center gap-2
+              text-sm font-bold text-[#0D1222]
+            "
+          >
+            <span>Find your starting point</span>
+
+            <span className="transition-transform duration-300 group-hover:translate-x-1">
+              →
+            </span>
+          </Link>
         </div>
-
       </div>
     </section>
   );
 }
 
+/* ---------------- 06. Program Spotlight ---------------- */
 
-/* ---------------- ProgramSpotlight ---------------- */
 export function ProgramSpotlight() {
   const cards = [
     {
       num: "01",
-      numColor: "text-[#1E3ABA]/60",
+      label: "LEARN",
       title: "Practical, Industry-Relevant Learning",
       desc: "Go beyond theory with hands-on projects, real-world case studies and skills that actually matter.",
-      image: "/spotlight1.jpg", // Ensure you add this or use an image from public/
+      image: "/spotlight1.jpg",
       alt: "Laptop displaying code - Build, Apply, Grow",
+      accent: "#1E3ABA",
+      soft: "#EEF2FF",
     },
     {
       num: "02",
-      numColor: "text-[#7C3AED]/60",
+      label: "ADAPT",
       title: "Flexible for Every Journey",
-      desc: "Learn at your own pace, from anywhere. Whether you're a student, working professional or changing careers — Summate fits into your life.",
-      image: "/spotlight2.png", // Ensure you add this or use an image from public/
+      desc: "Learn from wherever you are. Whether you're a student, working professional or changing careers — Summate fits into your life.",
+      image: "/spotlight2.png",
       alt: "Desk with books and coffee mug - Your Pace, Your Path",
+      accent: "#7C3AED",
+      soft: "#F3EFFF",
     },
     {
       num: "03",
-      numColor: "text-[#FF8A00]/60",
+      label: "BELONG",
       title: "A Supportive Learning Community",
       desc: "You're never alone. Learn with peers, get guidance from mentors and be part of a community that cheers your progress.",
-      image: "/spotlight3.png", // Ensure you add this or use an image from public/
+      image: "/spotlight3.png",
       alt: "Wooden figurines - Learn Together, Grow Together",
+      accent: "#FF8A00",
+      soft: "#FFF5E8",
     },
     {
       num: "04",
-      numColor: "text-[#00D4C8]/80",
+      label: "MOVE FORWARD",
       title: "Pathways to Real Opportunities",
       desc: "Gain skills, build a standout portfolio and get access to opportunities that help you take the next step with confidence.",
-      image: "/spotlight4.png", // Ensure you add this or use an image from public/
+      image: "/spotlight4.png",
       alt: "Stack of books - Skills, Portfolio, Mentorship, Opportunities",
+      accent: "#00A99D",
+      soft: "#EAFBF9",
     },
   ];
 
   return (
-    <section className="relative overflow-hidden bg-[#FAFBFF] py-20 lg:py-28" id="program">
+    <section
+      id="program"
+      className="relative overflow-hidden bg-[#FAFBFF] py-24 lg:py-32"
+    >
+      {/* =========================================================
+          BACKGROUND
+      ========================================================= */}
+
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute left-[8%] top-20 h-72 w-72 rounded-full bg-[#1E3ABA]/[0.025] blur-3xl" />
+
+        <div className="absolute bottom-0 right-[5%] h-80 w-80 rounded-full bg-[#7C3AED]/[0.025] blur-3xl" />
+      </div>
+
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-        
-        {/* Top Header Cluster */}
-        <div className="relative mx-auto max-w-3xl text-center">
-          
-          {/* Top-Right Handwritten Callout */}
-          <div className="pointer-events-none absolute -right-6 -top-8 hidden select-none md:block lg:-right-16">
-            <span className="font-serif italic text-slate-400 text-sm tracking-wide block rotate-6">
-              Learning<br />That Fits<br />Real Life
-            </span>
-            <svg className="mt-1 ml-4 h-6 w-10 text-slate-300 rotate-12" fill="none" viewBox="0 0 40 24" stroke="currentColor">
-              <path d="M4 20c8-12 18-16 30-12m-5 8l5-8-8-2" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
+        {/* =========================================================
+            HEADER
+        ========================================================= */}
+
+        <div className="flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
+          <div className="max-w-3xl">
+            <div className="mb-5 flex items-center gap-3">
+              <span className="h-px w-10 bg-[#1E3ABA]" />
+
+              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#1E3ABA]">
+                The Summate Difference
+              </span>
+            </div>
+
+            <h2 className="text-[38px] font-extrabold leading-[1.05] tracking-[-0.045em] text-[#0D1222] sm:text-[48px] lg:text-[58px]">
+              More Than
+              <br />
+              <span className="text-slate-400">
+                Just Courses.
+              </span>
+            </h2>
+
+            <p className="mt-6 max-w-2xl text-sm leading-7 text-slate-600 sm:text-base">
+              A learning experience built for real growth, real people
+              and real opportunities.
+            </p>
           </div>
 
-          <h2 className="text-3xl font-extrabold tracking-tight text-[#0F172A] sm:text-4xl lg:text-[46px] lg:leading-[1.18]">
-            More Than Just Courses
-          </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-slate-600 sm:text-base">
-            A learning experience built for real growth, real people and real opportunities.
-          </p>
+          {/* Side statement */}
+          <div className="max-w-[260px] lg:pb-1">
+            <p className="text-right font-serif text-sm italic leading-6 text-slate-400">
+              Learning becomes meaningful when you have somewhere
+              to take it.
+            </p>
+          </div>
         </div>
 
-        {/* 4 Cards Grid */}
-        <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {cards.map((c) => (
-            <div
-              key={c.num}
-              className="group flex flex-col justify-between overflow-hidden rounded-3xl border border-slate-200/90 bg-white shadow-sm transition-all duration-300 hover:border-slate-300 hover:shadow-xl"
-            >
-              {/* Card Header & Text Body */}
-              <div className="p-7">
-                <span className={`select-none font-sans text-5xl font-black ${c.numColor}`}>
-                  {c.num}
-                </span>
+        {/* =========================================================
+            JOURNEY LINE
+        ========================================================= */}
 
-                <h3 className="mt-4 text-lg font-extrabold leading-snug text-[#0F172A]">
-                  {c.title}
+        <div className="mt-14 hidden items-center gap-4 md:flex">
+          <span className="font-mono text-[10px] font-bold tracking-[0.18em] text-[#1E3ABA]">
+            LEARN
+          </span>
+
+          <div className="h-px flex-1 bg-slate-200" />
+
+          <span className="font-mono text-[10px] font-bold tracking-[0.18em] text-slate-400">
+            ADAPT
+          </span>
+
+          <div className="h-px flex-1 bg-slate-200" />
+
+          <span className="font-mono text-[10px] font-bold tracking-[0.18em] text-slate-400">
+            BELONG
+          </span>
+
+          <div className="h-px flex-1 bg-slate-200" />
+
+          <span className="font-mono text-[10px] font-bold tracking-[0.18em] text-slate-400">
+            MOVE FORWARD
+          </span>
+        </div>
+
+        {/* =========================================================
+            DESKTOP JOURNEY
+        ========================================================= */}
+
+        <div className="mt-8 hidden gap-4 lg:flex">
+          {cards.map((card, index) => {
+            const featured = index === 0;
+
+            return (
+              <article
+                key={card.num}
+                className={`
+                  group relative flex flex-col overflow-hidden
+                  rounded-[28px] border border-slate-200
+                  bg-white
+                  transition-all duration-500 ease-out
+                  hover:-translate-y-2
+                  hover:border-slate-300
+                  hover:shadow-[0_30px_70px_rgba(13,18,34,0.10)]
+                  ${
+                    featured
+                      ? "w-[32%]"
+                      : "w-[22.67%]"
+                  }
+                `}
+              >
+                {/* =================================================
+                    TOP
+                ================================================= */}
+
+                <div className="relative p-6 xl:p-7">
+                  {/* Number */}
+                  <div className="flex items-center justify-between">
+                    <span
+                      className="font-mono text-[11px] font-bold tracking-[0.15em]"
+                      style={{ color: card.accent }}
+                    >
+                      {card.num}
+                    </span>
+
+                    <span
+                      className="rounded-full px-2.5 py-1 text-[9px] font-bold tracking-[0.12em]"
+                      style={{
+                        backgroundColor: card.soft,
+                        color: card.accent,
+                      }}
+                    >
+                      {card.label}
+                    </span>
+                  </div>
+
+                  {/* Title */}
+                  <h3
+                    className={`
+                      mt-7 font-extrabold leading-[1.12]
+                      tracking-[-0.035em] text-[#0D1222]
+                      transition-colors duration-300
+                      group-hover:text-[#1E3ABA]
+                      ${
+                        featured
+                          ? "text-[25px]"
+                          : "text-[21px]"
+                      }
+                    `}
+                  >
+                    {card.title}
+                  </h3>
+
+                  <p
+                    className={`
+                      mt-3 text-slate-500
+                      ${
+                        featured
+                          ? "text-sm leading-6"
+                          : "text-xs leading-6"
+                      }
+                    `}
+                  >
+                    {card.desc}
+                  </p>
+                </div>
+
+                {/* =================================================
+                    IMAGE
+                ================================================= */}
+
+                <div
+                  className={`
+                    relative mt-auto overflow-hidden
+                    ${
+                      featured
+                        ? "h-[250px]"
+                        : "h-[205px]"
+                    }
+                  `}
+                >
+                  {/* Image background */}
+                  <div
+                    className="absolute inset-0 transition-all duration-500 group-hover:scale-105"
+                    style={{
+                      backgroundColor: card.soft,
+                    }}
+                  />
+
+                  {/* Decorative circle */}
+                  <div
+                    className="
+                      absolute -bottom-20 -left-12
+                      h-52 w-52 rounded-full
+                      opacity-30 blur-2xl
+                      transition-all duration-700
+                      group-hover:scale-125
+                    "
+                    style={{
+                      backgroundColor: card.accent,
+                    }}
+                  />
+
+                  <Image
+                    src={card.image}
+                    alt={card.alt}
+                    fill
+                    className="
+                      relative z-10 object-cover object-center
+                      transition-transform duration-700
+                      ease-out
+                      group-hover:scale-105
+                    "
+                    sizes="(max-width: 1280px) 25vw, 300px"
+                  />
+
+                  {/* Floating number */}
+                  <div
+                    className="
+                      absolute bottom-4 left-4 z-20
+                      flex h-9 w-9 items-center
+                      justify-center rounded-full
+                      border border-white/80
+                      bg-white/90
+                      text-[10px] font-bold
+                      shadow-sm backdrop-blur
+                    "
+                    style={{
+                      color: card.accent,
+                    }}
+                  >
+                    {card.num}
+                  </div>
+                </div>
+
+                {/* =================================================
+                    BOTTOM
+                ================================================= */}
+
+                <div className="flex items-center justify-between border-t border-slate-100 px-6 py-4">
+                  <span className="text-[10px] font-semibold uppercase tracking-[0.13em] text-slate-400">
+                    {index === 0
+                      ? "Start here"
+                      : "Part of the journey"}
+                  </span>
+
+                  <span
+                    className="
+                      flex h-7 w-7 items-center
+                      justify-center rounded-full
+                      text-white
+                      transition-all duration-300
+                      group-hover:translate-x-1
+                    "
+                    style={{
+                      backgroundColor: card.accent,
+                    }}
+                  >
+                    <Icon
+                      name="ArrowUpRight"
+                      size={13}
+                      strokeWidth={2}
+                    />
+                  </span>
+                </div>
+
+                {/* Accent line */}
+                <div
+                  className="
+                    absolute bottom-0 left-0 h-1
+                    w-0 transition-all duration-500
+                    group-hover:w-full
+                  "
+                  style={{
+                    backgroundColor: card.accent,
+                  }}
+                />
+              </article>
+            );
+          })}
+        </div>
+
+        {/* =========================================================
+            TABLET / MOBILE
+        ========================================================= */}
+
+        <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:hidden">
+          {cards.map((card, index) => (
+            <article
+              key={card.num}
+              className="
+                group relative overflow-hidden
+                rounded-[26px] border border-slate-200
+                bg-white
+                transition-all duration-500
+                hover:-translate-y-1
+                hover:shadow-[0_24px_55px_rgba(13,18,34,0.08)]
+              "
+            >
+              {/* Header */}
+              <div className="p-6">
+                <div className="flex items-center justify-between">
+                  <span
+                    className="font-mono text-[11px] font-bold tracking-[0.15em]"
+                    style={{
+                      color: card.accent,
+                    }}
+                  >
+                    {card.num}
+                  </span>
+
+                  <span
+                    className="rounded-full px-2.5 py-1 text-[9px] font-bold tracking-[0.12em]"
+                    style={{
+                      backgroundColor: card.soft,
+                      color: card.accent,
+                    }}
+                  >
+                    {card.label}
+                  </span>
+                </div>
+
+                <h3 className="mt-6 text-xl font-extrabold leading-[1.12] tracking-[-0.035em] text-[#0D1222]">
+                  {card.title}
                 </h3>
-                <p className="mt-3 text-xs leading-relaxed text-slate-600 sm:text-[13px]">
-                  {c.desc}
+
+                <p className="mt-3 text-sm leading-6 text-slate-500">
+                  {card.desc}
                 </p>
               </div>
 
-              {/* Bottom Visual Frame */}
-              <div className="relative mt-auto h-48 w-full overflow-hidden bg-slate-50 border-t border-slate-100">
+              {/* Image */}
+              <div className="relative h-[220px] overflow-hidden">
+                <div
+                  className="absolute inset-0"
+                  style={{
+                    backgroundColor: card.soft,
+                  }}
+                />
+
                 <Image
-                  src={c.image}
-                  alt={c.alt}
+                  src={card.image}
+                  alt={card.alt}
                   fill
-                  className="object-cover object-center transition-transform duration-300 group-hover:scale-105"
-                  sizes="(max-width: 768px) 100vw, 25vw"
+                  className="
+                    object-cover object-center
+                    transition-transform duration-700
+                    group-hover:scale-105
+                  "
+                  sizes="(max-width: 640px) 100vw, 50vw"
                 />
               </div>
-            </div>
+
+              {/* Bottom */}
+              <div className="flex items-center justify-between border-t border-slate-100 px-6 py-4">
+                <span className="text-[10px] font-semibold uppercase tracking-[0.13em] text-slate-400">
+                  {index === 0
+                    ? "Start here"
+                    : "Keep going"}
+                </span>
+
+                <span
+                  className="flex h-8 w-8 items-center justify-center rounded-full text-white"
+                  style={{
+                    backgroundColor: card.accent,
+                  }}
+                >
+                  <Icon
+                    name="ArrowUpRight"
+                    size={14}
+                    strokeWidth={2}
+                  />
+                </span>
+              </div>
+            </article>
           ))}
         </div>
 
-        {/* Bottom Philosophy Ribbon */}
-        <div className="relative mt-10 flex flex-col items-center justify-between gap-6 rounded-2xl border border-slate-200/90 bg-white px-8 py-5 shadow-sm sm:flex-row">
-          <div className="flex items-center gap-4">
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-[#1E3ABA]">
-              <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-              </svg>
-            </div>
-            <div>
-              <p className="text-xs font-semibold text-[#0F172A]">Different Journeys. A Brighter Tomorrow.</p>
-              <p className="text-xs text-slate-500">
-                At Summate, we bring learners, skills and opportunities together — to help you build a future that's truly yours.
-              </p>
-            </div>
+        {/* =========================================================
+            BOTTOM MESSAGE
+        ========================================================= */}
+
+        <div className="mt-12 flex flex-col justify-between gap-5 border-t border-slate-200 pt-7 sm:flex-row sm:items-center">
+          <div className="flex items-center gap-3">
+            <span className="h-2 w-2 rounded-full bg-[#1E3ABA]" />
+
+            <p className="text-sm font-medium text-slate-500">
+              Learn something. Apply it. See where it takes you.
+            </p>
           </div>
 
-          <div className="flex items-center gap-6 text-xs font-bold tracking-wider text-slate-600 shrink-0">
-            <div className="flex items-center gap-1.5">
-              <span className="text-[#1E3ABA]">📖</span>
-              <span>LEARN</span>
-            </div>
-            <span className="text-slate-300">|</span>
-            <div className="flex items-center gap-1.5">
-              <span className="text-[#FF2D75]">⚙️</span>
-              <span>APPLY</span>
-            </div>
-            <span className="text-slate-300">|</span>
-            <div className="flex items-center gap-1.5">
-              <span className="text-[#FF8A00]">📊</span>
-              <span>ACHIEVE</span>
-            </div>
+          <div className="flex items-center gap-2 text-sm font-bold text-[#0D1222]">
+            <span>Learn</span>
+            <span className="text-slate-300">→</span>
+            <span>Apply</span>
+            <span className="text-slate-300">→</span>
+            <span>Grow</span>
           </div>
-
         </div>
-
       </div>
     </section>
   );
 }
-/* ---------------- CurriculumSection ---------------- */
-export function CurriculumSection({ children }: { children: React.ReactNode }) {
-  return (
-    <section className="border-t border-slate-100 bg-white py-20 lg:py-28" id="curriculum">
-      <div className="mx-auto max-w-4xl px-6 lg:px-8">
-        <div className="text-center">
-          <p className="text-xs font-semibold uppercase tracking-wider text-[#1E3ABA]">Curriculum</p>
-          <h2 className="mt-2 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
-            Twelve weeks. Four progressive phases.
-          </h2>
-          <p className="mt-3 text-sm text-slate-600">
-            Foundations first, followed by application architecture, engineering practice, and AI interview defensibility.
-          </p>
-        </div>
-        <div className="mt-12">{children}</div>
-      </div>
-    </section>
-  );
-}
-
-/* ---------------- ComparisonTable ---------------- */
+/* ---------------- 07. Comparison Table (Responsive Board with Amber & Blue) ---------------- */
 export function ComparisonTable() {
   const comparisonRows = [
     {
@@ -582,139 +1767,181 @@ export function ComparisonTable() {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-[#FAFBFF] py-24 lg:py-32" id="methodology">
-      {/* Ambient background illumination */}
-      <div className="pointer-events-none absolute left-1/2 top-0 h-[480px] w-[820px] -translate-x-1/2 -translate-y-1/4 rounded-full bg-gradient-to-b from-blue-100/50 via-indigo-50/20 to-transparent blur-3xl" />
+    <section className="relative overflow-hidden bg-white py-16 sm:py-20 lg:py-28" id="comparison">
+      <div className="pointer-events-none absolute -left-20 top-1/4 h-[350px] w-[350px] sm:h-[420px] sm:w-[420px] rounded-full bg-blue-100/40 blur-3xl" />
+      <div className="pointer-events-none absolute -right-20 bottom-10 h-[360px] w-[360px] sm:h-[460px] sm:w-[460px] rounded-full bg-indigo-100/35 blur-3xl" />
 
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header */}
         <div className="relative mx-auto max-w-3xl text-center">
-          <h2 className="mt-5 text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl lg:text-[46px] lg:leading-[1.14]">
-            How Batch 1 differs <br className="hidden sm:inline" />
-            <span className="text-slate-950">from tutorial courses.</span>
+          <div className="inline-flex items-center gap-2 rounded-full border border-blue-200/60 bg-blue-50/70 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-[#1E3ABA]">
+            <span className="h-1.5 w-1.5 rounded-full bg-[#1E3ABA]" />
+            A Clearer Difference
+          </div>
+
+          <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-[#0F172A] sm:text-4xl lg:text-[46px] lg:leading-[1.15]">
+            More than just <span className="text-[#1E3ABA]">courses.</span>
           </h2>
 
-          <p className="mt-4 text-base text-slate-600 sm:text-lg">
-            Same topics everywhere. A completely different standard of execution.
+          <p className="mt-3 text-sm font-medium text-slate-500 sm:text-base">
+            Same goal. A very different journey.
           </p>
-
-          {/* Top-Right Hand-drawn Accent */}
-          <div className="pointer-events-none absolute -right-6 -top-2 hidden select-none lg:block xl:-right-16">
-            <span className="block rotate-6 font-serif text-xs font-medium tracking-wide text-slate-400 italic">
-              Real Skills · Real Projects <br />
-              Real Progress
-            </span>
-            <svg className="ml-auto mt-1 h-5 w-10 rotate-12 text-slate-300" fill="none" viewBox="0 0 40 24" stroke="currentColor">
-              <path d="M4 20c8-12 18-16 30-12m-5 8l5-8-8-2" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </div>
         </div>
 
-        {/* High-End Comparison Table */}
-        <div className="mt-14 overflow-hidden rounded-[28px] border border-slate-200/80 bg-white shadow-xl shadow-slate-900/[0.03]">
-          <div className="overflow-x-auto">
-            <table className="w-full min-w-[720px] border-collapse text-left">
-              
-              {/* Header Columns */}
-              <thead>
-                <tr className="border-b border-slate-200/70 bg-slate-50/40">
-                  <th className="w-[28%] px-8 py-6 text-xs font-bold uppercase tracking-wider text-slate-400">
-                    Focus Area
-                  </th>
-
-                  <th className="w-[36%] px-8 py-6">
-                    <div className="flex items-center gap-3">
-                      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-slate-200/80 bg-white text-slate-600 shadow-2xs">
-                        <Icon name="BookOpen" size={17} strokeWidth={1.8} />
-                      </div>
-                      <div>
-                        <p className="text-sm font-bold text-slate-800">Traditional Courses</p>
-                        <p className="text-[11px] font-medium text-slate-400">Tutorial-style instruction</p>
-                      </div>
-                    </div>
-                  </th>
-
-                  {/* Highlighted Summate Column Header */}
-                  <th className="w-[36%] border-l border-blue-100/80 bg-[#F5F8FF] px-8 py-6">
-                    <div className="flex items-center gap-3">
-                      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#1E3ABA] text-white shadow-sm shadow-blue-600/20">
-                        <Icon name="Zap" size={17} strokeWidth={2.2} />
-                      </div>
-                      <div>
-                        <p className="text-sm font-bold text-[#1E3ABA]">Summate Approach</p>
-                        <p className="text-[11px] font-semibold text-blue-600/70">Founding Batch 1</p>
-                      </div>
-                    </div>
-                  </th>
-                </tr>
-              </thead>
-
-              {/* Body Rows */}
-              <tbody className="divide-y divide-slate-100">
-                {comparisonRows.map((r) => (
-                  <tr key={r.area} className="group transition-colors duration-150 hover:bg-slate-50/50">
-                    
-                    {/* Area Title & Icon */}
-                    <td className="px-8 py-5">
-                      <div className="flex items-center gap-3.5">
-                        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-slate-200/60 bg-slate-50 text-slate-600 transition-colors group-hover:border-slate-300 group-hover:bg-white group-hover:text-slate-900">
-                          <Icon name={r.icon} size={15} strokeWidth={2} />
-                        </div>
-                        <span className="text-sm font-bold text-slate-900">
-                          {r.area}
-                        </span>
-                      </div>
-                    </td>
-
-                    {/* Traditional Description */}
-                    <td className="px-8 py-5 text-sm leading-relaxed text-slate-500">
-                      {r.traditional}
-                    </td>
-
-                    {/* Summate Highlighted Cell */}
-                    <td className="border-l border-blue-100/80 bg-[#F5F8FF]/60 px-8 py-5 text-sm font-medium leading-relaxed text-slate-900 transition-colors group-hover:bg-[#F0F5FF]">
-                      <div className="flex items-start gap-2.5">
-                        <span className="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-blue-100 text-[#1E3ABA]">
-                          <Icon name="Check" size={11} strokeWidth={3} />
-                        </span>
-                        <span>{r.summate}</span>
-                      </div>
-                    </td>
-
-                  </tr>
-                ))}
-              </tbody>
-
-            </table>
-          </div>
-        </div>
-
-        {/* Bottom Conversion Ribbon */}
-        <div className="mt-8 flex flex-col items-center justify-between gap-6 rounded-2xl border border-slate-200/80 bg-white p-6 shadow-sm sm:flex-row sm:px-8">
-          <div className="flex items-center gap-4">
-            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-[#1E3ABA]">
-              <Icon name="Sparkles" size={20} strokeWidth={2.2} />
-            </div>
-            <div>
-              <p className="text-sm font-bold text-slate-900 sm:text-base">
-                A learning experience that takes you further.
-              </p>
-              <p className="text-xs text-slate-500 sm:text-sm">
-                Built for learners who want demonstrable capability, not just certificates.
-              </p>
-            </div>
-          </div>
-
-          <div className="shrink-0">
-            <Link
-              href="/apply"
-              className="inline-flex items-center gap-2 rounded-full bg-[#1E3ABA] px-6 py-3 text-xs font-bold text-white shadow-md shadow-[#1E3ABA]/20 transition-all hover:bg-[#152882] hover:shadow-lg active:scale-95"
+        {/* Mobile & Tablet (< lg) */}
+        <div className="mt-10 space-y-4 lg:hidden">
+          {comparisonRows.map((r) => (
+            <div
+              key={r.area}
+              className="rounded-3xl border border-slate-200/90 bg-white p-5 shadow-sm"
             >
-              <span>Join Batch 1</span>
-              <Icon name="ArrowRight" size={14} strokeWidth={2.2} />
-            </Link>
+              <div className="flex items-center gap-2.5 pb-3 border-b border-slate-100">
+                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-slate-100 text-slate-700">
+                  <Icon name={r.icon} size={16} strokeWidth={2} />
+                </span>
+                <span className="text-sm font-bold text-slate-900">
+                  {r.area}
+                </span>
+              </div>
+
+              <div className="mt-4 space-y-3">
+                <div className="rounded-2xl border border-amber-200/70 bg-[#FFFDF5] p-3.5">
+                  <div className="flex items-center justify-between gap-2 mb-1.5">
+                    <span className="text-[11px] font-bold text-amber-900 uppercase tracking-wide">
+                      Traditional Courses
+                    </span>
+                    <span className="text-[10px] font-bold uppercase rounded bg-amber-100/80 px-1.5 py-0.5 text-amber-800">
+                      Typical
+                    </span>
+                  </div>
+                  <div className="flex items-start gap-2.5">
+                    <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-amber-100 text-amber-600 font-bold text-xs mt-0.5">
+                      ✕
+                    </span>
+                    <p className="text-xs font-medium leading-relaxed text-slate-600">
+                      {r.traditional}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="rounded-2xl border border-blue-200/90 bg-[#F5F8FF] p-3.5">
+                  <div className="flex items-center justify-between gap-2 mb-1.5">
+                    <span className="text-[11px] font-extrabold text-[#1E3ABA] uppercase tracking-wide">
+                      Summate Approach
+                    </span>
+                    <span className="text-[10px] font-bold uppercase rounded bg-blue-100 px-1.5 py-0.5 text-[#1E3ABA]">
+                      Our Way
+                    </span>
+                  </div>
+                  <div className="flex items-start gap-2.5">
+                    <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-blue-100 text-[#1E3ABA] mt-0.5">
+                      <Icon name="Check" size={11} strokeWidth={3} />
+                    </span>
+                    <p className="text-xs font-bold leading-relaxed text-[#0F172A]">
+                      {r.summate}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Desktop 3-Column Floating Board (≥ lg) */}
+        <div className="mt-14 hidden lg:grid lg:grid-cols-12 lg:items-start lg:gap-6">
+          
+          <div className="flex flex-col lg:col-span-3">
+            <div className="h-[64px] flex items-center px-4 border-b border-transparent">
+              <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-slate-400">
+                Focus Area
+              </span>
+            </div>
+
+            <div className="mt-4 space-y-3">
+              {comparisonRows.map((r) => (
+                <div
+                  key={r.area}
+                  className="flex h-[88px] items-center gap-3 px-4"
+                >
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-slate-100 text-slate-700">
+                    <Icon name={r.icon} size={17} strokeWidth={2} />
+                  </span>
+                  <span className="text-[13px] font-bold text-slate-900">
+                    {r.area}
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
+
+          <div className="rounded-[32px] border border-amber-200/80 bg-[#FFFDF5] p-6 shadow-sm lg:col-span-4">
+            <div className="flex h-[64px] items-center justify-between border-b border-amber-100/80 pb-4">
+              <div className="flex items-center gap-3">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-amber-100/90 text-amber-700">
+                  <Icon name="GraduationCap" size={19} strokeWidth={2} />
+                </div>
+                <div>
+                  <h3 className="text-sm font-bold text-[#0F172A]">Traditional Courses</h3>
+                  <p className="text-[11px] font-medium text-slate-500">Tutorial-style instruction</p>
+                </div>
+              </div>
+
+              <span className="rounded-md border border-amber-200/80 bg-amber-100/60 px-2 py-0.5 font-mono text-[10px] font-bold tracking-wider text-amber-800 uppercase">
+                Typical
+              </span>
+            </div>
+
+            <div className="mt-4 space-y-3">
+              {comparisonRows.map((r) => (
+                <div
+                  key={r.area}
+                  className="flex h-[88px] items-center gap-3 rounded-2xl border border-amber-100/60 bg-white/70 px-4 py-3 shadow-2xs"
+                >
+                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-amber-100 text-amber-600 font-bold text-xs">
+                    ✕
+                  </span>
+                  <p className="text-xs font-medium leading-snug text-slate-600 xl:text-[13px]">
+                    {r.traditional}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="relative rounded-[32px] border border-blue-200/90 bg-[#F5F8FF] p-6 shadow-md shadow-blue-900/[0.04] lg:col-span-5">
+            <div className="flex h-[64px] items-center justify-between border-b border-blue-100 pb-4">
+              <div className="flex items-center gap-3">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-blue-100 text-[#1E3ABA] shadow-2xs">
+                  <Icon name="Zap" size={19} strokeWidth={2.3} />
+                </div>
+                <div>
+                  <h3 className="text-sm font-extrabold text-[#1E3ABA]">Summate Approach</h3>
+                  <p className="text-[11px] font-medium text-blue-600/70">Founding Batch 1</p>
+                </div>
+              </div>
+
+              <span className="rounded-md border border-blue-200 bg-blue-100/70 px-2 py-0.5 font-mono text-[10px] font-bold tracking-wider text-[#1E3ABA] uppercase">
+                Our Way
+              </span>
+            </div>
+
+            <div className="mt-4 space-y-3">
+              {comparisonRows.map((r) => (
+                <div
+                  key={r.area}
+                  className="flex h-[88px] items-center gap-3 rounded-2xl border border-blue-100/90 bg-white px-4 py-3 shadow-2xs"
+                >
+                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-blue-100 text-[#1E3ABA]">
+                    <Icon name="Check" size={12} strokeWidth={3} />
+                  </span>
+                  <p className="text-xs font-bold leading-snug text-[#0F172A] xl:text-[13px]">
+                    {r.summate}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+
         </div>
 
       </div>
@@ -722,7 +1949,453 @@ export function ComparisonTable() {
   );
 }
 
-/* ---------------- ToolStrip ---------------- */
+/* ---------------- 08. Batch Benefits ---------------- */
+export function BatchBenefits() {
+  const benefits = [
+    {
+      num: "01",
+      phase: "LEARN",
+      title: "Live, Interactive Classes",
+      desc: "Learn directly from practitioners in a focused, collaborative environment.",
+      icon: "Laptop",
+      accent: "#1E3ABA",
+      soft: "#EEF2FF",
+    },
+    {
+      num: "02",
+      phase: "BUILD",
+      title: "Hands-on Projects",
+      desc: "Build and ship real-world projects you can actually showcase.",
+      icon: "FileCode2",
+      accent: "#7C3AED",
+      soft: "#F3EFFF",
+    },
+    {
+      num: "03",
+      phase: "GROW",
+      title: "Mentorship & Guidance",
+      desc: "Get personalised feedback and support throughout the journey.",
+      icon: "UserCheck",
+      accent: "#059669",
+      soft: "#ECFDF5",
+    },
+    {
+      num: "04",
+      phase: "PREPARE",
+      title: "Career Preparation",
+      desc: "Resume reviews, portfolio support and interview preparation.",
+      icon: "Briefcase",
+      accent: "#FF8A00",
+      soft: "#FFF5E8",
+    },
+    {
+      num: "05",
+      phase: "CONNECT",
+      title: "A Focused Peer Community",
+      desc: "Learn and grow with a motivated group of peers.",
+      icon: "Users",
+      accent: "#FF2D75",
+      soft: "#FFF0F5",
+    },
+    {
+      num: "06",
+      phase: "CONTINUE",
+      title: "Access to Resources",
+      desc: "Revisit sessions, notes and resources beyond the program.",
+      icon: "BookOpen",
+      accent: "#00A99D",
+      soft: "#EAFBF9",
+    },
+  ];
+
+  const [active, setActive] = useState(1);
+
+  const current = benefits[active];
+
+  return (
+    <section
+      id="batch-benefits"
+      className="relative overflow-hidden bg-white py-24 lg:py-32"
+    >
+      {/* =========================================================
+          BACKGROUND
+      ========================================================= */}
+
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute left-[-160px] top-[20%] h-[500px] w-[500px] rounded-full bg-[#1E3ABA]/[0.025] blur-3xl" />
+
+        <div className="absolute right-[-140px] bottom-[-100px] h-[500px] w-[500px] rounded-full bg-[#7C3AED]/[0.025] blur-3xl" />
+      </div>
+
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+        {/* =========================================================
+            HEADER
+        ========================================================= */}
+
+        <div className="flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
+          <div className="max-w-3xl">
+            <div className="mb-5 flex items-center gap-3">
+              <span className="h-px w-10 bg-[#1E3ABA]" />
+
+              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#1E3ABA]">
+                The Batch 01 Experience
+              </span>
+            </div>
+
+            <h2 className="text-[38px] font-extrabold leading-[1.05] tracking-[-0.045em] text-[#0D1222] sm:text-[48px] lg:text-[58px]">
+              A learning experience
+              <br />
+              <span className="text-slate-400">
+                that moves you forward.
+              </span>
+            </h2>
+
+            <p className="mt-6 max-w-2xl text-sm leading-7 text-slate-600 sm:text-base">
+              Practical skills, real projects and the right guidance —
+              everything designed to help you build what's next.
+            </p>
+          </div>
+
+          {/* Journey */}
+          <div className="shrink-0 lg:pb-1">
+            <div className="flex items-center gap-3">
+              <span className="font-mono text-[10px] font-bold tracking-[0.18em] text-[#1E3ABA]">
+                LEARN
+              </span>
+
+              <span className="text-slate-300">→</span>
+
+              <span className="font-mono text-[10px] font-bold tracking-[0.18em] text-[#7C3AED]">
+                BUILD
+              </span>
+
+              <span className="text-slate-300">→</span>
+
+              <span className="font-mono text-[10px] font-bold tracking-[0.18em] text-emerald-600">
+                GROW
+              </span>
+            </div>
+          </div>
+        </div>
+
+        {/* =========================================================
+            MAIN EXPERIENCE
+        ========================================================= */}
+
+        <div className="mt-14 grid gap-8 lg:grid-cols-[1fr_0.9fr] lg:gap-12">
+          {/* =======================================================
+              BENEFIT LIST
+          ======================================================= */}
+
+          <div className="overflow-hidden rounded-[28px] border border-slate-200 bg-[#FAFBFF]">
+            {benefits.map((benefit, index) => {
+              const isActive = active === index;
+
+              return (
+                <button
+                  key={benefit.num}
+                  type="button"
+                  onMouseEnter={() => setActive(index)}
+                  onFocus={() => setActive(index)}
+                  onClick={() => setActive(index)}
+                  className={`
+                    group relative flex w-full
+                    items-center gap-4 border-b
+                    border-slate-200/80
+                    px-5 py-5 text-left
+                    transition-all duration-300
+                    last:border-b-0
+                    sm:px-6 sm:py-6
+                    ${
+                      isActive
+                        ? "bg-white"
+                        : "hover:bg-white/70"
+                    }
+                  `}
+                >
+                  {/* Active indicator */}
+                  <div
+                    className={`
+                      absolute bottom-0 left-0 top-0
+                      w-1 transition-all duration-300
+                    `}
+                    style={{
+                      backgroundColor: isActive
+                        ? benefit.accent
+                        : "transparent",
+                    }}
+                  />
+
+                  {/* Number */}
+                  <span
+                    className={`
+                      flex h-9 w-9 shrink-0
+                      items-center justify-center
+                      rounded-xl font-mono text-[10px]
+                      font-bold transition-all duration-300
+                      ${
+                        isActive
+                          ? "text-white"
+                          : "bg-slate-100 text-slate-400"
+                      }
+                    `}
+                    style={{
+                      backgroundColor: isActive
+                        ? benefit.accent
+                        : undefined,
+                    }}
+                  >
+                    {benefit.num}
+                  </span>
+
+                  {/* Icon */}
+                  <span
+                    className={`
+                      hidden h-9 w-9 shrink-0
+                      items-center justify-center
+                      rounded-xl sm:flex
+                      transition-all duration-300
+                    `}
+                    style={{
+                      backgroundColor: isActive
+                        ? benefit.soft
+                        : "#F8FAFC",
+                      color: benefit.accent,
+                    }}
+                  >
+                    <Icon
+                      name={benefit.icon}
+                      size={16}
+                      strokeWidth={2}
+                    />
+                  </span>
+
+                  {/* Content */}
+                  <span className="min-w-0 flex-1">
+                    <span className="flex items-center gap-2">
+                      <span
+                        className={`
+                          text-[10px] font-bold
+                          uppercase tracking-[0.15em]
+                          transition-colors duration-300
+                        `}
+                        style={{
+                          color: isActive
+                            ? benefit.accent
+                            : "#94A3B8",
+                        }}
+                      >
+                        {benefit.phase}
+                      </span>
+                    </span>
+
+                    <span
+                      className={`
+                        mt-1 block text-sm font-extrabold
+                        tracking-[-0.015em]
+                        transition-colors duration-300
+                        sm:text-[15px]
+                        ${
+                          isActive
+                            ? "text-[#0D1222]"
+                            : "text-slate-600"
+                        }
+                      `}
+                    >
+                      {benefit.title}
+                    </span>
+
+                    {/* Description only expands on active */}
+                    <span
+                      className={`
+                        block overflow-hidden
+                        text-xs leading-5 text-slate-500
+                        transition-all duration-300
+                        ${
+                          isActive
+                            ? "mt-1 max-h-12 opacity-100"
+                            : "max-h-0 opacity-0"
+                        }
+                      `}
+                    >
+                      {benefit.desc}
+                    </span>
+                  </span>
+
+                  {/* Arrow */}
+                  <span
+                    className={`
+                      flex h-8 w-8 shrink-0
+                      items-center justify-center
+                      rounded-full border
+                      transition-all duration-300
+                      ${
+                        isActive
+                          ? "border-transparent text-white"
+                          : "border-slate-200 text-slate-400"
+                      }
+                    `}
+                    style={{
+                      backgroundColor: isActive
+                        ? benefit.accent
+                        : "transparent",
+                    }}
+                  >
+                    <Icon
+                      name={
+                        isActive
+                          ? "ArrowUpRight"
+                          : "ArrowRight"
+                      }
+                      size={13}
+                      strokeWidth={2}
+                    />
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+
+          {/* =======================================================
+              VISUAL PANEL
+          ======================================================= */}
+
+          <div className="relative min-h-[500px] overflow-hidden rounded-[30px] border border-slate-200 bg-[#F7F9FF]">
+            {/* Accent glow */}
+            <div
+              className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full opacity-40 blur-3xl transition-colors duration-700"
+              style={{
+                backgroundColor: current.accent,
+              }}
+            />
+
+            {/* Background number */}
+            <div
+              className="pointer-events-none absolute -right-3 -top-16 select-none text-[220px] font-extrabold leading-none tracking-[-0.1em] opacity-60 transition-colors duration-500"
+              style={{
+                color: current.soft,
+              }}
+            >
+              {current.num}
+            </div>
+
+            {/* Image */}
+            <div className="absolute inset-5 overflow-hidden rounded-[23px]">
+              <Image
+                src="/workspace-setup.png"
+                alt="Workspace with laptop, notebook and books"
+                fill
+                priority
+                className="object-cover object-center transition-transform duration-700"
+                sizes="(max-width: 1024px) 100vw, 45vw"
+              />
+
+              {/* Image overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0D1222]/75 via-transparent to-transparent" />
+            </div>
+
+            {/* Floating label */}
+            <div
+              className="
+                absolute left-9 top-9 z-20
+                flex items-center gap-2
+                rounded-full border border-white/80
+                bg-white/90 px-3 py-2
+                shadow-lg backdrop-blur-md
+              "
+            >
+              <span
+                className="h-2 w-2 rounded-full"
+                style={{
+                  backgroundColor: current.accent,
+                }}
+              />
+
+              <span className="text-[9px] font-bold uppercase tracking-[0.15em] text-slate-600">
+                Batch 01
+              </span>
+            </div>
+
+            {/* Bottom content */}
+            <div className="absolute bottom-9 left-9 right-9 z-20 text-white">
+              <p
+                className="text-[10px] font-bold uppercase tracking-[0.18em]"
+                style={{
+                  color: "#CBD5FF",
+                }}
+              >
+                {current.phase}
+              </p>
+
+              <h3 className="mt-2 max-w-sm text-2xl font-extrabold leading-[1.08] tracking-[-0.035em]">
+                {current.title}
+              </h3>
+
+              <p className="mt-3 max-w-md text-xs leading-6 text-white/70">
+                {current.desc}
+              </p>
+
+              {/* Progress */}
+              <div className="mt-6 flex items-center gap-2">
+                {benefits.map((item, index) => (
+                  <span
+                    key={item.num}
+                    className="h-1 rounded-full transition-all duration-500"
+                    style={{
+                      width: index === active ? "32px" : "10px",
+                      backgroundColor:
+                        index === active
+                          ? current.accent
+                          : "rgba(255,255,255,0.35)",
+                    }}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* =========================================================
+            BOTTOM STATEMENT
+        ========================================================= */}
+
+        <div className="mt-12 grid gap-5 border-t border-slate-200 pt-7 sm:grid-cols-3">
+          <div>
+            <p className="font-mono text-[10px] font-bold tracking-[0.15em] text-[#1E3ABA]">
+              01 / LEARN
+            </p>
+
+            <p className="mt-2 text-sm font-semibold text-[#0D1222]">
+              Understand the fundamentals.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-mono text-[10px] font-bold tracking-[0.15em] text-[#7C3AED]">
+              02 / BUILD
+            </p>
+
+            <p className="mt-2 text-sm font-semibold text-[#0D1222]">
+              Turn knowledge into something real.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-mono text-[10px] font-bold tracking-[0.15em] text-emerald-600">
+              03 / GROW
+            </p>
+
+            <p className="mt-2 text-sm font-semibold text-[#0D1222]">
+              Take it into your next opportunity.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------------- 09. Tool Strip ---------------- */
 export function ToolStrip() {
   const toolList = [
     { name: "VS Code", slug: "vscode" },
@@ -748,31 +2421,26 @@ export function ToolStrip() {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-[#FAFBFF] py-24 lg:py-32" id="tools">
-      {/* Ambient background glow */}
+    <section className="relative overflow-hidden bg-white py-24 lg:py-32" id="tools">
       <div className="pointer-events-none absolute left-1/2 top-0 h-[450px] w-[800px] -translate-x-1/2 -translate-y-1/3 rounded-full bg-blue-100/40 blur-3xl" />
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         
-        {/* Section Header */}
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="mt-5 text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl lg:text-[46px] lg:leading-[1.14]">
             Tools you’ll work with
           </h2>
-
           <p className="mt-4 text-base text-slate-600 sm:text-lg">
             Modern, industry-relevant tools to help you build, ship and grow.
           </p>
         </div>
 
-        {/* 10-column Icon Grid */}
         <div className="mt-16 grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-10">
           {toolList.map((tool) => (
             <div
               key={tool.name}
               className="group flex flex-col items-center justify-center text-center"
             >
-              {/* Rounded App Icon Tile */}
               <div className="flex h-16 w-16 items-center justify-center rounded-[20px] border border-slate-200/80 bg-white shadow-sm shadow-slate-900/[0.04] transition-all duration-200 group-hover:-translate-y-1 group-hover:border-slate-300 group-hover:shadow-md sm:h-[72px] sm:w-[72px]">
                 {tool.isMore ? (
                   <span className="flex items-center gap-1 text-slate-400 tracking-widest text-lg font-black">
@@ -789,8 +2457,6 @@ export function ToolStrip() {
                   />
                 )}
               </div>
-
-              {/* Label */}
               <span className="mt-3 text-xs font-medium text-slate-700 transition-colors group-hover:text-slate-950">
                 {tool.name}
               </span>
@@ -798,7 +2464,6 @@ export function ToolStrip() {
           ))}
         </div>
 
-        {/* Bottom Tagline & Accent Rule */}
         <div className="mt-20 flex flex-col items-center justify-center">
           <div className="h-0.5 w-8 rounded-full bg-slate-200" />
           <p className="mt-5 text-[11px] font-bold uppercase tracking-[0.25em] text-slate-400">
@@ -811,120 +2476,230 @@ export function ToolStrip() {
   );
 }
 
-/* ---------------- StepPath ---------------- */
+/* ---------------- 10. Step Path ---------------- */
 export function StepPath() {
   const steps = [
     {
       num: "01",
-      title: "Enroll",
-      body: "Choose your batch and complete the enrollment process in a few minutes.",
+      title: "Apply Online",
+      phase: "START",
+      body: "Tell us where you are, what you want to learn and where you want to go next.",
       icon: "FileText",
-      numColor: "text-[#1E3ABA]",
-      iconColor: "text-[#1E3ABA]",
-      iconBg: "bg-blue-50/80",
+      accent: "#1E3ABA",
+      soft: "#EEF2FF",
     },
     {
       num: "02",
-      title: "Get Started",
-      body: "Access your learning portal, meet your cohort and join the first live session.",
+      title: "Learn Where You Are",
+      phase: "LEARN",
+      body: "Join live sessions, meet your cohort and build a strong foundation together.",
       icon: "Users",
-      numColor: "text-[#7C3AED]",
-      iconColor: "text-[#7C3AED]",
-      iconBg: "bg-purple-50/80",
+      accent: "#7C3AED",
+      soft: "#F3EFFF",
     },
     {
       num: "03",
-      title: "Learn & Build",
-      body: "Attend live classes, work on real projects and get guidance from mentors.",
+      title: "Learn & Apply",
+      phase: "BUILD",
+      body: "Put concepts into practice through projects, challenges and guided feedback.",
       icon: "BookOpen",
-      numColor: "text-emerald-600",
-      iconColor: "text-emerald-600",
-      iconBg: "bg-emerald-50/80",
+      accent: "#059669",
+      soft: "#ECFDF5",
     },
     {
       num: "04",
-      title: "Showcase",
-      body: "Build a portfolio with real-world projects and receive feedback to stand out.",
+      title: "Build Your Capability",
+      phase: "BUILD",
+      body: "Turn your learning into work you understand, can explain and can showcase.",
       icon: "Laptop",
-      numColor: "text-[#FF8A00]",
-      iconColor: "text-[#FF8A00]",
-      iconBg: "bg-amber-50/80",
+      accent: "#FF8A00",
+      soft: "#FFF5E8",
     },
     {
       num: "05",
-      title: "What's Next",
-      body: "Graduate with confidence and take the next step towards your career goals.",
-      icon: "Rocket",
-      numColor: "text-[#00D4C8]",
-      iconColor: "text-[#00D4C8]",
-      iconBg: "bg-teal-50/80",
+      title: "Take the Next Step",
+      phase: "GROW",
+      body: "Leave with greater confidence, practical experience and a clearer direction.",
+      icon: "ArrowUpRight",
+      accent: "#00A99D",
+      soft: "#EAFBF9",
     },
   ];
 
   return (
-    <section className="relative overflow-hidden bg-[#FAFBFF] py-24 lg:py-32" id="how-it-works">
-      {/* Ambient background glows */}
-      <div className="pointer-events-none absolute left-[-100px] top-1/4 h-[420px] w-[420px] rounded-full bg-blue-100/40 blur-3xl" />
-      <div className="pointer-events-none absolute right-[-80px] bottom-10 h-[480px] w-[480px] rounded-full bg-indigo-100/30 blur-3xl" />
+    <section
+      id="how-it-works"
+      className="relative overflow-hidden bg-white py-24 lg:py-32"
+    >
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
 
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-        
-        {/* Section Header */}
-        <div className="mx-auto max-w-3xl text-center">
-          <h2 className="text-3xl font-extrabold tracking-tight text-[#0F172A] sm:text-4xl lg:text-[46px] lg:leading-[1.15]">
-            From enrollment to the next step.
-          </h2>
-          <p className="mt-4 text-sm font-medium text-slate-500 sm:text-base">
-            A simple process, a meaningful journey.
-          </p>
+        {/* HEADER */}
+        <div className="grid gap-8 lg:grid-cols-12 lg:items-end">
+
+          <div className="lg:col-span-7">
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#1E3ABA]">
+              How It Works
+            </p>
+
+            <h2 className="mt-4 max-w-3xl text-3xl font-extrabold tracking-[-0.03em] text-[#0D1222] sm:text-4xl lg:text-[52px] lg:leading-[1.08]">
+              From where you are
+              <br />
+              <span className="text-slate-400">to what comes next.</span>
+            </h2>
+          </div>
+
+          <div className="lg:col-span-5 lg:pb-1">
+            <p className="max-w-md text-sm leading-7 text-slate-500 sm:text-base">
+              A simple process designed to move you from learning something
+              new to actually being able to use it.
+            </p>
+          </div>
         </div>
 
-        {/* 5-Step Process Row */}
-        <div className="relative mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-5">
-          {steps.map((s, idx) => (
-            <div key={s.num} className="relative flex flex-col">
-              
-              {/* Card */}
-              <div className="group flex h-full flex-col justify-between rounded-[28px] border border-slate-200/80 bg-white p-7 shadow-sm transition-all duration-300 hover:border-slate-300 hover:shadow-xl">
-                <div>
-                  {/* Circular Icon Disc */}
-                  <div className={`flex h-14 w-14 items-center justify-center rounded-2xl ${s.iconBg} ${s.iconColor} shadow-2xs transition-transform duration-200 group-hover:scale-105`}>
-                    <Icon name={s.icon} size={22} strokeWidth={2} />
+        {/* DESKTOP JOURNEY */}
+        <div className="relative mt-10 hidden lg:block">
+
+          {/* Connecting line */}
+          <div className="absolute left-[10%] right-[10%] top-[68px] h-px bg-slate-200" />
+
+          <div className="grid grid-cols-5 gap-5">
+
+            {steps.map((step, index) => (
+              <div
+                key={step.num}
+                className="group relative"
+              >
+
+                {/* NUMBER NODE */}
+                <div className="relative z-10 flex items-center">
+                  <div
+                    className="flex h-[68px] w-[68px] items-center justify-center rounded-full border-[6px] border-white shadow-[0_4px_20px_rgba(13,18,34,0.08)] transition-all duration-300 group-hover:scale-110"
+                    style={{
+                      backgroundColor: step.soft,
+                      color: step.accent,
+                    }}
+                  >
+                    <span className="font-mono text-sm font-bold">
+                      {step.num}
+                    </span>
                   </div>
 
-                  {/* Step Number Tag */}
-                  <span className={`mt-6 block font-mono text-xs font-bold tracking-wider ${s.numColor}`}>
-                    {s.num}
-                  </span>
+                  {index < steps.length - 1 && (
+                    <div className="absolute left-[68px] right-[-20px] top-1/2 h-px bg-slate-200">
+                      <div
+                        className="h-full origin-left scale-x-0 transition-transform duration-500 group-hover:scale-x-100"
+                        style={{ backgroundColor: step.accent }}
+                      />
+                    </div>
+                  )}
+                </div>
 
-                  {/* Title & Body */}
-                  <h3 className="mt-2 text-lg font-bold text-slate-900">
-                    {s.title}
-                  </h3>
-                  <p className="mt-2.5 text-xs leading-relaxed text-slate-500 sm:text-[13px]">
-                    {s.body}
+                {/* CONTENT */}
+                <div className="mt-8 pr-4">
+
+                  <p
+                    className="text-[10px] font-bold tracking-[0.18em]"
+                    style={{ color: step.accent }}
+                  >
+                    {step.phase}
                   </p>
+
+                  <h3 className="mt-2 text-lg font-bold tracking-tight text-[#0D1222]">
+                    {step.title}
+                  </h3>
+
+                  <p className="mt-3 text-sm leading-6 text-slate-500">
+                    {step.body}
+                  </p>
+
+                  <div
+                    className="mt-6 flex h-10 w-10 items-center justify-center rounded-xl transition-all duration-300 group-hover:translate-x-1"
+                    style={{
+                      backgroundColor: step.soft,
+                      color: step.accent,
+                    }}
+                  >
+                    <Icon
+                      name={step.icon}
+                      size={17}
+                      strokeWidth={1.8}
+                    />
+                  </div>
+                </div>
+
+              </div>
+            ))}
+
+          </div>
+        </div>
+
+        {/* MOBILE / TABLET */}
+        <div className="mt-10 space-y-4 lg:hidden">
+
+          {steps.map((step) => (
+            <div
+              key={step.num}
+              className="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-6 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
+            >
+
+              <div className="flex gap-5">
+
+                {/* NUMBER */}
+                <div
+                  className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl"
+                  style={{
+                    backgroundColor: step.soft,
+                    color: step.accent,
+                  }}
+                >
+                  <span className="font-mono text-xs font-bold">
+                    {step.num}
+                  </span>
+                </div>
+
+                <div className="min-w-0 flex-1">
+
+                  <div className="flex items-center justify-between gap-4">
+
+                    <div>
+                      <p
+                        className="text-[10px] font-bold tracking-[0.16em]"
+                        style={{ color: step.accent }}
+                      >
+                        {step.phase}
+                      </p>
+
+                      <h3 className="mt-1 text-base font-bold text-[#0D1222]">
+                        {step.title}
+                      </h3>
+                    </div>
+
+                    <div
+                      className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl"
+                      style={{
+                        backgroundColor: step.soft,
+                        color: step.accent,
+                      }}
+                    >
+                      <Icon
+                        name={step.icon}
+                        size={15}
+                        strokeWidth={1.8}
+                      />
+                    </div>
+
+                  </div>
+
+                  <p className="mt-3 text-sm leading-6 text-slate-500">
+                    {step.body}
+                  </p>
+
                 </div>
               </div>
 
-              {/* Connecting Step Pill Arrow (Between Cards on Desktop) */}
-              {idx < steps.length - 1 && (
-                <div className="pointer-events-none absolute -right-3.5 top-1/2 z-20 hidden -translate-y-1/2 lg:flex">
-                  <div className="flex h-7 w-7 items-center justify-center rounded-full border border-slate-200/90 bg-white text-slate-400 shadow-sm">
-                    <Icon name="ArrowRight" size={12} strokeWidth={2.5} />
-                  </div>
-                </div>
-              )}
             </div>
           ))}
-        </div>
 
-        {/* Bottom Tagline & Accent Rule */}
-        <div className="mt-20 flex flex-col items-center justify-center">
-          <div className="h-0.5 w-8 rounded-full bg-slate-200" />
-          <p className="mt-5 text-[11px] font-bold uppercase tracking-[0.25em] text-slate-400">
-            Learn &nbsp;·&nbsp; Build &nbsp;·&nbsp; Grow
-          </p>
         </div>
 
       </div>
@@ -932,7 +2707,460 @@ export function StepPath() {
   );
 }
 
-/* ---------------- PromoBanner ---------------- */
+/* ---------------- 11. Founders Note ---------------- */
+export function FoundersNote() {
+  return (
+    <section
+      id="our-story"
+      className="relative overflow-hidden bg-[#F8FAFF] py-24 lg:py-32"
+    >
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+
+        {/* HEADER */}
+        <div className="grid gap-8 lg:grid-cols-12 lg:items-end">
+
+          <div className="lg:col-span-7">
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#1E3ABA]">
+              06 · Our Story
+            </p>
+
+            <h2 className="mt-4 max-w-3xl text-3xl font-extrabold tracking-[-0.03em] text-[#0D1222] sm:text-4xl lg:text-[52px] lg:leading-[1.08]">
+              Why we started
+              <br />
+              <span className="text-slate-400">Summate.</span>
+            </h2>
+          </div>
+
+          <div className="lg:col-span-5 lg:pb-1">
+            <p className="max-w-md text-sm leading-7 text-slate-500 sm:text-base">
+              We believe learning becomes meaningful when it moves beyond
+              knowing something and becomes something you can actually use.
+            </p>
+          </div>
+        </div>
+
+        {/* STORY */}
+        <div className="relative mt-14 grid gap-8 lg:grid-cols-12 lg:gap-12">
+
+          {/* LEFT — STORY MARKER */}
+          <div className="lg:col-span-4">
+
+            <div className="sticky top-28">
+
+              <div className="flex items-center gap-4">
+
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-[#1E3ABA] shadow-sm ring-1 ring-slate-200">
+                  <Icon
+                    name="Compass"
+                    size={20}
+                    strokeWidth={1.8}
+                  />
+                </div>
+
+                <div>
+                  <p className="text-sm font-bold text-[#0D1222]">
+                    The beginning
+                  </p>
+
+                  <p className="mt-0.5 text-xs text-slate-500">
+                    Batch 01
+                  </p>
+                </div>
+
+              </div>
+
+              <div className="mt-8 hidden border-l border-slate-200 pl-6 lg:block">
+                <p className="text-xs font-bold uppercase tracking-[0.16em] text-slate-400">
+                  LEARN
+                </p>
+
+                <div className="my-4 h-12 w-px bg-gradient-to-b from-[#1E3ABA] to-transparent" />
+
+                <p className="text-xs font-bold uppercase tracking-[0.16em] text-slate-400">
+                  APPLY
+                </p>
+
+                <div className="my-4 h-12 w-px bg-gradient-to-b from-[#7C3AED] to-transparent" />
+
+                <p className="text-xs font-bold uppercase tracking-[0.16em] text-slate-400">
+                  ACHIEVE
+                </p>
+              </div>
+
+            </div>
+          </div>
+
+          {/* RIGHT — FOUNDER NOTE */}
+          <div className="lg:col-span-8">
+
+            <div className="relative overflow-hidden rounded-[32px] border border-slate-200 bg-white px-7 py-9 shadow-[0_12px_40px_rgba(13,18,34,0.04)] sm:px-10 sm:py-12 lg:px-14 lg:py-14">
+
+              {/* Decorative quote */}
+              <div className="pointer-events-none absolute -right-3 -top-10 select-none font-serif text-[180px] font-black leading-none text-slate-100">
+                “
+              </div>
+
+              <div className="relative">
+
+                {/* Label */}
+                <div className="flex items-center gap-2">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#FF8A00]" />
+
+                  <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-slate-400">
+                    A note from the founders
+                  </span>
+                </div>
+
+                {/* Main note */}
+                <div className="mt-8 max-w-2xl">
+
+                  <p className="text-xl font-medium leading-[1.65] tracking-[-0.01em] text-[#0D1222] sm:text-2xl sm:leading-[1.6]">
+                    {founders?.quote ||
+                      "A simple note from the founders to be added here."}
+                  </p>
+
+                  <p className="mt-8 text-sm leading-7 text-slate-500">
+                    {founders?.closing ||
+                      "Batch 01 is where that journey begins and we're looking forward to building it with our first learners."}
+                  </p>
+
+                </div>
+
+                {/* SIGNOFF */}
+                <div className="mt-12 flex flex-col gap-5 border-t border-slate-200 pt-7 sm:flex-row sm:items-end sm:justify-between">
+
+                  <div>
+                    <p className="font-serif text-lg italic text-[#0D1222]">
+                      The Founders
+                    </p>
+
+                    <p className="mt-1 text-xs font-semibold text-[#1E3ABA]">
+                      {founders?.signoff || "The Founders, Summate Learning"}
+                    </p>
+                  </div>
+
+                  <Link
+                    href="/apply"
+                    className="group inline-flex items-center gap-2 self-start rounded-full bg-[#0D1222] px-5 py-3 text-xs font-bold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#1E3ABA]"
+                  >
+                    Join Batch 1
+
+                    <Icon
+                      name="ArrowUpRight"
+                      size={14}
+                      strokeWidth={2.2}
+                      className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                    />
+                  </Link>
+
+                </div>
+
+              </div>
+            </div>
+
+            {/* Closing line */}
+            <div className="mt-7 flex items-center justify-between px-1">
+
+              <p className="text-xs text-slate-400">
+                Building the first cohort, together.
+              </p>
+
+              <div className="flex items-center gap-2 text-[10px] font-bold tracking-[0.16em] text-slate-300">
+                <span>01</span>
+                <span>→</span>
+                <span>02</span>
+                <span>→</span>
+                <span>03</span>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+  );
+}
+
+/* ---------------- 12. Mentors ---------------- */
+export function MentorCards() {
+  return (
+    <section
+      id="mentors"
+      className="relative overflow-hidden bg-white py-24 lg:py-32"
+    >
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+
+        {/* HEADER */}
+        <div className="grid gap-8 lg:grid-cols-12 lg:items-end">
+
+          <div className="lg:col-span-7">
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#1E3ABA]">
+              The People Behind It
+            </p>
+
+            <h2 className="mt-4 max-w-3xl text-3xl font-extrabold tracking-[-0.03em] text-[#0D1222] sm:text-4xl lg:text-[52px] lg:leading-[1.08]">
+              Learn with people
+              <br />
+              <span className="text-slate-400">
+                who have done the work.
+              </span>
+            </h2>
+          </div>
+
+          <div className="lg:col-span-5 lg:pb-1">
+            <p className="max-w-md text-sm leading-7 text-slate-500 sm:text-base">
+              {mentors.note}
+            </p>
+          </div>
+
+        </div>
+
+        {/* SMALL JOURNEY MARKER */}
+        <div className="mt-12 flex items-center gap-3 text-[10px] font-bold tracking-[0.2em] text-slate-400">
+          <span className="text-[#1E3ABA]">KNOW</span>
+          <span>→</span>
+          <span className="text-[#7C3AED]">APPLY</span>
+          <span>→</span>
+          <span className="text-[#00A99D]">GROW</span>
+        </div>
+
+        {/* MENTORS */}
+        <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+
+          {mentors.people.map((m, i) => (
+            <div
+              key={i}
+              className="group relative overflow-hidden rounded-[28px] border border-slate-200 bg-[#F8FAFF] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-slate-300 hover:shadow-[0_16px_40px_rgba(13,18,34,0.07)]"
+            >
+
+              {/* Number */}
+              <div className="flex items-center justify-between">
+
+                <span className="font-mono text-[10px] font-bold tracking-[0.15em] text-slate-300">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+
+                <div className="flex h-8 w-8 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-400 transition-all duration-300 group-hover:border-[#1E3ABA]/20 group-hover:text-[#1E3ABA]">
+                  <Icon
+                    name="ArrowUpRight"
+                    size={13}
+                    strokeWidth={2}
+                  />
+                </div>
+
+              </div>
+
+              {/* Avatar */}
+              <div className="mt-8 flex items-center justify-center">
+                <div className="relative">
+
+                  {/* Accent ring */}
+                  <div className="absolute -inset-2 rounded-full border border-slate-200 transition-all duration-500 group-hover:scale-105 group-hover:border-[#1E3ABA]/20" />
+
+                  <Avatar initials={m.initials} />
+
+                </div>
+              </div>
+
+              {/* Info */}
+              <div className="mt-8 text-center">
+
+                <p className="text-base font-bold tracking-tight text-[#0D1222]">
+                  {m.name}
+                </p>
+
+                <p className="mt-1 text-xs leading-5 text-slate-500">
+                  {m.role}
+                </p>
+
+              </div>
+
+              {/* Bottom accent */}
+              <div className="mt-7 flex justify-center">
+                <div className="h-1 w-8 rounded-full bg-slate-200 transition-all duration-300 group-hover:w-14 group-hover:bg-[#1E3ABA]" />
+              </div>
+
+            </div>
+          ))}
+
+        </div>
+
+        {/* BOTTOM MESSAGE */}
+        <div className="mt-12 flex flex-col gap-5 border-t border-slate-200 pt-7 sm:flex-row sm:items-center sm:justify-between">
+
+          <p className="max-w-xl text-sm leading-6 text-slate-500">
+            Learning becomes more useful when you can ask questions,
+            receive feedback and understand how ideas work in practice.
+          </p>
+
+          <div className="flex shrink-0 items-center gap-2 text-xs font-bold text-slate-400">
+            <span className="h-2 w-2 rounded-full bg-[#FF8A00]" />
+            Mentorship & guidance
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  );
+}
+
+/* ---------------- 13. Final CTA (Item #9: Learn Build Grow Push) ---------------- */
+export function FinalCta() {
+  const journey = [
+    {
+      num: "01",
+      title: "LEARN",
+      body: "Understand the fundamentals.",
+      accent: "#1E3ABA",
+      soft: "#EEF2FF",
+    },
+    {
+      num: "02",
+      title: "BUILD",
+      body: "Turn knowledge into something real.",
+      accent: "#7C3AED",
+      soft: "#F3EFFF",
+    },
+    {
+      num: "03",
+      title: "GROW",
+      body: "Take it into your next opportunity.",
+      accent: "#00A99D",
+      soft: "#EAFBF9",
+    },
+  ];
+
+  return (
+    <section
+      id="apply"
+      className="relative overflow-hidden bg-[#0D1222] py-24 sm:py-28 lg:py-32"
+    >
+      {/* Subtle background details */}
+      <div className="pointer-events-none absolute -left-40 top-1/2 h-[500px] w-[500px] -translate-y-1/2 rounded-full bg-[#1E3ABA]/10 blur-[120px]" />
+      <div className="pointer-events-none absolute -right-40 top-0 h-[500px] w-[500px] rounded-full bg-[#7C3AED]/10 blur-[120px]" />
+
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+
+        {/* TOP LABEL */}
+        <div className="flex items-center justify-center gap-3 text-[10px] font-bold uppercase tracking-[0.22em] text-slate-500">
+          <span>Summate Learning</span>
+          <span className="text-slate-700">·</span>
+          <span>Batch 01</span>
+        </div>
+
+        {/* MAIN COPY */}
+        <div className="mx-auto mt-8 max-w-4xl text-center">
+
+          <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#6E8AFF]">
+            Your next chapter
+          </p>
+
+          <h2 className="mt-5 text-4xl font-extrabold tracking-[-0.04em] text-white sm:text-5xl lg:text-[64px] lg:leading-[1.05]">
+            Learn something.
+            <br />
+            <span className="text-slate-500">
+              Build something.
+            </span>
+            <br />
+            Take it forward.
+          </h2>
+
+          <p className="mx-auto mt-7 max-w-2xl text-sm leading-7 text-slate-400 sm:text-base">
+            If you’re ready to turn what you’ve learned into something you
+            can use, build and take forward, Batch 1 is where Summate Learning
+            begins.
+          </p>
+
+          {/* CTA */}
+          <div className="mt-9">
+            <Link
+              href="/apply"
+              className="group inline-flex items-center gap-3 rounded-full bg-white px-7 py-3.5 text-sm font-bold text-[#0D1222] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#EEF2FF]"
+            >
+              Apply for Batch 1
+
+              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#1E3ABA] text-white transition-transform duration-200 group-hover:translate-x-0.5">
+                <Icon
+                  name="ArrowUpRight"
+                  size={13}
+                  strokeWidth={2.5}
+                />
+              </span>
+            </Link>
+          </div>
+        </div>
+
+        {/* JOURNEY */}
+        <div className="mx-auto mt-20 max-w-5xl">
+
+          <div className="relative">
+
+            {/* Connecting line */}
+            <div className="absolute left-[16%] right-[16%] top-7 hidden h-px bg-slate-800 sm:block" />
+
+            <div className="grid gap-4 sm:grid-cols-3">
+
+              {journey.map((item, index) => (
+                <div
+                  key={item.num}
+                  className="group relative"
+                >
+
+                  {/* Node */}
+                  <div className="relative z-10 mx-auto flex h-14 w-14 items-center justify-center rounded-full border-4 border-[#0D1222] bg-slate-900 shadow-[0_0_0_1px_rgba(255,255,255,0.08)] transition-transform duration-300 group-hover:scale-110">
+                    <span
+                      className="font-mono text-[10px] font-bold"
+                      style={{ color: item.accent }}
+                    >
+                      {item.num}
+                    </span>
+                  </div>
+
+                  {/* Content */}
+                  <div className="mt-6 text-center">
+
+                    <p
+                      className="text-xs font-extrabold tracking-[0.2em]"
+                      style={{ color: item.accent }}
+                    >
+                      {item.title}
+                    </p>
+
+                    <p className="mx-auto mt-2 max-w-[220px] text-xs leading-5 text-slate-500">
+                      {item.body}
+                    </p>
+
+                  </div>
+
+                </div>
+              ))}
+
+            </div>
+          </div>
+        </div>
+
+        {/* BOTTOM LINE */}
+        <div className="mx-auto mt-20 flex max-w-5xl flex-col gap-4 border-t border-slate-800 pt-7 text-center sm:flex-row sm:items-center sm:justify-between sm:text-left">
+
+          <p className="text-xs text-slate-500">
+            LEARN · BUILD · GROW
+          </p>
+
+          <p className="text-xs text-slate-600">
+            The journey starts with the next step.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+  );
+}
+
+/* ---------------- 14. Banners & Auxiliaries ---------------- */
 export function PromoBanner() {
   if (!banners.promo.enabled) return null;
   const b = banners.promo;
@@ -957,7 +3185,6 @@ export function PromoBanner() {
   );
 }
 
-/* ---------------- CommunityStrip ---------------- */
 export function CommunityStrip() {
   return (
     <section className="border-t border-slate-100 bg-white py-20 lg:py-28">
@@ -986,34 +3213,6 @@ export function CommunityStrip() {
   );
 }
 
-/* ---------------- MentorCards ---------------- */
-export function MentorCards() {
-  return (
-    <section className="border-t border-slate-100 bg-slate-50/50 py-20 lg:py-28" id="mentors">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="max-w-2xl">
-          <p className="text-xs font-semibold uppercase tracking-wider text-[#1E3ABA]">Instructors</p>
-          <h2 className="mt-2 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
-            Mentors & Industry Guides
-          </h2>
-          <p className="mt-2 text-sm text-slate-600">{mentors.note}</p>
-        </div>
-
-        <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {mentors.people.map((m, i) => (
-            <div key={i} className="rounded-2xl border border-slate-200 bg-white p-6">
-              <Avatar initials={m.initials} />
-              <p className="mt-4 text-base font-bold text-slate-900">{m.name}</p>
-              <p className="text-xs text-slate-500">{m.role}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ---------------- PlacementBanner ---------------- */
 export function PlacementBanner() {
   if (!banners.placement.enabled) return null;
   const b = banners.placement;
@@ -1036,7 +3235,6 @@ export function PlacementBanner() {
   );
 }
 
-/* ---------------- TestimonialsSection ---------------- */
 export function TestimonialsSection({ children }: { children: React.ReactNode }) {
   return (
     <section className="border-t border-slate-100 bg-white py-20 lg:py-28">
@@ -1051,279 +3249,6 @@ export function TestimonialsSection({ children }: { children: React.ReactNode })
   );
 }
 
-/* ---------------- FoundersNote ---------------- */
-export function FoundersNote() {
-  return (
-    <section className="relative overflow-hidden border-t border-slate-100 bg-[#FAFBFF] py-20 lg:py-28" id="our-story">
-      {/* Ambient background glows */}
-      <div className="pointer-events-none absolute -left-24 top-1/2 h-96 w-96 -translate-y-1/2 rounded-full bg-blue-100/40 blur-3xl" />
-      <div className="pointer-events-none absolute -right-24 bottom-10 h-80 w-80 rounded-full bg-violet-100/30 blur-3xl" />
-
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-16">
-          
-          {/* Left Column */}
-          <div className="flex flex-col items-start lg:col-span-5">
-            <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-[#0F172A] sm:text-4xl lg:text-[42px] lg:leading-[1.15]">
-              Why We Started <br />
-              <span className="text-[#1E3ABA]">Summate.</span>
-            </h2>
-
-            <p className="mt-5 text-sm leading-relaxed text-slate-600 sm:text-base">
-              Learning shouldn&apos;t end at passive consumption. We founded Summate to bridge the space between syllabus completion and real engineering capability.
-            </p>
-
-            <div className="mt-8 rounded-2xl border border-slate-200/90 bg-white p-5 shadow-sm">
-              <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-[#1E3ABA]">
-                  <Icon name="Compass" size={18} strokeWidth={2.2} />
-                </div>
-                <div>
-                  <p className="text-xs font-bold text-slate-900">Batch 01 Cohort</p>
-                  <p className="text-[11px] text-slate-500">Building alongside our first learners</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="mt-8">
-              <Link
-                href="/apply"
-                className="inline-flex items-center gap-2 rounded-full bg-slate-950 px-6 py-3 text-xs font-bold text-white shadow-sm transition hover:bg-[#1E3ABA] active:scale-95"
-              >
-                <span>Join Batch 1</span>
-                <Icon name="ArrowRight" size={13} strokeWidth={2.5} />
-              </Link>
-            </div>
-          </div>
-
-          {/* Right Column */}
-          <div className="lg:col-span-7">
-            <div className="relative overflow-hidden rounded-3xl border border-slate-200/90 bg-white p-8 sm:p-12 shadow-sm transition hover:shadow-md">
-              
-              {/* Decorative Watermark Quote */}
-              <span className="pointer-events-none absolute -right-2 -top-6 select-none font-serif text-[160px] font-black leading-none text-slate-100/80">
-                “
-              </span>
-
-              <div className="relative z-10">
-                {/* Note Pill */}
-                <div className="inline-flex items-center gap-2 rounded-full border border-slate-100 bg-slate-50 px-3 py-1 text-[11px] font-semibold text-slate-600">
-                  <span className="h-1.5 w-1.5 rounded-full bg-[#FF8A00]" />
-                  A note from the founders
-                </div>
-
-                {/* Main Quote */}
-                <blockquote className="mt-6 text-lg font-medium leading-relaxed text-slate-800 sm:text-xl sm:leading-relaxed">
-                  “{founders?.quote || "A simple note from the founders to be added here."}”
-                </blockquote>
-
-                {/* Closing */}
-                <p className="mt-6 text-sm leading-relaxed text-slate-600">
-                  {founders?.closing || "Batch 01 is where that journey begins and we're looking forward to building it with our first learners."}
-                </p>
-
-                {/* Signoff */}
-                <div className="mt-10 flex flex-wrap items-center justify-between gap-4 border-t border-slate-100 pt-6">
-                  <div>
-                    <p className="font-serif text-lg italic text-slate-900">
-                      The Founders
-                    </p>
-                    <p className="text-xs font-semibold text-[#1E3ABA]">
-                      {founders?.signoff || "The Founders, Summate Learning"}
-                    </p>
-                  </div>
-
-                  <div className="flex items-center gap-2 text-xs font-bold tracking-wider text-slate-400">
-                    <span className="h-2 w-2 rounded-full bg-emerald-500" />
-                    <span>FOUNDING COHORT · 2026</span>
-                  </div>
-                </div>
-
-              </div>
-
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-  );
-}
-/* ---------------- BatchBenefits ---------------- */
-export function BatchBenefits() {
-  const benefits = [
-    {
-      title: "Live, Interactive Classes",
-      desc: "Learn directly from industry practitioners in a focused, collaborative environment.",
-      icon: "Laptop",
-      color: "text-[#1E3ABA]",
-      bg: "bg-blue-50/80",
-      border: "border-blue-100",
-    },
-    {
-      title: "Hands-on Projects",
-      desc: "Build and ship real-world projects you can showcase.",
-      icon: "FileCode2",
-      color: "text-[#7C3AED]",
-      bg: "bg-purple-50/80",
-      border: "border-purple-100",
-    },
-    {
-      title: "Mentorship & Guidance",
-      desc: "Get personalised feedback and support throughout the journey.",
-      icon: "UserCheck",
-      color: "text-emerald-600",
-      bg: "bg-emerald-50/80",
-      border: "border-emerald-100",
-    },
-    {
-      title: "Career Preparation",
-      desc: "Resume reviews, portfolio support and interview preparation.",
-      icon: "Briefcase",
-      color: "text-[#FF8A00]",
-      bg: "bg-amber-50/80",
-      border: "border-amber-100",
-    },
-    {
-      title: "A Focused Peer Community",
-      desc: "Learn and grow with a motivated group of peers.",
-      icon: "Users",
-      color: "text-[#FF2D75]",
-      bg: "bg-pink-50/80",
-      border: "border-pink-100",
-    },
-    {
-      title: "Lifetime Access to Resources",
-      desc: "Revisit sessions, notes and resources even after the program.",
-      icon: "BarChart3",
-      color: "text-[#00D4C8]",
-      bg: "bg-teal-50/80",
-      border: "border-teal-100",
-    },
-  ];
-
-  return (
-    <section className="relative overflow-hidden bg-[#FAFBFF] py-24 lg:py-32" id="batch-benefits">
-      {/* Ambient background glows */}
-      <div className="pointer-events-none absolute left-[-80px] top-1/3 h-[450px] w-[450px] rounded-full bg-blue-100/40 blur-3xl" />
-      <div className="pointer-events-none absolute right-[-60px] top-10 h-[500px] w-[500px] rounded-full bg-indigo-100/35 blur-3xl" />
-
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-        
-        {/* Section Header */}
-        <div className="relative max-w-3xl">
-          <h2 className="text-3xl font-extrabold tracking-tight text-[#0F172A] sm:text-4xl lg:text-[46px] lg:leading-[1.14]">
-            A learning experience <br />
-            that actually moves you forward.
-          </h2>
-
-          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-slate-500 sm:text-base">
-            Practical skills, real projects and the right guidance — everything you need to build what's next.
-          </p>
-
-          {/* Top-Right Handwritten Callout */}
-          <div className="pointer-events-none absolute -top-3 right-0 hidden select-none lg:block xl:-right-12">
-            <span className="block rotate-6 font-serif text-base font-medium tracking-wide text-slate-400 italic">
-              Learn <br />
-              Build <br />
-              Grow
-            </span>
-            <svg className="ml-auto mt-1 h-5 w-9 rotate-12 text-slate-300" fill="none" viewBox="0 0 36 20" stroke="currentColor">
-              <path d="M4 18c6-10 14-14 26-10m-5 8l5-8-8-2" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </div>
-        </div>
-
-        {/* Content Grid: 2-Column Benefits Cards on Left, Workspace Shot on Right */}
-        <div className="mt-14 grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-12">
-          
-          {/* Left Column: 6 Benefits Grid (lg:col-span-7) */}
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:col-span-7">
-            {benefits.map((b) => (
-              <div
-                key={b.title}
-                className="group flex items-start gap-4 rounded-2xl border border-slate-200/80 bg-white p-5 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-md"
-              >
-                {/* Icon Box */}
-                <div className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border ${b.border} ${b.bg} ${b.color} shadow-2xs`}>
-                  <Icon name={b.icon} size={18} strokeWidth={2.2} />
-                </div>
-
-                {/* Text Content */}
-                <div>
-                  <h3 className="text-sm font-bold text-slate-900">
-                    {b.title}
-                  </h3>
-                  <p className="mt-1 text-xs leading-relaxed text-slate-500">
-                    {b.desc}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Right Column: Desk Setup Visual Stage (lg:col-span-5) */}
-          <div className="relative flex items-center justify-center lg:col-span-5">
-            <div className="relative h-[380px] w-full overflow-hidden rounded-3xl border border-slate-200/80 bg-slate-50 shadow-sm sm:h-[440px]">
-              <Image
-                src="/workspace-setup.png"
-                alt="Workspace with laptop, notebook and book stack"
-                fill
-                className="object-cover object-center"
-                sizes="(max-width: 1024px) 100vw, 40vw"
-              />
-            </div>
-          </div>
-
-        </div>
-
-        {/* Bottom Navigation Ribbon */}
-        <div className="relative mt-12 flex flex-col items-center justify-between gap-6 rounded-2xl border border-slate-200/90 bg-white px-8 py-5 shadow-sm sm:flex-row">
-          
-          {/* 4 Feature Tags */}
-          <div className="flex flex-wrap items-center gap-6 text-xs font-bold tracking-wider text-slate-600">
-            <div className="flex items-center gap-2">
-              <Icon name="GraduationCap" size={16} className="text-[#1E3ABA]" strokeWidth={2} />
-              <span>LEARN</span>
-            </div>
-            <span className="text-slate-200 hidden sm:inline">|</span>
-
-            <div className="flex items-center gap-2">
-              <Icon name="Code2" size={16} className="text-[#1E3ABA]" strokeWidth={2} />
-              <span>BUILD</span>
-            </div>
-            <span className="text-slate-200 hidden sm:inline">|</span>
-
-            <div className="flex items-center gap-2">
-              <Icon name="Users" size={16} className="text-[#1E3ABA]" strokeWidth={2} />
-              <span>CONNECT</span>
-            </div>
-            <span className="text-slate-200 hidden sm:inline">|</span>
-
-            <div className="flex items-center gap-2">
-              <Icon name="BarChart3" size={16} className="text-[#1E3ABA]" strokeWidth={2} />
-              <span>GROW</span>
-            </div>
-          </div>
-
-          {/* Right CTA Button */}
-          <div className="shrink-0">
-            <Link
-              href="/apply"
-              className="inline-flex items-center gap-2 rounded-full bg-[#1E3ABA] px-6 py-2.5 text-xs font-bold text-white shadow-sm shadow-blue-600/20 transition-all hover:bg-[#152882] active:scale-95"
-            >
-              <span>Be Part of Batch 1</span>
-              <Icon name="ArrowRight" size={13} strokeWidth={2.5} />
-            </Link>
-          </div>
-        </div>
-
-      </div>
-    </section>
-  );
-}
-
-/* ---------------- InsightCards ---------------- */
 export function InsightCards() {
   return (
     <section className="border-t border-slate-100 bg-slate-50/50 py-20 lg:py-28" id="insights">
@@ -1333,7 +3258,7 @@ export function InsightCards() {
 
         <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
           {insights.items.map((a) => (
-            <div key={a.title} className="rounded-2xl border border-slate-200 bg-white p-6">
+            <div key={a.title} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
               <span className="text-xs font-semibold text-slate-400">{a.tag}</span>
               <h3 className="mt-3 text-base font-bold text-slate-900">{a.title}</h3>
               <p className="mt-4 text-xs font-medium text-slate-400">{a.date}</p>
@@ -1345,7 +3270,6 @@ export function InsightCards() {
   );
 }
 
-/* ---------------- MentorRecruitBanner ---------------- */
 export function MentorRecruitBanner() {
   if (!banners.mentorRecruit.enabled) return null;
   const b = banners.mentorRecruit;
@@ -1370,10 +3294,9 @@ export function MentorRecruitBanner() {
   );
 }
 
-/* ---------------- EnquirySection ---------------- */
 export function EnquirySection({ children }: { children: React.ReactNode }) {
   return (
-    <section className="border-t border-slate-100 bg-slate-50/50 py-20 lg:py-28" id="enquiry">
+    <section className="border-t border-slate-100 bg-[#FAFBFF] py-20 lg:py-28" id="enquiry">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-2">
           <div>
@@ -1395,270 +3318,6 @@ export function EnquirySection({ children }: { children: React.ReactNode }) {
             {children}
           </div>
         </div>
-      </div>
-    </section>
-  );
-}
-
-/* ---------------- FinalCta ---------------- */
-export function FinalCta() {
-  const trustTags = [
-    "Limited seats",
-    "Live & interactive",
-    "Real projects",
-    "Mentorship",
-  ];
-
-  return (
-    <section className="relative overflow-hidden bg-[#FAFBFF] pt-24 lg:pt-32" id="apply">
-      {/* Ambient background glows */}
-      <div className="pointer-events-none absolute left-[-100px] top-10 h-[480px] w-[480px] rounded-full bg-blue-100/40 blur-3xl" />
-      <div className="pointer-events-none absolute right-[-80px] top-20 h-[500px] w-[500px] rounded-full bg-indigo-100/35 blur-3xl" />
-
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-        
-        {/* Top Header Cluster */}
-        <div className="relative mx-auto max-w-3xl text-center">
-          
-          {/* Top-Left Handwritten Callout */}
-          <div className="pointer-events-none absolute -left-6 -top-4 hidden select-none md:block lg:-left-16">
-            <span className="block -rotate-6 font-serif text-sm tracking-wide text-slate-400 italic">
-              Learn <br />
-              Build <br />
-              Grow
-            </span>
-            <svg className="ml-2 mt-1 h-5 w-9 -rotate-12 text-slate-300" fill="none" viewBox="0 0 36 20" stroke="currentColor">
-              <path d="M4 4c6 10 14 14 26 10m-5-8l5 8-8 2" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </div>
-
-          {/* Top-Right Handwritten Callout */}
-          <div className="pointer-events-none absolute -right-6 -top-2 hidden select-none md:block lg:-right-16">
-            <span className="block rotate-6 font-serif text-sm tracking-wide text-slate-400 italic">
-              Same Curiosity <br />
-              Bigger Possibilities
-            </span>
-            <svg className="ml-auto mt-1 h-5 w-9 rotate-12 text-slate-300" fill="none" viewBox="0 0 36 20" stroke="currentColor">
-              <path d="M4 18c6-10 14-14 26-10m-5 8l5-8-8-2" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </div>
-
-          {/* Main Headline */}
-          <h2 className="text-4xl font-extrabold tracking-tight text-[#0F172A] sm:text-5xl lg:text-[56px] lg:leading-[1.12]">
-            Ready to build <br />
-            <span className="text-[#1E3ABA]">what’s next?</span>
-          </h2>
-
-          <p className="mx-auto mt-5 max-w-xl text-sm leading-relaxed text-slate-500 sm:text-base">
-            Join Summate Batch 1 and take the next step towards a brighter, more opportunities[cite: 1].
-          </p>
-
-          {/* Primary Action Button */}
-          <div className="mt-8">
-            <Link
-              href="/apply"
-              className="inline-flex items-center gap-2 rounded-full bg-[#1E3ABA] px-8 py-3.5 text-sm font-bold text-white shadow-lg shadow-blue-600/25 transition-all hover:bg-[#152882] hover:shadow-xl active:scale-95"
-            >
-              <span>Apply for Batch 1</span>
-              <Icon name="ArrowRight" size={15} strokeWidth={2.5} />
-            </Link>
-          </div>
-
-          {/* Trust Check Tags */}
-          <div className="mt-8 mb-10 flex flex-wrap items-center justify-center gap-2 sm:gap-3">
-            {trustTags.map((tag) => (
-              <div
-                key={tag}
-                className="inline-flex items-center gap-1.5 rounded-full border border-slate-200/70 bg-white/80 px-3.5 py-1.5 text-xs font-semibold text-slate-600 shadow-2xs backdrop-blur-sm"
-              >
-                <Icon name="Check" size={13} className="text-[#1E3ABA]" strokeWidth={2.5} />
-                <span>{tag}</span>
-              </div>
-            ))}
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-  );
-}
-
-export function WhySummate() {
-  const gaps = [
-    {
-      num: "GAP 01",
-      text: "A learner can finish a course without knowing how to solve a problem they haven't seen before.",
-      icon: "FileText",
-      color: "text-[#1E3ABA]",
-      bg: "bg-blue-50/80",
-      border: "border-blue-100",
-    },
-    {
-      num: "GAP 02",
-      text: "Collect certificates without knowing how to demonstrate the skill behind them.",
-      icon: "Award",
-      color: "text-[#FF2D75]",
-      bg: "bg-pink-50/80",
-      border: "border-pink-100",
-    },
-    {
-      num: "GAP 03",
-      text: "Learn ten tools without understanding which one to reach for.",
-      icon: "Layers",
-      color: "text-[#FF8A00]",
-      bg: "bg-amber-50/80",
-      border: "border-amber-100",
-    },
-    {
-      num: "GAP 04",
-      text: "Spend months preparing for a career without ever being asked to think like someone already in it.",
-      icon: "UserCheck",
-      color: "text-[#00D4C8]",
-      bg: "bg-teal-50/80",
-      border: "border-teal-100",
-    },
-  ];
-
-  const pillars = [
-    {
-      num: "01",
-      icon: "BookOpen",
-      iconColor: "text-[#1E3ABA]",
-      iconBg: "bg-blue-50",
-      title: "Beyond the Syllabus",
-      subtitle: "Learning is not a checklist of things you have completed.",
-      body: "Summate Learning goes beyond “here's the concept, here's the assignment, next chapter.” We focus on understanding, applying, questioning, making mistakes and figuring things out because that's how knowledge becomes a skill.",
-      accentLink: "text-[#1E3ABA]",
-    },
-    {
-      num: "02",
-      icon: "BarChart3",
-      iconColor: "text-[#FF2D75]",
-      iconBg: "bg-pink-50",
-      title: "Skills Need Somewhere to Go",
-      subtitle: "A skill becomes valuable when you can use it.",
-      body: "What you learn should have somewhere to land; maybe a project, a problem, a conversation, an interview, a workplace or the next thing you are choosing to pursue. Summate connects learning with application and you're building something with it.",
-      accentLink: "text-[#FF2D75]",
-    },
-    {
-      num: "03",
-      icon: "Zap",
-      iconColor: "text-[#FF8A00]",
-      iconBg: "bg-amber-50",
-      title: "Work is Changing. Learning Must Too.",
-      subtitle: "Curricula struggle to keep up with industry shifts.",
-      body: "Technology, AI and workplaces are moving faster than traditional curricula can sometimes keep up. We want learners to understand the tool, but also make them efficiently think around it, work with it and adapt when the tool changes.",
-      accentLink: "text-[#FF8A00]",
-    },
-  ];
-
-  return (
-    <section className="relative overflow-hidden bg-[#FAFBFF] py-20 lg:py-28" id="why-summate">
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-        
-        {/* Header */}
-        <div className="mx-auto max-w-3xl text-center">
-          <h2 className="text-3xl font-extrabold tracking-tight text-[#0F172A] sm:text-4xl lg:text-[46px] lg:leading-[1.18]">
-            Because learning shouldn’t stop <br className="hidden sm:inline" />
-            <span className="bg-gradient-to-r from-[#FF8A00] via-[#FF2D75] to-[#7C3AED] bg-clip-text text-transparent">
-              where the syllabus ends.
-            </span>
-          </h2>
-
-          <p className="mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-slate-600 sm:text-base">
-            There are courses, certificates, tutorials, bootcamps, crash courses and promises of “job-ready” skills everywhere. But knowing something is not the same as knowing what to do with it. Summate is built around this gap.
-          </p>
-        </div>
-
-        {/* 4 Gap Cards */}
-        <div className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {gaps.map((g) => (
-            <div
-              key={g.num}
-              className="flex h-full flex-col justify-start rounded-2xl border border-slate-200/80 bg-white p-5 shadow-sm transition-all duration-200 hover:border-slate-300 hover:shadow-md"
-            >
-              <div className="flex items-center gap-3">
-                <div className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-xl ${g.bg} ${g.color} border ${g.border}`}>
-                  <Icon name={g.icon} size={17} strokeWidth={2} />
-                </div>
-                <span className="text-xs font-bold tracking-wider text-slate-500">
-                  {g.num}
-                </span>
-              </div>
-              <p className="mt-3.5 text-xs font-medium leading-relaxed text-slate-700 sm:text-[13px]">
-                {g.text}
-              </p>
-            </div>
-          ))}
-        </div>
-
-        {/* 3 Core Pillars */}
-        <div className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-3">
-          {pillars.map((p) => (
-            <div
-              key={p.num}
-              className="relative flex flex-col justify-between overflow-hidden rounded-3xl border border-slate-200/90 bg-white p-8 shadow-sm transition-all duration-300 hover:border-slate-300 hover:shadow-xl"
-            >
-              <span className="pointer-events-none absolute right-4 top-2 select-none font-sans text-8xl font-black text-slate-100/75">
-                {p.num}
-              </span>
-
-              <div className="relative z-10">
-                <div className={`flex h-12 w-12 items-center justify-center rounded-2xl ${p.iconBg} ${p.iconColor} shadow-sm`}>
-                  <Icon name={p.icon} size={22} strokeWidth={2} />
-                </div>
-
-                <h3 className="mt-6 text-xl font-bold text-[#0F172A]">{p.title}</h3>
-                <p className="mt-1.5 text-xs font-semibold text-slate-500">{p.subtitle}</p>
-                <p className="mt-4 text-xs leading-relaxed text-slate-600 sm:text-sm">
-                  {p.body}
-                </p>
-              </div>
-
-              <div className="relative z-10 mt-8 border-t border-slate-100 pt-4">
-                <Link
-                  href="/#program"
-                  className={`inline-flex items-center gap-1.5 text-xs font-bold ${p.accentLink} transition-transform hover:translate-x-0.5`}
-                >
-                  <span>Learn more</span>
-                  <Icon name="ArrowRight" size={13} strokeWidth={2.5} />
-                </Link>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Bottom Ribbon */}
-        <div className="relative mt-8 flex flex-col items-center justify-between gap-6 rounded-2xl border border-slate-200/90 bg-white px-8 py-5 shadow-sm sm:flex-row">
-          <div className="flex items-center gap-4">
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-[#1E3ABA]">
-              <Icon name="GraduationCap" size={20} strokeWidth={2} />
-            </div>
-            <div>
-              <p className="text-xs font-medium text-slate-500">At Summate, the goal isn’t simply to know more.</p>
-              <p className="text-sm font-bold text-[#0F172A]">It’s to know what to do with what you know.</p>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-6 text-xs font-bold tracking-wider text-slate-600">
-            <div className="flex items-center gap-1.5">
-              <Icon name="BookOpen" size={15} className="text-[#1E3ABA]" />
-              <span>LEARN</span>
-            </div>
-            <span className="text-slate-300">|</span>
-            <div className="flex items-center gap-1.5">
-              <Icon name="Cog" size={15} className="text-[#FF2D75]" />
-              <span>APPLY</span>
-            </div>
-            <span className="text-slate-300">|</span>
-            <div className="flex items-center gap-1.5">
-              <Icon name="BarChart2" size={15} className="text-[#FF8A00]" />
-              <span>ACHIEVE</span>
-            </div>
-          </div>
-        </div>
-
       </div>
     </section>
   );

@@ -1,45 +1,58 @@
-import SiteNav from "@/components/SiteNav";
-import SiteFooter from "@/components/SiteFooter";
+"use client";
+
+import { useState } from "react";
+import LoadingScreen from "@/components/ui/LoadingScreen";
 import {
   Hero,
-  LogoMarquee,
+ // LogoMarquee,
   WhySummate,
+  TrackCatalog,
   PersonaCards,
   ProgramSpotlight,
-  CurriculumSection,
   ComparisonTable,
+  BatchBenefits,
   ToolStrip,
   StepPath,
-  PromoBanner,
-  CommunityStrip,
-  MentorCards,
-  PlacementBanner,
   FoundersNote,
-  BatchBenefits,
-  InsightCards,
-  MentorRecruitBanner,
-  EnquirySection,
+  MentorCards,
   FinalCta,
 } from "@/components/marketing/sections";
+import SiteNav from "@/components/SiteNav";
+import SiteFooter from "@/components/SiteFooter";
 
 export default function HomePage() {
+  const [isLoaded, setIsLoaded] = useState(false);
+
   return (
-    <div className="min-h-screen bg-white">
-      <SiteNav />
-      <main>
+    <>
+      {/* Animated Screen with your Logo */}
+      <LoadingScreen
+        logoSrc="/logo.png"
+        minDuration={800}
+        onComplete={() => setIsLoaded(true)}
+      />
+
+      {/* Main Content: Fades in smoothly once loading completes */}
+      <main
+        className={`transition-opacity duration-700 ease-out ${
+          isLoaded ? "opacity-100" : "opacity-0"
+        }`}
+      >
+        <SiteNav />
         <Hero />
-        {/* <LogoMarquee /> */}
         <WhySummate />
+        <TrackCatalog />
         <PersonaCards />
-        <FoundersNote />
         <ProgramSpotlight />
         <ComparisonTable />
+        <BatchBenefits />
         <ToolStrip />
         <StepPath />
-        <BatchBenefits />
+        <FoundersNote />
+        <MentorCards />
         <FinalCta />
+        <SiteFooter />
       </main>
-      <SiteFooter />
-    </div>
+    </>
   );
 }

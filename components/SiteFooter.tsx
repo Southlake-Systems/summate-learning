@@ -10,7 +10,7 @@ export default function SiteFooter() {
       links: [
         {
           label: "AI-Augmented Full-Stack",
-          href: "/#program",
+          href: "/#programs",
         },
         {
           label: "How It Works",
@@ -23,19 +23,19 @@ export default function SiteFooter() {
       ],
     },
     {
-      title: "Company",
+      title: "Explore",
       links: [
-        {
-          label: "Our Story",
-          href: "/#our-story",
-        },
         {
           label: "Why Summate",
           href: "/#why-summate",
         },
         {
-          label: "Mentors",
-          href: "/#mentors",
+          label: "Who It's For",
+          href: "/#who-it-is-for",
+        },
+        {
+          label: "Our Story",
+          href: "/#our-story",
         },
       ],
     },
@@ -71,101 +71,114 @@ export default function SiteFooter() {
     },
   ];
 
+  const email = site?.email || "info@summatelearning.com";
+  const phone = site?.phone || "+91 98765 43210";
+  const location = site?.location || "Kochi, Kerala, India";
+
   return (
-    <footer className="relative overflow-hidden border-t border-slate-200 bg-white text-slate-600">
+    <footer className="relative overflow-hidden border-t border-slate-200 bg-[#F8FAFF] text-slate-600">
 
-      {/* Ambient background glow */}
-      <div className="pointer-events-none absolute -left-40 bottom-0 h-96 w-96 rounded-full bg-[#1E3AB6]/5 blur-[120px]" />
-      <div className="pointer-events-none absolute -right-40 top-0 h-96 w-96 rounded-full bg-[#7C3AED]/5 blur-[120px]" />
+      {/* Subtle top transition */}
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#1E3ABA]/30 to-transparent" />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-6 py-16 lg:px-8 lg:py-20">
+      <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8 lg:py-20">
 
-        {/* Main Footer */}
-        <div className="grid grid-cols-1 gap-14 lg:grid-cols-12 lg:gap-10">
+        {/* -------------------------------------------------
+            TOP BRAND ROW
+        -------------------------------------------------- */}
+        <div className="grid gap-14 lg:grid-cols-12 lg:gap-16">
 
           {/* BRAND */}
-          <div className="lg:col-span-4">
+          <div className="lg:col-span-5">
 
-            <Link href="/" className="inline-block">
+            <Link
+              href="/"
+              aria-label="Summate Learning home"
+              className="inline-flex"
+            >
               <Image
                 src="/logo.png"
                 alt="Summate Learning"
                 width={210}
                 height={70}
-                className="h-14 w-auto object-contain"
+                className="h-12 w-auto object-contain"
               />
             </Link>
 
-            <p className="mt-6 max-w-sm text-sm leading-7 text-slate-500">
-              Future-ready learning for the next generation.
-              Real skills. Real projects. Real impact.
+            <p className="mt-6 max-w-md text-[15px] leading-7 text-slate-500">
+              Learning designed to take you beyond what you already know —
+              into what you can build, apply and become capable of.
             </p>
 
-            {/* Founding Batch */}
-            <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-[#1E3AB6]/10 bg-[#1E3AB6]/5 px-4 py-2 text-xs font-medium text-[#1E3AB6]">
-              <span className="h-2 w-2 animate-pulse rounded-full bg-[#FF8A00]" />
-              Founding Batch · September 2026
+            {/* Brand motif */}
+            <div className="mt-7 flex items-center gap-3 text-[11px] font-bold tracking-[0.2em] text-slate-400">
+              <span className="text-[#1E3ABA]">LEARN</span>
+              <span className="text-slate-300">•</span>
+              <span className="text-[#7C3AED]">APPLY</span>
+              <span className="text-slate-300">•</span>
+              <span className="text-[#FF8A00]">ACHIEVE</span>
             </div>
 
             {/* Contact */}
-            <div className="mt-7 space-y-3 text-sm">
+            <div className="mt-8 space-y-3">
 
               <a
-                href={`mailto:${site?.email || "info@summatelearning.com"}`}
-                className="flex items-center gap-3 transition-colors hover:text-[#1E3AB6]"
+                href={`mailto:${email}`}
+                className="group flex items-center gap-3 text-sm text-slate-500 transition-colors hover:text-[#1E3ABA]"
               >
-                <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#1E3AB6]/5 text-[#1E3AB6]">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-500 transition-colors group-hover:border-[#1E3ABA]/20 group-hover:text-[#1E3ABA]">
                   <Icon name="Mail" size={15} />
                 </span>
 
-                {site?.email || "info@summatelearning.com"}
+                {email}
               </a>
 
               <a
-                href={`tel:${(site?.phone || "+91 98765 43210").replace(
-                  /\s/g,
-                  ""
-                )}`}
-                className="flex items-center gap-3 transition-colors hover:text-[#1E3AB6]"
+                href={`tel:${phone.replace(/\s/g, "")}`}
+                className="group flex items-center gap-3 text-sm text-slate-500 transition-colors hover:text-[#1E3ABA]"
               >
-                <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#FF8A00]/10 text-[#FF8A00]">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-500 transition-colors group-hover:border-[#1E3ABA]/20 group-hover:text-[#1E3ABA]">
                   <Icon name="Phone" size={15} />
                 </span>
 
-                {site?.phone || "+91 98765 43210"}
+                {phone}
               </a>
 
-              <div className="flex items-center gap-3">
-                <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#7C3AED]/5 text-[#7C3AED]">
+              <div className="flex items-center gap-3 text-sm text-slate-500">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-500">
                   <Icon name="MapPin" size={15} />
                 </span>
 
-                {site?.location || "Kochi, Kerala, India"}
+                {location}
               </div>
 
             </div>
           </div>
 
-          {/* LINKS */}
-          <div className="grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-4 lg:col-span-8">
+          {/* LINK COLUMNS */}
+          <div className="grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-4 lg:col-span-7">
 
             {columns.map((column) => (
               <div key={column.title}>
 
-                <h3 className="text-sm font-semibold text-[#0D1222]">
+                <h3 className="text-xs font-bold uppercase tracking-[0.14em] text-[#0D1222]">
                   {column.title}
                 </h3>
 
-                <ul className="mt-5 space-y-3.5">
+                <ul className="mt-5 space-y-3">
 
                   {column.links.map((link) => (
                     <li key={link.label}>
 
                       <Link
                         href={link.href}
-                        className="text-sm text-slate-500 transition-colors hover:text-[#1E3AB6]"
+                        className="group inline-flex items-center gap-1 text-sm text-slate-500 transition-colors hover:text-[#1E3ABA]"
                       >
-                        {link.label}
+                        <span>{link.label}</span>
+
+                        <span className="translate-x-0 opacity-0 transition-all duration-200 group-hover:translate-x-0.5 group-hover:opacity-100">
+                          →
+                        </span>
                       </Link>
 
                     </li>
@@ -179,64 +192,90 @@ export default function SiteFooter() {
           </div>
         </div>
 
-        {/* CTA STRIP */}
-        <div className="mt-16 overflow-hidden rounded-3xl border border-[#1E3AB6]/10 bg-gradient-to-r from-[#F4F7FF] via-white to-[#F8F4FF] px-6 py-8 sm:px-10">
+        {/* -------------------------------------------------
+            FINAL CTA
+        -------------------------------------------------- */}
+        <div className="relative mt-16 overflow-hidden rounded-[28px] border border-[#1E3ABA]/10 bg-white px-6 py-8 shadow-[0_12px_40px_rgba(13,18,34,0.05)] sm:px-10 sm:py-9">
 
-          <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">
+          {/* Decorative numbers */}
+          <div className="pointer-events-none absolute right-6 top-1/2 hidden -translate-y-1/2 select-none items-center gap-3 text-[11px] font-bold tracking-[0.2em] text-slate-200 md:flex">
+            <span>01</span>
+            <span>→</span>
+            <span>02</span>
+            <span>→</span>
+            <span>03</span>
+          </div>
 
-            <div>
-              <p className="text-lg font-semibold text-[#0D1222]">
-                Ready to start your next chapter?
+          <div className="relative flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">
+
+            <div className="max-w-xl">
+              <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#1E3ABA]">
+                Batch 01
               </p>
 
-              <p className="mt-1 text-sm text-slate-500">
-                Join the founding batch of Summate Learning.
+              <h2 className="mt-2 text-xl font-extrabold tracking-tight text-[#0D1222] sm:text-2xl">
+                Your next chapter can start here.
+              </h2>
+
+              <p className="mt-2 max-w-lg text-sm leading-6 text-slate-500">
+                Turn what you have learned into something you can use,
+                build and take forward.
               </p>
             </div>
 
             <Link
               href="/apply"
-              className="inline-flex items-center gap-2 rounded-full bg-[#1E3AB6] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-[#1E3AB6]/20 transition-all hover:-translate-y-0.5 hover:bg-[#172f99]"
+              className="group inline-flex shrink-0 items-center gap-3 rounded-full bg-[#0D1222] px-6 py-3.5 text-sm font-bold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#1E3ABA]"
             >
               Apply for Batch 1
-              <span>→</span>
+
+              <span className="transition-transform duration-200 group-hover:translate-x-1">
+                →
+              </span>
             </Link>
 
           </div>
         </div>
 
-        {/* BOTTOM */}
-        <div className="mt-10 flex flex-col gap-6 border-t border-slate-200 pt-8 md:flex-row md:items-center md:justify-between">
+        {/* -------------------------------------------------
+            BOTTOM BAR
+        -------------------------------------------------- */}
+        <div className="mt-10 flex flex-col gap-6 border-t border-slate-200 pt-7 md:flex-row md:items-center md:justify-between">
 
-          <p className="text-xs text-slate-400">
-            © 2026 Summate Learning. All rights reserved.
-          </p>
+          <div className="flex flex-col gap-1">
+            <p className="text-xs text-slate-400">
+              © 2026 Summate Learning. All rights reserved.
+            </p>
 
-          <div className="flex flex-wrap items-center gap-5">
+            <p className="text-xs text-slate-400">
+              Learn. Apply. Achieve.
+            </p>
+          </div>
 
-            <span className="text-xs text-slate-400">
-              Kerala · Tamil Nadu · Karnataka · Telangana · Andhra Pradesh
-            </span>
+          <div className="flex items-center gap-4">
 
             {/* Socials */}
-            <div className="flex items-center gap-2">
+            {site?.social?.length ? (
+              <div className="flex items-center gap-2">
+                {site.social.map((social) => (
+                  <a
+                    key={social.label}
+                    href={social.href}
+                    aria-label={social.label}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-500 transition-all duration-200 hover:-translate-y-0.5 hover:border-[#1E3ABA]/20 hover:text-[#1E3ABA]"
+                  >
+                    <Icon
+                      name={social.label}
+                      size={15}
+                      strokeWidth={1.8}
+                    />
+                  </a>
+                ))}
+              </div>
+            ) : null}
 
-              {site?.social?.map((social) => (
-                <a
-                  key={social.label}
-                  href={social.href}
-                  aria-label={social.label}
-                  className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-500 transition-all hover:-translate-y-0.5 hover:border-[#1E3AB6]/20 hover:bg-[#1E3AB6]/5 hover:text-[#1E3AB6]"
-                >
-                  <Icon
-                    name={social.label}
-                    size={15}
-                    strokeWidth={1.8}
-                  />
-                </a>
-              ))}
-
-            </div>
           </div>
         </div>
 
