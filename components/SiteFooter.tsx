@@ -71,9 +71,7 @@ export default function SiteFooter() {
     },
   ];
 
-  const email = site?.email || "info@summatelearning.com";
-  const phone = site?.phone || "+91 98765 43210";
-  const location = site?.location || "Kochi, Kerala, India";
+  const { email, phone, address } = site;
 
   return (
     <footer className="relative overflow-hidden border-t border-slate-200 bg-[#F8FAFF] text-slate-600">
@@ -144,12 +142,18 @@ export default function SiteFooter() {
                 {phone}
               </a>
 
-              <div className="flex items-center gap-3 text-sm text-slate-500">
+              <div className="flex items-start gap-3 text-sm text-slate-500">
                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-500">
                   <Icon name="MapPin" size={15} />
                 </span>
 
-                {location}
+                <address className="not-italic leading-relaxed">
+                  {address.map((line) => (
+                    <span key={line} className="block">
+                      {line}
+                    </span>
+                  ))}
+                </address>
               </div>
 
             </div>
