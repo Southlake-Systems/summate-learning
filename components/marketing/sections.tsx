@@ -18,134 +18,439 @@ import {
 /* ---------------- 01. Hero ---------------- */
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-white pt-10 pb-16 lg:pt-16 lg:pb-24">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-8">
-          
-          {/* Left Column */}
-          <div className="flex flex-col items-start lg:col-span-6">
-      
-            <h1 className="mt-6 text-4xl font-extrabold leading-[1.08] tracking-tight text-slate-950 sm:text-5xl lg:text-[58px]">
-              You are more than <br />
-              <span className="text-slate-950">what you already know.</span>
+    <section className="relative isolate overflow-hidden bg-white" id="hero">
+
+      {/* =====================================================
+          ANIMATION + REDUCED MOTION
+      ====================================================== */}
+      <style>{`
+        @keyframes heroFadeUp {
+          from {
+            opacity: 0;
+            transform: translateY(24px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes heroFadeRight {
+          from {
+            opacity: 0;
+            transform: translateX(30px) scale(.97);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0) scale(1);
+          }
+        }
+
+        @keyframes heroFloat {
+          0%, 100% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(-9px);
+          }
+        }
+
+        @keyframes heroFloatReverse {
+          0%, 100% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(8px);
+          }
+        }
+
+        @keyframes heroGlow {
+          0%, 100% {
+            opacity: .55;
+            transform: scale(1);
+          }
+          50% {
+            opacity: .8;
+            transform: scale(1.08);
+          }
+        }
+
+        @keyframes heroLine {
+          from {
+            transform: scaleX(0);
+            transform-origin: left;
+          }
+          to {
+            transform: scaleX(1);
+            transform-origin: left;
+          }
+        }
+
+        .hero-fade-up {
+          animation: heroFadeUp .75s cubic-bezier(.22,1,.36,1) both;
+        }
+
+        .hero-fade-right {
+          animation: heroFadeRight .9s cubic-bezier(.22,1,.36,1) .15s both;
+        }
+
+        .hero-float {
+          animation: heroFloat 5s ease-in-out infinite;
+        }
+
+        .hero-float-reverse {
+          animation: heroFloatReverse 6s ease-in-out infinite;
+        }
+
+        .hero-glow {
+          animation: heroGlow 7s ease-in-out infinite;
+        }
+
+        .hero-line {
+          animation: heroLine .9s cubic-bezier(.22,1,.36,1) .5s both;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .hero-fade-up,
+          .hero-fade-right,
+          .hero-float,
+          .hero-float-reverse,
+          .hero-glow,
+          .hero-line {
+            animation: none !important;
+          }
+        }
+      `}</style>
+
+      {/* =====================================================
+          AMBIENT BACKGROUND
+      ====================================================== */}
+
+      {/* Blue glow */}
+      <div
+        className="hero-glow pointer-events-none absolute -left-48 top-24 -z-10 h-[520px] w-[520px] rounded-full bg-[#1E3ABA]/10 blur-[120px]"
+        aria-hidden="true"
+      />
+
+      {/* Purple / pink glow */}
+      <div
+        className="hero-glow pointer-events-none absolute right-[8%] top-[-120px] -z-10 h-[500px] w-[500px] rounded-full bg-gradient-to-br from-[#7C3AED]/10 via-[#FF2D75]/10 to-[#FF8A00]/10 blur-[110px]"
+        aria-hidden="true"
+      />
+
+      {/* Subtle grid */}
+      <div
+        className="pointer-events-none absolute inset-0 -z-20 opacity-[0.28]"
+        aria-hidden="true"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(30,58,186,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(30,58,186,0.035) 1px, transparent 1px)",
+          backgroundSize: "64px 64px",
+          maskImage:
+            "linear-gradient(to bottom, black 0%, transparent 75%)",
+          WebkitMaskImage:
+            "linear-gradient(to bottom, black 0%, transparent 75%)",
+        }}
+      />
+
+      <div className="mx-auto max-w-[1180px] px-6 sm:px-8 lg:px-0">
+
+        {/* =====================================================
+            MAIN HERO
+        ====================================================== */}
+
+        <div className="grid min-h-[750px] grid-cols-1 items-center gap-10 py-14 sm:py-16 lg:grid-cols-12 lg:gap-4 lg:py-20">
+
+          {/* =================================================
+              LEFT CONTENT
+          ================================================== */}
+          <div className="relative z-20 lg:col-span-6">
+
+            {/* Brand motif */}
+            <div
+              className="hero-fade-up flex items-center gap-3 text-[10px] font-bold tracking-[0.22em]"
+              style={{ animationDelay: "0s" }}
+            >
+              <span className="text-[#1E3ABA]">LEARN</span>
+              <span className="text-slate-300">•</span>
+              <span className="text-[#7C3AED]">APPLY</span>
+              <span className="text-slate-300">•</span>
+              <span className="text-[#FF8A00]">ACHIEVE</span>
+            </div>
+
+            {/* Heading */}
+            <h1
+              className="hero-fade-up mt-6 max-w-[650px] text-4xl font-extrabold leading-[1.02] tracking-[-0.045em] text-[#0D1222] sm:text-5xl lg:text-[60px] xl:text-[66px]"
+              style={{ animationDelay: ".08s" }}
+            >
+              You are more than
+              <br />
+              what you already
+              <br />
+
+              <span className="relative inline-block">
+                <span className="bg-gradient-to-r from-[#1E3ABA] via-[#7C3AED] to-[#FF6B2C] bg-clip-text text-transparent">
+                  know.
+                </span>
+
+                {/* Small accent underline */}
+                <span className="hero-line absolute -bottom-1 left-0 h-[4px] w-[90%] rounded-full bg-gradient-to-r from-[#1E3ABA] via-[#7C3AED] to-[#FF8A00]" />
+              </span>
             </h1>
 
-            <p className="mt-6 max-w-xl text-base leading-relaxed text-slate-600 sm:text-lg">
+            {/* Description */}
+            <p
+              className="hero-fade-up mt-7 max-w-xl text-[15px] leading-7 text-sDlate-600 sm:text-base lg:text-[17px]"
+              style={{ animationDelay: ".16s" }}
+            >
               {hero.body[0]}
             </p>
 
-            <div className="mt-8 flex flex-wrap items-center gap-4">
+            {/* CTA */}
+            <div
+              className="hero-fade-up mt-8 flex flex-wrap items-center gap-3"
+              style={{ animationDelay: ".24s" }}
+            >
+
               <Link
                 href="/apply"
-                className="group relative inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#1E3ABA] via-[#7C3AED] to-[#FF2D75] bg-[length:200%_auto] px-7 py-3.5 text-sm font-semibold text-white shadow-md shadow-[#1E3ABA]/20 transition-all duration-300 hover:bg-right hover:shadow-lg hover:shadow-[#7C3AED]/25 active:scale-[0.98]"
+                className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-[#1E3ABA] via-[#7C3AED] to-[#FF2D75] px-7 py-3.5 text-sm font-bold text-white shadow-[0_10px_28px_rgba(30,58,186,0.22)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_36px_rgba(124,58,237,0.25)] active:scale-[0.98]"
               >
-                <span>Apply for Batch 1</span>
-                <span className="transition-transform duration-200 group-hover:translate-x-0.5">
-                  <Icon name="ArrowRight" size={15} strokeWidth={2.2} />
+                {/* Moving highlight */}
+                <span className="absolute inset-y-0 left-[-80px] w-16 skew-x-[-20deg] bg-white/20 transition-transform duration-700 group-hover:translate-x-[300px]" />
+
+                <span className="relative">
+                  Apply for Batch 1
                 </span>
+
+                <Icon
+                  name="ArrowRight"
+                  size={15}
+                  strokeWidth={2.4}
+                  className="relative transition-transform duration-200 group-hover:translate-x-1"
+                />
               </Link>
 
               <Link
-                href="/#tracks"
-                className="inline-flex items-center rounded-full border border-slate-200 bg-white px-6 py-3.5 text-sm font-semibold text-slate-700 transition hover:bg-slate-50"
+                href="/#programs"
+                className="group inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-6 py-3.5 text-sm font-semibold text-[#0D1222] shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-[#1E3ABA]/20 hover:shadow-md"
               >
-                Explore Tracks
+                Explore Programs
+
+                <Icon
+                  name="ArrowUpRight"
+                  size={15}
+                  strokeWidth={2.2}
+                  className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                />
               </Link>
+
             </div>
 
-            {/* Spec Bar */}
-           <div className="mt-12 border-t border-slate-100 pt-7">
-  <div className="flex flex-wrap items-center gap-2 sm:gap-2.5">
-    {/* Live Online */}
-    <div className="group flex items-center gap-2 rounded-xl border border-slate-200/70 bg-white/80 px-3.5 py-2 shadow-2xs backdrop-blur-xs transition-all duration-200 hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-xs">
-      <span className="flex h-6 w-6 items-center justify-center rounded-lg bg-blue-50 text-summate-cobalt transition-colors group-hover:bg-summate-cobalt group-hover:text-white">
-        <Icon name="Users" size={13} strokeWidth={2.2} />
-      </span>
-      <span className="text-xs font-semibold text-slate-800">Live Online</span>
-    </div>
+            {/* =================================================
+                FEATURE STRIP
+            ================================================== */}
+            <div
+              className="hero-fade-up mt-10 border-t border-slate-200/80 pt-6"
+              style={{ animationDelay: ".32s" }}
+            >
+              {/* <div className="grid grid-cols-2 gap-2 sm:flex sm:flex-wrap sm:gap-2.5">
 
-    {/* 12 Weeks */}
-    <div className="group flex items-center gap-2 rounded-xl border border-slate-200/70 bg-white/80 px-3.5 py-2 shadow-2xs backdrop-blur-xs transition-all duration-200 hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-xs">
-      <span className="flex h-6 w-6 items-center justify-center rounded-lg bg-purple-50 text-summate-purple transition-colors group-hover:bg-summate-purple group-hover:text-white">
-        <Icon name="Calendar" size={13} strokeWidth={2.2} />
-      </span>
-      <span className="text-xs font-semibold text-slate-800">12 Weeks</span>
-    </div>
+                {[
+                  {
+                    label: "Live Online",
+                    icon: "Users",
+                    color: "#1E3ABA",
+                    bg: "#EEF2FF",
+                  },
+                  {
+                    label: "12 Weeks",
+                    icon: "Calendar",
+                    color: "#7C3AED",
+                    bg: "#F3EFFF",
+                  },
+                  {
+                    label: "Project Driven",
+                    icon: "Laptop",
+                    color: "#FF8A00",
+                    bg: "#FFF5E8",
+                  },
+                  {
+                    label: "AI Assisted",
+                    icon: "Sparkles",
+                    color: "#FF2D75",
+                    bg: "#FFF0F5",
+                  },
+                ].map((item) => (
+                  <div
+                    key={item.label}
+                    className="group flex items-center gap-2 rounded-xl border border-slate-200/80 bg-white/80 px-3 py-2 shadow-[0_4px_16px_rgba(13,18,34,0.03)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
+                  >
+                    <span
+                      className="flex h-7 w-7 items-center justify-center rounded-lg transition-transform duration-300 group-hover:scale-110"
+                      style={{
+                        backgroundColor: item.bg,
+                        color: item.color,
+                      }}
+                    >
+                      <Icon
+                        name={item.icon}
+                        size={13}
+                        strokeWidth={2.2}
+                      />
+                    </span>
 
-    {/* Project Driven */}
-    <div className="group flex items-center gap-2 rounded-xl border border-slate-200/70 bg-white/80 px-3.5 py-2 shadow-2xs backdrop-blur-xs transition-all duration-200 hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-xs">
-      <span className="flex h-6 w-6 items-center justify-center rounded-lg bg-amber-50 text-summate-orange transition-colors group-hover:bg-summate-orange group-hover:text-white">
-        <Icon name="Laptop" size={13} strokeWidth={2.2} />
-      </span>
-      <span className="text-xs font-semibold text-slate-800">Project Driven</span>
-    </div>
+                    <span className="text-xs font-semibold text-slate-700">
+                      {item.label}
+                    </span>
+                  </div>
+                ))}
 
-    {/* AI Assisted */}
-    <div className="group flex items-center gap-2 rounded-xl border border-slate-200/70 bg-white/80 px-3.5 py-2 shadow-2xs backdrop-blur-xs transition-all duration-200 hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-xs">
-      <span className="flex h-6 w-6 items-center justify-center rounded-lg bg-pink-50 text-summate-magenta transition-colors group-hover:bg-summate-magenta group-hover:text-white">
-        <Icon name="Sparkles" size={13} strokeWidth={2.2} />
-      </span>
-      <span className="text-xs font-semibold text-slate-800">AI Assisted</span>
-    </div>
-  </div>
-</div>
+              </div> */}
+            </div>
           </div>
 
-          {/* Right Column: Hero Visual with Glass Badges */}
-          <div className="relative flex min-h-[460px] items-center justify-center lg:col-span-6 lg:min-h-[540px]">
-            <div className="relative z-10 w-full max-w-[420px]">
+          {/* =================================================
+              RIGHT VISUAL
+          ================================================== */}
+          <div className="relative flex min-h-[470px] items-center justify-center lg:col-span-6 lg:min-h-[560px]">
+
+            {/* Main glow behind visual */}
+            <div
+              className="hero-glow pointer-events-none absolute left-1/2 top-1/2 h-[420px] w-[420px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-[#1E3ABA]/20 via-[#7C3AED]/20 to-[#FF2D75]/10 blur-[80px]"
+              aria-hidden="true"
+            />
+
+            {/* Geometric depth shape */}
+            <div
+              className="hero-float pointer-events-none absolute right-[7%] top-[8%] h-[330px] w-[330px] rotate-[18deg] rounded-[72px] bg-gradient-to-br from-[#1E3ABA]/20 via-[#7C3AED]/20 to-[#FF2D75]/20 blur-[1px]"
+              aria-hidden="true"
+            />
+
+            {/* Secondary geometric shape */}
+            <div
+              className="hero-float-reverse pointer-events-none absolute bottom-[8%] left-[5%] h-[170px] w-[170px] rounded-full bg-gradient-to-br from-[#00B4FF]/15 to-[#00D4C8]/10 blur-[2px]"
+              aria-hidden="true"
+            />
+
+            {/* Decorative ring */}
+            <div
+              className="pointer-events-none absolute right-[8%] top-[13%] h-[190px] w-[190px] rounded-full border border-[#7C3AED]/20"
+              aria-hidden="true"
+            />
+
+            <div
+              className="pointer-events-none absolute right-[12%] top-[17%] h-[130px] w-[130px] rounded-full border border-[#FF2D75]/15"
+              aria-hidden="true"
+            />
+
+            {/* Main image */}
+            <div className="hero-fade-right relative z-10 w-full max-w-[530px]">
               <Image
                 src="/hero_right.png"
-                alt="Summate Learning Student"
-                width={500}
-                height={550}
-                className="h-auto w-full object-contain"
+                alt="Summate Learning student building skills"
+                width={600}
+                height={650}
                 priority
+                className="relative z-10 h-auto w-full object-contain drop-shadow-[0_30px_45px_rgba(13,18,34,0.12)]"
               />
             </div>
 
-            <div className="absolute left-0 top-[18%] z-20 flex items-center gap-3 rounded-2xl border border-slate-200/90 bg-white/95 px-4 py-3 shadow-md shadow-slate-900/5 backdrop-blur-sm transition-transform hover:-translate-y-0.5">
-              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-slate-100 text-slate-800">
+            {/* =================================================
+                FLOATING CARDS
+            ================================================== */}
+
+            {/* Build */}
+            <div className="hero-float absolute left-[-2%] top-[12%] z-20 hidden items-center gap-3 rounded-2xl border border-white/80 bg-white/95 px-4 py-3 shadow-[0_14px_35px_rgba(13,18,34,0.10)] backdrop-blur-md sm:flex">
+              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#EEF2FF] text-[#1E3ABA]">
                 <Icon name="Code2" size={17} strokeWidth={2} />
               </div>
+
               <div className="leading-tight">
-                <p className="text-xs font-bold text-slate-900">Build</p>
-                <p className="text-[11px] text-slate-500">Real Projects</p>
+                <p className="text-xs font-bold text-[#0D1222]">
+                  Build
+                </p>
+                <p className="text-[11px] text-slate-500">
+                  Real Projects
+                </p>
               </div>
             </div>
 
-            <div className="absolute left-2 bottom-[14%] z-20 flex items-center gap-3 rounded-2xl border border-slate-200/90 bg-white/95 px-4 py-3 shadow-md shadow-slate-900/5 backdrop-blur-sm transition-transform hover:-translate-y-0.5">
-              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-slate-100 text-slate-800">
+            {/* Learn */}
+            <div className="hero-float-reverse absolute bottom-[13%] left-[0%] z-20 hidden items-center gap-3 rounded-2xl border border-white/80 bg-white/95 px-4 py-3 shadow-[0_14px_35px_rgba(13,18,34,0.10)] backdrop-blur-md sm:flex">
+              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#EAFBF9] text-[#00A99D]">
                 <Icon name="Brain" size={17} strokeWidth={2} />
               </div>
+
               <div className="leading-tight">
-                <p className="text-xs font-bold text-slate-900">Learn with</p>
-                <p className="text-[11px] text-slate-500">Industry Experts</p>
+                <p className="text-xs font-bold text-[#0D1222]">
+                  Learn with
+                </p>
+                <p className="text-[11px] text-slate-500">
+                  Industry Experts
+                </p>
               </div>
             </div>
 
-            <div className="absolute right-0 top-[26%] z-20 flex items-center gap-3 rounded-2xl border border-slate-200/90 bg-white/95 px-4 py-3 shadow-md shadow-slate-900/5 backdrop-blur-sm transition-transform hover:-translate-y-0.5">
-              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-slate-100 text-slate-800">
+            {/* Career */}
+            <div className="hero-float-reverse absolute right-[-1%] top-[22%] z-20 hidden items-center gap-3 rounded-2xl border border-white/80 bg-white/95 px-4 py-3 shadow-[0_14px_35px_rgba(13,18,34,0.10)] backdrop-blur-md sm:flex">
+              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#FFF0F5] text-[#FF2D75]">
                 <Icon name="TrendingUp" size={17} strokeWidth={2} />
               </div>
+
               <div className="leading-tight">
-                <p className="text-xs font-bold text-slate-900">Career</p>
-                <p className="text-[11px] text-slate-500">Opportunities</p>
+                <p className="text-xs font-bold text-[#0D1222]">
+                  Career
+                </p>
+                <p className="text-[11px] text-slate-500">
+                  Opportunities
+                </p>
               </div>
             </div>
 
-            <div className="absolute right-2 bottom-[20%] z-20 flex items-center gap-3 rounded-2xl border border-slate-200/90 bg-white/95 px-4 py-3 shadow-md shadow-slate-900/5 backdrop-blur-sm transition-transform hover:-translate-y-0.5">
-              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-slate-100 text-slate-800">
+            {/* Future Ready */}
+            <div className="hero-float absolute bottom-[17%] right-[0%] z-20 hidden items-center gap-3 rounded-2xl border border-white/80 bg-white/95 px-4 py-3 shadow-[0_14px_35px_rgba(13,18,34,0.10)] backdrop-blur-md sm:flex">
+              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#FFF5E8] text-[#FF8A00]">
                 <Icon name="Rocket" size={17} strokeWidth={2} />
               </div>
+
               <div className="leading-tight">
-                <p className="text-xs font-bold text-slate-900">Future Ready</p>
-                <p className="text-[11px] text-slate-500">Skills</p>
+                <p className="text-xs font-bold text-[#0D1222]">
+                  Future Ready
+                </p>
+                <p className="text-[11px] text-slate-500">
+                  Skills
+                </p>
               </div>
             </div>
+
+            {/* Tiny decorative dots */}
+            <div className="pointer-events-none absolute right-[2%] top-[5%] grid grid-cols-4 gap-2 opacity-40">
+              {Array.from({ length: 16 }).map((_, i) => (
+                <span
+                  key={i}
+                  className="h-1 w-1 rounded-full bg-[#7C3AED]"
+                />
+              ))}
+            </div>
+
           </div>
+        </div>
+
+        {/* =====================================================
+            BOTTOM TRANSITION
+        ====================================================== */}
+
+        <div className="relative h-20 lg:h-24">
+
+          {/* Soft color horizon */}
+          <div className="absolute left-1/2 top-1/2 h-px w-[75%] -translate-x-1/2 bg-gradient-to-r from-transparent via-[#1E3ABA]/20 via-[#7C3AED]/30 to-transparent" />
+
+          {/* Transition glow */}
+          <div className="pointer-events-none absolute left-1/2 top-1/2 h-16 w-[55%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-r from-[#1E3ABA]/5 via-[#7C3AED]/10 to-[#FF8A00]/5 blur-2xl" />
 
         </div>
+
       </div>
     </section>
   );
@@ -231,160 +536,391 @@ export function WhySummate() {
 
   return (
     <section
-      id="why-summate"
-      className="relative overflow-hidden border-t border-slate-100 bg-white"
-    >
-      {/* Very subtle background detail */}
-      <div className="pointer-events-none absolute -right-40 top-24 h-[420px] w-[420px] rounded-full bg-[#EEF3FF] opacity-60 blur-3xl" />
+  id="why-summate"
+  className="relative isolate overflow-hidden border-t border-slate-100 bg-white"
+>
+  {/* =====================================================
+      SECTION TRANSITION / AMBIENT DEPTH
+  ====================================================== */}
 
-      <div className="relative mx-auto max-w-7xl px-6 py-24 lg:px-8 lg:py-32">
+  {/* Soft top transition */}
+  <div
+    className="pointer-events-none absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-[#F4F6FF] via-[#FAFBFF] to-transparent"
+    aria-hidden="true"
+  />
 
-        {/* =====================================================
-            HEADER
-        ===================================================== */}
-        <div className="grid gap-10 lg:grid-cols-[1fr_0.8fr] lg:items-end">
-          <div>
-            <div className="mb-6 flex items-center gap-3">
-              <span className="h-px w-10 bg-[#1E3ABA]" />
+  {/* Left ambient glow */}
+  <div
+    className="pointer-events-none absolute -left-56 top-[28%] h-[520px] w-[520px] rounded-full bg-[#1E3ABA]/[0.045] blur-[120px]"
+    aria-hidden="true"
+  />
 
-              <span className="text-[11px] font-bold uppercase tracking-[0.18em] text-[#1E3ABA]">
-                Why Summate
-              </span>
-            </div>
+  {/* Right ambient glow */}
+  <div
+    className="pointer-events-none absolute -right-52 top-[10%] h-[620px] w-[620px] rounded-full bg-gradient-to-br from-[#7C3AED]/[0.05] via-[#FF2D75]/[0.035] to-[#FF8A00]/[0.025] blur-[130px]"
+    aria-hidden="true"
+  />
 
-            <h2 className="max-w-4xl text-4xl font-extrabold leading-[1.04] tracking-[-0.045em] text-[#0D1222] sm:text-5xl lg:text-[56px]">
-              Because learning shouldn't stop
-              <br className="hidden sm:block" />
-              where the syllabus ends.
-            </h2>
-          </div>
+  {/* Very subtle grid */}
+  <div
+    className="pointer-events-none absolute inset-x-0 top-0 h-[700px] opacity-[0.22]"
+    aria-hidden="true"
+    style={{
+      backgroundImage:
+        "linear-gradient(rgba(30,58,186,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(30,58,186,0.035) 1px, transparent 1px)",
+      backgroundSize: "72px 72px",
+      maskImage:
+        "linear-gradient(to bottom, black 0%, rgba(0,0,0,.65) 45%, transparent 100%)",
+      WebkitMaskImage:
+        "linear-gradient(to bottom, black 0%, rgba(0,0,0,.65) 45%, transparent 100%)",
+    }}
+  />
 
-          <p className="max-w-lg text-[16px] font-medium leading-7 text-slate-500 lg:pb-1">
-            There are courses, certificates, tutorials, bootcamps and
-            promises of “job-ready” skills everywhere. But knowing something
-            is not the same as knowing what to do with it.
-          </p>
+  {/* =====================================================
+      CONTENT
+  ====================================================== */}
+
+  <div className="relative mx-auto max-w-[1180px] px-6 py-24 sm:px-8 lg:px-0 lg:py-32">
+
+    {/* ===================================================
+        HEADER
+    ==================================================== */}
+
+    <div className="grid gap-10 lg:grid-cols-[1fr_0.72fr] lg:items-end">
+
+      <div>
+        {/* Section marker */}
+        <div className="mb-6 flex items-center gap-3">
+          <span className="relative h-px w-12 overflow-hidden bg-[#D9E0F5]">
+            <span className="absolute inset-y-0 left-0 w-7 bg-[#1E3ABA]" />
+          </span>
+
+          <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#1E3ABA]">
+            Why Summate
+          </span>
         </div>
 
-        {/* =====================================================
-            THE GAP
-        ===================================================== */}
-        <div className="mt-20 border-y border-slate-200">
-          <div className="grid lg:grid-cols-[240px_1fr]">
+        <h2 className="max-w-4xl text-4xl font-extrabold leading-[1.04] tracking-[-0.045em] text-[#0D1222] sm:text-5xl lg:text-[56px]">
+          Because learning shouldn't stop
+          <br className="hidden sm:block" />
+          where the syllabus ends.
+        </h2>
+      </div>
 
-            {/* Label */}
-            <div className="border-b border-slate-200 py-7 lg:border-b-0 lg:border-r lg:pr-10">
-              <p className="text-xs font-bold uppercase tracking-[0.16em] text-slate-400">
-                The gap
-              </p>
+      <div className="relative lg:pb-1">
+        {/* Small vertical accent */}
+        <div className="absolute -left-5 top-1 hidden h-12 w-px bg-gradient-to-b from-[#1E3ABA] to-transparent lg:block" />
 
-              <p className="mt-3 max-w-[180px] text-sm font-semibold leading-6 text-[#0D1222]">
-                Where knowing something isn't enough.
-              </p>
-            </div>
+        <p className="max-w-lg text-[16px] font-medium leading-7 text-slate-500">
+          There are courses, certificates, tutorials, bootcamps and
+          promises of “job-ready” skills everywhere. But knowing something
+          is not the same as knowing what to do with it.
+        </p>
+      </div>
+    </div>
 
-            {/* Gap items */}
-            <div className="grid sm:grid-cols-2">
-              {gaps.map((gap, index) => (
-                <div
-                  key={gap.num}
-                  className={`group relative flex gap-5 px-1 py-7 sm:px-7 ${
-                    index < 2 ? "sm:border-b border-slate-200" : ""
-                  } ${
-                    index % 2 === 0
-                      ? "sm:border-r border-slate-200"
-                      : ""
-                  }`}
-                >
-                  {/* Number */}
-                  <div className="shrink-0">
-                    <span className="font-mono text-[11px] font-semibold tracking-wider text-[#1E3ABA]">
-                      {gap.num}
-                    </span>
-                  </div>
+    {/* ===================================================
+        THE GAP
+    ==================================================== */}
 
-                  {/* Content */}
-                  <div className="flex-1">
-                    <p className="max-w-md text-sm font-semibold leading-6 text-slate-700 transition-colors duration-200 group-hover:text-[#0D1222]">
-                      {gap.text}
-                    </p>
-                  </div>
+    <div className="relative mt-20">
 
-                  {/* Arrow */}
-                  <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-slate-200 text-slate-300 transition-all duration-200 group-hover:border-[#1E3ABA]/30 group-hover:bg-[#EEF3FF] group-hover:text-[#1E3ABA]">
-                    <Icon
-                      name="ArrowUpRight"
-                      size={13}
-                      strokeWidth={2}
-                    />
-                  </div>
+      {/* Section label floating above border */}
+      <div className="absolute -top-3 left-7 z-10 bg-white px-3">
+        <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">
+          The gap
+        </span>
+      </div>
+
+      <div className="overflow-hidden rounded-[24px] border border-slate-200 bg-white shadow-[0_20px_60px_rgba(13,18,34,0.045)]">
+
+        <div className="grid lg:grid-cols-[230px_1fr]">
+
+          {/* -----------------------------------------------
+              LEFT LABEL
+          ------------------------------------------------ */}
+
+          <div className="relative border-b border-slate-200 bg-[#FAFBFF] px-7 py-8 lg:border-b-0 lg:border-r">
+            {/* Vertical accent */}
+            <div className="absolute left-0 top-0 h-full w-[2px] bg-gradient-to-b from-[#1E3ABA] via-[#7C3AED] to-transparent" />
+
+        
+            <p className="mt-4 max-w-[180px] text-[15px] font-semibold leading-6 text-[#0D1222]">
+              Where knowing something isn't enough.
+            </p>
+
+          </div>
+
+          {/* -----------------------------------------------
+              GAP ITEMS
+          ------------------------------------------------ */}
+
+          <div className="grid sm:grid-cols-2">
+            {gaps.map((gap, index) => (
+              <div
+                key={gap.num}
+                className={`
+                  group relative flex min-h-[150px] gap-5 px-6 py-7
+                  transition-all duration-300
+                  hover:bg-[#FAFBFF]
+                  sm:px-7 sm:py-8
+                  ${index < 2 ? "border-b border-slate-200" : ""}
+                  ${index % 2 === 0 ? "sm:border-r border-slate-200" : ""}
+                `}
+              >
+                {/* Number */}
+                <div className="relative shrink-0">
+                  <span
+                    className="
+                      font-mono text-[11px] font-semibold tracking-wider
+                      text-[#1E3ABA]
+                      transition-all duration-300
+                      group-hover:text-[#7C3AED]
+                    "
+                  >
+                    {gap.num}
+                  </span>
+
+                  <span className="absolute -bottom-3 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-slate-200 transition-all duration-300 group-hover:bg-[#1E3ABA]" />
                 </div>
-              ))}
-            </div>
+
+                {/* Content */}
+                <div className="flex-1">
+                  <p
+                    className="
+                      max-w-md text-sm font-semibold leading-6 text-slate-700
+                      transition-colors duration-300
+                      group-hover:text-[#0D1222]
+                    "
+                  >
+                    {gap.text}
+                  </p>
+
+                  {/* Hover line */}
+                  <div className="mt-5 h-px w-0 bg-gradient-to-r from-[#1E3ABA] to-[#7C3AED] transition-all duration-500 group-hover:w-16" />
+                </div>
+
+                {/* Arrow */}
+                <div
+                  className="
+                    flex h-8 w-8 shrink-0 items-center justify-center
+                    rounded-full border border-slate-200
+                    text-slate-300
+                    transition-all duration-300
+                    group-hover:-translate-y-0.5
+                    group-hover:border-[#1E3ABA]/20
+                    group-hover:bg-[#EEF3FF]
+                    group-hover:text-[#1E3ABA]
+                  "
+                >
+                  <Icon
+                    name="ArrowUpRight"
+                    size={13}
+                    strokeWidth={2}
+                  />
+                </div>
+              </div>
+            ))}
           </div>
-        </div>
-
-        {/* =====================================================
-            CORE PILLARS
-        ===================================================== */}
-        <div className="mt-24">
-
-          <div className="mb-10 flex items-end justify-between gap-6">
-            <div>
-              <p className="text-xs font-bold uppercase tracking-[0.16em] text-slate-400">
-                What we believe
-              </p>
-
-              <h3 className="mt-3 text-2xl font-extrabold tracking-[-0.03em] text-[#0D1222] sm:text-3xl">
-                Three ideas behind how we teach.
-              </h3>
-            </div>
-
-            <div className="hidden h-px max-w-[260px] flex-1 bg-slate-200 sm:block" />
-          </div>
-
-          <PhilosophyCards />
-        </div>
-
-        {/* =====================================================
-            CLOSING STATEMENT
-        ===================================================== */}
-        <div className="relative mt-20 overflow-hidden rounded-[28px] bg-[#0D1222] px-7 py-9 sm:px-10 sm:py-10">
-          <div className="relative z-10 flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
-
-            <div className="max-w-2xl">
-              <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-slate-500">
-                The Summate philosophy
-              </p>
-
-              <p className="mt-3 text-xl font-semibold leading-8 tracking-[-0.02em] text-white sm:text-2xl">
-                The goal isn't simply to know more.
-                <span className="text-slate-400">
-                  {" "}
-                  It's to know what to do with what you know.
-                </span>
-              </p>
-            </div>
-
-            {/* Brand signature — NOT a tab/pill */}
-            <div className="flex shrink-0 items-center gap-3 text-xs font-bold uppercase tracking-[0.18em]">
-              <span className="text-white">LEARN</span>
-
-              <span className="text-slate-600">→</span>
-
-              <span className="text-white">APPLY</span>
-
-              <span className="text-slate-600">→</span>
-
-              <span className="text-white">ACHIEVE</span>
-            </div>
-          </div>
-
-          {/* Decorative glow */}
-          <div className="pointer-events-none absolute -right-24 -top-32 h-72 w-72 rounded-full bg-[#1E3ABA] opacity-30 blur-3xl" />
         </div>
       </div>
-    </section>
+    </div>
+
+    {/* ===================================================
+        CORE PILLARS
+    ==================================================== */}
+
+    <div className="relative mt-28">
+
+      {/* Large background numbers */}
+      <div
+        className="pointer-events-none absolute -right-4 -top-20 hidden select-none lg:block"
+        aria-hidden="true"
+      >
+        <span className="font-mono text-[180px] font-bold leading-none tracking-[-0.08em] text-slate-50">
+          01
+        </span>
+      </div>
+
+      {/* Header */}
+      <div className="relative z-10 mb-10 flex items-end justify-between gap-6">
+        <div>
+          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">
+            What we believe
+          </p>
+
+          <h3 className="mt-3 text-2xl font-extrabold tracking-[-0.03em] text-[#0D1222] sm:text-3xl">
+            Three ideas behind how we teach.
+          </h3>
+        </div>
+
+        <div className="hidden items-center gap-3 sm:flex">
+          <span className="text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-400">
+            01 — 03
+          </span>
+
+          <span className="h-px w-24 bg-gradient-to-r from-slate-300 to-transparent" />
+        </div>
+      </div>
+
+      {/* Cards */}
+      <div className="relative">
+        <PhilosophyCards />
+
+        {/* Decorative vertical line */}
+        <div
+          className="pointer-events-none absolute -right-6 top-10 hidden h-[80%] w-px bg-gradient-to-b from-transparent via-slate-200 to-transparent xl:block"
+          aria-hidden="true"
+        />
+      </div>
+    </div>
+
+    {/* ===================================================
+        PHILOSOPHY / TRANSITION
+    ==================================================== */}
+
+    <div className="relative mt-24">
+
+      {/* Glow behind dark panel */}
+      <div
+        className="pointer-events-none absolute -inset-x-12 -bottom-12 h-40 rounded-full bg-[#1E3ABA]/10 blur-[70px]"
+        aria-hidden="true"
+      />
+
+      <div
+        className="
+          group relative overflow-hidden rounded-[28px]
+          bg-[#0D1222]
+          px-7 py-10
+          shadow-[0_30px_80px_rgba(13,18,34,0.16)]
+          sm:px-10 sm:py-11
+        "
+      >
+
+        {/* Grid inside dark panel */}
+        <div
+          className="pointer-events-none absolute inset-0 opacity-[0.08]"
+          aria-hidden="true"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(255,255,255,.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.5) 1px, transparent 1px)",
+            backgroundSize: "48px 48px",
+            maskImage:
+              "linear-gradient(to right, black, transparent 75%)",
+            WebkitMaskImage:
+              "linear-gradient(to right, black, transparent 75%)",
+          }}
+        />
+
+        {/* Blue glow */}
+        <div
+          className="
+            pointer-events-none absolute
+            -right-28 -top-32
+            h-80 w-80
+            rounded-full
+            bg-[#1E3ABA]/30
+            blur-[80px]
+            transition-transform duration-1000
+            group-hover:scale-110
+          "
+          aria-hidden="true"
+        />
+
+        {/* Purple glow */}
+        <div
+          className="
+            pointer-events-none absolute
+            -bottom-40 left-[38%]
+            h-72 w-72
+            rounded-full
+            bg-[#7C3AED]/20
+            blur-[80px]
+          "
+          aria-hidden="true"
+        />
+
+        {/* Decorative corner geometry */}
+        <div
+          className="pointer-events-none absolute right-8 top-8 h-16 w-16 rounded-full border border-white/[0.08]"
+          aria-hidden="true"
+        />
+
+        <div
+          className="pointer-events-none absolute right-[57px] top-[57px] h-2 w-2 rounded-full bg-[#7C3AED]"
+          aria-hidden="true"
+        />
+
+        {/* Content */}
+        <div className="relative z-10 flex flex-col gap-9 md:flex-row md:items-center md:justify-between">
+
+          <div className="max-w-2xl">
+
+            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500">
+              The Summate philosophy
+            </p>
+
+            <p className="mt-4 text-xl font-semibold leading-8 tracking-[-0.025em] text-white sm:text-2xl sm:leading-9">
+              The goal isn't simply to know more.
+              <span className="text-slate-500">
+                {" "}
+                It's to know what to do with what you know.
+              </span>
+            </p>
+
+          </div>
+
+          {/* Brand signature */}
+          <div className="relative shrink-0">
+
+            <div className="flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.2em]">
+
+              <span className="text-white">
+                LEARN
+              </span>
+
+              <span className="text-slate-600">
+                →
+              </span>
+
+              <span className="text-slate-300">
+                APPLY
+              </span>
+
+              <span className="text-slate-600">
+                →
+              </span>
+
+              <span className="text-slate-500">
+                ACHIEVE
+              </span>
+
+            </div>
+
+            {/* Signature underline */}
+            <div className="mt-3 h-px w-full bg-gradient-to-r from-[#1E3ABA] via-[#7C3AED] to-[#FF2D75]" />
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {/* ===================================================
+        BOTTOM TRANSITION
+    ==================================================== */}
+
+    <div className="relative mt-20 flex items-center justify-center">
+      <div className="h-px w-full bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
+
+      <div className="absolute flex items-center gap-2 bg-white px-5">
+        <span className="h-1.5 w-1.5 rounded-full bg-[#1E3ABA]" />
+        <span className="h-1.5 w-1.5 rounded-full bg-[#7C3AED]" />
+        <span className="h-1.5 w-1.5 rounded-full bg-[#FF2D75]" />
+      </div>
+    </div>
+
+  </div>
+</section>
   );
 }
 export function TrackCatalog() {
@@ -393,6 +929,7 @@ export function TrackCatalog() {
       id: "full-stack",
       number: "01",
       badge: "Flagship Program",
+      category: "Technology",
       title: "AI-Augmented Full-Stack Developer",
       tagline:
         "Build production-ready applications while learning how to work effectively with modern AI tools.",
@@ -400,13 +937,9 @@ export function TrackCatalog() {
       format: "Live Online",
       accent: "#1E3ABA",
       soft: "#EEF2FF",
-      skills: [
-        "Next.js",
-        "TypeScript",
-        "Python",
-        "APIs",
-        "AI Workflows",
-      ],
+      gradient:
+        "linear-gradient(135deg, #1E3ABA 0%, #6D4AFF 48%, #C43DFF 100%)",
+      skills: ["Next.js", "TypeScript", "Python", "APIs", "AI Workflows"],
       seats: "Founding Cohort",
       featured: true,
     },
@@ -414,6 +947,7 @@ export function TrackCatalog() {
       id: "data-eng",
       number: "02",
       badge: "Coming Soon",
+      category: "Data",
       title: "Modern Data Engineering",
       tagline:
         "Build practical data systems and develop the engineering habits needed for production environments.",
@@ -421,13 +955,9 @@ export function TrackCatalog() {
       format: "Live Online",
       accent: "#7C3AED",
       soft: "#F3EFFF",
-      skills: [
-        "Python",
-        "Data Pipelines",
-        "SQL",
-        "Cloud",
-        "Analytics",
-      ],
+      gradient:
+        "linear-gradient(135deg, #5B21B6 0%, #8B5CF6 50%, #C084FC 100%)",
+      skills: ["Python", "Data Pipelines", "SQL", "Cloud", "Analytics"],
       seats: "Coming Soon",
       featured: false,
     },
@@ -435,6 +965,7 @@ export function TrackCatalog() {
       id: "growth-marketing",
       number: "03",
       badge: "Coming Soon",
+      category: "Growth",
       title: "Performance & Digital Marketing",
       tagline:
         "Learn how modern marketing teams use experimentation, analytics and technology to drive growth.",
@@ -442,20 +973,17 @@ export function TrackCatalog() {
       format: "Live Online",
       accent: "#FF2D75",
       soft: "#FFF0F5",
-      skills: [
-        "Analytics",
-        "CRO",
-        "Campaigns",
-        "Attribution",
-        "Growth",
-      ],
+      gradient:
+        "linear-gradient(135deg, #FF2D75 0%, #FF4D9A 50%, #FF8A00 100%)",
+      skills: ["Analytics", "CRO", "Campaigns", "Attribution", "Growth"],
       seats: "Coming Soon",
       featured: false,
     },
     {
       id: "ai-mech",
       number: "04",
-      badge: "Interdisciplinary",
+      badge: "Coming Soon",
+      category: "AI + Hardware",
       title: "AI & Embedded Systems",
       tagline:
         "Explore the intersection of intelligent software, hardware and real-world systems.",
@@ -463,13 +991,9 @@ export function TrackCatalog() {
       format: "Live Online",
       accent: "#FF8A00",
       soft: "#FFF6E9",
-      skills: [
-        "Computer Vision",
-        "Edge AI",
-        "Embedded",
-        "Sensors",
-        "Python",
-      ],
+      gradient:
+        "linear-gradient(135deg, #FF8A00 0%, #FFB000 48%, #FFE066 100%)",
+      skills: ["Computer Vision", "Edge AI", "Embedded", "Sensors", "Python"],
       seats: "Coming Soon",
       featured: false,
     },
@@ -478,353 +1002,333 @@ export function TrackCatalog() {
   return (
     <section
       id="programs"
-      className="relative overflow-hidden bg-[#FAFBFF] py-24 lg:py-32"
+      className="relative overflow-hidden bg-white py-20 lg:py-28"
     >
-      {/* =========================================================
-          BACKGROUND DETAILS
-      ========================================================= */}
+      {/* =====================================================
+          AMBIENT BACKGROUND
+      ====================================================== */}
 
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute left-[8%] top-20 h-72 w-72 rounded-full bg-[#1E3ABA]/[0.035] blur-3xl" />
-        <div className="absolute bottom-0 right-[5%] h-80 w-80 rounded-full bg-[#7C3AED]/[0.025] blur-3xl" />
+      <div
+        className="pointer-events-none absolute -left-40 top-20 h-[420px] w-[420px] rounded-full bg-[#1E3ABA]/[0.035] blur-[110px]"
+        aria-hidden="true"
+      />
 
-        <div
-          className="absolute inset-0 opacity-[0.35]"
-          style={{
-            backgroundImage:
-              "radial-gradient(#CBD5E1 0.7px, transparent 0.7px)",
-            backgroundSize: "24px 24px",
-            maskImage:
-              "linear-gradient(to bottom, black, transparent 75%)",
-            WebkitMaskImage:
-              "linear-gradient(to bottom, black, transparent 75%)",
-          }}
-        />
-      </div>
+      <div
+        className="pointer-events-none absolute -right-40 bottom-0 h-[460px] w-[460px] rounded-full bg-[#7C3AED]/[0.04] blur-[120px]"
+        aria-hidden="true"
+      />
 
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-        {/* =========================================================
-            HEADER
-        ========================================================= */}
+      <div className="relative mx-auto max-w-[1180px] px-6 sm:px-8 lg:px-0">
 
-        <div className="flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
-          <div className="max-w-3xl">
-            <div className="mb-5 flex items-center gap-3">
-              <span className="h-px w-10 bg-[#1E3ABA]" />
+        {/* ===================================================
+            SECTION HEADER
+        ==================================================== */}
 
-              <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#1E3ABA]">
-                Programs
-              </span>
-            </div>
+        <div className="mb-8">
+          <div className="mb-4 flex items-center gap-3">
+            <span className="h-px w-10 bg-[#1E3ABA]" />
 
-            <h2 className="text-[38px] font-extrabold leading-[1.05] tracking-[-0.045em] text-[#0D1222] sm:text-[48px] lg:text-[58px]">
-              Learning that leads
-              <br />
-              <span className="text-slate-400">
-                somewhere.
-              </span>
-            </h2>
-
-            <p className="mt-6 max-w-2xl text-base leading-7 text-slate-600 lg:text-lg">
-              Programs designed around practical learning, real work
-              and the skills you need for what comes next.
-            </p>
+            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#1E3ABA]">
+              Programs
+            </span>
           </div>
 
-          {/* Small count */}
-          <div className="hidden shrink-0 lg:block">
-            <div className="flex items-end gap-3">
-              <span className="text-5xl font-extrabold tracking-[-0.06em] text-[#0D1222]">
-                04
-              </span>
+          <h2 className="max-w-2xl text-4xl font-extrabold leading-[1.02] tracking-[-0.045em] text-[#0D1222] sm:text-5xl lg:text-[56px]">
+            Learning that leads
+            <span className="text-slate-400"> somewhere.</span>
+          </h2>
 
-              <span className="mb-1 max-w-[100px] text-[10px] font-bold uppercase leading-4 tracking-[0.15em] text-slate-400">
-                Learning paths
-                <br />
-                and programs
-              </span>
-            </div>
-          </div>
+          <p className="mt-5 max-w-xl text-sm leading-7 text-slate-500 sm:text-base">
+            Explore learning paths designed around practical skills,
+            real work and what comes next.
+          </p>
         </div>
 
-        {/* =========================================================
-            FEATURED PROGRAM
-        ========================================================= */}
+        {/* ===================================================
+            PROGRAM SHELF
+        ==================================================== */}
 
-        <div className="mt-16">
-          {tracks
-            .filter((track) => track.featured)
-            .map((track) => (
-              <Link
-                key={track.id}
-                href="/apply"
-                className="group relative block overflow-hidden rounded-[32px] border border-[#1E3ABA]/15 bg-white transition-all duration-500 hover:-translate-y-1 hover:border-[#1E3ABA]/30 hover:shadow-[0_30px_80px_rgba(30,58,186,0.12)]"
+        <div
+          className="
+            relative overflow-hidden
+            rounded-[32px]
+            p-5
+            sm:p-6
+            lg:p-7
+          "
+          style={{
+            background:
+              "linear-gradient(120deg, #1557E8 0%, #477BE8 28%, #82BCE0 55%, #9AD7B0 100%)",
+          }}
+        >
+
+          {/* Inner glow */}
+          <div
+            className="pointer-events-none absolute -right-24 -top-32 h-80 w-80 rounded-full bg-white/20 blur-[90px]"
+            aria-hidden="true"
+          />
+
+          <div
+            className="pointer-events-none absolute -left-20 bottom-[-160px] h-96 w-96 rounded-full bg-[#7C3AED]/20 blur-[100px]"
+            aria-hidden="true"
+          />
+
+          {/* =================================================
+              FILTER / CATEGORY ROW
+          ================================================== */}
+
+          <div className="relative z-10 mb-5 flex gap-2 overflow-x-auto pb-1 scrollbar-hide">
+            {[
+              "All Programs",
+              "Technology",
+              "Data",
+              "Growth",
+              "AI + Hardware",
+            ].map((item, index) => (
+              <button
+                key={item}
+                className={`
+                  shrink-0 rounded-full border px-4 py-2
+                  text-[11px] font-semibold
+                  transition-all duration-300
+                  ${
+                    index === 0
+                      ? "border-[#0D1222] bg-[#0D1222] text-white shadow-sm"
+                      : "border-white/60 bg-white/85 text-[#0D1222] hover:bg-white"
+                  }
+                `}
               >
-                {/* Accent edge */}
-                <div
-                  className="absolute bottom-0 left-0 top-0 w-1.5"
-                  style={{ backgroundColor: track.accent }}
-                />
+                {item}
+              </button>
+            ))}
+          </div>
 
-                {/* Decorative number */}
-                <div
-                  className="pointer-events-none absolute -right-5 -top-16 select-none text-[240px] font-extrabold leading-none tracking-[-0.1em]"
-                  style={{ color: track.soft }}
+          {/* =================================================
+              MAIN SHELF
+          ================================================== */}
+
+          <div className="relative z-10 grid gap-4 lg:grid-cols-[220px_1fr]">
+
+            {/* LEFT INTRO */}
+            <div className="flex flex-col justify-center px-2 py-6 lg:px-3">
+
+              <p className="text-[26px] font-extrabold leading-[1.08] tracking-[-0.035em] text-white sm:text-3xl">
+                Find the path
+                <br />
+                that moves
+                <br />
+                you forward.
+              </p>
+
+              <p className="mt-4 max-w-[190px] text-xs font-medium leading-5 text-white/75">
+                Choose your direction. Learn the workflow, build the skill
+                and take it somewhere useful.
+              </p>
+
+              <Link
+                href="/apply"
+                className="
+                  mt-6 inline-flex w-fit items-center gap-2
+                  rounded-xl bg-white px-4 py-2.5
+                  text-xs font-bold text-[#1E3ABA]
+                  shadow-[0_8px_25px_rgba(13,18,34,0.12)]
+                  transition-all duration-300
+                  hover:-translate-y-0.5 hover:shadow-lg
+                "
+              >
+                Explore programs
+
+                <Icon
+                  name="ArrowRight"
+                  size={14}
+                  strokeWidth={2}
+                />
+              </Link>
+            </div>
+
+            {/* PROGRAM CARDS */}
+            <div
+              className="
+                grid gap-3
+                sm:grid-cols-2
+                xl:grid-cols-3
+              "
+            >
+              {tracks.slice(0, 3).map((track) => (
+                <Link
+                  key={track.id}
+                  href={track.featured ? "/apply" : "#"}
+                  className="
+                    group relative overflow-hidden
+                    rounded-[20px]
+                    border border-white/70
+                    bg-white
+                    shadow-[0_12px_30px_rgba(13,18,34,0.08)]
+                    transition-all duration-400
+                    hover:-translate-y-1
+                    hover:shadow-[0_20px_40px_rgba(13,18,34,0.14)]
+                  "
                 >
-                  {track.number}
-                </div>
 
-                {/* Hover orb */}
-                <div
-                  className="pointer-events-none absolute -right-24 bottom-[-100px] h-64 w-64 rounded-full opacity-0 blur-3xl transition-all duration-700 group-hover:opacity-60"
-                  style={{ backgroundColor: track.accent }}
-                />
+                  {/* =========================================
+                      VISUAL
+                  ========================================== */}
 
-                <div className="relative grid lg:grid-cols-[1fr_320px]">
-                  {/* Main */}
-                  <div className="p-8 sm:p-10 lg:p-12">
-                    <div className="flex flex-wrap items-center gap-3">
-                      <span
-                        className="rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-[0.12em]"
-                        style={{
-                          backgroundColor: track.soft,
-                          color: track.accent,
-                        }}
-                      >
-                        {track.badge}
-                      </span>
+                  <div
+                    className="relative h-[145px] overflow-hidden"
+                    style={{
+                      background: track.gradient,
+                    }}
+                  >
 
-                      <span className="text-[11px] font-semibold text-slate-400">
-                        {track.number} / 04
+                    {/* Abstract geometry */}
+                    <div className="absolute -right-8 -top-10 h-36 w-36 rounded-full border-[18px] border-white/20 transition-transform duration-700 group-hover:scale-125" />
+
+                    <div className="absolute -bottom-10 left-8 h-28 w-28 rotate-12 rounded-[28px] border border-white/25 bg-white/10 backdrop-blur-sm transition-transform duration-700 group-hover:rotate-6 group-hover:scale-110" />
+
+                    <div className="absolute left-5 top-5 flex h-9 w-9 items-center justify-center rounded-xl bg-white/15 text-white backdrop-blur-md">
+                      <span className="font-mono text-[10px] font-bold">
+                        {track.number}
                       </span>
                     </div>
 
-                    <h3 className="mt-7 max-w-3xl text-3xl font-extrabold leading-[1.08] tracking-[-0.045em] text-[#0D1222] transition-colors duration-300 group-hover:text-[#1E3ABA] sm:text-4xl lg:text-[46px]">
+                    {/* Decorative lines */}
+                    <div className="absolute bottom-5 left-5 flex gap-1">
+                      <span className="h-1 w-8 rounded-full bg-white/70" />
+                      <span className="h-1 w-3 rounded-full bg-white/35" />
+                    </div>
+
+                    {/* Status */}
+                    <span className="absolute right-4 top-4 rounded-full bg-white/90 px-2.5 py-1 text-[9px] font-bold uppercase tracking-[0.1em] text-[#0D1222]">
+                      {track.featured ? "Featured" : "Coming Soon"}
+                    </span>
+                  </div>
+
+                  {/* =========================================
+                      CONTENT
+                  ========================================== */}
+
+                  <div className="p-5">
+
+                    <p
+                      className="text-[9px] font-bold uppercase tracking-[0.16em]"
+                      style={{ color: track.accent }}
+                    >
+                      {track.category}
+                    </p>
+
+                    <h3 className="mt-2 min-h-[52px] text-[17px] font-extrabold leading-[1.15] tracking-[-0.025em] text-[#0D1222]">
                       {track.title}
                     </h3>
 
-                    <p className="mt-5 max-w-2xl text-sm leading-7 text-slate-600 sm:text-base">
+                    <p className="mt-3 line-clamp-2 text-[11px] leading-5 text-slate-500">
                       {track.tagline}
                     </p>
 
-                    {/* Skills */}
-                    <div className="mt-8 flex flex-wrap gap-2">
-                      {track.skills.map((skill) => (
-                        <span
-                          key={skill}
-                          className="rounded-lg border border-slate-200 bg-slate-50 px-3 py-1.5 text-[11px] font-semibold text-slate-600 transition-colors duration-300 group-hover:border-slate-300 group-hover:bg-white"
-                        >
-                          {skill}
+                    {/* Metadata */}
+                    <div className="mt-5 flex items-center justify-between border-t border-slate-100 pt-4">
+
+                      <div className="flex items-center gap-1.5">
+                        <Icon
+                          name="Calendar"
+                          size={12}
+                          strokeWidth={1.8}
+                          className="text-slate-400"
+                        />
+
+                        <span className="text-[10px] font-semibold text-slate-600">
+                          {track.duration}
                         </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Side panel */}
-                  <div className="flex flex-col justify-between border-t border-slate-100 bg-[#FAFBFF] p-8 lg:border-l lg:border-t-0 lg:p-10">
-                    <div>
-                      <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-slate-400">
-                        Program format
-                      </p>
-
-                      <div className="mt-5 space-y-4">
-                        <div className="flex items-center gap-3">
-                          <span
-                            className="flex h-9 w-9 items-center justify-center rounded-xl"
-                            style={{
-                              backgroundColor: track.soft,
-                              color: track.accent,
-                            }}
-                          >
-                            <Icon
-                              name="Calendar"
-                              size={16}
-                              strokeWidth={1.8}
-                            />
-                          </span>
-
-                          <div>
-                            <p className="text-xs font-bold text-[#0D1222]">
-                              {track.duration}
-                            </p>
-                            <p className="text-[11px] text-slate-400">
-                              Structured program
-                            </p>
-                          </div>
-                        </div>
-
-                        <div className="flex items-center gap-3">
-                          <span
-                            className="flex h-9 w-9 items-center justify-center rounded-xl"
-                            style={{
-                              backgroundColor: track.soft,
-                              color: track.accent,
-                            }}
-                          >
-                            <Icon
-                              name="Monitor"
-                              size={16}
-                              strokeWidth={1.8}
-                            />
-                          </span>
-
-                          <div>
-                            <p className="text-xs font-bold text-[#0D1222]">
-                              {track.format}
-                            </p>
-                            <p className="text-[11px] text-slate-400">
-                              Learn from anywhere
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="mt-10 flex items-center justify-between border-t border-slate-200 pt-6">
-                      <div>
-                        <p className="text-[10px] font-bold uppercase tracking-[0.15em] text-slate-400">
-                          Availability
-                        </p>
-
-                        <p className="mt-1 text-xs font-bold text-emerald-600">
-                          ● {track.seats}
-                        </p>
                       </div>
 
                       <span
-                        className="flex h-11 w-11 items-center justify-center rounded-full text-white transition-all duration-300 group-hover:translate-x-1 group-hover:scale-105"
+                        className="flex h-7 w-7 items-center justify-center rounded-full text-white transition-all duration-300 group-hover:translate-x-1"
                         style={{ backgroundColor: track.accent }}
                       >
                         <Icon
                           name="ArrowUpRight"
-                          size={18}
+                          size={13}
                           strokeWidth={2}
                         />
                       </span>
                     </div>
                   </div>
-                </div>
-              </Link>
-            ))}
-        </div>
-
-        {/* =========================================================
-            OTHER PROGRAMS
-        ========================================================= */}
-
-        <div className="mt-12">
-          <div className="mb-5 flex items-center justify-between">
-            <div>
-              <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-slate-400">
-                More programs
-              </p>
-            </div>
-
-            <div className="hidden h-px flex-1 bg-slate-200/80 sm:ml-6 sm:block" />
-          </div>
-
-          <div className="grid gap-4 md:grid-cols-3">
-            {tracks
-              .filter((track) => !track.featured)
-              .map((track) => (
-                <Link
-                  key={track.id}
-                  href="/apply"
-                  className="group relative overflow-hidden rounded-[24px] border border-slate-200 bg-white p-7 transition-all duration-500 hover:-translate-y-1 hover:border-slate-300 hover:shadow-[0_22px_50px_rgba(13,18,34,0.08)]"
-                >
-                  {/* Number */}
-                  <div
-                    className="absolute -right-2 -top-8 select-none text-[110px] font-extrabold leading-none tracking-[-0.08em] opacity-70 transition-transform duration-500 group-hover:translate-x-2 group-hover:-translate-y-1"
-                    style={{ color: track.soft }}
-                  >
-                    {track.number}
-                  </div>
-
-                  {/* Top */}
-                  <div className="relative flex items-center justify-between">
-                    <span
-                      className="rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-[0.12em]"
-                      style={{
-                        backgroundColor: track.soft,
-                        color: track.accent,
-                      }}
-                    >
-                      {track.badge}
-                    </span>
-
-                    <span
-                      className="flex h-8 w-8 items-center justify-center rounded-full border border-slate-200 text-slate-400 transition-all duration-300 group-hover:border-slate-300 group-hover:text-[#0D1222]"
-                    >
-                      <Icon
-                        name="ArrowUpRight"
-                        size={14}
-                        strokeWidth={2}
-                      />
-                    </span>
-                  </div>
-
-                  {/* Content */}
-                  <div className="relative mt-8">
-                    <p className="mb-2 font-mono text-[10px] font-bold tracking-[0.15em] text-slate-400">
-                      PROGRAM {track.number}
-                    </p>
-
-                    <h3 className="text-xl font-extrabold leading-[1.15] tracking-[-0.035em] text-[#0D1222] transition-colors duration-300 group-hover:text-[#1E3ABA]">
-                      {track.title}
-                    </h3>
-
-                    <p className="mt-3 text-xs leading-6 text-slate-500">
-                      {track.tagline}
-                    </p>
-                  </div>
-
-                  {/* Skills */}
-                  <div className="relative mt-6 flex flex-wrap gap-1.5">
-                    {track.skills.slice(0, 4).map((skill) => (
-                      <span
-                        key={skill}
-                        className="rounded-md bg-slate-50 px-2 py-1 text-[10px] font-medium text-slate-500"
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-
-                  {/* Bottom */}
-                  <div className="relative mt-7 flex items-center justify-between border-t border-slate-100 pt-5">
-                    <div>
-                      <p className="text-[9px] font-bold uppercase tracking-[0.15em] text-slate-400">
-                        Format
-                      </p>
-
-                      <p className="mt-1 text-[11px] font-semibold text-slate-600">
-                        {track.duration} · {track.format}
-                      </p>
-                    </div>
-
-                    <span
-                      className="text-[10px] font-bold uppercase tracking-[0.12em] transition-colors duration-300"
-                      style={{ color: track.accent }}
-                    >
-                      Explore
-                    </span>
-                  </div>
 
                   {/* Bottom accent */}
                   <div
-                    className="absolute bottom-0 left-0 h-0.5 w-0 transition-all duration-500 group-hover:w-full"
+                    className="absolute bottom-0 left-0 h-1 w-0 transition-all duration-500 group-hover:w-full"
                     style={{ backgroundColor: track.accent }}
                   />
                 </Link>
               ))}
+            </div>
           </div>
+
+          {/* =================================================
+              FOURTH PROGRAM
+          ================================================== */}
+
+          <div className="relative z-10 mt-4">
+            <Link
+              href="#"
+              className="
+                group flex items-center justify-between
+                rounded-[18px]
+                border border-white/50
+                bg-white/75
+                px-5 py-4
+                backdrop-blur-md
+                transition-all duration-300
+                hover:bg-white
+              "
+            >
+              <div className="flex items-center gap-4">
+
+                <span
+                  className="flex h-9 w-9 items-center justify-center rounded-xl text-white"
+                  style={{ backgroundColor: tracks[3].accent }}
+                >
+                  <span className="font-mono text-[10px] font-bold">
+                    04
+                  </span>
+                </span>
+
+                <div>
+                  <p className="text-[9px] font-bold uppercase tracking-[0.15em] text-[#FF8A00]">
+                    AI + Hardware
+                  </p>
+
+                  <p className="mt-0.5 text-sm font-bold text-[#0D1222]">
+                    AI & Embedded Systems
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-3">
+
+                <span className="hidden text-[10px] font-semibold text-slate-400 sm:block">
+                  Coming Soon
+                </span>
+
+                <span className="flex h-8 w-8 items-center justify-center rounded-full border border-slate-200 text-slate-400 transition-all duration-300 group-hover:border-[#FF8A00]/30 group-hover:bg-[#FFF6E9] group-hover:text-[#FF8A00]">
+                  <Icon
+                    name="ArrowUpRight"
+                    size={14}
+                    strokeWidth={2}
+                  />
+                </span>
+              </div>
+            </Link>
+          </div>
+
         </div>
 
-        {/* =========================================================
-            CLOSING LINE
-        ========================================================= */}
+        {/* =================================================
+            BOTTOM STATEMENT
+        ================================================== */}
 
-        <div className="mt-12 flex flex-col items-start justify-between gap-5 border-t border-slate-200 pt-7 sm:flex-row sm:items-center">
+        <div className="mt-8 flex flex-col gap-4 border-t border-slate-200 pt-6 sm:flex-row sm:items-center sm:justify-between">
+
           <p className="max-w-xl text-sm leading-6 text-slate-500">
             Every program is designed to help you move from knowing
             something to being able to use it.
@@ -834,7 +1338,7 @@ export function TrackCatalog() {
             href="/apply"
             className="group inline-flex items-center gap-2 text-sm font-bold text-[#0D1222]"
           >
-            <span>Start with Batch 01</span>
+            Start with Batch 01
 
             <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#1E3ABA] text-white transition-transform duration-300 group-hover:translate-x-1">
               <Icon
@@ -1293,6 +1797,7 @@ export function ProgramSpotlight() {
       alt: "Laptop displaying code - Build, Apply, Grow",
       accent: "#1E3ABA",
       soft: "#EEF2FF",
+      glow: "rgba(30,58,186,.28)",
     },
     {
       num: "02",
@@ -1303,6 +1808,7 @@ export function ProgramSpotlight() {
       alt: "Desk with books and coffee mug - Your Pace, Your Path",
       accent: "#7C3AED",
       soft: "#F3EFFF",
+      glow: "rgba(124,58,237,.25)",
     },
     {
       num: "03",
@@ -1313,6 +1819,7 @@ export function ProgramSpotlight() {
       alt: "Wooden figurines - Learn Together, Grow Together",
       accent: "#FF8A00",
       soft: "#FFF5E8",
+      glow: "rgba(255,138,0,.22)",
     },
     {
       num: "04",
@@ -1323,132 +1830,254 @@ export function ProgramSpotlight() {
       alt: "Stack of books - Skills, Portfolio, Mentorship, Opportunities",
       accent: "#00A99D",
       soft: "#EAFBF9",
+      glow: "rgba(0,169,157,.22)",
     },
   ];
+
+  const [active, setActive] = useState(0);
 
   return (
     <section
       id="program"
-      className="relative overflow-hidden bg-[#FAFBFF] py-24 lg:py-32"
+      className="relative isolate overflow-hidden bg-[#F8FAFF] py-24 lg:py-32"
     >
-      {/* =========================================================
-          BACKGROUND
-      ========================================================= */}
+      {/* =====================================================
+          ANIMATIONS
+      ====================================================== */}
 
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute left-[8%] top-20 h-72 w-72 rounded-full bg-[#1E3ABA]/[0.025] blur-3xl" />
+      <style>{`
+        @keyframes spotlightFloat {
+          0%, 100% {
+            transform: translate3d(0, 0, 0) scale(1);
+          }
+          50% {
+            transform: translate3d(0, -12px, 0) scale(1.025);
+          }
+        }
 
-        <div className="absolute bottom-0 right-[5%] h-80 w-80 rounded-full bg-[#7C3AED]/[0.025] blur-3xl" />
-      </div>
+        @keyframes spotlightPulse {
+          0%, 100% {
+            opacity: .35;
+            transform: scale(1);
+          }
+          50% {
+            opacity: .65;
+            transform: scale(1.12);
+          }
+        }
 
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-        {/* =========================================================
+        @keyframes spotlightLine {
+          from {
+            transform: scaleX(0);
+            transform-origin: left;
+          }
+          to {
+            transform: scaleX(1);
+            transform-origin: left;
+          }
+        }
+
+        .spotlight-float {
+          animation: spotlightFloat 7s ease-in-out infinite;
+        }
+
+        .spotlight-pulse {
+          animation: spotlightPulse 6s ease-in-out infinite;
+        }
+
+        .spotlight-line {
+          animation: spotlightLine 1.2s cubic-bezier(.22,1,.36,1) both;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .spotlight-float,
+          .spotlight-pulse,
+          .spotlight-line {
+            animation: none !important;
+          }
+        }
+      `}</style>
+
+      {/* =====================================================
+          AMBIENT BACKGROUND
+      ====================================================== */}
+
+      <div
+        className="pointer-events-none absolute -left-52 top-20 h-[520px] w-[520px] rounded-full bg-[#1E3ABA]/[0.045] blur-[120px]"
+        aria-hidden="true"
+      />
+
+      <div
+        className="pointer-events-none absolute -right-52 bottom-0 h-[580px] w-[580px] rounded-full bg-[#7C3AED]/[0.045] blur-[130px]"
+        aria-hidden="true"
+      />
+
+      {/* subtle grid */}
+      <div
+        className="pointer-events-none absolute inset-x-0 top-0 h-[700px] opacity-[0.22]"
+        aria-hidden="true"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(30,58,186,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(30,58,186,.035) 1px, transparent 1px)",
+          backgroundSize: "72px 72px",
+          maskImage:
+            "linear-gradient(to bottom, black 0%, transparent 90%)",
+          WebkitMaskImage:
+            "linear-gradient(to bottom, black 0%, transparent 90%)",
+        }}
+      />
+
+      <div className="relative mx-auto max-w-[1180px] px-6 sm:px-8 lg:px-0">
+
+        {/* ===================================================
             HEADER
-        ========================================================= */}
+        ==================================================== */}
 
-        <div className="flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
-          <div className="max-w-3xl">
-            <div className="mb-5 flex items-center gap-3">
-              <span className="h-px w-10 bg-[#1E3ABA]" />
+        <div className="grid gap-10 lg:grid-cols-[1fr_360px] lg:items-end">
+
+          <div>
+            <div className="mb-6 flex items-center gap-3">
+              <span className="relative h-px w-12 overflow-hidden bg-slate-200">
+                <span className="spotlight-line absolute inset-y-0 left-0 w-8 bg-[#1E3ABA]" />
+              </span>
 
               <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#1E3ABA]">
                 The Summate Difference
               </span>
             </div>
 
-            <h2 className="text-[38px] font-extrabold leading-[1.05] tracking-[-0.045em] text-[#0D1222] sm:text-[48px] lg:text-[58px]">
+            <h2 className="max-w-3xl text-4xl font-extrabold leading-[1.02] tracking-[-0.05em] text-[#0D1222] sm:text-5xl lg:text-[58px]">
               More Than
               <br />
-              <span className="text-slate-400">
+              <span className="bg-gradient-to-r from-slate-400 via-slate-400 to-slate-300 bg-clip-text text-transparent">
                 Just Courses.
               </span>
             </h2>
 
-            <p className="mt-6 max-w-2xl text-sm leading-7 text-slate-600 sm:text-base">
+            <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600 sm:text-base">
               A learning experience built for real growth, real people
               and real opportunities.
             </p>
           </div>
 
-          {/* Side statement */}
-          <div className="max-w-[260px] lg:pb-1">
-            <p className="text-right font-serif text-sm italic leading-6 text-slate-400">
+          {/* Right editorial statement */}
+          <div className="relative lg:pb-2">
+            <div className="absolute -left-5 top-0 hidden h-12 w-px bg-gradient-to-b from-[#1E3ABA] to-transparent lg:block" />
+
+            <p className="text-sm font-medium leading-6 text-slate-500">
               Learning becomes meaningful when you have somewhere
               to take it.
             </p>
+
+            <div className="mt-5 flex items-center gap-2">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#1E3ABA]" />
+              <span className="h-px w-12 bg-slate-200" />
+              <span className="h-1.5 w-1.5 rounded-full bg-[#7C3AED]" />
+            </div>
           </div>
         </div>
 
-        {/* =========================================================
-            JOURNEY LINE
-        ========================================================= */}
+        {/* ===================================================
+            JOURNEY NAV
+        ==================================================== */}
 
-        <div className="mt-14 hidden items-center gap-4 md:flex">
-          <span className="font-mono text-[10px] font-bold tracking-[0.18em] text-[#1E3ABA]">
-            LEARN
-          </span>
+        <div className="relative mt-16">
 
-          <div className="h-px flex-1 bg-slate-200" />
+          {/* Connecting line */}
+          <div className="absolute left-0 right-0 top-1/2 hidden h-px -translate-y-1/2 bg-slate-200 md:block" />
 
-          <span className="font-mono text-[10px] font-bold tracking-[0.18em] text-slate-400">
-            ADAPT
-          </span>
+          <div className="relative grid grid-cols-2 gap-3 sm:grid-cols-4">
 
-          <div className="h-px flex-1 bg-slate-200" />
+            {cards.map((card, index) => {
+              const isActive = active === index;
 
-          <span className="font-mono text-[10px] font-bold tracking-[0.18em] text-slate-400">
-            BELONG
-          </span>
+              return (
+                <button
+                  key={card.num}
+                  onClick={() => setActive(index)}
+                  className="group relative flex items-center gap-3 text-left md:justify-center"
+                >
+                  <span
+                    className={`
+                      relative z-10 flex h-8 w-8 shrink-0 items-center
+                      justify-center rounded-full border
+                      text-[9px] font-bold
+                      transition-all duration-500
+                      ${
+                        isActive
+                          ? "border-[#1E3ABA] bg-[#1E3ABA] text-white shadow-[0_0_0_6px_rgba(30,58,186,.08)]"
+                          : "border-slate-200 bg-white text-slate-400 group-hover:border-slate-300 group-hover:text-slate-700"
+                      }
+                    `}
+                  >
+                    {card.num}
+                  </span>
 
-          <div className="h-px flex-1 bg-slate-200" />
-
-          <span className="font-mono text-[10px] font-bold tracking-[0.18em] text-slate-400">
-            MOVE FORWARD
-          </span>
+                  <span
+                    className={`
+                      text-[9px] font-bold uppercase tracking-[0.16em]
+                      transition-colors duration-300
+                      ${
+                        isActive
+                          ? "text-[#0D1222]"
+                          : "text-slate-400 group-hover:text-slate-600"
+                      }
+                    `}
+                  >
+                    {card.label}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
         </div>
 
-        {/* =========================================================
-            DESKTOP JOURNEY
-        ========================================================= */}
+        {/* ===================================================
+            DESKTOP INTERACTIVE CARDS
+        ==================================================== */}
 
-        <div className="mt-8 hidden gap-4 lg:flex">
+        <div className="mt-8 hidden min-h-[500px] gap-3 lg:flex">
+
           {cards.map((card, index) => {
-            const featured = index === 0;
+            const isActive = active === index;
 
             return (
               <article
                 key={card.num}
+                onMouseEnter={() => setActive(index)}
                 className={`
-                  group relative flex flex-col overflow-hidden
-                  rounded-[28px] border border-slate-200
-                  bg-white
-                  transition-all duration-500 ease-out
-                  hover:-translate-y-2
-                  hover:border-slate-300
-                  hover:shadow-[0_30px_70px_rgba(13,18,34,0.10)]
+                  group relative flex min-w-0 cursor-pointer
+                  flex-col overflow-hidden rounded-[28px]
+                  border bg-white
+                  transition-all duration-700
+                  ease-[cubic-bezier(.22,1,.36,1)]
                   ${
-                    featured
-                      ? "w-[32%]"
-                      : "w-[22.67%]"
+                    isActive
+                      ? "border-slate-300 shadow-[0_30px_80px_rgba(13,18,34,.13)]"
+                      : "border-slate-200 shadow-[0_8px_30px_rgba(13,18,34,.035)]"
                   }
                 `}
+                style={{
+                  flex: isActive ? 1.65 : 0.78,
+                }}
               >
-                {/* =================================================
-                    TOP
-                ================================================= */}
 
-                <div className="relative p-6 xl:p-7">
-                  {/* Number */}
+                {/* =================================================
+                    CARD TOP
+                ================================================== */}
+
+                <div className="relative z-10 p-6 xl:p-7">
+
                   <div className="flex items-center justify-between">
                     <span
-                      className="font-mono text-[11px] font-bold tracking-[0.15em]"
+                      className="font-mono text-[10px] font-bold tracking-[0.16em]"
                       style={{ color: card.accent }}
                     >
                       {card.num}
                     </span>
 
                     <span
-                      className="rounded-full px-2.5 py-1 text-[9px] font-bold tracking-[0.12em]"
+                      className="rounded-full px-2.5 py-1 text-[8px] font-bold uppercase tracking-[0.12em]"
                       style={{
                         backgroundColor: card.soft,
                         color: card.accent,
@@ -1458,17 +2087,15 @@ export function ProgramSpotlight() {
                     </span>
                   </div>
 
-                  {/* Title */}
                   <h3
                     className={`
-                      mt-7 font-extrabold leading-[1.12]
-                      tracking-[-0.035em] text-[#0D1222]
-                      transition-colors duration-300
-                      group-hover:text-[#1E3ABA]
+                      mt-7 font-extrabold leading-[1.1]
+                      tracking-[-0.04em] text-[#0D1222]
+                      transition-all duration-500
                       ${
-                        featured
-                          ? "text-[25px]"
-                          : "text-[21px]"
+                        isActive
+                          ? "text-[28px]"
+                          : "text-[20px]"
                       }
                     `}
                   >
@@ -1477,11 +2104,12 @@ export function ProgramSpotlight() {
 
                   <p
                     className={`
-                      mt-3 text-slate-500
+                      overflow-hidden
+                      transition-all duration-500
                       ${
-                        featured
-                          ? "text-sm leading-6"
-                          : "text-xs leading-6"
+                        isActive
+                          ? "mt-4 max-h-28 text-sm leading-6 text-slate-500"
+                          : "mt-3 max-h-0 text-xs leading-6 text-slate-500 opacity-0"
                       }
                     `}
                   >
@@ -1491,110 +2119,139 @@ export function ProgramSpotlight() {
 
                 {/* =================================================
                     IMAGE
-                ================================================= */}
+                ================================================== */}
 
                 <div
                   className={`
                     relative mt-auto overflow-hidden
-                    ${
-                      featured
-                        ? "h-[250px]"
-                        : "h-[205px]"
-                    }
+                    transition-all duration-700
+                    ${isActive ? "h-[270px]" : "h-[190px]"}
                   `}
                 >
-                  {/* Image background */}
+
+                  {/* Background */}
                   <div
-                    className="absolute inset-0 transition-all duration-500 group-hover:scale-105"
+                    className="absolute inset-0 transition-transform duration-1000 group-hover:scale-105"
                     style={{
                       backgroundColor: card.soft,
                     }}
                   />
 
-                  {/* Decorative circle */}
+                  {/* Animated glow */}
                   <div
-                    className="
-                      absolute -bottom-20 -left-12
-                      h-52 w-52 rounded-full
-                      opacity-30 blur-2xl
-                      transition-all duration-700
-                      group-hover:scale-125
-                    "
+                    className={`
+                      spotlight-pulse
+                      absolute -bottom-24 -left-16
+                      h-64 w-64 rounded-full blur-3xl
+                      transition-opacity duration-700
+                      ${isActive ? "opacity-70" : "opacity-35"}
+                    `}
                     style={{
-                      backgroundColor: card.accent,
+                      backgroundColor: card.glow,
                     }}
                   />
 
+                  {/* Image */}
                   <Image
                     src={card.image}
                     alt={card.alt}
                     fill
-                    className="
+                    className={`
                       relative z-10 object-cover object-center
-                      transition-transform duration-700
-                      ease-out
-                      group-hover:scale-105
-                    "
-                    sizes="(max-width: 1280px) 25vw, 300px"
+                      transition-transform duration-1000
+                      ease-[cubic-bezier(.22,1,.36,1)]
+                      ${
+                        isActive
+                          ? "scale-[1.03] group-hover:scale-[1.08]"
+                          : "scale-100 group-hover:scale-[1.04]"
+                      }
+                    `}
+                    sizes="(max-width: 1280px) 30vw, 350px"
                   />
 
-                  {/* Floating number */}
+                  {/* Image gradient */}
                   <div
                     className="
-                      absolute bottom-4 left-4 z-20
-                      flex h-9 w-9 items-center
-                      justify-center rounded-full
-                      border border-white/80
+                      absolute inset-x-0 bottom-0 z-20 h-24
+                      bg-gradient-to-t from-black/20 to-transparent
+                    "
+                  />
+
+                  {/* Number */}
+                  <div
+                    className="
+                      absolute bottom-4 left-4 z-30
+                      flex h-9 w-9 items-center justify-center
+                      rounded-full border border-white/70
                       bg-white/90
                       text-[10px] font-bold
-                      shadow-sm backdrop-blur
+                      shadow-lg backdrop-blur-md
                     "
-                    style={{
-                      color: card.accent,
-                    }}
+                    style={{ color: card.accent }}
                   >
                     {card.num}
+                  </div>
+
+                  {/* Floating label */}
+                  <div
+                    className={`
+                      absolute right-4 top-4 z-30
+                      rounded-full border border-white/60
+                      bg-white/80 px-3 py-1.5
+                      text-[9px] font-semibold text-[#0D1222]
+                      shadow-sm backdrop-blur-md
+                      transition-all duration-500
+                      ${
+                        isActive
+                          ? "translate-y-0 opacity-100"
+                          : "-translate-y-2 opacity-0"
+                      }
+                    `}
+                  >
+                    Explore this path
                   </div>
                 </div>
 
                 {/* =================================================
                     BOTTOM
-                ================================================= */}
+                ================================================== */}
 
-                <div className="flex items-center justify-between border-t border-slate-100 px-6 py-4">
-                  <span className="text-[10px] font-semibold uppercase tracking-[0.13em] text-slate-400">
+                <div className="relative z-10 flex items-center justify-between border-t border-slate-100 px-6 py-4">
+
+                  <span className="text-[9px] font-bold uppercase tracking-[0.15em] text-slate-400">
                     {index === 0
                       ? "Start here"
                       : "Part of the journey"}
                   </span>
 
                   <span
-                    className="
-                      flex h-7 w-7 items-center
-                      justify-center rounded-full
-                      text-white
-                      transition-all duration-300
-                      group-hover:translate-x-1
-                    "
-                    style={{
-                      backgroundColor: card.accent,
-                    }}
+                    className={`
+                      flex h-8 w-8 items-center justify-center
+                      rounded-full text-white
+                      transition-all duration-500
+                      ${
+                        isActive
+                          ? "translate-x-0 scale-100"
+                          : "scale-90 opacity-70"
+                      }
+                    `}
+                    style={{ backgroundColor: card.accent }}
                   >
                     <Icon
                       name="ArrowUpRight"
-                      size={13}
+                      size={14}
                       strokeWidth={2}
                     />
                   </span>
                 </div>
 
-                {/* Accent line */}
+                {/* Bottom accent */}
                 <div
-                  className="
+                  className={`
                     absolute bottom-0 left-0 h-1
-                    w-0 transition-all duration-500
-                    group-hover:w-full
-                  "
+                    transition-all duration-700
+                    ${isActive ? "w-full" : "w-0"}
+                  `}
                   style={{
                     backgroundColor: card.accent,
                   }}
@@ -1604,37 +2261,37 @@ export function ProgramSpotlight() {
           })}
         </div>
 
-        {/* =========================================================
-            TABLET / MOBILE
-        ========================================================= */}
+        {/* ===================================================
+            MOBILE / TABLET
+        ==================================================== */}
 
-        <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:hidden">
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:hidden">
+
           {cards.map((card, index) => (
             <article
               key={card.num}
               className="
                 group relative overflow-hidden
-                rounded-[26px] border border-slate-200
+                rounded-[24px] border border-slate-200
                 bg-white
+                shadow-[0_10px_35px_rgba(13,18,34,.045)]
                 transition-all duration-500
                 hover:-translate-y-1
-                hover:shadow-[0_24px_55px_rgba(13,18,34,0.08)]
+                hover:shadow-[0_20px_50px_rgba(13,18,34,.10)]
               "
             >
-              {/* Header */}
               <div className="p-6">
+
                 <div className="flex items-center justify-between">
                   <span
-                    className="font-mono text-[11px] font-bold tracking-[0.15em]"
-                    style={{
-                      color: card.accent,
-                    }}
+                    className="font-mono text-[10px] font-bold tracking-[0.15em]"
+                    style={{ color: card.accent }}
                   >
                     {card.num}
                   </span>
 
                   <span
-                    className="rounded-full px-2.5 py-1 text-[9px] font-bold tracking-[0.12em]"
+                    className="rounded-full px-2.5 py-1 text-[8px] font-bold uppercase tracking-[0.12em]"
                     style={{
                       backgroundColor: card.soft,
                       color: card.accent,
@@ -1644,7 +2301,7 @@ export function ProgramSpotlight() {
                   </span>
                 </div>
 
-                <h3 className="mt-6 text-xl font-extrabold leading-[1.12] tracking-[-0.035em] text-[#0D1222]">
+                <h3 className="mt-6 text-xl font-extrabold leading-[1.1] tracking-[-0.035em] text-[#0D1222]">
                   {card.title}
                 </h3>
 
@@ -1653,41 +2310,37 @@ export function ProgramSpotlight() {
                 </p>
               </div>
 
-              {/* Image */}
               <div className="relative h-[220px] overflow-hidden">
                 <div
                   className="absolute inset-0"
-                  style={{
-                    backgroundColor: card.soft,
-                  }}
+                  style={{ backgroundColor: card.soft }}
+                />
+
+                <div
+                  className="absolute -bottom-16 -left-10 h-48 w-48 rounded-full blur-3xl"
+                  style={{ backgroundColor: card.glow }}
                 />
 
                 <Image
                   src={card.image}
                   alt={card.alt}
                   fill
-                  className="
-                    object-cover object-center
-                    transition-transform duration-700
-                    group-hover:scale-105
-                  "
+                  className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
                   sizes="(max-width: 640px) 100vw, 50vw"
                 />
+
+                <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/15 to-transparent" />
               </div>
 
-              {/* Bottom */}
               <div className="flex items-center justify-between border-t border-slate-100 px-6 py-4">
-                <span className="text-[10px] font-semibold uppercase tracking-[0.13em] text-slate-400">
-                  {index === 0
-                    ? "Start here"
-                    : "Keep going"}
+
+                <span className="text-[9px] font-bold uppercase tracking-[0.15em] text-slate-400">
+                  {index === 0 ? "Start here" : "Keep going"}
                 </span>
 
                 <span
                   className="flex h-8 w-8 items-center justify-center rounded-full text-white"
-                  style={{
-                    backgroundColor: card.accent,
-                  }}
+                  style={{ backgroundColor: card.accent }}
                 >
                   <Icon
                     name="ArrowUpRight"
@@ -1700,25 +2353,29 @@ export function ProgramSpotlight() {
           ))}
         </div>
 
-        {/* =========================================================
-            BOTTOM MESSAGE
-        ========================================================= */}
+        {/* ===================================================
+            BOTTOM JOURNEY STATEMENT
+        ==================================================== */}
 
-        <div className="mt-12 flex flex-col justify-between gap-5 border-t border-slate-200 pt-7 sm:flex-row sm:items-center">
+        <div className="relative mt-12 flex flex-col gap-5 border-t border-slate-200 pt-7 sm:flex-row sm:items-center sm:justify-between">
+
           <div className="flex items-center gap-3">
-            <span className="h-2 w-2 rounded-full bg-[#1E3ABA]" />
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#1E3ABA] opacity-40" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-[#1E3ABA]" />
+            </span>
 
             <p className="text-sm font-medium text-slate-500">
               Learn something. Apply it. See where it takes you.
             </p>
           </div>
 
-          <div className="flex items-center gap-2 text-sm font-bold text-[#0D1222]">
-            <span>Learn</span>
+          <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.16em]">
+            <span className="text-[#1E3ABA]">Learn</span>
             <span className="text-slate-300">→</span>
-            <span>Apply</span>
+            <span className="text-[#7C3AED]">Apply</span>
             <span className="text-slate-300">→</span>
-            <span>Grow</span>
+            <span className="text-[#FF2D75]">Grow</span>
           </div>
         </div>
       </div>

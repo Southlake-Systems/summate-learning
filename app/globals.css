@@ -1,4 +1,4 @@
-/* Summate Learning — design tokens (Vibrant Palette & Poppins) */
+@import "tw-animate-css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -145,3 +145,4 @@ h1, h2, h3 { text-wrap: balance; font-weight: 700; }
   .su-text-display-md { font-size: 30px; letter-spacing: -0.4px; }
   .su-text-display-sm { font-size: 24px; }
 }
+

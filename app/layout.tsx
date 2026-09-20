@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import "./components.css";
+
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
@@ -12,7 +13,7 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "Summate Learning — AI-Augmented Full-Stack Developer Course",
   description:
-    "A 12-week live online program for Batch 1 — turn what you've learned into practical, demonstrable ability. Founding batch starts September 2026.",
+    "A 12-week live online program for Batch 1 — turn what you've learned into practical, demonstrable ability.",
 };
 
 export default function RootLayout({
@@ -21,8 +22,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={poppins.className}>
-      <body className="antialiased selection:bg-[#1E3ABA] selection:text-white">
+    <html lang="en" className={poppins.variable}>
+      <body className="font-poppins antialiased selection:bg-[#1E3ABA] selection:text-white">
         {children}
       </body>
     </html>
