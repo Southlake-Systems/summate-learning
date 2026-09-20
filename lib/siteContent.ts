@@ -6,9 +6,16 @@
 export const site = {
   name: "Summate Learning",
   tagline: "Founding Program: AI-Augmented Full-Stack Developer Course Live Online September 2026",
-  email: "info@summatelearning.com",
-  phone: "+91 98765 43210",
+  legalName: "Summate Learning LLP",
+  email: "hello@summatelearning.com",
+  phone: "+91 92928 38222",
   location: "Kochi, Kerala, India",
+  address: [
+    "Summate Learning LLP",
+    "43/1574, Suite No. 053, Calm Workspaces,",
+    "Kochappilly Road, Near NH Bypass Flyover,",
+    "Palarivattom, Ernakulam, Kerala - 682025",
+  ],
   regions: ["Kerala", "Tamil Nadu", "Karnataka", "Telangana", "Andhra Pradesh"],
   social: [
     { label: "Instagram", href: "#" },

@@ -111,36 +111,39 @@ export default function SiteFooter() {
             <div className="mt-7 space-y-3 text-sm">
 
               <a
-                href={`mailto:${site?.email || "info@summatelearning.com"}`}
+                href={`mailto:${site.email}`}
                 className="flex items-center gap-3 transition-colors hover:text-[#1E3AB6]"
               >
                 <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#1E3AB6]/5 text-[#1E3AB6]">
                   <Icon name="Mail" size={15} />
                 </span>
 
-                {site?.email || "info@summatelearning.com"}
+                {site.email}
               </a>
 
               <a
-                href={`tel:${(site?.phone || "+91 98765 43210").replace(
-                  /\s/g,
-                  ""
-                )}`}
+                href={`tel:${site.phone.replace(/\s/g, "")}`}
                 className="flex items-center gap-3 transition-colors hover:text-[#1E3AB6]"
               >
                 <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#FF8A00]/10 text-[#FF8A00]">
                   <Icon name="Phone" size={15} />
                 </span>
 
-                {site?.phone || "+91 98765 43210"}
+                {site.phone}
               </a>
 
-              <div className="flex items-center gap-3">
-                <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#7C3AED]/5 text-[#7C3AED]">
+              <div className="flex items-start gap-3">
+                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#7C3AED]/5 text-[#7C3AED]">
                   <Icon name="MapPin" size={15} />
                 </span>
 
-                {site?.location || "Kochi, Kerala, India"}
+                <address className="not-italic leading-relaxed">
+                  {site.address.map((line) => (
+                    <span key={line} className="block">
+                      {line}
+                    </span>
+                  ))}
+                </address>
               </div>
 
             </div>
