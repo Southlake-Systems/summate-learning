@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Icon from "@/components/ui/Icon";
 
 type Pillar = {
@@ -9,12 +10,18 @@ type Pillar = {
   title: string;
   subtitle: string;
   body: string;
+  image: string;
+  imageAlt: string;
+  imagePosition: string;
 };
 
 const pillars: Pillar[] = [
   {
     num: "01",
     icon: "BookOpen",
+    image: "/philosophy1.jpg",
+    imageAlt: "A stack of books beside a cup of pencils on a bright desk",
+    imagePosition: "60% 70%",
     title: "Beyond the Syllabus",
     subtitle:
       "Learning is not a checklist of things you have completed.",
@@ -24,6 +31,9 @@ const pillars: Pillar[] = [
   {
     num: "02",
     icon: "ArrowUpRight",
+    image: "/philosophy2.jpg",
+    imageAlt: "A laptop on a desk showing the words Skills Create Opportunities",
+    imagePosition: "55% 50%",
     title: "Skills Need Somewhere to Go",
     subtitle:
       "A skill becomes valuable when you can actually use it.",
@@ -33,6 +43,9 @@ const pillars: Pillar[] = [
   {
     num: "03",
     icon: "Zap",
+    image: "/philosophy3.jpg",
+    imageAlt: "A glowing light bulb above a stack of books labelled Adapt, Learn, Grow",
+    imagePosition: "50% 50%",
     title: "Work is Changing. Learning Must Too.",
     subtitle:
       "The way we work is changing. Learning has to change with it.",
@@ -126,6 +139,31 @@ export default function PhilosophyCards() {
                     }
                   `}
                 >
+                  {/* =================================================
+                      IMAGE
+                  ================================================= */}
+                  <div
+                    className="pointer-events-none absolute inset-x-0 top-0 h-[55%]"
+                    style={{
+                      maskImage:
+                        "linear-gradient(to bottom, black 55%, transparent)",
+                      WebkitMaskImage:
+                        "linear-gradient(to bottom, black 55%, transparent)",
+                    }}
+                  >
+                    <Image
+                      src={pillar.image}
+                      alt={pillar.imageAlt}
+                      fill
+                      sizes="(min-width: 1280px) 380px, 31vw"
+                      className={`
+                        object-cover transition-transform duration-700
+                        ${isActive ? "scale-105" : "scale-100"}
+                      `}
+                      style={{ objectPosition: pillar.imagePosition }}
+                    />
+                  </div>
+
                   {/* =================================================
                       LARGE BACKGROUND NUMBER
                   ================================================= */}
@@ -361,6 +399,26 @@ export default function PhilosophyCards() {
               >
                 {!isFlipped ? (
                   <>
+                    {/* Image banner */}
+                    <div
+                      className="pointer-events-none relative -mx-6 -mt-6 mb-5 h-44"
+                      style={{
+                        maskImage:
+                          "linear-gradient(to bottom, black 60%, transparent)",
+                        WebkitMaskImage:
+                          "linear-gradient(to bottom, black 60%, transparent)",
+                      }}
+                    >
+                      <Image
+                        src={pillar.image}
+                        alt={pillar.imageAlt}
+                        fill
+                        sizes="(max-width: 1024px) 100vw, 0px"
+                        className="object-cover"
+                        style={{ objectPosition: pillar.imagePosition }}
+                      />
+                    </div>
+
                     {/* Top */}
                     <div className="flex items-start justify-between">
                       <div
