@@ -1789,43 +1789,13 @@ export function PersonaCards() {
 
 export function ProgramSpotlight() {
   // Each row is one shift in approach: what most courses do, and what Summate does instead.
+  // Kept to one short line each so the whole comparison fits in a single screen.
   const shifts = [
-    {
-      from: "Watching lessons",
-      to: "Using what you learn",
-      body: "Every concept is followed by practice, application and problem-solving, so learning doesn't stay theoretical. You work through problems yourself before reaching for AI.",
-      proof: "Practice problems before relying on AI",
-      accent: "#1E3ABA",
-    },
-    {
-      from: "Learning alone, on recordings",
-      to: "Learning live, with your batch",
-      body: "Live online sessions with a small founding cohort. Ask questions as they come up, get feedback in the moment and learn alongside people starting the same journey.",
-      proof: "Live sessions, not recordings",
-      accent: "#7C3AED",
-    },
-    {
-      from: "Forum replies, if you're lucky",
-      to: "Mentors who review your work",
-      body: "Working professionals review your project and your thinking at regular checkpoints, so you find out what to improve while there's still time to improve it.",
-      proof: "Regular mentor-led reviews",
-      accent: "#0284C7",
-    },
-    {
-      from: "A certificate at the end",
-      to: "Work you can show and explain",
-      body: "Build one substantial project across the 12 weeks, with real Git history, tests and a working deployment. Then practise defending your decisions in mock interviews, with placement support for your next step.",
-      proof: "One project, built over 12 weeks",
-      accent: "#FF2D75",
-    },
-    {
-      from: "Done when the course ends",
-      to: "A network that keeps going",
-      body: "Graduates join the Summate Circle: peers, mentors and professionals who share opportunities, build together and keep learning long after the last session.",
-      proof: "Summate Circle membership",
-      accent: "#0EA5A0",
-      href: "/circle",
-    },
+    { from: "Watching lessons", to: "Using what you learn", body: "Practise every concept yourself before reaching for AI.", accent: "#1E3ABA" },
+    { from: "Learning alone, on recordings", to: "Learning live, with your batch", body: "A small cohort, with questions and feedback in real time.", accent: "#7C3AED" },
+    { from: "Forum replies, if you're lucky", to: "Mentors who review your work", body: "Working professionals review your project at regular checkpoints.", accent: "#0284C7" },
+    { from: "A certificate at the end", to: "Work you can show and explain", body: "One 12-week project with Git, tests and deployment, plus mock interviews.", accent: "#FF2D75" },
+    { from: "Done when the course ends", to: "A network that keeps going", body: "Graduates join the Summate Circle of peers, mentors and professionals.", accent: "#0EA5A0", href: "/circle" },
   ];
 
   const sum = [
@@ -1861,16 +1831,19 @@ export function ProgramSpotlight() {
     return () => io.disconnect();
   }, []);
 
-  const reveal = `transition-all duration-500 ease-out ${revealed ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0"}`;
-  const delay = (i: number) => ({ transitionDelay: revealed ? `${i * 110}ms` : "0ms" });
+  const reveal = `transition-all duration-500 ease-out ${revealed ? "translate-y-0 opacity-100" : "translate-y-1.5 opacity-0"}`;
+  const delay = (i: number) => ({ transitionDelay: revealed ? `${i * 100}ms` : "0ms" });
 
   return (
-    <section id="program" className="relative isolate overflow-hidden bg-[#F8FAFF] py-14 lg:py-20">
-      <div className="relative mx-auto max-w-[1180px] px-6 sm:px-8 lg:px-0">
+    <section
+      id="program"
+      className="relative isolate flex scroll-mt-[76px] items-center overflow-hidden bg-[#F8FAFF] py-12 lg:min-h-[calc(100svh-76px)] lg:py-6 [@media(min-width:1024px)_and_(max-height:760px)]:py-3"
+    >
+      <div className="relative mx-auto w-full max-w-[1180px] px-6 sm:px-8 lg:px-0">
         {/* Header */}
-        <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,420px)] lg:items-end lg:gap-16">
+        <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between lg:gap-12">
           <div>
-            <div className="mb-6 flex items-center gap-3">
+            <div className="mb-2 flex items-center gap-3">
               <span className="relative h-px w-12 overflow-hidden bg-slate-200">
                 <span className="absolute inset-y-0 left-0 w-8 bg-[#1E3ABA]" />
               </span>
@@ -1878,147 +1851,120 @@ export function ProgramSpotlight() {
                 The Summate Difference
               </span>
             </div>
-            <h2 className="max-w-3xl font-display text-4xl font-extrabold leading-[1.02] tracking-[-0.045em] text-[#0D1222] sm:text-5xl lg:text-[58px]">
+            <h2 className="font-display text-[34px] font-extrabold leading-[1.02] tracking-[-0.045em] text-[#0D1222] lg:text-[42px]">
               More than just courses.
             </h2>
           </div>
-          <p className="max-w-[46ch] text-[17px] leading-[1.65] text-slate-600 lg:pb-2">
-            Most courses stop once they&apos;ve taught you something. Summate is built around what comes
-            next: using it, proving it, and growing with people who&apos;ve done it before.
+          <p className="max-w-[48ch] text-[15px] leading-[1.6] text-slate-600 lg:pb-1">
+            Most courses stop once they&apos;ve taught you something. Summate is built around what comes next:
+            using it, proving it, and growing with people who&apos;ve done it before.
           </p>
         </div>
 
-        {/* The four shifts */}
-        <div className="mt-14 overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-[0_24px_70px_rgba(13,18,34,0.06)]">
-          <div className="hidden grid-cols-[minmax(0,5fr)_minmax(0,7fr)] border-b border-slate-200 bg-[#FBFCFF] px-10 py-4 text-[14px] font-semibold md:grid">
-            <span className="text-slate-500">Most courses give you</span>
-            <span className="text-[#1E3ABA]">Summate gives you</span>
-          </div>
-
-          <ul className="divide-y divide-slate-200">
-            {shifts.map((s) => (
-              <li
-                key={s.to}
-                className="relative grid gap-5 px-6 py-8 sm:px-10 md:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] md:gap-10 md:py-10"
-              >
-                <span aria-hidden="true" className="absolute inset-y-0 left-0 w-1" style={{ background: s.accent }} />
-
-                <div className="flex items-start gap-3 md:pt-1.5">
-                  <span
-                    aria-hidden="true"
-                    className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-slate-100 text-slate-400"
-                  >
-                    <X size={13} strokeWidth={2.6} />
-                  </span>
-                  <p className="text-[17px] font-medium leading-snug text-slate-400 line-through decoration-slate-300 decoration-[1.5px] sm:text-[19px]">
-                    <span className="sr-only">Most courses: </span>
-                    {s.from}
+        <div className="mt-5 [@media(min-width:1024px)_and_(max-height:760px)]:mt-3 grid gap-4 lg:grid-cols-[minmax(0,1.55fr)_minmax(0,1fr)]">
+          {/* The five shifts */}
+          <div className="overflow-hidden rounded-[24px] border border-slate-200 bg-white shadow-[0_20px_60px_rgba(13,18,34,0.06)]">
+            <div className="hidden grid-cols-[minmax(0,4fr)_minmax(0,7fr)] gap-6 border-b border-slate-200 bg-[#FBFCFF] px-6 py-3 [@media(min-width:1024px)_and_(max-height:760px)]:py-2 text-[13px] font-semibold sm:grid">
+              <span className="text-slate-500">Most courses give you</span>
+              <span className="text-[#1E3ABA]">Summate gives you</span>
+            </div>
+            <ul className="divide-y divide-slate-100">
+              {shifts.map((s) => (
+                <li
+                  key={s.to}
+                  className="relative grid gap-1.5 px-6 py-3.5 [@media(min-width:1024px)_and_(max-height:760px)]:py-2.5 sm:grid-cols-[minmax(0,4fr)_minmax(0,7fr)] sm:items-center sm:gap-6"
+                >
+                  <span aria-hidden="true" className="absolute inset-y-0 left-0 w-1" style={{ background: s.accent }} />
+                  <p className="flex items-center gap-2 text-[14px] font-medium leading-snug text-slate-400">
+                    <X size={13} strokeWidth={2.6} aria-hidden="true" className="shrink-0 text-slate-300" />
+                    <span className="line-through decoration-slate-300 decoration-[1.5px]">
+                      <span className="sr-only">Most courses: </span>
+                      {s.from}
+                    </span>
                   </p>
-                </div>
-
-                <div>
-                  <h3 className="flex items-start gap-3 font-display text-[26px] font-bold leading-[1.1] tracking-[-0.03em] text-[#0D1222] sm:text-[32px]">
+                  <div className="flex items-start gap-2.5">
                     <span
                       aria-hidden="true"
-                      className="mt-1.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-white sm:mt-2"
+                      className="mt-[3px] flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-white"
                       style={{ background: s.accent }}
                     >
-                      <Check size={13} strokeWidth={3} />
+                      <Check size={12} strokeWidth={3} />
                     </span>
-                    <span>
-                      <span className="sr-only">At Summate: </span>
-                      {s.to}
-                    </span>
-                  </h3>
-                  <p className="mt-3 max-w-[58ch] pl-9 text-[16px] leading-[1.7] text-slate-600">{s.body}</p>
-                  <div className="mt-4 pl-9">
-                    {s.href ? (
-                      <Link
-                        href={s.href}
-                        className="inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-[13px] font-semibold transition-opacity hover:opacity-80"
-                        style={{ background: `${s.accent}14`, color: s.accent }}
-                      >
-                        {s.proof}
-                        <Icon name="ArrowUpRight" size={13} strokeWidth={2.4} />
-                      </Link>
-                    ) : (
-                      <span
-                        className="inline-flex rounded-full px-3.5 py-1.5 text-[13px] font-semibold"
-                        style={{ background: `${s.accent}14`, color: s.accent }}
-                      >
-                        {s.proof}
-                      </span>
-                    )}
+                    <div className="min-w-0">
+                      <h3 className="font-display text-[18px] font-bold leading-tight tracking-[-0.02em] text-[#0D1222]">
+                        <span className="sr-only">At Summate: </span>
+                        {s.href ? (
+                          <Link href={s.href} className="text-[#0D1222] hover:text-[#1E3ABA]">
+                            {s.to}
+                          </Link>
+                        ) : (
+                          s.to
+                        )}
+                      </h3>
+                      <p className="mt-0.5 text-[14px] leading-[1.5] text-slate-500">{s.body}</p>
+                    </div>
                   </div>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-        {/* The sum */}
-        <div className="relative isolate mt-6 overflow-hidden rounded-[28px] bg-[#0D1222] px-7 py-10 sm:px-12 sm:py-14">
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute -right-32 -top-40 -z-10 h-[480px] w-[480px] rounded-full bg-[#1E3ABA]/50 blur-[110px]"
-          />
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute -bottom-40 left-1/4 -z-10 h-[360px] w-[360px] rounded-full bg-[#7C3AED]/25 blur-[110px]"
-          />
+          {/* The sum */}
+          <div className="relative isolate flex flex-col overflow-hidden rounded-[24px] bg-[#0D1222] p-6">
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute -right-24 -top-28 -z-10 h-[340px] w-[340px] rounded-full bg-[#1E3ABA]/55 blur-[100px]"
+            />
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute -bottom-32 -left-10 -z-10 h-[280px] w-[280px] rounded-full bg-[#7C3AED]/25 blur-[100px]"
+            />
 
-          <div className="grid gap-12 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:items-center lg:gap-16">
-            <div>
-              <h3 className="font-display text-[32px] font-bold leading-[1.08] tracking-[-0.035em] text-white sm:text-[40px]">
-                It all adds up.
-              </h3>
-              <p className="mt-4 max-w-[42ch] text-[16px] leading-[1.7] text-slate-300">
-                That&apos;s where the name comes from. No single part is unusual on its own. What matters is
-                that every Summate course brings them together, so they add up to more than a certificate.
-              </p>
-              <Link
-                href="/courses/ai-augmented-full-stack-developer"
-                className="mt-8 inline-flex h-12 items-center gap-2 rounded-full bg-white px-6 text-[15px] font-semibold text-[#0D1222] transition-colors hover:bg-[#F2F4FF] hover:text-[#1E3ABA]"
-              >
-                See how the course works
-                <Icon name="ArrowUpRight" size={16} strokeWidth={2.2} />
-              </Link>
-            </div>
+            <h3 className="font-display text-[26px] font-bold leading-tight tracking-[-0.03em] text-white">It all adds up.</h3>
+            <p className="mt-1.5 text-[14px] leading-[1.55] text-slate-400">
+              That&apos;s where the name comes from. Every Summate course brings these together.
+            </p>
 
-            <div ref={sumRef} aria-label="What a Summate course adds up to">
-              <ul className="space-y-1">
+            <div ref={sumRef} aria-label="What a Summate course adds up to" className="mt-4">
+              <ul>
                 {sum.map((item, i) => (
                   <li
                     key={item}
-                    className={`flex items-baseline gap-4 py-1.5 font-display text-[20px] font-semibold tracking-[-0.015em] text-slate-200 sm:text-[24px] ${reveal}`}
+                    className={`flex items-baseline gap-3 py-[3px] font-display text-[16px] font-semibold tracking-[-0.01em] text-slate-200 ${reveal}`}
                     style={delay(i)}
                   >
-                    <span aria-hidden="true" className="w-5 shrink-0 text-right text-[#6E8AFF]">
+                    <span aria-hidden="true" className="w-3 shrink-0 text-right text-[#6E8AFF]">
                       {i === 0 ? "" : "+"}
                     </span>
                     {item}
                   </li>
                 ))}
               </ul>
-
               <div
                 aria-hidden="true"
-                className={`my-5 ml-9 h-[2px] origin-left bg-white/70 transition-transform duration-700 ease-out ${
+                className={`my-3 ml-6 h-[2px] origin-left bg-white/70 transition-transform duration-700 ease-out ${
                   revealed ? "scale-x-100" : "scale-x-0"
                 }`}
-                style={{ transitionDelay: revealed ? `${sum.length * 110}ms` : "0ms" }}
+                style={delay(sum.length)}
               />
-
               <p
-                className={`flex items-baseline gap-4 font-display text-[28px] font-bold leading-[1.15] tracking-[-0.03em] text-white sm:text-[36px] ${reveal}`}
-                style={{ transitionDelay: revealed ? `${(sum.length + 2) * 110}ms` : "0ms" }}
+                className={`flex items-baseline gap-3 font-display text-[21px] font-bold leading-[1.2] tracking-[-0.025em] text-white ${reveal}`}
+                style={delay(sum.length + 2)}
               >
-                <span aria-hidden="true" className="w-5 shrink-0 text-right text-[#6E8AFF]">
+                <span aria-hidden="true" className="w-3 shrink-0 text-right text-[#6E8AFF]">
                   =
                 </span>
                 <span>Skills you can use, show and build on.</span>
               </p>
             </div>
+
+            <Link
+              href="/courses/ai-augmented-full-stack-developer"
+              className="mt-auto inline-flex h-11 w-fit items-center gap-2 self-start rounded-full bg-white px-5 text-[14px] font-semibold text-[#0D1222] transition-colors hover:bg-[#F2F4FF] hover:text-[#1E3ABA] lg:mt-5"
+            >
+              See how the course works
+              <Icon name="ArrowUpRight" size={15} strokeWidth={2.2} />
+            </Link>
           </div>
         </div>
       </div>
