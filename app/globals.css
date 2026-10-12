@@ -53,9 +53,9 @@
   --su-danger-soft: rgba(255, 45, 117, 0.12);
 
   /* Typography */
-  --su-font-display: 'Poppins', var(--font-poppins, sans-serif), -apple-system, sans-serif;
-  --su-font-body: 'Poppins', var(--font-poppins, sans-serif), -apple-system, sans-serif;
-  --su-font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --su-font-display: var(--font-display), 'Figtree', -apple-system, sans-serif;
+  --su-font-body: var(--font-body), -apple-system, sans-serif;
+  --su-font-mono: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
 
   /* Spacing */
   --su-space-xxs: 4px;
@@ -66,7 +66,7 @@
   --su-space-lg: 24px;
   --su-space-xl: 32px;
   --su-space-xxl: 48px;
-  --su-space-section: 96px;
+  --su-space-section: 64px;
 
   /* Radius */
   --su-radius-none: 0px;
@@ -129,18 +129,18 @@ img { max-width: 100%; display: block; }
 .su-text-number { font-family: var(--su-font-mono); font-size: 16px; font-weight: 600; line-height: 1.4; }
 
 h1, h2, h3, p { margin: 0; text-wrap: pretty; }
-h1, h2, h3 { text-wrap: balance; font-weight: 700; }
+h1, h2, h3 { text-wrap: balance; font-weight: 700; font-family: var(--su-font-display); }
 
 /* ---- Layout Helpers ---- */
 .su-wrap { max-width: 1240px; margin: 0 auto; padding: 0 32px; }
 .su-wrap--narrow { max-width: 780px; }
 
-.su-section { padding: 96px 0; }
-.su-section--tight { padding: 60px 0; }
+.su-section { padding: 64px 0; }
+.su-section--tight { padding: 40px 0; }
 
 @media (max-width: 768px) {
   .su-wrap { padding: 0 20px; }
-  .su-section { padding: 64px 0; }
+  .su-section { padding: 44px 0; }
   .su-text-display-lg { font-size: 36px; letter-spacing: -0.6px; }
   .su-text-display-md { font-size: 30px; letter-spacing: -0.4px; }
   .su-text-display-sm { font-size: 24px; }

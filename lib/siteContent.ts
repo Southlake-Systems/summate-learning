@@ -28,15 +28,33 @@ export const site = {
 /* ------------------------------------------------------------------ *
  * NAVIGATION (Section 1)
  * ------------------------------------------------------------------ */
-export const nav = {
+export type NavLink = { label: string; href: string; description?: string };
+export type NavItem = NavLink & { children?: NavLink[] };
+
+export const nav: {
+  links: NavItem[];
+  primaryCta: NavLink;
+  secondaryCta: NavLink;
+} = {
   links: [
-    { label: "Our Story", href: "/#our-story" },
-    { label: "Programs", href: "/#program" },
-    { label: "Why Summate", href: "/#why-summate" },
-    { label: "FAQs", href: "/#faqs" },
+    {
+      label: "About",
+      href: "/about",
+      children: [
+        { label: "About Summate", href: "/about", description: "Why we exist and who we're for" },
+        { label: "Founder & CEO", href: "/founder", description: "Rameshan on building Summate" },
+        { label: "Leadership", href: "/leadership", description: "The team behind the platform" },
+        { label: "Faculty & Mentors", href: "/faculty", description: "The people who teach and guide" },
+        { label: "Careers", href: "/careers", description: "Come build Summate with us" },
+      ],
+    },
+    { label: "Courses", href: "/courses" },
+    { label: "Summate Circle", href: "/circle" },
+    { label: "FAQ", href: "/faq" },
+    { label: "Contact", href: "/contact" },
   ],
   primaryCta: { label: "Apply for Batch 1", href: "/apply" },
-  secondaryCta: { label: "Meet the Team", href: "/#our-story" },
+  secondaryCta: { label: "Meet the team", href: "/leadership" },
 };
 
 /* ------------------------------------------------------------------ *
@@ -63,7 +81,7 @@ export const banners = {
     title: "Placement support is part of the program.",
     body: "Placement support is part of the program offering. The exact scope, process and terms should be published clearly once finalised.",
     cta: "Talk to us about hiring",
-    href: "/#enquiry",
+    href: "/contact?topic=partnership",
     placeholder: true,
   },
   mentorRecruit: {
@@ -72,7 +90,7 @@ export const banners = {
     title: "Mentor the first cohort of Summate learners.",
     body: "We are building a teaching and mentoring team of working professionals. If you would like to review projects, run sessions or mock interviews, we would like to hear from you.",
     cta: "Express interest",
-    href: "/#enquiry",
+    href: "/contact?topic=teach",
   },
 };
 
@@ -89,7 +107,7 @@ export const hero = {
     "We are kicking off with our founding program AI-Augmented Full-Stack Developer which is a 12-week, live online programme built around immersive, application-driven learning, and the judicious use of AI.",
   ],
   primaryCta: { label: "Apply for Batch 1", href: "/apply" },
-  secondaryCta: { label: "Meet the Team", href: "/#our-story" },
+  secondaryCta: { label: "Meet the team", href: "/leadership" },
   capabilities: [
     "Foundations of full-stack development",
     "One substantial project, built across 12 weeks",
@@ -503,35 +521,36 @@ export const footer = {
   copyright: "© 2026 Summate Learning. All rights reserved.",
   columns: [
     {
-      title: "Program",
+      title: "Courses",
       links: [
-        { label: "AI-Augmented Full-Stack Developer", href: "/#program" },
-        { label: "Why Summate", href: "/#why-summate" },
-        { label: "How it works", href: "/#how-it-works" },
+        { label: "All courses", href: "/courses" },
+        { label: "AI-Augmented Full-Stack Developer", href: "/courses/ai-augmented-full-stack-developer" },
         { label: "Apply for Batch 1", href: "/apply" },
       ],
     },
     {
       title: "About",
       links: [
-        { label: "Our Story", href: "/#our-story" },
-        { label: "Mentors", href: "/#mentors" },
-        { label: "Placements", href: "/#placements" },
+        { label: "About Summate", href: "/about" },
+        { label: "Founder & CEO", href: "/founder" },
+        { label: "Leadership", href: "/leadership" },
+        { label: "Faculty & Mentors", href: "/faculty" },
+        { label: "Careers", href: "/careers" },
       ],
     },
     {
-      title: "Support",
+      title: "Community",
       links: [
-        { label: "FAQs", href: "/#faqs" },
-        { label: "Contact", href: "/#enquiry" },
-        { label: "Book a callback", href: "/#enquiry" },
+        { label: "Summate Circle", href: "/circle" },
+        { label: "FAQ", href: "/faq" },
+        { label: "Contact", href: "/contact" },
       ],
     },
     {
       title: "Legal",
       links: [
-        { label: "Privacy Policy", href: "#" },
-        { label: "Terms of Service", href: "#" },
+        { label: "Privacy Policy", href: "/privacy" },
+        { label: "Terms & Conditions", href: "/terms" },
       ],
     },
   ],

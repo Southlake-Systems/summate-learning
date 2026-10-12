@@ -1,17 +1,31 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Bricolage_Grotesque, Figtree, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import "./components.css";
 
-const poppins = Poppins({
+const display = Bricolage_Grotesque({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-  variable: "--font-poppins",
+  variable: "--font-display",
+  display: "swap",
+});
+
+const body = Figtree({
+  subsets: ["latin"],
+  variable: "--font-body",
+  display: "swap",
+});
+
+const mono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Summate Learning — AI-Augmented Full-Stack Developer Course",
+  title: {
+    default: "Summate Learning — AI-Augmented Full-Stack Developer Course",
+    template: "%s — Summate Learning",
+  },
   description:
     "A 12-week live online program for Batch 1 — turn what you've learned into practical, demonstrable ability.",
 };
@@ -22,8 +36,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={poppins.variable}>
-      <body className="font-poppins antialiased selection:bg-[#1E3ABA] selection:text-white">
+    <html lang="en" className={`${display.variable} ${body.variable} ${mono.variable}`}>
+      <body className="font-sans antialiased selection:bg-[#1E3ABA] selection:text-white">
         {children}
       </body>
     </html>

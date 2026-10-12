@@ -9,7 +9,6 @@ import {
   TrackCatalog,
   PersonaCards,
   ProgramSpotlight,
-  ComparisonTable,
   BatchBenefits,
   ToolStrip,
   StepPath,
@@ -44,7 +43,6 @@ export default function HomePage() {
         <TrackCatalog />
         <PersonaCards />
         <ProgramSpotlight />
-        <ComparisonTable />
         <BatchBenefits />
         <ToolStrip />
         <StepPath />

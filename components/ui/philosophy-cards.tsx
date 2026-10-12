@@ -101,9 +101,7 @@ export default function PhilosophyCards() {
                 transition-all duration-500 ease-out
                 ${
                   active === null
-                    ? index === 1
-                      ? "z-10 h-[450px] -translate-y-5"
-                      : "z-10 h-[420px] translate-y-5"
+                    ? "z-10 h-[440px] translate-y-0"
                     : isActive
                       ? "z-30 h-[480px] -translate-y-8"
                       : index < active

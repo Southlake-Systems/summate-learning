@@ -3,7 +3,8 @@ import Link from "next/link";
 import Icon from "@/components/ui/Icon";
 import PhilosophyCards from "@/components/ui/philosophy-cards";
 import { Avatar } from "@/components/ui/primitives";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { Check, X } from "lucide-react";
 
 import {
   hero,
@@ -168,14 +169,14 @@ export function Hero() {
 
             {/* Brand motif */}
             <div
-              className="hero-fade-up flex items-center gap-3 text-[10px] font-bold tracking-[0.22em]"
+              className="hero-fade-up flex items-center gap-3 text-[13px] font-extrabold tracking-[0.2em]"
               style={{ animationDelay: "0s" }}
             >
               <span className="text-[#1E3ABA]">LEARN</span>
               <span className="text-slate-300">•</span>
               <span className="text-[#7C3AED]">APPLY</span>
               <span className="text-slate-300">•</span>
-              <span className="text-[#FF8A00]">ACHIEVE</span>
+              <span className="bg-gradient-to-br from-[#3B5BFF] via-[#1E3ABA] to-[#0A1B6B] bg-clip-text text-transparent">ACHIEVE</span>
             </div>
 
             {/* Heading */}
@@ -580,7 +581,7 @@ export function WhySummate() {
       CONTENT
   ====================================================== */}
 
-  <div className="relative mx-auto max-w-[1180px] px-6 py-24 sm:px-8 lg:px-0 lg:py-32">
+  <div className="relative mx-auto max-w-[1180px] px-6 py-14 sm:px-8 lg:px-0 lg:py-20">
 
     {/* ===================================================
         HEADER
@@ -595,7 +596,7 @@ export function WhySummate() {
             <span className="absolute inset-y-0 left-0 w-7 bg-[#1E3ABA]" />
           </span>
 
-          <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#1E3ABA]">
+          <span className="text-[13px] font-bold uppercase tracking-[0.2em] text-[#1E3ABA]">
             Why Summate
           </span>
         </div>
@@ -627,7 +628,7 @@ export function WhySummate() {
 
       {/* Section label floating above border */}
       <div className="absolute -top-3 left-7 z-10 bg-white px-3">
-        <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">
+        <span className="text-[13px] font-bold uppercase tracking-[0.2em] text-slate-600">
           The gap
         </span>
       </div>
@@ -745,7 +746,7 @@ export function WhySummate() {
       {/* Header */}
       <div className="relative z-10 mb-10 flex items-end justify-between gap-6">
         <div>
-          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">
+          <p className="text-[13px] font-bold uppercase tracking-[0.2em] text-slate-600">
             What we believe
           </p>
 
@@ -856,7 +857,7 @@ export function WhySummate() {
 
           <div className="max-w-2xl">
 
-            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500">
+            <p className="text-[13px] font-bold uppercase tracking-[0.2em] text-slate-400">
               The Summate philosophy
             </p>
 
@@ -891,7 +892,7 @@ export function WhySummate() {
                 →
               </span>
 
-              <span className="text-slate-500">
+              <span className="bg-gradient-to-br from-[#A9BBFF] via-[#5B7BFF] to-[#2D4FE0] bg-clip-text text-transparent">
                 ACHIEVE
               </span>
 
@@ -1002,7 +1003,7 @@ export function TrackCatalog() {
   return (
     <section
       id="programs"
-      className="relative overflow-hidden bg-white py-20 lg:py-28"
+      className="relative overflow-hidden bg-white py-12 lg:py-20"
     >
       {/* =====================================================
           AMBIENT BACKGROUND
@@ -1028,7 +1029,7 @@ export function TrackCatalog() {
           <div className="mb-4 flex items-center gap-3">
             <span className="h-px w-10 bg-[#1E3ABA]" />
 
-            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#1E3ABA]">
+            <span className="text-[13px] font-bold uppercase tracking-[0.2em] text-[#1E3ABA]">
               Programs
             </span>
           </div>
@@ -1058,7 +1059,7 @@ export function TrackCatalog() {
           "
           style={{
             background:
-              "linear-gradient(120deg, #1557E8 0%, #477BE8 28%, #82BCE0 55%, #9AD7B0 100%)",
+              "linear-gradient(120deg, #0B2A9E 0%, #1543D6 30%, #3F7BEA 60%, #7FB8E6 100%)",
           }}
         >
 
@@ -1157,7 +1158,7 @@ export function TrackCatalog() {
               {tracks.slice(0, 3).map((track) => (
                 <Link
                   key={track.id}
-                  href={track.featured ? "/apply" : "#"}
+                  href={track.featured ? "/courses/ai-augmented-full-stack-developer" : "/courses"}
                   className="
                     group relative overflow-hidden
                     rounded-[20px]
@@ -1270,7 +1271,7 @@ export function TrackCatalog() {
 
           <div className="relative z-10 mt-4">
             <Link
-              href="#"
+              href="/courses"
               className="
                 group flex items-center justify-between
                 rounded-[18px]
@@ -1433,7 +1434,7 @@ export function PersonaCards() {
   return (
     <section
       id="who-it-is-for"
-      className="relative overflow-hidden bg-white py-24 lg:py-32"
+      className="relative overflow-hidden bg-white py-14 lg:py-20"
     >
       {/* =========================================================
           BACKGROUND
@@ -1454,7 +1455,7 @@ export function PersonaCards() {
           <div className="mb-5 flex items-center justify-center gap-3">
             <span className="h-px w-8 bg-slate-300" />
 
-            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">
+            <span className="text-[13px] font-bold uppercase tracking-[0.2em] text-slate-600">
               Who It's For
             </span>
 
@@ -1787,595 +1788,237 @@ export function PersonaCards() {
 /* ---------------- 06. Program Spotlight ---------------- */
 
 export function ProgramSpotlight() {
-  const cards = [
+  // Each row is one shift in approach: what most courses do, and what Summate does instead.
+  const shifts = [
     {
-      num: "01",
-      label: "LEARN",
-      title: "Practical, Industry-Relevant Learning",
-      desc: "Go beyond theory with hands-on projects, real-world case studies and skills that actually matter.",
-      image: "/spotlight1.jpg",
-      alt: "Laptop displaying code - Build, Apply, Grow",
+      from: "Watching lessons",
+      to: "Using what you learn",
+      body: "Every concept is followed by practice, application and problem-solving, so learning doesn't stay theoretical. You work through problems yourself before reaching for AI.",
+      proof: "Practice problems before relying on AI",
       accent: "#1E3ABA",
-      soft: "#EEF2FF",
-      glow: "rgba(30,58,186,.28)",
     },
     {
-      num: "02",
-      label: "ADAPT",
-      title: "Flexible for Every Journey",
-      desc: "Learn from wherever you are. Whether you're a student, working professional or changing careers — Summate fits into your life.",
-      image: "/spotlight2.png",
-      alt: "Desk with books and coffee mug - Your Pace, Your Path",
+      from: "Learning alone, on recordings",
+      to: "Learning live, with your batch",
+      body: "Live online sessions with a small founding cohort. Ask questions as they come up, get feedback in the moment and learn alongside people starting the same journey.",
+      proof: "Live sessions, not recordings",
       accent: "#7C3AED",
-      soft: "#F3EFFF",
-      glow: "rgba(124,58,237,.25)",
     },
     {
-      num: "03",
-      label: "BELONG",
-      title: "A Supportive Learning Community",
-      desc: "You're never alone. Learn with peers, get guidance from mentors and be part of a community that cheers your progress.",
-      image: "/spotlight3.png",
-      alt: "Wooden figurines - Learn Together, Grow Together",
-      accent: "#FF8A00",
-      soft: "#FFF5E8",
-      glow: "rgba(255,138,0,.22)",
+      from: "Forum replies, if you're lucky",
+      to: "Mentors who review your work",
+      body: "Working professionals review your project and your thinking at regular checkpoints, so you find out what to improve while there's still time to improve it.",
+      proof: "Regular mentor-led reviews",
+      accent: "#0284C7",
     },
     {
-      num: "04",
-      label: "MOVE FORWARD",
-      title: "Pathways to Real Opportunities",
-      desc: "Gain skills, build a standout portfolio and get access to opportunities that help you take the next step with confidence.",
-      image: "/spotlight4.png",
-      alt: "Stack of books - Skills, Portfolio, Mentorship, Opportunities",
-      accent: "#00A99D",
-      soft: "#EAFBF9",
-      glow: "rgba(0,169,157,.22)",
+      from: "A certificate at the end",
+      to: "Work you can show and explain",
+      body: "Build one substantial project across the 12 weeks, with real Git history, tests and a working deployment. Then practise defending your decisions in mock interviews, with placement support for your next step.",
+      proof: "One project, built over 12 weeks",
+      accent: "#FF2D75",
+    },
+    {
+      from: "Done when the course ends",
+      to: "A network that keeps going",
+      body: "Graduates join the Summate Circle: peers, mentors and professionals who share opportunities, build together and keep learning long after the last session.",
+      proof: "Summate Circle membership",
+      accent: "#0EA5A0",
+      href: "/circle",
     },
   ];
 
-  const [active, setActive] = useState(0);
+  const sum = [
+    "Live sessions with your batch",
+    "Practice after every concept",
+    "One real project, start to finish",
+    "Mentor reviews and feedback",
+    "Mock interviews",
+    "The Summate Circle",
+  ];
+
+  // Reveal the sum line by line, once, when it scrolls into view.
+  const sumRef = useRef<HTMLDivElement>(null);
+  const [revealed, setRevealed] = useState(false);
+
+  useEffect(() => {
+    const el = sumRef.current;
+    if (!el) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setRevealed(true);
+      return;
+    }
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setRevealed(true);
+          io.disconnect();
+        }
+      },
+      { threshold: 0.35 }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
+  const reveal = `transition-all duration-500 ease-out ${revealed ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0"}`;
+  const delay = (i: number) => ({ transitionDelay: revealed ? `${i * 110}ms` : "0ms" });
 
   return (
-    <section
-      id="program"
-      className="relative isolate overflow-hidden bg-[#F8FAFF] py-24 lg:py-32"
-    >
-      {/* =====================================================
-          ANIMATIONS
-      ====================================================== */}
-
-      <style>{`
-        @keyframes spotlightFloat {
-          0%, 100% {
-            transform: translate3d(0, 0, 0) scale(1);
-          }
-          50% {
-            transform: translate3d(0, -12px, 0) scale(1.025);
-          }
-        }
-
-        @keyframes spotlightPulse {
-          0%, 100% {
-            opacity: .35;
-            transform: scale(1);
-          }
-          50% {
-            opacity: .65;
-            transform: scale(1.12);
-          }
-        }
-
-        @keyframes spotlightLine {
-          from {
-            transform: scaleX(0);
-            transform-origin: left;
-          }
-          to {
-            transform: scaleX(1);
-            transform-origin: left;
-          }
-        }
-
-        .spotlight-float {
-          animation: spotlightFloat 7s ease-in-out infinite;
-        }
-
-        .spotlight-pulse {
-          animation: spotlightPulse 6s ease-in-out infinite;
-        }
-
-        .spotlight-line {
-          animation: spotlightLine 1.2s cubic-bezier(.22,1,.36,1) both;
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-          .spotlight-float,
-          .spotlight-pulse,
-          .spotlight-line {
-            animation: none !important;
-          }
-        }
-      `}</style>
-
-      {/* =====================================================
-          AMBIENT BACKGROUND
-      ====================================================== */}
-
-      <div
-        className="pointer-events-none absolute -left-52 top-20 h-[520px] w-[520px] rounded-full bg-[#1E3ABA]/[0.045] blur-[120px]"
-        aria-hidden="true"
-      />
-
-      <div
-        className="pointer-events-none absolute -right-52 bottom-0 h-[580px] w-[580px] rounded-full bg-[#7C3AED]/[0.045] blur-[130px]"
-        aria-hidden="true"
-      />
-
-      {/* subtle grid */}
-      <div
-        className="pointer-events-none absolute inset-x-0 top-0 h-[700px] opacity-[0.22]"
-        aria-hidden="true"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(30,58,186,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(30,58,186,.035) 1px, transparent 1px)",
-          backgroundSize: "72px 72px",
-          maskImage:
-            "linear-gradient(to bottom, black 0%, transparent 90%)",
-          WebkitMaskImage:
-            "linear-gradient(to bottom, black 0%, transparent 90%)",
-        }}
-      />
-
+    <section id="program" className="relative isolate overflow-hidden bg-[#F8FAFF] py-14 lg:py-20">
       <div className="relative mx-auto max-w-[1180px] px-6 sm:px-8 lg:px-0">
-
-        {/* ===================================================
-            HEADER
-        ==================================================== */}
-
-        <div className="grid gap-10 lg:grid-cols-[1fr_360px] lg:items-end">
-
+        {/* Header */}
+        <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,420px)] lg:items-end lg:gap-16">
           <div>
             <div className="mb-6 flex items-center gap-3">
               <span className="relative h-px w-12 overflow-hidden bg-slate-200">
-                <span className="spotlight-line absolute inset-y-0 left-0 w-8 bg-[#1E3ABA]" />
+                <span className="absolute inset-y-0 left-0 w-8 bg-[#1E3ABA]" />
               </span>
-
-              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#1E3ABA]">
+              <span className="text-[13px] font-bold uppercase tracking-[0.2em] text-[#1E3ABA]">
                 The Summate Difference
               </span>
             </div>
-
-            <h2 className="max-w-3xl text-4xl font-extrabold leading-[1.02] tracking-[-0.05em] text-[#0D1222] sm:text-5xl lg:text-[58px]">
-              More Than
-              <br />
-              <span className="bg-gradient-to-r from-slate-400 via-slate-400 to-slate-300 bg-clip-text text-transparent">
-                Just Courses.
-              </span>
+            <h2 className="max-w-3xl font-display text-4xl font-extrabold leading-[1.02] tracking-[-0.045em] text-[#0D1222] sm:text-5xl lg:text-[58px]">
+              More than just courses.
             </h2>
-
-            <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600 sm:text-base">
-              A learning experience built for real growth, real people
-              and real opportunities.
-            </p>
           </div>
-
-          {/* Right editorial statement */}
-          <div className="relative lg:pb-2">
-            <div className="absolute -left-5 top-0 hidden h-12 w-px bg-gradient-to-b from-[#1E3ABA] to-transparent lg:block" />
-
-            <p className="text-sm font-medium leading-6 text-slate-500">
-              Learning becomes meaningful when you have somewhere
-              to take it.
-            </p>
-
-            <div className="mt-5 flex items-center gap-2">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#1E3ABA]" />
-              <span className="h-px w-12 bg-slate-200" />
-              <span className="h-1.5 w-1.5 rounded-full bg-[#7C3AED]" />
-            </div>
-          </div>
+          <p className="max-w-[46ch] text-[17px] leading-[1.65] text-slate-600 lg:pb-2">
+            Most courses stop once they&apos;ve taught you something. Summate is built around what comes
+            next: using it, proving it, and growing with people who&apos;ve done it before.
+          </p>
         </div>
 
-        {/* ===================================================
-            JOURNEY NAV
-        ==================================================== */}
-
-        <div className="relative mt-16">
-
-          {/* Connecting line */}
-          <div className="absolute left-0 right-0 top-1/2 hidden h-px -translate-y-1/2 bg-slate-200 md:block" />
-
-          <div className="relative grid grid-cols-2 gap-3 sm:grid-cols-4">
-
-            {cards.map((card, index) => {
-              const isActive = active === index;
-
-              return (
-                <button
-                  key={card.num}
-                  onClick={() => setActive(index)}
-                  className="group relative flex items-center gap-3 text-left md:justify-center"
-                >
-                  <span
-                    className={`
-                      relative z-10 flex h-8 w-8 shrink-0 items-center
-                      justify-center rounded-full border
-                      text-[9px] font-bold
-                      transition-all duration-500
-                      ${
-                        isActive
-                          ? "border-[#1E3ABA] bg-[#1E3ABA] text-white shadow-[0_0_0_6px_rgba(30,58,186,.08)]"
-                          : "border-slate-200 bg-white text-slate-400 group-hover:border-slate-300 group-hover:text-slate-700"
-                      }
-                    `}
-                  >
-                    {card.num}
-                  </span>
-
-                  <span
-                    className={`
-                      text-[9px] font-bold uppercase tracking-[0.16em]
-                      transition-colors duration-300
-                      ${
-                        isActive
-                          ? "text-[#0D1222]"
-                          : "text-slate-400 group-hover:text-slate-600"
-                      }
-                    `}
-                  >
-                    {card.label}
-                  </span>
-                </button>
-              );
-            })}
+        {/* The four shifts */}
+        <div className="mt-14 overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-[0_24px_70px_rgba(13,18,34,0.06)]">
+          <div className="hidden grid-cols-[minmax(0,5fr)_minmax(0,7fr)] border-b border-slate-200 bg-[#FBFCFF] px-10 py-4 text-[14px] font-semibold md:grid">
+            <span className="text-slate-500">Most courses give you</span>
+            <span className="text-[#1E3ABA]">Summate gives you</span>
           </div>
-        </div>
 
-        {/* ===================================================
-            DESKTOP INTERACTIVE CARDS
-        ==================================================== */}
-
-        <div className="mt-8 hidden min-h-[500px] gap-3 lg:flex">
-
-          {cards.map((card, index) => {
-            const isActive = active === index;
-
-            return (
-              <article
-                key={card.num}
-                onMouseEnter={() => setActive(index)}
-                className={`
-                  group relative flex min-w-0 cursor-pointer
-                  flex-col overflow-hidden rounded-[28px]
-                  border bg-white
-                  transition-all duration-700
-                  ease-[cubic-bezier(.22,1,.36,1)]
-                  ${
-                    isActive
-                      ? "border-slate-300 shadow-[0_30px_80px_rgba(13,18,34,.13)]"
-                      : "border-slate-200 shadow-[0_8px_30px_rgba(13,18,34,.035)]"
-                  }
-                `}
-                style={{
-                  flex: isActive ? 1.65 : 0.78,
-                }}
+          <ul className="divide-y divide-slate-200">
+            {shifts.map((s) => (
+              <li
+                key={s.to}
+                className="relative grid gap-5 px-6 py-8 sm:px-10 md:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] md:gap-10 md:py-10"
               >
+                <span aria-hidden="true" className="absolute inset-y-0 left-0 w-1" style={{ background: s.accent }} />
 
-                {/* =================================================
-                    CARD TOP
-                ================================================== */}
-
-                <div className="relative z-10 p-6 xl:p-7">
-
-                  <div className="flex items-center justify-between">
-                    <span
-                      className="font-mono text-[10px] font-bold tracking-[0.16em]"
-                      style={{ color: card.accent }}
-                    >
-                      {card.num}
-                    </span>
-
-                    <span
-                      className="rounded-full px-2.5 py-1 text-[8px] font-bold uppercase tracking-[0.12em]"
-                      style={{
-                        backgroundColor: card.soft,
-                        color: card.accent,
-                      }}
-                    >
-                      {card.label}
-                    </span>
-                  </div>
-
-                  <h3
-                    className={`
-                      mt-7 font-extrabold leading-[1.1]
-                      tracking-[-0.04em] text-[#0D1222]
-                      transition-all duration-500
-                      ${
-                        isActive
-                          ? "text-[28px]"
-                          : "text-[20px]"
-                      }
-                    `}
+                <div className="flex items-start gap-3 md:pt-1.5">
+                  <span
+                    aria-hidden="true"
+                    className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-slate-100 text-slate-400"
                   >
-                    {card.title}
-                  </h3>
-
-                  <p
-                    className={`
-                      overflow-hidden
-                      transition-all duration-500
-                      ${
-                        isActive
-                          ? "mt-4 max-h-28 text-sm leading-6 text-slate-500"
-                          : "mt-3 max-h-0 text-xs leading-6 text-slate-500 opacity-0"
-                      }
-                    `}
-                  >
-                    {card.desc}
+                    <X size={13} strokeWidth={2.6} />
+                  </span>
+                  <p className="text-[17px] font-medium leading-snug text-slate-400 line-through decoration-slate-300 decoration-[1.5px] sm:text-[19px]">
+                    <span className="sr-only">Most courses: </span>
+                    {s.from}
                   </p>
                 </div>
 
-                {/* =================================================
-                    IMAGE
-                ================================================== */}
-
-                <div
-                  className={`
-                    relative mt-auto overflow-hidden
-                    transition-all duration-700
-                    ${isActive ? "h-[270px]" : "h-[190px]"}
-                  `}
-                >
-
-                  {/* Background */}
-                  <div
-                    className="absolute inset-0 transition-transform duration-1000 group-hover:scale-105"
-                    style={{
-                      backgroundColor: card.soft,
-                    }}
-                  />
-
-                  {/* Animated glow */}
-                  <div
-                    className={`
-                      spotlight-pulse
-                      absolute -bottom-24 -left-16
-                      h-64 w-64 rounded-full blur-3xl
-                      transition-opacity duration-700
-                      ${isActive ? "opacity-70" : "opacity-35"}
-                    `}
-                    style={{
-                      backgroundColor: card.glow,
-                    }}
-                  />
-
-                  {/* Image */}
-                  <Image
-                    src={card.image}
-                    alt={card.alt}
-                    fill
-                    className={`
-                      relative z-10 object-cover object-center
-                      transition-transform duration-1000
-                      ease-[cubic-bezier(.22,1,.36,1)]
-                      ${
-                        isActive
-                          ? "scale-[1.03] group-hover:scale-[1.08]"
-                          : "scale-100 group-hover:scale-[1.04]"
-                      }
-                    `}
-                    sizes="(max-width: 1280px) 30vw, 350px"
-                  />
-
-                  {/* Image gradient */}
-                  <div
-                    className="
-                      absolute inset-x-0 bottom-0 z-20 h-24
-                      bg-gradient-to-t from-black/20 to-transparent
-                    "
-                  />
-
-                  {/* Number */}
-                  <div
-                    className="
-                      absolute bottom-4 left-4 z-30
-                      flex h-9 w-9 items-center justify-center
-                      rounded-full border border-white/70
-                      bg-white/90
-                      text-[10px] font-bold
-                      shadow-lg backdrop-blur-md
-                    "
-                    style={{ color: card.accent }}
-                  >
-                    {card.num}
-                  </div>
-
-                  {/* Floating label */}
-                  <div
-                    className={`
-                      absolute right-4 top-4 z-30
-                      rounded-full border border-white/60
-                      bg-white/80 px-3 py-1.5
-                      text-[9px] font-semibold text-[#0D1222]
-                      shadow-sm backdrop-blur-md
-                      transition-all duration-500
-                      ${
-                        isActive
-                          ? "translate-y-0 opacity-100"
-                          : "-translate-y-2 opacity-0"
-                      }
-                    `}
-                  >
-                    Explore this path
+                <div>
+                  <h3 className="flex items-start gap-3 font-display text-[26px] font-bold leading-[1.1] tracking-[-0.03em] text-[#0D1222] sm:text-[32px]">
+                    <span
+                      aria-hidden="true"
+                      className="mt-1.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-white sm:mt-2"
+                      style={{ background: s.accent }}
+                    >
+                      <Check size={13} strokeWidth={3} />
+                    </span>
+                    <span>
+                      <span className="sr-only">At Summate: </span>
+                      {s.to}
+                    </span>
+                  </h3>
+                  <p className="mt-3 max-w-[58ch] pl-9 text-[16px] leading-[1.7] text-slate-600">{s.body}</p>
+                  <div className="mt-4 pl-9">
+                    {s.href ? (
+                      <Link
+                        href={s.href}
+                        className="inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-[13px] font-semibold transition-opacity hover:opacity-80"
+                        style={{ background: `${s.accent}14`, color: s.accent }}
+                      >
+                        {s.proof}
+                        <Icon name="ArrowUpRight" size={13} strokeWidth={2.4} />
+                      </Link>
+                    ) : (
+                      <span
+                        className="inline-flex rounded-full px-3.5 py-1.5 text-[13px] font-semibold"
+                        style={{ background: `${s.accent}14`, color: s.accent }}
+                      >
+                        {s.proof}
+                      </span>
+                    )}
                   </div>
                 </div>
-
-                {/* =================================================
-                    BOTTOM
-                ================================================== */}
-
-                <div className="relative z-10 flex items-center justify-between border-t border-slate-100 px-6 py-4">
-
-                  <span className="text-[9px] font-bold uppercase tracking-[0.15em] text-slate-400">
-                    {index === 0
-                      ? "Start here"
-                      : "Part of the journey"}
-                  </span>
-
-                  <span
-                    className={`
-                      flex h-8 w-8 items-center justify-center
-                      rounded-full text-white
-                      transition-all duration-500
-                      ${
-                        isActive
-                          ? "translate-x-0 scale-100"
-                          : "scale-90 opacity-70"
-                      }
-                    `}
-                    style={{ backgroundColor: card.accent }}
-                  >
-                    <Icon
-                      name="ArrowUpRight"
-                      size={14}
-                      strokeWidth={2}
-                    />
-                  </span>
-                </div>
-
-                {/* Bottom accent */}
-                <div
-                  className={`
-                    absolute bottom-0 left-0 h-1
-                    transition-all duration-700
-                    ${isActive ? "w-full" : "w-0"}
-                  `}
-                  style={{
-                    backgroundColor: card.accent,
-                  }}
-                />
-              </article>
-            );
-          })}
+              </li>
+            ))}
+          </ul>
         </div>
 
-        {/* ===================================================
-            MOBILE / TABLET
-        ==================================================== */}
+        {/* The sum */}
+        <div className="relative isolate mt-6 overflow-hidden rounded-[28px] bg-[#0D1222] px-7 py-10 sm:px-12 sm:py-14">
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute -right-32 -top-40 -z-10 h-[480px] w-[480px] rounded-full bg-[#1E3ABA]/50 blur-[110px]"
+          />
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute -bottom-40 left-1/4 -z-10 h-[360px] w-[360px] rounded-full bg-[#7C3AED]/25 blur-[110px]"
+          />
 
-        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:hidden">
+          <div className="grid gap-12 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:items-center lg:gap-16">
+            <div>
+              <h3 className="font-display text-[32px] font-bold leading-[1.08] tracking-[-0.035em] text-white sm:text-[40px]">
+                It all adds up.
+              </h3>
+              <p className="mt-4 max-w-[42ch] text-[16px] leading-[1.7] text-slate-300">
+                That&apos;s where the name comes from. No single part is unusual on its own. What matters is
+                that every Summate course brings them together, so they add up to more than a certificate.
+              </p>
+              <Link
+                href="/courses/ai-augmented-full-stack-developer"
+                className="mt-8 inline-flex h-12 items-center gap-2 rounded-full bg-white px-6 text-[15px] font-semibold text-[#0D1222] transition-colors hover:bg-[#F2F4FF] hover:text-[#1E3ABA]"
+              >
+                See how the course works
+                <Icon name="ArrowUpRight" size={16} strokeWidth={2.2} />
+              </Link>
+            </div>
 
-          {cards.map((card, index) => (
-            <article
-              key={card.num}
-              className="
-                group relative overflow-hidden
-                rounded-[24px] border border-slate-200
-                bg-white
-                shadow-[0_10px_35px_rgba(13,18,34,.045)]
-                transition-all duration-500
-                hover:-translate-y-1
-                hover:shadow-[0_20px_50px_rgba(13,18,34,.10)]
-              "
-            >
-              <div className="p-6">
-
-                <div className="flex items-center justify-between">
-                  <span
-                    className="font-mono text-[10px] font-bold tracking-[0.15em]"
-                    style={{ color: card.accent }}
+            <div ref={sumRef} aria-label="What a Summate course adds up to">
+              <ul className="space-y-1">
+                {sum.map((item, i) => (
+                  <li
+                    key={item}
+                    className={`flex items-baseline gap-4 py-1.5 font-display text-[20px] font-semibold tracking-[-0.015em] text-slate-200 sm:text-[24px] ${reveal}`}
+                    style={delay(i)}
                   >
-                    {card.num}
-                  </span>
+                    <span aria-hidden="true" className="w-5 shrink-0 text-right text-[#6E8AFF]">
+                      {i === 0 ? "" : "+"}
+                    </span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
 
-                  <span
-                    className="rounded-full px-2.5 py-1 text-[8px] font-bold uppercase tracking-[0.12em]"
-                    style={{
-                      backgroundColor: card.soft,
-                      color: card.accent,
-                    }}
-                  >
-                    {card.label}
-                  </span>
-                </div>
+              <div
+                aria-hidden="true"
+                className={`my-5 ml-9 h-[2px] origin-left bg-white/70 transition-transform duration-700 ease-out ${
+                  revealed ? "scale-x-100" : "scale-x-0"
+                }`}
+                style={{ transitionDelay: revealed ? `${sum.length * 110}ms` : "0ms" }}
+              />
 
-                <h3 className="mt-6 text-xl font-extrabold leading-[1.1] tracking-[-0.035em] text-[#0D1222]">
-                  {card.title}
-                </h3>
-
-                <p className="mt-3 text-sm leading-6 text-slate-500">
-                  {card.desc}
-                </p>
-              </div>
-
-              <div className="relative h-[220px] overflow-hidden">
-                <div
-                  className="absolute inset-0"
-                  style={{ backgroundColor: card.soft }}
-                />
-
-                <div
-                  className="absolute -bottom-16 -left-10 h-48 w-48 rounded-full blur-3xl"
-                  style={{ backgroundColor: card.glow }}
-                />
-
-                <Image
-                  src={card.image}
-                  alt={card.alt}
-                  fill
-                  className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
-                  sizes="(max-width: 640px) 100vw, 50vw"
-                />
-
-                <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/15 to-transparent" />
-              </div>
-
-              <div className="flex items-center justify-between border-t border-slate-100 px-6 py-4">
-
-                <span className="text-[9px] font-bold uppercase tracking-[0.15em] text-slate-400">
-                  {index === 0 ? "Start here" : "Keep going"}
+              <p
+                className={`flex items-baseline gap-4 font-display text-[28px] font-bold leading-[1.15] tracking-[-0.03em] text-white sm:text-[36px] ${reveal}`}
+                style={{ transitionDelay: revealed ? `${(sum.length + 2) * 110}ms` : "0ms" }}
+              >
+                <span aria-hidden="true" className="w-5 shrink-0 text-right text-[#6E8AFF]">
+                  =
                 </span>
-
-                <span
-                  className="flex h-8 w-8 items-center justify-center rounded-full text-white"
-                  style={{ backgroundColor: card.accent }}
-                >
-                  <Icon
-                    name="ArrowUpRight"
-                    size={14}
-                    strokeWidth={2}
-                  />
-                </span>
-              </div>
-            </article>
-          ))}
-        </div>
-
-        {/* ===================================================
-            BOTTOM JOURNEY STATEMENT
-        ==================================================== */}
-
-        <div className="relative mt-12 flex flex-col gap-5 border-t border-slate-200 pt-7 sm:flex-row sm:items-center sm:justify-between">
-
-          <div className="flex items-center gap-3">
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#1E3ABA] opacity-40" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-[#1E3ABA]" />
-            </span>
-
-            <p className="text-sm font-medium text-slate-500">
-              Learn something. Apply it. See where it takes you.
-            </p>
-          </div>
-
-          <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.16em]">
-            <span className="text-[#1E3ABA]">Learn</span>
-            <span className="text-slate-300">→</span>
-            <span className="text-[#7C3AED]">Apply</span>
-            <span className="text-slate-300">→</span>
-            <span className="text-[#FF2D75]">Grow</span>
+                <span>Skills you can use, show and build on.</span>
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -2424,7 +2067,7 @@ export function ComparisonTable() {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-white py-16 sm:py-20 lg:py-28" id="comparison">
+    <section className="relative overflow-hidden bg-white py-16 sm:py-12 lg:py-20" id="comparison">
       <div className="pointer-events-none absolute -left-20 top-1/4 h-[350px] w-[350px] sm:h-[420px] sm:w-[420px] rounded-full bg-blue-100/40 blur-3xl" />
       <div className="pointer-events-none absolute -right-20 bottom-10 h-[360px] w-[360px] sm:h-[460px] sm:w-[460px] rounded-full bg-indigo-100/35 blur-3xl" />
 
@@ -2672,7 +2315,7 @@ export function BatchBenefits() {
   return (
     <section
       id="batch-benefits"
-      className="relative overflow-hidden bg-white py-24 lg:py-32"
+      className="relative overflow-hidden bg-white py-14 lg:py-20"
     >
       {/* =========================================================
           BACKGROUND
@@ -2694,7 +2337,7 @@ export function BatchBenefits() {
             <div className="mb-5 flex items-center gap-3">
               <span className="h-px w-10 bg-[#1E3ABA]" />
 
-              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#1E3ABA]">
+              <span className="text-[13px] font-bold uppercase tracking-[0.2em] text-[#1E3ABA]">
                 The Batch 01 Experience
               </span>
             </div>
@@ -2976,7 +2619,7 @@ export function BatchBenefits() {
             {/* Bottom content */}
             <div className="absolute bottom-9 left-9 right-9 z-20 text-white">
               <p
-                className="text-[10px] font-bold uppercase tracking-[0.18em]"
+                className="text-[13px] font-bold uppercase tracking-[0.18em]"
                 style={{
                   color: "#CBD5FF",
                 }}
@@ -3078,7 +2721,7 @@ export function ToolStrip() {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-white py-24 lg:py-32" id="tools">
+    <section className="relative overflow-hidden bg-white py-14 lg:py-20" id="tools">
       <div className="pointer-events-none absolute left-1/2 top-0 h-[450px] w-[800px] -translate-x-1/2 -translate-y-1/3 rounded-full bg-blue-100/40 blur-3xl" />
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
@@ -3186,7 +2829,7 @@ export function StepPath() {
   return (
     <section
       id="how-it-works"
-      className="relative overflow-hidden bg-white py-24 lg:py-32"
+      className="relative overflow-hidden bg-white py-14 lg:py-20"
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
 
@@ -3194,7 +2837,7 @@ export function StepPath() {
         <div className="grid gap-8 lg:grid-cols-12 lg:items-end">
 
           <div className="lg:col-span-7">
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#1E3ABA]">
+            <p className="text-[13px] font-bold uppercase tracking-[0.18em] text-[#1E3ABA]">
               How It Works
             </p>
 
@@ -3369,7 +3012,7 @@ export function FoundersNote() {
   return (
     <section
       id="our-story"
-      className="relative overflow-hidden bg-[#F8FAFF] py-24 lg:py-32"
+      className="relative overflow-hidden bg-[#F8FAFF] py-14 lg:py-20"
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
 
@@ -3377,7 +3020,7 @@ export function FoundersNote() {
         <div className="grid gap-8 lg:grid-cols-12 lg:items-end">
 
           <div className="lg:col-span-7">
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#1E3ABA]">
+            <p className="text-[13px] font-bold uppercase tracking-[0.18em] text-[#1E3ABA]">
               06 · Our Story
             </p>
 
@@ -3427,19 +3070,19 @@ export function FoundersNote() {
               </div>
 
               <div className="mt-8 hidden border-l border-slate-200 pl-6 lg:block">
-                <p className="text-xs font-bold uppercase tracking-[0.16em] text-slate-400">
+                <p className="text-[13px] font-bold uppercase tracking-[0.16em] text-slate-600">
                   LEARN
                 </p>
 
                 <div className="my-4 h-12 w-px bg-gradient-to-b from-[#1E3ABA] to-transparent" />
 
-                <p className="text-xs font-bold uppercase tracking-[0.16em] text-slate-400">
+                <p className="text-[13px] font-bold uppercase tracking-[0.16em] text-slate-600">
                   APPLY
                 </p>
 
                 <div className="my-4 h-12 w-px bg-gradient-to-b from-[#7C3AED] to-transparent" />
 
-                <p className="text-xs font-bold uppercase tracking-[0.16em] text-slate-400">
+                <p className="bg-gradient-to-br from-[#3B5BFF] via-[#1E3ABA] to-[#0A1B6B] bg-clip-text text-[13px] font-bold uppercase tracking-[0.16em] text-transparent">
                   ACHIEVE
                 </p>
               </div>
@@ -3463,7 +3106,7 @@ export function FoundersNote() {
                 <div className="flex items-center gap-2">
                   <span className="h-1.5 w-1.5 rounded-full bg-[#FF8A00]" />
 
-                  <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-slate-400">
+                  <span className="text-[13px] font-bold uppercase tracking-[0.18em] text-slate-600">
                     A note from the founders
                   </span>
                 </div>
@@ -3545,7 +3188,7 @@ export function MentorCards() {
   return (
     <section
       id="mentors"
-      className="relative overflow-hidden bg-white py-24 lg:py-32"
+      className="relative overflow-hidden bg-white py-14 lg:py-20"
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
 
@@ -3553,7 +3196,7 @@ export function MentorCards() {
         <div className="grid gap-8 lg:grid-cols-12 lg:items-end">
 
           <div className="lg:col-span-7">
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#1E3ABA]">
+            <p className="text-[13px] font-bold uppercase tracking-[0.18em] text-[#1E3ABA]">
               The People Behind It
             </p>
 
@@ -3693,7 +3336,7 @@ export function FinalCta() {
   return (
     <section
       id="apply"
-      className="relative overflow-hidden bg-[#0D1222] py-24 sm:py-28 lg:py-32"
+      className="relative overflow-hidden bg-[#0D1222] py-14 sm:py-16 lg:py-20"
     >
       {/* Subtle background details */}
       <div className="pointer-events-none absolute -left-40 top-1/2 h-[500px] w-[500px] -translate-y-1/2 rounded-full bg-[#1E3ABA]/10 blur-[120px]" />
@@ -3711,7 +3354,7 @@ export function FinalCta() {
         {/* MAIN COPY */}
         <div className="mx-auto mt-8 max-w-4xl text-center">
 
-          <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#6E8AFF]">
+          <p className="text-[13px] font-bold uppercase tracking-[0.18em] text-[#6E8AFF]">
             Your next chapter
           </p>
 
@@ -3844,7 +3487,7 @@ export function PromoBanner() {
 
 export function CommunityStrip() {
   return (
-    <section className="border-t border-slate-100 bg-white py-20 lg:py-28">
+    <section className="border-t border-slate-100 bg-white py-12 lg:py-20">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
           <div>
@@ -3894,7 +3537,7 @@ export function PlacementBanner() {
 
 export function TestimonialsSection({ children }: { children: React.ReactNode }) {
   return (
-    <section className="border-t border-slate-100 bg-white py-20 lg:py-28">
+    <section className="border-t border-slate-100 bg-white py-12 lg:py-20">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <p className="text-xs font-semibold uppercase tracking-wider text-[#1E3ABA]">Learner Stories</p>
         <h2 className="mt-2 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
@@ -3908,7 +3551,7 @@ export function TestimonialsSection({ children }: { children: React.ReactNode })
 
 export function InsightCards() {
   return (
-    <section className="border-t border-slate-100 bg-slate-50/50 py-20 lg:py-28" id="insights">
+    <section className="border-t border-slate-100 bg-slate-50/50 py-12 lg:py-20" id="insights">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <p className="text-xs font-semibold uppercase tracking-wider text-[#1E3ABA]">Field Notes</p>
         <h2 className="mt-2 text-3xl font-bold text-slate-950 sm:text-4xl">Articles & Perspectives</h2>
@@ -3953,7 +3596,7 @@ export function MentorRecruitBanner() {
 
 export function EnquirySection({ children }: { children: React.ReactNode }) {
   return (
-    <section className="border-t border-slate-100 bg-[#FAFBFF] py-20 lg:py-28" id="enquiry">
+    <section className="border-t border-slate-100 bg-[#FAFBFF] py-12 lg:py-20" id="enquiry">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-2">
           <div>

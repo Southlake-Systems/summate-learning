@@ -114,7 +114,7 @@ export default function SiteFooter() {
               <span className="text-slate-300">•</span>
               <span className="text-[#7C3AED]">APPLY</span>
               <span className="text-slate-300">•</span>
-              <span className="text-[#FF8A00]">ACHIEVE</span>
+              <span className="bg-gradient-to-br from-[#3B5BFF] via-[#1E3ABA] to-[#0A1B6B] bg-clip-text text-transparent">ACHIEVE</span>
             </div>
 
             {/* Contact */}

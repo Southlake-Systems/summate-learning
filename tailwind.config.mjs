@@ -21,7 +21,9 @@ export default {
         },
       },
       fontFamily: {
-        sans: ["Poppins", "var(--su-font-body)", "sans-serif"],
+        sans: ["var(--su-font-body)", "sans-serif"],
+        display: ["var(--su-font-display)", "sans-serif"],
+        mono: ["var(--su-font-mono)", "monospace"],
       },
       keyframes: {
         shimmer: {
