@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Icon from "@/components/ui/Icon";
+import { courses } from "@/lib/pageContent";
 import PhilosophyCards from "@/components/ui/philosophy-cards";
 import { Avatar } from "@/components/ui/primitives";
 import { useEffect, useRef, useState } from "react";
@@ -925,62 +926,14 @@ export function WhySummate() {
   );
 }
 export function TrackCatalog() {
-  const tracks = [
-    {
-      id: "full-stack",
-      number: "01",
-      badge: "Flagship Program",
-      category: "Technology",
-      title: "AI-Augmented Full-Stack Developer",
-      tagline:
-        "Build production-ready applications while learning how to work effectively with modern AI tools.",
-      duration: "12 Weeks",
-      format: "Live Online",
-      accent: "#1E3ABA",
-      soft: "#EEF2FF",
-      gradient:
-        "linear-gradient(135deg, #1E3ABA 0%, #6D4AFF 48%, #C43DFF 100%)",
-      skills: ["Next.js", "TypeScript", "Python", "APIs", "AI Workflows"],
-      seats: "Founding Cohort",
-      featured: true,
-    },
-    {
-      id: "devops",
-      number: "02",
-      badge: "Coming Soon",
-      category: "Infrastructure",
-      title: "DevOps Engineering",
-      tagline:
-        "Learn to build, ship and run software reliably with the tooling and practices modern engineering teams depend on.",
-      duration: "12 Weeks",
-      format: "Live Online",
-      accent: "#7C3AED",
-      soft: "#F3EFFF",
-      gradient:
-        "linear-gradient(135deg, #5B21B6 0%, #8B5CF6 50%, #C084FC 100%)",
-      skills: ["Linux", "CI/CD", "Docker", "Kubernetes", "Cloud"],
-      seats: "Coming Soon",
-      featured: false,
-    },
-    {
-      id: "growth-marketing",
-      number: "03",
-      badge: "Coming Soon",
-      category: "Growth",
-      title: "Performance & Digital Marketing",
-      tagline:
-        "Learn how modern marketing teams use experimentation, analytics and technology to drive growth.",
-      duration: "10 Weeks",
-      format: "Live Online",
-      accent: "#FF2D75",
-      soft: "#FFF0F5",
-      gradient:
-        "linear-gradient(135deg, #FF2D75 0%, #FF4D9A 50%, #FF8A00 100%)",
-      skills: ["Analytics", "CRO", "Campaigns", "Attribution", "Growth"],
-      seats: "Coming Soon",
-      featured: false,
-    },
-  ];
+  const tracks = courses.map((course, index) => ({
+    ...course,
+    number: String(index + 1).padStart(2, "0"),
+    featured: course.status === "open",
+  }));
+  const categories = courses
+    .map((course) => course.category)
+    .filter((category, index, all) => all.indexOf(category) === index);
 
   return (
     <section
@@ -1061,12 +1014,7 @@ export function TrackCatalog() {
           ================================================== */}
 
           <div className="relative z-10 mb-5 flex gap-2 overflow-x-auto pb-1 scrollbar-hide">
-            {[
-              "All Programs",
-              "Technology",
-              "Infrastructure",
-              "Growth",
-            ].map((item, index) => (
+            {["All Programs", ...categories].map((item, index) => (
               <button
                 key={item}
                 className={`
@@ -1138,8 +1086,8 @@ export function TrackCatalog() {
             >
               {tracks.map((track) => (
                 <Link
-                  key={track.id}
-                  href={track.featured ? "/courses/ai-augmented-full-stack-developer" : "/courses"}
+                  key={track.slug}
+                  href={track.featured ? `/courses/${track.slug}` : "/courses"}
                   className="
                     group relative overflow-hidden
                     rounded-[20px]

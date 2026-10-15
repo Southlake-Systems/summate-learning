@@ -19,6 +19,8 @@ export type Course = {
   status: "open" | "soon";
   skills: string[];
   accent: string;
+  /** Card artwork on the home page Programs shelf. */
+  gradient: string;
 };
 
 export const courses: Course[] = [
@@ -33,6 +35,8 @@ export const courses: Course[] = [
     status: "open",
     skills: ["Next.js", "TypeScript", "Python", "APIs", "Testing", "AI workflows"],
     accent: "#1E3ABA",
+    gradient:
+      "linear-gradient(135deg, #1E3ABA 0%, #6D4AFF 48%, #C43DFF 100%)",
   },
   {
     slug: "devops-engineering",
@@ -45,6 +49,8 @@ export const courses: Course[] = [
     status: "soon",
     skills: ["Linux", "Git", "CI/CD", "Docker", "Kubernetes", "Cloud"],
     accent: "#7C3AED",
+    gradient:
+      "linear-gradient(135deg, #5B21B6 0%, #8B5CF6 50%, #C084FC 100%)",
   },
   {
     slug: "performance-digital-marketing",
@@ -57,6 +63,8 @@ export const courses: Course[] = [
     status: "soon",
     skills: ["Analytics", "CRO", "Campaigns", "Attribution"],
     accent: "#FF2D75",
+    gradient:
+      "linear-gradient(135deg, #FF2D75 0%, #FF4D9A 50%, #FF8A00 100%)",
   },
 ];
 
