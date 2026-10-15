@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 };
 
 const explore = [
-  { label: "Founder & CEO", body: "Why Rameshan started Summate.", href: "/founder" },
+  { label: "Managing Director", body: "Ramesan P. L. on three decades in education.", href: "/founder" },
   { label: "Leadership", body: "The team setting the direction.", href: "/leadership" },
   { label: "Faculty & Mentors", body: "The people you'll learn from.", href: "/faculty" },
   { label: "Summate Circle", body: "The community after the course.", href: "/circle" },

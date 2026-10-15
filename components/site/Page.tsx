@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { ReactNode } from "react";
 import Link from "next/link";
 import { ArrowUpRight, ChevronRight } from "lucide-react";
@@ -309,6 +310,7 @@ export function PersonCard({
   bio,
   expertise,
   href,
+  image,
   pendingNote = "Profile to be announced",
 }: {
   name: string | null;
@@ -317,6 +319,7 @@ export function PersonCard({
   bio: string | null;
   expertise: string | null;
   href?: string;
+  image?: string;
   pendingNote?: string;
 }) {
   const pending = !name;
@@ -335,6 +338,15 @@ export function PersonCard({
         pending ? "border-dashed border-slate-300 bg-[#FAFBFF]" : "border-slate-200 bg-white"
       )}
     >
+      {image ? (
+        <Image
+          src={image}
+          alt=""
+          width={64}
+          height={64}
+          className="h-16 w-16 rounded-2xl object-cover object-top"
+        />
+      ) : (
       <div
         aria-hidden="true"
         className={cn(
@@ -346,6 +358,7 @@ export function PersonCard({
       >
         {pending ? "?" : initials}
       </div>
+      )}
 
       <h3 className={cn("mt-6 font-display text-xl font-bold tracking-[-0.02em]", pending ? "text-slate-400" : "text-[#0D1222]")}>
         {name ?? "To be announced"}

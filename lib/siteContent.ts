@@ -37,19 +37,20 @@ export const nav: {
   secondaryCta: NavLink;
 } = {
   links: [
+    { label: "Courses", href: "/courses" },
+    { label: "Summate Circle", href: "/circle" },
     {
       label: "About",
       href: "/about",
       children: [
         { label: "About Summate", href: "/about", description: "Why we exist and who we're for" },
-        { label: "Founder & CEO", href: "/founder", description: "Rameshan on building Summate" },
+        { label: "Managing Director", href: "/founder", description: "Ramesan P. L. and his work in education" },
         { label: "Leadership", href: "/leadership", description: "The team behind the platform" },
+        { label: "Our Team", href: "/team", description: "Our Managing Director and investors" },
         { label: "Faculty & Mentors", href: "/faculty", description: "The people who teach and guide" },
         { label: "Careers", href: "/careers", description: "Come build Summate with us" },
       ],
     },
-    { label: "Courses", href: "/courses" },
-    { label: "Summate Circle", href: "/circle" },
     { label: "FAQ", href: "/faq" },
     { label: "Contact", href: "/contact" },
   ],
@@ -532,8 +533,9 @@ export const footer = {
       title: "About",
       links: [
         { label: "About Summate", href: "/about" },
-        { label: "Founder & CEO", href: "/founder" },
+        { label: "Managing Director", href: "/founder" },
         { label: "Leadership", href: "/leadership" },
+        { label: "Our Team", href: "/team" },
         { label: "Faculty & Mentors", href: "/faculty" },
         { label: "Careers", href: "/careers" },
       ],
