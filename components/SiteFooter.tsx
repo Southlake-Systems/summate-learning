@@ -12,10 +12,10 @@ export default function SiteFooter() {
           label: "AI-Augmented Full-Stack",
           href: "/#programs",
         },
-        {
-          label: "How It Works",
-          href: "/#how-it-works",
-        },
+        // {
+        //   label: "How It Works",
+        //   href: "/#how-it-works",
+        // },
         {
           label: "Apply for Batch 1",
           href: "/apply",
@@ -33,10 +33,10 @@ export default function SiteFooter() {
           label: "Who It's For",
           href: "/#who-it-is-for",
         },
-        {
-          label: "Our Story",
-          href: "/#our-story",
-        },
+        // {
+        //   label: "Our Story",
+        //   href: "/#our-story",
+        // },
       ],
     },
     {

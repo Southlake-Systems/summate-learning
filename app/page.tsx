@@ -11,9 +11,9 @@ import {
   ProgramSpotlight,
   BatchBenefits,
   ToolStrip,
-  StepPath,
-  FoundersNote,
-  MentorCards,
+ // StepPath,
+ // FoundersNote,
+ // MentorCards,
   FinalCta,
 } from "@/components/marketing/sections";
 import SiteNav from "@/components/SiteNav";
@@ -45,9 +45,9 @@ export default function HomePage() {
         <ProgramSpotlight />
         <BatchBenefits />
         <ToolStrip />
-        <StepPath />
-        <FoundersNote />
-        <MentorCards />
+        {/* <StepPath /> */}
+        {/* <FoundersNote /> */}
+        {/* <MentorCards /> */}
         <FinalCta />
         <SiteFooter />
       </main>
