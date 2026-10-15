@@ -35,15 +35,15 @@ export const courses: Course[] = [
     accent: "#1E3ABA",
   },
   {
-    slug: "modern-data-engineering",
-    title: "Modern Data Engineering",
-    category: "Data",
+    slug: "devops-engineering",
+    title: "DevOps Engineering",
+    category: "Infrastructure",
     tagline:
-      "Build practical data systems and the engineering habits production environments expect.",
+      "Learn to build, ship and run software reliably with the tooling and practices modern engineering teams depend on.",
     duration: "12 weeks",
     format: "Live online",
     status: "soon",
-    skills: ["Python", "SQL", "Data pipelines", "Cloud", "Analytics"],
+    skills: ["Linux", "Git", "CI/CD", "Docker", "Kubernetes", "Cloud"],
     accent: "#7C3AED",
   },
   {
@@ -57,18 +57,6 @@ export const courses: Course[] = [
     status: "soon",
     skills: ["Analytics", "CRO", "Campaigns", "Attribution"],
     accent: "#FF2D75",
-  },
-  {
-    slug: "ai-embedded-systems",
-    title: "AI & Embedded Systems",
-    category: "AI + Hardware",
-    tagline:
-      "Work where intelligent software meets hardware, sensors and real-world systems.",
-    duration: "12 weeks",
-    format: "Live online",
-    status: "soon",
-    skills: ["Computer vision", "Edge AI", "Embedded", "Sensors"],
-    accent: "#FF8A00",
   },
 ];
 
