@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Plus } from "lucide-react";
+import { ArrowRight, Linkedin, Plus } from "lucide-react";
 import { PageShell, Breadcrumbs, Section, Split, Prose, CtaBand } from "@/components/site/Page";
 import { leadership, type TeamMember } from "@/lib/pageContent";
 import { cn } from "@/lib/utils";
@@ -139,6 +139,18 @@ function Profile({ member, tone, index }: { member: TeamMember; tone: string; in
                   {member.name}
                 </h2>
                 <p className="mt-2 text-[15px] font-medium text-[#1E3ABA]">{member.role}</p>
+                {member.linkedin && (
+                  <a
+                    href={member.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-4 inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-3.5 py-2 text-[14px] font-semibold text-[#0A1640] transition-colors hover:border-[#1E3ABA] hover:text-[#1E3ABA] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1E3ABA]"
+                  >
+                    <Linkedin size={16} strokeWidth={2} aria-hidden="true" />
+                    LinkedIn
+                    <span className="sr-only">profile of {member.name} (opens in a new tab)</span>
+                  </a>
+                )}
               </div>
             </div>
           </div>

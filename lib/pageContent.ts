@@ -238,6 +238,8 @@ export type TeamMember = {
   image?: string;
   /** Links the card to a separate profile page instead of a profile section on /leadership. */
   href?: string;
+  /** Public LinkedIn profile URL, shown on the profile section. */
+  linkedin?: string;
   /** Short profile-card summary. */
   summary: string;
   bio: string[];
@@ -266,6 +268,7 @@ export const leadership = {
       name: "Bibin Kuruvilla",
       role: "Investor",
       image: "/team/bibin.jpg",
+      linkedin: "https://www.linkedin.com/in/bibin-kuruvilla",
       summary:
         "Technology professional and Co-Founder & CTO of Obsium, with 20+ years of experience in cloud infrastructure, Kubernetes, DevOps, and platform engineering. He brings a strong engineering perspective shaped by years of building and scaling reliable technology systems.",
       bio: [
@@ -289,6 +292,7 @@ export const leadership = {
       name: "Jyothis Joseph",
       role: "Investor",
       image: "/team/jyothis.jpg",
+      linkedin: "https://www.linkedin.com/in/jyothisjoseph",
       summary:
         "A technology entrepreneur with 20+ years of industry experience, Jyothis has founded and built companies across cloud services and mobile applications, both of which were acquired by Netrix Global in 2017. He is currently building ellow.io, a talent marketplace connecting businesses with vetted remote technology professionals. He brings experience in entrepreneurship, technology, and business leadership.",
       bio: [
@@ -317,6 +321,7 @@ export const leadership = {
       name: "Shaun Xavier",
       role: "Investor",
       image: "/team/shaun.jpg",
+      linkedin: "https://www.linkedin.com/in/shaunxavier",
       summary:
         "An operations-focused professional with experience in team scaling, process improvement, and business execution in startup environments. Shaun also pursues his passion for acting and Malayalam cinema, bringing together interests in business and the creative arts.",
       bio: [
