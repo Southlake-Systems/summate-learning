@@ -227,35 +227,8 @@ export type Person = {
   image?: string;
 };
 
-export const leadership = {
-  title: "Building the future of learning",
-  lede: "Summate is driven by a team that believes education should be practical, engaging and connected to the opportunities of the future.",
-  body: "Our leadership brings together experience across education, technology, operations, business and community building to create a learning ecosystem that puts learners at the centre.",
-  people: [
-    {
-      name: "Ramesan P. L.",
-      role: "Managing Director",
-      bio: "Ramesan brings over 32 years of teaching, curriculum development and academic leadership to Summate's educational direction.",
-      expertise: "Educational leadership and academic coordination",
-      href: "/founder",
-      image: "/founder.jpg",
-    },
-    { name: null, role: null, bio: null, expertise: null },
-    { name: null, role: null, bio: null, expertise: null },
-  ] as Person[],
-  advisory: {
-    title: "Our advisory network",
-    body: [
-      "Summate aims to build a strong network of educators, industry professionals, researchers and domain experts who can contribute their knowledge and experience to our programs and initiatives.",
-      "Their perspectives will help us continuously improve our courses, learning experiences and opportunities for our community.",
-    ],
-  },
-  closing:
-    "Great learning experiences are built by people who understand both where learners are today and where they need to go tomorrow.",
-};
-
 /* ------------------------------------------------------------------ *
- * OUR TEAM (investors)
+ * LEADERSHIP TEAM (Managing Director and investors)
  * ------------------------------------------------------------------ */
 export type TeamMember = {
   slug: string;
@@ -263,7 +236,7 @@ export type TeamMember = {
   role: string;
   /** Optional portrait in /public, e.g. "/team/bibin.jpg". Falls back to initials. */
   image?: string;
-  /** Links the card to a separate profile page instead of a profile section on /team. */
+  /** Links the card to a separate profile page instead of a profile section on /leadership. */
   href?: string;
   /** Short profile-card summary. */
   summary: string;
@@ -272,8 +245,8 @@ export type TeamMember = {
   beyond?: { title: string; body: string };
 };
 
-export const team = {
-  title: "Our Team",
+export const leadership = {
+  title: "Leadership",
   lede: "Summate Learning brings together decades of classroom experience with people who have built companies, technology platforms and teams that work in the real world.",
   heading: "Meet the people behind Summate",
   members: [
@@ -367,6 +340,15 @@ export const team = {
       },
     },
   ] as TeamMember[],
+  advisory: {
+    title: "Our advisory network",
+    body: [
+      "Summate aims to build a strong network of educators, industry professionals, researchers and domain experts who can contribute their knowledge and experience to our programs and initiatives.",
+      "Their perspectives will help us continuously improve our courses, learning experiences and opportunities for our community.",
+    ],
+  },
+  closing:
+    "Great learning experiences are built by people who understand both where learners are today and where they need to go tomorrow.",
 };
 
 /* ------------------------------------------------------------------ *

@@ -45,8 +45,7 @@ export const nav: {
       children: [
         { label: "About Summate", href: "/about", description: "Why we exist and who we're for" },
         { label: "Managing Director", href: "/founder", description: "Ramesan P. L. and his work in education" },
-        { label: "Leadership", href: "/leadership", description: "The team behind the platform" },
-        { label: "Our Team", href: "/team", description: "Our Managing Director and investors" },
+        { label: "Leadership", href: "/leadership", description: "Our Managing Director and investors" },
         { label: "Faculty & Mentors", href: "/faculty", description: "The people who teach and guide" },
         { label: "Careers", href: "/careers", description: "Come build Summate with us" },
       ],
@@ -535,7 +534,6 @@ export const footer = {
         { label: "About Summate", href: "/about" },
         { label: "Managing Director", href: "/founder" },
         { label: "Leadership", href: "/leadership" },
-        { label: "Our Team", href: "/team" },
         { label: "Faculty & Mentors", href: "/faculty" },
         { label: "Careers", href: "/careers" },
       ],
