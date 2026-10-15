@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Linkedin, Plus } from "lucide-react";
+import { ArrowRight, Award, Linkedin } from "lucide-react";
+import { ClampText } from "@/components/site/ClampText";
 import { PageShell, Breadcrumbs, Section, Split, Prose, CtaBand } from "@/components/site/Page";
 import { leadership, type TeamMember } from "@/lib/pageContent";
 import { cn } from "@/lib/utils";
@@ -58,137 +59,94 @@ function Portrait({ member, tone, sizes }: { member: TeamMember; tone: string; s
   );
 }
 
-/** Portrait on the front; hovering or focusing flips it to the profile summary on the back. */
-function MemberCard({ member, tone }: { member: TeamMember; tone: string }) {
+/** One person: portrait beside everything about them, so nothing drifts apart. */
+function PersonRow({ member, tone }: { member: TeamMember; tone: string }) {
+  const href = member.href ?? `#${member.slug}`;
   return (
-    <article className="[perspective:1400px]">
-      <Link
-        href={member.href ?? `#${member.slug}`}
-        aria-label={`${member.name}, ${member.role}. ${member.summary} Read the full profile.`}
-        className="group block rounded-[22px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1E3ABA]"
-      >
-        <div className="relative aspect-[4/5] transition-transform duration-700 ease-[cubic-bezier(.2,.8,.2,1)] [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] group-focus-visible:[transform:rotateY(180deg)] motion-reduce:duration-0">
-          {/* Front */}
-          <div className="absolute inset-0 overflow-hidden rounded-[22px] bg-[#0A1640] [backface-visibility:hidden]">
-            <Portrait member={member} tone={tone} sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw" />
-            <div
-              aria-hidden="true"
-              className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[#050A1F]/85 via-[#050A1F]/35 to-transparent"
-            />
-            <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-5 sm:p-6">
-              <div>
-                <h3 className="font-display text-[24px] font-bold leading-[1.05] tracking-[-0.025em] text-white sm:text-[26px]">
-                  {member.name}
-                </h3>
-                <p className="mt-1.5 text-[14px] font-medium text-white/75">{member.role}</p>
-              </div>
-              <span
-                aria-hidden="true"
-                className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-white text-[#0A1640]"
-              >
-                <Plus size={18} strokeWidth={2.4} />
-              </span>
-            </div>
-          </div>
-
-          {/* Back */}
-          <div
-            aria-hidden="true"
-            className="absolute inset-0 flex flex-col overflow-hidden rounded-[22px] bg-[#0A1640] p-6 text-white [backface-visibility:hidden] [transform:rotateY(180deg)] sm:p-7"
-          >
-            <div
-              className="pointer-events-none absolute inset-0"
-              style={{
-                backgroundImage:
-                  "radial-gradient(70% 55% at 100% 0%, rgba(47,91,255,.45), transparent 70%), radial-gradient(60% 50% at 0% 100%, rgba(124,58,237,.32), transparent 70%)",
-              }}
-            />
-            <div className="relative">
-              <p className="font-display text-[22px] font-bold leading-[1.05] tracking-[-0.025em]">{member.name}</p>
-              <p className="mt-1.5 text-[13px] font-medium uppercase tracking-[0.08em] text-[#9DB4FF]">{member.role}</p>
-            </div>
-            <p className="relative mt-5 flex-1 overflow-hidden text-[14px] leading-[1.6] text-slate-200 lg:text-[13px] xl:text-[14px]">
-              {member.summary}
-            </p>
-            <span className="relative mt-4 inline-flex items-center gap-2 text-[14px] font-semibold text-white">
-              Read full profile
-              <span className="grid h-8 w-8 place-items-center rounded-lg bg-[#2F5BFF]">
-                <ArrowRight size={16} strokeWidth={2.4} />
-              </span>
-            </span>
-          </div>
-        </div>
-      </Link>
-    </article>
-  );
-}
-
-function Profile({ member, tone, index }: { member: TeamMember; tone: string; index: number }) {
-  const [lead, ...rest] = member.bio;
-  return (
-    <Section id={member.slug} tone={index % 2 === 0 ? "white" : "mist"} className="scroll-mt-20">
-      <div className="grid gap-10 lg:grid-cols-12 lg:gap-12">
-        <aside className="lg:col-span-4">
-          <div className="lg:sticky lg:top-28">
-            <div className="flex items-center gap-5 lg:block">
-              <div className="relative aspect-[4/5] w-24 shrink-0 overflow-hidden rounded-2xl sm:w-28 lg:w-full lg:max-w-[300px] lg:rounded-[22px]">
-                <Portrait member={member} tone={tone} sizes="(min-width: 1024px) 300px, 112px" />
-              </div>
-              <div className="lg:mt-7">
-                <h2 className="font-display text-[30px] font-bold leading-[1.05] tracking-[-0.03em] text-[#0D1222] sm:text-[38px]">
-                  {member.name}
-                </h2>
-                <p className="mt-2 text-[15px] font-medium text-[#1E3ABA]">{member.role}</p>
-                {member.linkedin && (
-                  <a
-                    href={member.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-4 inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-3.5 py-2 text-[14px] font-semibold text-[#0A1640] transition-colors hover:border-[#1E3ABA] hover:text-[#1E3ABA] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1E3ABA]"
-                  >
-                    <Linkedin size={16} strokeWidth={2} aria-hidden="true" />
-                    LinkedIn
-                    <span className="sr-only">profile of {member.name} (opens in a new tab)</span>
-                  </a>
-                )}
-              </div>
-            </div>
-          </div>
-        </aside>
-
-        <div className="lg:col-span-8 lg:pt-1">
-          <p className="max-w-[52ch] font-display text-[20px] font-medium leading-[1.5] tracking-[-0.01em] text-[#0D1222] sm:text-[22px]">
-            {lead}
-          </p>
-          <Prose className="mt-8">
-            {rest.map((p) => (
-              <p key={p}>{p}</p>
-            ))}
-          </Prose>
-
-          {member.beyond && (
-            <div className="mt-10 max-w-[64ch] rounded-[22px] bg-[#EEF2FF] p-7 sm:p-8">
-              <h3 className="font-display text-[19px] font-bold text-[#0A1640]">{member.beyond.title}</h3>
-              <p className="mt-2 text-[16px] leading-[1.7] text-slate-700">{member.beyond.body}</p>
-            </div>
-          )}
+    <article
+      id={member.slug}
+      className="grid scroll-mt-24 gap-x-5 py-10 first:pt-0 last:pb-0 sm:grid-cols-[180px_minmax(0,1fr)] sm:gap-x-8 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-x-12 lg:py-12"
+    >
+      {/* Phones: small portrait beside the name. Larger screens: portrait column beside everything. */}
+      <div className="flex items-center gap-5 sm:block">
+        <Link
+          href={href}
+          tabIndex={-1}
+          aria-hidden="true"
+          className="relative block aspect-[4/5] w-24 shrink-0 overflow-hidden rounded-2xl bg-[#0A1640] sm:w-full sm:max-w-[240px] sm:rounded-[22px]"
+        >
+          <Portrait member={member} tone={tone} sizes="(min-width: 1024px) 240px, (min-width: 640px) 180px, 96px" />
+        </Link>
+        <div className="sm:hidden">
+          <h3 className="font-display text-[26px] font-bold leading-[1.05] tracking-[-0.03em] text-[#0D1222]">
+            {member.name}
+          </h3>
+          <p className="mt-1.5 text-[15px] font-medium text-[#1E3ABA]">{member.role}</p>
         </div>
       </div>
 
-      <div className="mt-14 border-t border-slate-200 pt-8 lg:mt-16">
-        <h3 className="font-display text-[17px] font-bold text-[#0D1222]">{member.areas.title}</h3>
-        <ul className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+      <div className="mt-5 flex min-w-0 flex-col sm:mt-0">
+        <div className="hidden sm:block">
+          <h3 className="font-display text-[30px] font-bold leading-[1.05] tracking-[-0.03em] text-[#0D1222] lg:text-[34px]">
+            {member.name}
+          </h3>
+          <p className="mt-2 text-[15px] font-medium text-[#1E3ABA]">{member.role}</p>
+        </div>
+
+        <ClampText className="sm:mt-5">
+          <p className="max-w-[64ch] text-[16px] leading-[1.7] text-slate-700 sm:text-[17px]">{member.summary}</p>
+        </ClampText>
+
+        <ul className="mt-6 flex flex-wrap gap-2" aria-label={member.areas.title}>
+          {member.award && (
+            <li
+              title={member.award.body}
+              className="inline-flex items-center gap-1.5 rounded-full bg-[#0A1640] px-3.5 py-1.5 text-[13px] font-semibold text-white"
+            >
+              <Award size={14} strokeWidth={2} aria-hidden="true" className="text-[#8FB4FF]" />
+              {member.award.title} {member.award.year}
+              <span className="sr-only">. {member.award.body}</span>
+            </li>
+          )}
           {member.areas.items.map((a) => (
             <li
               key={a}
-              className="rounded-2xl border border-slate-200 bg-white px-5 py-4 text-[15px] font-medium leading-snug text-slate-700"
+              className="rounded-full border border-slate-200 bg-[#F8FAFF] px-3.5 py-1.5 text-[13px] font-medium text-slate-700"
             >
               {a}
             </li>
           ))}
         </ul>
+
+        <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-3">
+          <Link
+            href={href}
+            className="group inline-flex h-11 items-center gap-2 rounded-full bg-[#0A1640] px-5 text-[15px] font-semibold text-white transition-colors hover:bg-[#1E3ABA] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1E3ABA]"
+          >
+            Full profile
+            <span className="sr-only"> of {member.name}</span>
+            <ArrowRight
+              size={16}
+              strokeWidth={2.4}
+              aria-hidden="true"
+              className="transition-transform duration-200 group-hover:translate-x-0.5"
+            />
+          </Link>
+          {member.linkedin && (
+            <a
+              href={member.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-[15px] font-semibold text-[#0A1640] underline decoration-slate-300 underline-offset-[6px] transition-colors hover:text-[#1E3ABA] hover:decoration-[#1E3ABA] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1E3ABA]"
+            >
+              <Linkedin size={16} strokeWidth={2} aria-hidden="true" />
+              LinkedIn
+              <span className="sr-only">profile of {member.name} (opens in a new tab)</span>
+            </a>
+          )}
+        </div>
       </div>
-    </Section>
+    </article>
   );
 }
 
@@ -207,52 +165,43 @@ export default function LeadershipPage() {
         />
         <div className="mx-auto max-w-7xl px-6 pb-16 pt-10 lg:px-8 lg:pb-24 lg:pt-14">
           <Breadcrumbs crumbs={[{ label: "About", href: "/about" }, { label: "Leadership" }]} onDark />
-          <div className="mt-14 grid gap-8 lg:mt-24 lg:grid-cols-[minmax(0,1fr)_minmax(0,26rem)] lg:items-end lg:gap-16">
-            <h1 className="font-display text-[72px] font-bold leading-[0.88] tracking-[-0.055em] sm:text-[112px] lg:text-[164px]">
+          <div className="mt-14 grid gap-8 lg:mt-24">
+            <h1 className="font-display text-[64px] font-bold leading-[0.88] tracking-[-0.055em] sm:text-[112px] lg:text-[132px] xl:text-[164px]">
               {leadership.title}
             </h1>
-            <p className="max-w-[44ch] text-[17px] leading-[1.7] text-slate-300 lg:pb-4">{leadership.lede}</p>
+            <p className="max-w-[44ch] text-[17px] leading-[1.7] text-slate-300">{leadership.lede}</p>
           </div>
         </div>
       </section>
 
-      {/* Roster */}
-      <section className="relative isolate overflow-hidden bg-white pb-16 pt-16 lg:pb-24 lg:pt-24">
+      {/* People: one row each, everything about a person kept together */}
+      <section className="relative isolate overflow-hidden bg-white py-16 lg:py-24">
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[420px] bg-gradient-to-b from-[#EEF0FF] via-[#F7F2FF] to-white"
+          className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[360px] bg-gradient-to-b from-[#EEF0FF] via-[#F7F2FF] to-white"
         />
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="lg:grid lg:grid-cols-12 lg:gap-12">
-            <h2 className="max-w-[16ch] font-display text-[38px] font-bold leading-[1.02] tracking-[-0.04em] text-[#0D1222] sm:text-[52px] lg:col-span-8 lg:col-start-5 lg:text-[64px]">
-              {leadership.heading}
-            </h2>
-          </div>
+        <div className="mx-auto max-w-5xl px-6 lg:px-8">
+          <h2 className="max-w-[18ch] font-display text-[38px] font-bold leading-[1.02] tracking-[-0.04em] text-[#0D1222] sm:text-[52px] lg:text-[60px]">
+            {leadership.heading}
+          </h2>
 
-          <ul className="mt-12 grid gap-10 sm:grid-cols-2 lg:mt-16 lg:grid-cols-4 lg:gap-5">
+          <div className="mt-12 divide-y divide-slate-200 lg:mt-16">
             {leadership.members.map((m, i) => (
-              <li key={m.slug}>
-                <MemberCard member={m} tone={tones[i % tones.length]} />
-              </li>
+              <PersonRow key={m.slug} member={m} tone={tones[i % tones.length]} />
             ))}
-          </ul>
+          </div>
         </div>
       </section>
-
-      {/* Full profiles */}
-      <div className="border-t border-slate-200/70">
-        {leadership.members.map((m, i) =>
-          m.href ? null : <Profile key={m.slug} member={m} tone={tones[i % tones.length]} index={i} />
-        )}
-      </div>
 
       <Section className="border-t border-slate-200/70">
         <Split title={leadership.advisory.title}>
-          <Prose>
-            {leadership.advisory.body.map((p) => (
-              <p key={p}>{p}</p>
-            ))}
-          </Prose>
+          <ClampText>
+            <Prose>
+              {leadership.advisory.body.map((p) => (
+                <p key={p}>{p}</p>
+              ))}
+            </Prose>
+          </ClampText>
           <p className="mt-10 border-l-4 border-[#7C3AED] pl-6 font-display text-2xl font-semibold leading-[1.35] tracking-[-0.015em] text-[#0D1222] sm:text-[28px]">
             {leadership.closing}
           </p>

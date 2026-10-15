@@ -228,7 +228,7 @@ export type Person = {
 };
 
 /* ------------------------------------------------------------------ *
- * LEADERSHIP TEAM (Managing Director and investors)
+ * LEADERSHIP TEAM (Managing Director and directors)
  * ------------------------------------------------------------------ */
 export type TeamMember = {
   slug: string;
@@ -236,8 +236,12 @@ export type TeamMember = {
   role: string;
   /** Optional portrait in /public, e.g. "/team/bibin.jpg". Falls back to initials. */
   image?: string;
-  /** Links the card to a separate profile page instead of a profile section on /leadership. */
+  /** Optional separate, longer profile page, linked from the profile section. */
   href?: string;
+  /** Hero headline on the dedicated profile page. */
+  headline?: string;
+  /** Four short facts shown in the strip under the hero on the dedicated profile page. */
+  highlights?: { title: string; body: string }[];
   /** Public LinkedIn profile URL, shown on the profile section. */
   linkedin?: string;
   /** Short profile-card summary. */
@@ -245,6 +249,8 @@ export type TeamMember = {
   bio: string[];
   areas: { title: string; items: string[] };
   beyond?: { title: string; body: string };
+  /** Award shown as a highlighted tag beside the areas on /leadership. */
+  award?: { title: string; year: string; body: string };
 };
 
 export const leadership = {
@@ -260,15 +266,37 @@ export const leadership = {
       href: "/founder",
       summary:
         "An education professional with over 32 years of teaching, curriculum development and academic leadership across ICSE, ISC, CBSE, HSC and SSLC, in India and in Muscat, Oman. He leads Summate's educational direction.",
-      bio: founder.profile,
-      areas: { title: "Areas of experience", items: founder.areas },
+      bio: [
+        "Ramesan P. L. is an education professional with over 32 years of teaching experience across ICSE, ISC, CBSE, HSC and SSLC, in India and in Muscat, Oman. His career spans classroom teaching, academic coordination, curriculum and textbook development, and teacher training.",
+        "A retired teacher of Loyola School, Thiruvananthapuram, he has coordinated the ICSE and ISC Malayalam syllabus, served as chief editor of its textbook committee and as a Chief Examiner in ICSE board examinations.",
+        "As Managing Director of Summate Learning, he brings an established academic perspective to the organisation's educational direction, valuing strong foundations, effective teaching and the practical application of knowledge.",
+      ],
+      areas: {
+        title: "Areas of experience",
+        items: [
+          "Educational Leadership and Academic Coordination",
+          "Teaching and Student Development",
+          "Curriculum and Textbook Development",
+          "Examination and Assessment Systems",
+          "Teacher Training and Mentoring",
+        ],
+      },
+      award: founder.awards.main,
     },
     {
       slug: "bibin-kuruvilla",
       name: "Bibin Kuruvilla",
-      role: "Investor",
+      role: "Director",
       image: "/team/bibin.jpg",
       linkedin: "https://www.linkedin.com/in/bibin-kuruvilla",
+      href: "/leadership/bibin-kuruvilla",
+      headline: "Two decades building the systems that power the internet.",
+      highlights: [
+        { title: "20+ years", body: "Building and scaling technology infrastructure" },
+        { title: "Co-Founder & CTO", body: "Obsium" },
+        { title: "Kubernetes and SRE", body: "Platform engineering and DevOps" },
+        { title: "Cloud and AWS", body: "Transformation, automation and cost optimisation" },
+      ],
       summary:
         "Technology professional and Co-Founder & CTO of Obsium, with 20+ years of experience in cloud infrastructure, Kubernetes, DevOps, and platform engineering. He brings a strong engineering perspective shaped by years of building and scaling reliable technology systems.",
       bio: [
@@ -290,9 +318,17 @@ export const leadership = {
     {
       slug: "jyothis-joseph",
       name: "Jyothis Joseph",
-      role: "Investor",
+      role: "Director",
       image: "/team/jyothis.jpg",
       linkedin: "https://www.linkedin.com/in/jyothisjoseph",
+      href: "/leadership/jyothis-joseph",
+      headline: "An entrepreneur who has built, scaled and sold technology companies.",
+      highlights: [
+        { title: "20+ years", body: "Across IT, operations, technology and sales" },
+        { title: "Two companies founded", body: "Ideamine (2009) and Empressem (2014)" },
+        { title: "Acquired in 2017", body: "Both by Chicago-based Netrix Global" },
+        { title: "Building ellow.io", body: "A marketplace for remote technology talent" },
+      ],
       summary:
         "A technology entrepreneur with 20+ years of industry experience, Jyothis has founded and built companies across cloud services and mobile applications, both of which were acquired by Netrix Global in 2017. He is currently building ellow.io, a talent marketplace connecting businesses with vetted remote technology professionals. He brings experience in entrepreneurship, technology, and business leadership.",
       bio: [
@@ -319,9 +355,17 @@ export const leadership = {
     {
       slug: "shaun-xavier",
       name: "Shaun Xavier",
-      role: "Investor",
+      role: "Director",
       image: "/team/shaun.jpg",
       linkedin: "https://www.linkedin.com/in/shaunxavier",
+      href: "/leadership/shaun-xavier",
+      headline: "Operational thinking for organisations that are growing fast.",
+      highlights: [
+        { title: "Startup operations", body: "Scaling teams in fast-paced environments" },
+        { title: "Process improvement", body: "Helping teams work efficiently as they grow" },
+        { title: "Strategic execution", body: "Turning plans into coordinated delivery" },
+        { title: "Actor", body: "A passion for Malayalam cinema" },
+      ],
       summary:
         "An operations-focused professional with experience in team scaling, process improvement, and business execution in startup environments. Shaun also pursues his passion for acting and Malayalam cinema, bringing together interests in business and the creative arts.",
       bio: [

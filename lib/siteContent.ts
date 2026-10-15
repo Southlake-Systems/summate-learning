@@ -44,7 +44,7 @@ export const nav: {
       href: "/about",
       children: [
         { label: "About Summate", href: "/about", description: "Why we exist and who we're for" },
-        { label: "Leadership", href: "/leadership", description: "Our Managing Director and investors" },
+        { label: "Leadership", href: "/leadership", description: "Our Managing Director and directors" },
         { label: "Faculty & Mentors", href: "/faculty", description: "The people who teach and guide" },
         { label: "Careers", href: "/careers", description: "Come build Summate with us" },
       ],

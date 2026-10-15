@@ -11,6 +11,7 @@ import {
   NotebookPen,
   Users,
 } from "lucide-react";
+import { ClampText } from "@/components/site/ClampText";
 import { PageShell, Breadcrumbs, Section, Split, Prose, H2, CtaBand } from "@/components/site/Page";
 import { founder } from "@/lib/pageContent";
 
@@ -52,7 +53,9 @@ export default function FounderPage() {
             <h1 className="mt-4 max-w-[17ch] font-display text-[40px] font-bold leading-[1.05] tracking-[-0.035em] sm:text-[54px] lg:text-[62px]">
               {founder.headline}
             </h1>
-            <p className="mt-7 max-w-[54ch] text-[17px] leading-[1.7] text-slate-300">{founder.summary}</p>
+            <ClampText className="mt-7" onDark>
+              <p className="max-w-[54ch] text-[17px] leading-[1.7] text-slate-300">{founder.summary}</p>
+            </ClampText>
 
             <div className="mt-9 flex flex-wrap items-center gap-x-6 gap-y-4">
               <Link
@@ -102,13 +105,13 @@ export default function FounderPage() {
 
       {/* Highlights strip, overlapping the hero */}
       <div className="relative z-10 mx-auto -mt-10 max-w-7xl px-6 lg:-mt-16 lg:px-8">
-        <ul className="grid grid-cols-2 gap-px overflow-hidden rounded-[22px] bg-slate-200 shadow-[0_24px_60px_-20px_rgba(10,22,64,.35)] lg:grid-cols-4">
+        <ul className="grid grid-cols-1 gap-px overflow-hidden rounded-[22px] bg-slate-200 min-[480px]:grid-cols-2 shadow-[0_24px_60px_-20px_rgba(10,22,64,.35)] lg:grid-cols-4">
           {founder.highlights.map(({ title, body }, i) => {
             const Icon = highlightIcons[i];
             return (
               <li
                 key={title}
-                className="flex flex-col items-start gap-3 bg-white px-5 py-6 sm:flex-row sm:gap-4 sm:px-7 sm:py-7"
+                className="flex items-start gap-4 bg-white px-5 py-5 min-[480px]:flex-col min-[480px]:gap-3 min-[480px]:py-6 sm:flex-row sm:gap-4 sm:px-7 sm:py-7"
               >
                 <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-[#EEF2FF] text-[#1E3ABA]">
                   <Icon size={20} strokeWidth={1.8} aria-hidden="true" />
@@ -128,11 +131,13 @@ export default function FounderPage() {
       {/* Profile */}
       <Section id="profile" className="scroll-mt-24">
         <Split title="Profile">
-          <Prose className="text-[18px]">
-            {founder.profile.map((p) => (
-              <p key={p}>{p}</p>
-            ))}
-          </Prose>
+          <ClampText>
+            <Prose className="text-[18px]">
+              {founder.profile.map((p) => (
+                <p key={p}>{p}</p>
+              ))}
+            </Prose>
+          </ClampText>
         </Split>
       </Section>
 
@@ -217,7 +222,9 @@ export default function FounderPage() {
               );
             })}
           </div>
-          <p className="mt-8 max-w-[62ch] text-[16px] leading-[1.7] text-slate-600">{contributions.outro}</p>
+          <ClampText className="mt-8">
+            <p className="max-w-[62ch] text-[16px] leading-[1.7] text-slate-600">{contributions.outro}</p>
+          </ClampText>
         </Split>
       </Section>
 
@@ -234,7 +241,9 @@ export default function FounderPage() {
                 </li>
               ))}
             </ul>
-            <p className="mt-6 max-w-[52ch] text-[15px] leading-[1.7] text-slate-600">{education.note}</p>
+            <ClampText className="mt-6">
+              <p className="max-w-[52ch] text-[15px] leading-[1.7] text-slate-600">{education.note}</p>
+            </ClampText>
           </div>
 
           <div className="lg:col-span-7">
@@ -265,7 +274,9 @@ export default function FounderPage() {
                 </li>
               ))}
             </ul>
-            <p className="mt-6 max-w-[62ch] text-[15px] leading-[1.7] text-slate-600">{awards.note}</p>
+            <ClampText className="mt-6">
+              <p className="max-w-[62ch] text-[15px] leading-[1.7] text-slate-600">{awards.note}</p>
+            </ClampText>
           </div>
         </div>
       </Section>
@@ -288,7 +299,9 @@ export default function FounderPage() {
           </p>
           <div className="mt-12 grid gap-6 text-[16px] leading-[1.75] text-slate-700 lg:grid-cols-3 lg:gap-10">
             {leadershipRest.map((p) => (
-              <p key={p}>{p}</p>
+              <ClampText key={p}>
+                <p>{p}</p>
+              </ClampText>
             ))}
           </div>
         </div>
