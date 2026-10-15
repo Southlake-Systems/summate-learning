@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import LoadingScreen from "@/components/ui/LoadingScreen";
+import Choreography, { BackToTop, ScrollProgress } from "@/components/ui/Choreography";
 import {
   Hero,
  // LogoMarquee,
@@ -37,6 +38,8 @@ export default function HomePage() {
           isLoaded ? "opacity-100" : "opacity-0"
         }`}
       >
+        <Choreography ready={isLoaded} />
+        <ScrollProgress />
         <SiteNav />
         <Hero />
         <WhySummate />
@@ -50,6 +53,7 @@ export default function HomePage() {
         {/* <MentorCards /> */}
         <FinalCta />
         <SiteFooter />
+        <BackToTop />
       </main>
     </>
   );

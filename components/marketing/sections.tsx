@@ -26,28 +26,6 @@ export function Hero() {
           ANIMATION + REDUCED MOTION
       ====================================================== */}
       <style>{`
-        @keyframes heroFadeUp {
-          from {
-            opacity: 0;
-            transform: translateY(24px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        @keyframes heroFadeRight {
-          from {
-            opacity: 0;
-            transform: translateX(30px) scale(.97);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0) scale(1);
-          }
-        }
-
         @keyframes heroFloat {
           0%, 100% {
             transform: translateY(0);
@@ -77,25 +55,6 @@ export function Hero() {
           }
         }
 
-        @keyframes heroLine {
-          from {
-            transform: scaleX(0);
-            transform-origin: left;
-          }
-          to {
-            transform: scaleX(1);
-            transform-origin: left;
-          }
-        }
-
-        .hero-fade-up {
-          animation: heroFadeUp .75s cubic-bezier(.22,1,.36,1) both;
-        }
-
-        .hero-fade-right {
-          animation: heroFadeRight .9s cubic-bezier(.22,1,.36,1) .15s both;
-        }
-
         .hero-float {
           animation: heroFloat 5s ease-in-out infinite;
         }
@@ -108,17 +67,10 @@ export function Hero() {
           animation: heroGlow 7s ease-in-out infinite;
         }
 
-        .hero-line {
-          animation: heroLine .9s cubic-bezier(.22,1,.36,1) .5s both;
-        }
-
         @media (prefers-reduced-motion: reduce) {
-          .hero-fade-up,
-          .hero-fade-right,
           .hero-float,
           .hero-float-reverse,
-          .hero-glow,
-          .hero-line {
+          .hero-glow {
             animation: none !important;
           }
         }
@@ -170,51 +122,51 @@ export function Hero() {
 
             {/* Brand motif */}
             <div
-              className="hero-fade-up flex items-center gap-3 text-[13px] font-extrabold tracking-[0.2em]"
-              style={{ animationDelay: "0s" }}
+              className="flex items-center gap-3 text-[13px] font-extrabold tracking-[0.2em]"
+              data-reveal-step="90"
             >
-              <span className="text-[#1E3ABA]">LEARN</span>
-              <span className="text-slate-300">•</span>
-              <span className="text-[#7C3AED]">APPLY</span>
-              <span className="text-slate-300">•</span>
-              <span className="bg-gradient-to-br from-[#3B5BFF] via-[#1E3ABA] to-[#0A1B6B] bg-clip-text text-transparent">ACHIEVE</span>
+              <span data-reveal="rise" className="text-[#1E3ABA]">LEARN</span>
+              <span data-reveal="fade" className="text-slate-300">•</span>
+              <span data-reveal="rise" className="text-[#7C3AED]">APPLY</span>
+              <span data-reveal="fade" className="text-slate-300">•</span>
+              <span data-reveal="rise" className="bg-gradient-to-br from-[#3B5BFF] via-[#1E3ABA] to-[#0A1B6B] bg-clip-text text-transparent">ACHIEVE</span>
             </div>
 
             {/* Heading */}
             <h1
-              className="hero-fade-up mt-6 max-w-[650px] text-4xl font-extrabold leading-[1.02] tracking-[-0.045em] text-[#0D1222] sm:text-5xl lg:text-[60px] xl:text-[66px]"
-              style={{ animationDelay: ".08s" }}
+              className="mt-6 max-w-[650px] text-4xl font-extrabold leading-[1.02] tracking-[-0.045em] text-[#0D1222] sm:text-5xl lg:text-[60px] xl:text-[66px]"
+              data-reveal-step="90"
             >
-              You are more than
-              <br />
-              what you already
-              <br />
+              <span data-reveal="line"><span>You are more than</span></span>
+              <span data-reveal="line"><span>what you already</span></span>
 
-              <span className="relative inline-block">
+              <span data-reveal="line" className="-mb-3 pb-3"><span className="relative inline-block">
                 <span className="bg-gradient-to-r from-[#1E3ABA] via-[#7C3AED] to-[#FF6B2C] bg-clip-text text-transparent">
                   know.
                 </span>
 
-                {/* Small accent underline */}
-                <span className="hero-line absolute -bottom-1 left-0 h-[4px] w-[90%] rounded-full bg-gradient-to-r from-[#1E3ABA] via-[#7C3AED] to-[#FF8A00]" />
-              </span>
+                {/* Small accent underline, drawn once the word has landed */}
+                <span
+                  data-reveal="draw"
+                  data-reveal-delay="650"
+                  className="absolute -bottom-1 left-0 h-[4px] w-[90%] rounded-full bg-gradient-to-r from-[#1E3ABA] via-[#7C3AED] to-[#FF8A00]"
+                />
+              </span></span>
             </h1>
 
             {/* Description */}
             <p
-              className="hero-fade-up mt-7 max-w-xl text-[15px] leading-7 text-sDlate-600 sm:text-base lg:text-[17px]"
-              style={{ animationDelay: ".16s" }}
+              data-reveal="rise"
+              className="mt-7 max-w-xl text-[15px] leading-7 text-slate-600 sm:text-base lg:text-[17px]"
             >
               {hero.body[0]}
             </p>
 
             {/* CTA */}
-            <div
-              className="hero-fade-up mt-8 flex flex-wrap items-center gap-3"
-              style={{ animationDelay: ".24s" }}
-            >
+            <div className="mt-8 flex flex-wrap items-center gap-3">
 
               <Link
+                data-reveal="rise"
                 href="/apply"
                 className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-[#1E3ABA] via-[#7C3AED] to-[#FF2D75] px-7 py-3.5 text-sm font-bold text-white shadow-[0_10px_28px_rgba(30,58,186,0.22)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_36px_rgba(124,58,237,0.25)] active:scale-[0.98]"
               >
@@ -234,6 +186,7 @@ export function Hero() {
               </Link>
 
               <Link
+                data-reveal="rise"
                 href="/#programs"
                 className="group inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-6 py-3.5 text-sm font-semibold text-[#0D1222] shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-[#1E3ABA]/20 hover:shadow-md"
               >
@@ -253,8 +206,8 @@ export function Hero() {
                 FEATURE STRIP
             ================================================== */}
             <div
-              className="hero-fade-up mt-10 border-t border-slate-200/80 pt-6"
-              style={{ animationDelay: ".32s" }}
+              data-reveal="draw"
+              className="mt-10 border-t border-slate-200/80 pt-6"
             >
               {/* <div className="grid grid-cols-2 gap-2 sm:flex sm:flex-wrap sm:gap-2.5">
 
@@ -337,17 +290,21 @@ export function Hero() {
 
             {/* Decorative ring */}
             <div
+              data-reveal="pop"
+              data-reveal-delay="-700"
               className="pointer-events-none absolute right-[8%] top-[13%] h-[190px] w-[190px] rounded-full border border-[#7C3AED]/20"
               aria-hidden="true"
             />
 
             <div
+              data-reveal="pop"
+              data-reveal-delay="-700"
               className="pointer-events-none absolute right-[12%] top-[17%] h-[130px] w-[130px] rounded-full border border-[#FF2D75]/15"
               aria-hidden="true"
             />
 
             {/* Main image */}
-            <div className="hero-fade-right relative z-10 w-full max-w-[530px]">
+            <div data-reveal="image" data-reveal-delay="-700" className="relative z-10 w-full max-w-[530px]">
               <Image
                 src="/hero_right.png"
                 alt="Summate Learning student building skills"
@@ -363,71 +320,79 @@ export function Hero() {
             ================================================== */}
 
             {/* Build */}
-            <div className="hero-float absolute left-[-2%] top-[12%] z-20 hidden items-center gap-3 rounded-2xl border border-white/80 bg-white/95 px-4 py-3 shadow-[0_14px_35px_rgba(13,18,34,0.10)] backdrop-blur-md sm:flex">
-              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#EEF2FF] text-[#1E3ABA]">
-                <Icon name="Code2" size={17} strokeWidth={2} />
-              </div>
+            <div data-reveal="pop" className="absolute left-[-2%] top-[12%] z-20 hidden sm:block">
+              <div className="hero-float flex items-center gap-3 rounded-2xl border border-white/80 bg-white/95 px-4 py-3 shadow-[0_14px_35px_rgba(13,18,34,0.10)] backdrop-blur-md">
+                <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#EEF2FF] text-[#1E3ABA]">
+                  <Icon name="Code2" size={17} strokeWidth={2} />
+                </div>
 
-              <div className="leading-tight">
-                <p className="text-xs font-bold text-[#0D1222]">
-                  Build
-                </p>
-                <p className="text-[11px] text-slate-500">
-                  Real Projects
-                </p>
+                <div className="leading-tight">
+                  <p className="text-xs font-bold text-[#0D1222]">
+                    Build
+                  </p>
+                  <p className="text-[11px] text-slate-500">
+                    Real Projects
+                  </p>
+                </div>
               </div>
             </div>
 
             {/* Learn */}
-            <div className="hero-float-reverse absolute bottom-[13%] left-[0%] z-20 hidden items-center gap-3 rounded-2xl border border-white/80 bg-white/95 px-4 py-3 shadow-[0_14px_35px_rgba(13,18,34,0.10)] backdrop-blur-md sm:flex">
-              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#EAFBF9] text-[#00A99D]">
-                <Icon name="Brain" size={17} strokeWidth={2} />
-              </div>
+            <div data-reveal="pop" className="absolute bottom-[13%] left-[0%] z-20 hidden sm:block">
+              <div className="hero-float-reverse flex items-center gap-3 rounded-2xl border border-white/80 bg-white/95 px-4 py-3 shadow-[0_14px_35px_rgba(13,18,34,0.10)] backdrop-blur-md">
+                <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#EAFBF9] text-[#00A99D]">
+                  <Icon name="Brain" size={17} strokeWidth={2} />
+                </div>
 
-              <div className="leading-tight">
-                <p className="text-xs font-bold text-[#0D1222]">
-                  Learn with
-                </p>
-                <p className="text-[11px] text-slate-500">
-                  Industry Experts
-                </p>
+                <div className="leading-tight">
+                  <p className="text-xs font-bold text-[#0D1222]">
+                    Learn with
+                  </p>
+                  <p className="text-[11px] text-slate-500">
+                    Industry Experts
+                  </p>
+                </div>
               </div>
             </div>
 
             {/* Career */}
-            <div className="hero-float-reverse absolute right-[-1%] top-[22%] z-20 hidden items-center gap-3 rounded-2xl border border-white/80 bg-white/95 px-4 py-3 shadow-[0_14px_35px_rgba(13,18,34,0.10)] backdrop-blur-md sm:flex">
-              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#FFF0F5] text-[#FF2D75]">
-                <Icon name="TrendingUp" size={17} strokeWidth={2} />
-              </div>
+            <div data-reveal="pop" className="absolute right-[-1%] top-[22%] z-20 hidden sm:block">
+              <div className="hero-float-reverse flex items-center gap-3 rounded-2xl border border-white/80 bg-white/95 px-4 py-3 shadow-[0_14px_35px_rgba(13,18,34,0.10)] backdrop-blur-md">
+                <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#FFF0F5] text-[#FF2D75]">
+                  <Icon name="TrendingUp" size={17} strokeWidth={2} />
+                </div>
 
-              <div className="leading-tight">
-                <p className="text-xs font-bold text-[#0D1222]">
-                  Career
-                </p>
-                <p className="text-[11px] text-slate-500">
-                  Opportunities
-                </p>
+                <div className="leading-tight">
+                  <p className="text-xs font-bold text-[#0D1222]">
+                    Career
+                  </p>
+                  <p className="text-[11px] text-slate-500">
+                    Opportunities
+                  </p>
+                </div>
               </div>
             </div>
 
             {/* Future Ready */}
-            <div className="hero-float absolute bottom-[17%] right-[0%] z-20 hidden items-center gap-3 rounded-2xl border border-white/80 bg-white/95 px-4 py-3 shadow-[0_14px_35px_rgba(13,18,34,0.10)] backdrop-blur-md sm:flex">
-              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#FFF5E8] text-[#FF8A00]">
-                <Icon name="Rocket" size={17} strokeWidth={2} />
-              </div>
+            <div data-reveal="pop" className="absolute bottom-[17%] right-[0%] z-20 hidden sm:block">
+              <div className="hero-float flex items-center gap-3 rounded-2xl border border-white/80 bg-white/95 px-4 py-3 shadow-[0_14px_35px_rgba(13,18,34,0.10)] backdrop-blur-md">
+                <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#FFF5E8] text-[#FF8A00]">
+                  <Icon name="Rocket" size={17} strokeWidth={2} />
+                </div>
 
-              <div className="leading-tight">
-                <p className="text-xs font-bold text-[#0D1222]">
-                  Future Ready
-                </p>
-                <p className="text-[11px] text-slate-500">
-                  Skills
-                </p>
+                <div className="leading-tight">
+                  <p className="text-xs font-bold text-[#0D1222]">
+                    Future Ready
+                  </p>
+                  <p className="text-[11px] text-slate-500">
+                    Skills
+                  </p>
+                </div>
               </div>
             </div>
 
             {/* Tiny decorative dots */}
-            <div className="pointer-events-none absolute right-[2%] top-[5%] grid grid-cols-4 gap-2 opacity-40">
+            <div data-reveal="fade" className="pointer-events-none absolute right-[2%] top-[5%] grid grid-cols-4 gap-2 opacity-40">
               {Array.from({ length: 16 }).map((_, i) => (
                 <span
                   key={i}
@@ -446,7 +411,7 @@ export function Hero() {
         <div className="relative h-20 lg:h-24">
 
           {/* Soft color horizon */}
-          <div className="absolute left-1/2 top-1/2 h-px w-[75%] -translate-x-1/2 bg-gradient-to-r from-transparent via-[#1E3ABA]/20 via-[#7C3AED]/30 to-transparent" />
+          <div data-reveal="draw" className="absolute left-1/2 top-1/2 h-px w-[75%] origin-center -translate-x-1/2 bg-gradient-to-r from-transparent via-[#1E3ABA]/20 via-[#7C3AED]/30 to-transparent" />
 
           {/* Transition glow */}
           <div className="pointer-events-none absolute left-1/2 top-1/2 h-16 w-[55%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-r from-[#1E3ABA]/5 via-[#7C3AED]/10 to-[#FF8A00]/5 blur-2xl" />
@@ -593,19 +558,18 @@ export function WhySummate() {
       <div>
         {/* Section marker */}
         <div className="mb-6 flex items-center gap-3">
-          <span className="relative h-px w-12 overflow-hidden bg-[#D9E0F5]">
+          <span data-reveal="draw" className="relative h-px w-12 overflow-hidden bg-[#D9E0F5]">
             <span className="absolute inset-y-0 left-0 w-7 bg-[#1E3ABA]" />
           </span>
 
-          <span className="text-[13px] font-bold uppercase tracking-[0.2em] text-[#1E3ABA]">
+          <span data-reveal="rise" className="text-[13px] font-bold uppercase tracking-[0.2em] text-[#1E3ABA]">
             Why Summate
           </span>
         </div>
 
         <h2 className="max-w-4xl text-4xl font-extrabold leading-[1.04] tracking-[-0.045em] text-[#0D1222] sm:text-5xl lg:text-[56px]">
-          Because learning shouldn't stop
-          <br className="hidden sm:block" />
-          where the syllabus ends.
+          <span data-reveal="line"><span>Because learning shouldn't stop</span></span>
+          <span data-reveal="line"><span>where the syllabus ends.</span></span>
         </h2>
       </div>
 
@@ -613,7 +577,7 @@ export function WhySummate() {
         {/* Small vertical accent */}
         <div className="absolute -left-5 top-1 hidden h-12 w-px bg-gradient-to-b from-[#1E3ABA] to-transparent lg:block" />
 
-        <p className="max-w-lg text-[16px] font-medium leading-7 text-slate-500">
+        <p data-reveal="rise" className="max-w-lg text-[16px] font-medium leading-7 text-slate-500">
           There are courses, certificates, tutorials, bootcamps and
           promises of “job-ready” skills everywhere. But knowing something
           is not the same as knowing what to do with it.
@@ -625,7 +589,7 @@ export function WhySummate() {
         THE GAP
     ==================================================== */}
 
-    <div className="relative mt-20">
+    <div data-reveal="rise" className="relative mt-20">
 
       {/* Section label floating above border */}
       <div className="absolute -top-3 left-7 z-10 bg-white px-3">
@@ -657,10 +621,11 @@ export function WhySummate() {
               GAP ITEMS
           ------------------------------------------------ */}
 
-          <div className="grid sm:grid-cols-2">
+          <div className="grid sm:grid-cols-2" data-reveal-step="110">
             {gaps.map((gap, index) => (
               <div
                 key={gap.num}
+                data-reveal="rise"
                 className={`
                   group relative flex min-h-[150px] gap-5 px-6 py-7
                   transition-all duration-300
@@ -746,7 +711,7 @@ export function WhySummate() {
 
       {/* Header */}
       <div className="relative z-10 mb-10 flex items-end justify-between gap-6">
-        <div>
+        <div data-reveal="rise">
           <p className="text-[13px] font-bold uppercase tracking-[0.2em] text-slate-600">
             What we believe
           </p>
@@ -761,12 +726,12 @@ export function WhySummate() {
             01 — 03
           </span>
 
-          <span className="h-px w-24 bg-gradient-to-r from-slate-300 to-transparent" />
+          <span data-reveal="draw" className="h-px w-24 bg-gradient-to-r from-slate-300 to-transparent" />
         </div>
       </div>
 
       {/* Cards */}
-      <div className="relative">
+      <div data-reveal="rise" className="relative">
         <PhilosophyCards />
 
         {/* Decorative vertical line */}
@@ -781,7 +746,7 @@ export function WhySummate() {
         PHILOSOPHY / TRANSITION
     ==================================================== */}
 
-    <div className="relative mt-24">
+    <div data-reveal="rise" className="relative mt-24">
 
       {/* Glow behind dark panel */}
       <div
@@ -875,32 +840,35 @@ export function WhySummate() {
           {/* Brand signature */}
           <div className="relative shrink-0">
 
-            <div className="flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.2em]">
+            <div
+              className="flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.2em]"
+              data-reveal-step="160"
+            >
 
-              <span className="text-white">
+              <span data-reveal="rise" data-reveal-delay="300" className="text-white">
                 LEARN
               </span>
 
-              <span className="text-slate-600">
+              <span data-reveal="fade" data-reveal-delay="300" className="text-slate-600">
                 →
               </span>
 
-              <span className="text-slate-300">
+              <span data-reveal="rise" data-reveal-delay="300" className="text-slate-300">
                 APPLY
               </span>
 
-              <span className="text-slate-600">
+              <span data-reveal="fade" data-reveal-delay="300" className="text-slate-600">
                 →
               </span>
 
-              <span className="bg-gradient-to-br from-[#A9BBFF] via-[#5B7BFF] to-[#2D4FE0] bg-clip-text text-transparent">
+              <span data-reveal="rise" data-reveal-delay="300" className="bg-gradient-to-br from-[#A9BBFF] via-[#5B7BFF] to-[#2D4FE0] bg-clip-text text-transparent">
                 ACHIEVE
               </span>
 
             </div>
 
-            {/* Signature underline */}
-            <div className="mt-3 h-px w-full bg-gradient-to-r from-[#1E3ABA] via-[#7C3AED] to-[#FF2D75]" />
+            {/* Signature underline, drawn after the three words */}
+            <div data-reveal="draw" data-reveal-delay="300" className="mt-3 h-px w-full bg-gradient-to-r from-[#1E3ABA] via-[#7C3AED] to-[#FF2D75]" />
 
           </div>
         </div>
@@ -911,13 +879,13 @@ export function WhySummate() {
         BOTTOM TRANSITION
     ==================================================== */}
 
-    <div className="relative mt-20 flex items-center justify-center">
-      <div className="h-px w-full bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
+    <div className="relative mt-20 flex items-center justify-center" data-reveal-step="120">
+      <div data-reveal="draw" className="h-px w-full origin-center bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
 
       <div className="absolute flex items-center gap-2 bg-white px-5">
-        <span className="h-1.5 w-1.5 rounded-full bg-[#1E3ABA]" />
-        <span className="h-1.5 w-1.5 rounded-full bg-[#7C3AED]" />
-        <span className="h-1.5 w-1.5 rounded-full bg-[#FF2D75]" />
+        <span data-reveal="pop" className="h-1.5 w-1.5 rounded-full bg-[#1E3ABA]" />
+        <span data-reveal="pop" className="h-1.5 w-1.5 rounded-full bg-[#7C3AED]" />
+        <span data-reveal="pop" className="h-1.5 w-1.5 rounded-full bg-[#FF2D75]" />
       </div>
     </div>
 
@@ -962,19 +930,23 @@ export function TrackCatalog() {
 
         <div className="mb-8">
           <div className="mb-4 flex items-center gap-3">
-            <span className="h-px w-10 bg-[#1E3ABA]" />
+            <span data-reveal="draw" className="h-px w-10 bg-[#1E3ABA]" />
 
-            <span className="text-[13px] font-bold uppercase tracking-[0.2em] text-[#1E3ABA]">
+            <span data-reveal="rise" className="text-[13px] font-bold uppercase tracking-[0.2em] text-[#1E3ABA]">
               Programs
             </span>
           </div>
 
           <h2 className="max-w-2xl text-4xl font-extrabold leading-[1.02] tracking-[-0.045em] text-[#0D1222] sm:text-5xl lg:text-[56px]">
-            Learning that leads
-            <span className="text-slate-400"> somewhere.</span>
+            <span data-reveal="line">
+              <span>
+                Learning that leads
+                <span className="text-slate-400"> somewhere.</span>
+              </span>
+            </span>
           </h2>
 
-          <p className="mt-5 max-w-xl text-sm leading-7 text-slate-500 sm:text-base">
+          <p data-reveal="rise" className="mt-5 max-w-xl text-sm leading-7 text-slate-500 sm:text-base">
             Explore learning paths designed around practical skills,
             real work and what comes next.
           </p>
@@ -985,6 +957,7 @@ export function TrackCatalog() {
         ==================================================== */}
 
         <div
+          data-reveal="image"
           className="
             relative overflow-hidden
             rounded-[32px]
@@ -1013,10 +986,11 @@ export function TrackCatalog() {
               FILTER / CATEGORY ROW
           ================================================== */}
 
-          <div className="relative z-10 mb-5 flex gap-2 overflow-x-auto pb-1 scrollbar-hide">
+          <div className="relative z-10 mb-5 flex gap-2 overflow-x-auto pb-1 scrollbar-hide" data-reveal-step="60">
             {["All Programs", ...categories].map((item, index) => (
               <button
                 key={item}
+                data-reveal="pop"
                 className={`
                   shrink-0 rounded-full border px-4 py-2
                   text-[11px] font-semibold
@@ -1040,7 +1014,7 @@ export function TrackCatalog() {
           <div className="relative z-10 grid gap-4 lg:grid-cols-[220px_1fr]">
 
             {/* LEFT INTRO */}
-            <div className="flex flex-col justify-center px-2 py-6 lg:px-3">
+            <div data-reveal="rise" className="flex flex-col justify-center px-2 py-6 lg:px-3">
 
               <p className="text-[26px] font-extrabold leading-[1.08] tracking-[-0.035em] text-white sm:text-3xl">
                 Find the path
@@ -1083,10 +1057,12 @@ export function TrackCatalog() {
                 sm:grid-cols-2
                 xl:grid-cols-3
               "
+              data-reveal-step="140"
             >
               {tracks.map((track) => (
                 <Link
                   key={track.slug}
+                  data-reveal="rise"
                   href={track.featured ? `/courses/${track.slug}` : "/courses"}
                   className="
                     group relative overflow-hidden
@@ -1200,7 +1176,7 @@ export function TrackCatalog() {
             BOTTOM STATEMENT
         ================================================== */}
 
-        <div className="mt-8 flex flex-col gap-4 border-t border-slate-200 pt-6 sm:flex-row sm:items-center sm:justify-between">
+        <div data-reveal="rise" className="mt-8 flex flex-col gap-4 border-t border-slate-200 pt-6 sm:flex-row sm:items-center sm:justify-between">
 
           <p className="max-w-xl text-sm leading-6 text-slate-500">
             Every program is designed to help you move from knowing
@@ -1325,22 +1301,21 @@ export function PersonaCards() {
 
         <div className="mx-auto max-w-3xl text-center">
           <div className="mb-5 flex items-center justify-center gap-3">
-            <span className="h-px w-8 bg-slate-300" />
+            <span data-reveal="draw" className="h-px w-8 origin-right bg-slate-300" />
 
-            <span className="text-[13px] font-bold uppercase tracking-[0.2em] text-slate-600">
+            <span data-reveal="rise" className="text-[13px] font-bold uppercase tracking-[0.2em] text-slate-600">
               Who It's For
             </span>
 
-            <span className="h-px w-8 bg-slate-300" />
+            <span data-reveal="draw" className="h-px w-8 bg-slate-300" />
           </div>
 
           <h2 className="text-[38px] font-extrabold leading-[1.08] tracking-[-0.045em] text-[#0D1222] sm:text-[48px] lg:text-[56px]">
-            There’s No Single
-            <br />
-            Starting Point for Learning.
+            <span data-reveal="line"><span>There’s No Single</span></span>
+            <span data-reveal="line"><span>Starting Point for Learning.</span></span>
           </h2>
 
-          <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-slate-500 sm:text-base">
+          <p data-reveal="rise" className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-slate-500 sm:text-base">
             Starting out, starting over, or ready for something more.
             Summate Learning is designed for different points in the
             journey.
@@ -1352,20 +1327,20 @@ export function PersonaCards() {
         ========================================================= */}
 
         <div className="mx-auto mt-12 hidden max-w-xl items-center justify-center md:flex">
-          <div className="flex items-center">
-            <span className="font-mono text-[10px] font-bold tracking-[0.15em] text-[#1E3ABA]">
+          <div className="flex items-center" data-reveal-step="220">
+            <span data-reveal="rise" className="font-mono text-[10px] font-bold tracking-[0.15em] text-[#1E3ABA]">
               STARTING OUT
             </span>
 
-            <span className="mx-4 h-px w-16 bg-slate-200" />
+            <span data-reveal="draw" className="mx-4 h-px w-16 bg-slate-200" />
 
-            <span className="font-mono text-[10px] font-bold tracking-[0.15em] text-slate-400">
+            <span data-reveal="rise" className="font-mono text-[10px] font-bold tracking-[0.15em] text-slate-400">
               MOVING FORWARD
             </span>
 
-            <span className="mx-4 h-px w-16 bg-slate-200" />
+            <span data-reveal="draw" className="mx-4 h-px w-16 bg-slate-200" />
 
-            <span className="font-mono text-[10px] font-bold tracking-[0.15em] text-slate-400">
+            <span data-reveal="rise" className="font-mono text-[10px] font-bold tracking-[0.15em] text-slate-400">
               CHANGING COURSE
             </span>
           </div>
@@ -1375,13 +1350,14 @@ export function PersonaCards() {
             CARDS
         ========================================================= */}
 
-        <div className="mt-14 grid gap-5 lg:grid-cols-3 lg:items-start">
+        <div className="mt-14 grid gap-5 lg:grid-cols-3 lg:items-start" data-reveal-step="180">
           {cards.map((card, index) => {
             const isMiddle = index === 1;
 
             return (
               <article
                 key={card.title}
+                data-reveal="rise"
                 className={`
                   group relative overflow-hidden rounded-[30px]
                   border border-slate-200 bg-white
@@ -1453,9 +1429,12 @@ export function PersonaCards() {
                         : "h-[350px]"
                     }
                   `}
+                  data-reveal-step="0"
                 >
-                  {/* Image background */}
+                  {/* Image background: rises first, then the figure steps onto it */}
                   <div
+                    data-reveal="grow"
+                    data-reveal-delay="100"
                     className="absolute inset-x-0 bottom-0 h-[85%] transition-all duration-500 group-hover:h-[92%]"
                     style={{
                       backgroundColor: card.soft,
@@ -1477,7 +1456,11 @@ export function PersonaCards() {
                   />
 
                   {/* Person / artwork */}
-                  <div className="absolute inset-x-0 bottom-0 top-2 transition-transform duration-700 ease-out group-hover:scale-[1.04]">
+                  <div
+                    data-reveal="rise"
+                    data-reveal-delay="300"
+                    className="absolute inset-x-0 bottom-0 top-2 transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                  >
                     <Image
                       src={card.image}
                       alt={card.title}
@@ -1490,6 +1473,8 @@ export function PersonaCards() {
 
                   {/* Quote */}
                   <div
+                    data-reveal="pop"
+                    data-reveal-delay="650"
                     className="
                       absolute bottom-5 left-5 right-5
                       rounded-2xl border border-white/80
@@ -1623,7 +1608,7 @@ export function PersonaCards() {
             BOTTOM STATEMENT
         ========================================================= */}
 
-        <div className="mt-14 flex flex-col items-start justify-between gap-5 border-t border-slate-200 pt-7 sm:flex-row sm:items-center">
+        <div data-reveal="rise" className="mt-14 flex flex-col items-start justify-between gap-5 border-t border-slate-200 pt-7 sm:flex-row sm:items-center">
           <div className="flex items-center gap-3">
             <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#EEF2FF] text-[#1E3ABA]">
               <Icon
@@ -1716,18 +1701,18 @@ export function ProgramSpotlight() {
         <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between lg:gap-12">
           <div>
             <div className="mb-2 flex items-center gap-3">
-              <span className="relative h-px w-12 overflow-hidden bg-slate-200">
+              <span data-reveal="draw" className="relative h-px w-12 overflow-hidden bg-slate-200">
                 <span className="absolute inset-y-0 left-0 w-8 bg-[#1E3ABA]" />
               </span>
-              <span className="text-[13px] font-bold uppercase tracking-[0.2em] text-[#1E3ABA]">
+              <span data-reveal="rise" className="text-[13px] font-bold uppercase tracking-[0.2em] text-[#1E3ABA]">
                 The Summate Difference
               </span>
             </div>
             <h2 className="font-display text-[34px] font-extrabold leading-[1.02] tracking-[-0.045em] text-[#0D1222] lg:text-[42px]">
-              More than just courses.
+              <span data-reveal="line"><span>More than just courses.</span></span>
             </h2>
           </div>
-          <p className="max-w-[48ch] text-[15px] leading-[1.6] text-slate-600 lg:pb-1">
+          <p data-reveal="rise" className="max-w-[48ch] text-[15px] leading-[1.6] text-slate-600 lg:pb-1">
             Most courses stop once they&apos;ve taught you something. Summate is built around what comes next:
             using it, proving it, and growing with people who&apos;ve done it before.
           </p>
@@ -1735,27 +1720,32 @@ export function ProgramSpotlight() {
 
         <div className="mt-5 [@media(min-width:1024px)_and_(max-height:760px)]:mt-3 grid gap-4 lg:grid-cols-[minmax(0,1.55fr)_minmax(0,1fr)]">
           {/* The five shifts */}
-          <div className="overflow-hidden rounded-[24px] border border-slate-200 bg-white shadow-[0_20px_60px_rgba(13,18,34,0.06)]">
+          <div data-reveal="rise" className="overflow-hidden rounded-[24px] border border-slate-200 bg-white shadow-[0_20px_60px_rgba(13,18,34,0.06)]">
             <div className="hidden grid-cols-[minmax(0,4fr)_minmax(0,7fr)] gap-6 border-b border-slate-200 bg-[#FBFCFF] px-6 py-3 [@media(min-width:1024px)_and_(max-height:760px)]:py-2 text-[13px] font-semibold sm:grid">
               <span className="text-slate-500">Most courses give you</span>
               <span className="text-[#1E3ABA]">Summate gives you</span>
             </div>
-            <ul className="divide-y divide-slate-100">
+            <ul className="divide-y divide-slate-100" data-reveal-step="130">
               {shifts.map((s) => (
                 <li
                   key={s.to}
+                  data-reveal="rise"
+                  data-reveal-step="0"
                   className="relative grid gap-1.5 px-6 py-3.5 [@media(min-width:1024px)_and_(max-height:760px)]:py-2.5 sm:grid-cols-[minmax(0,4fr)_minmax(0,7fr)] sm:items-center sm:gap-6"
                 >
-                  <span aria-hidden="true" className="absolute inset-y-0 left-0 w-1" style={{ background: s.accent }} />
+                  <span data-reveal="grow" aria-hidden="true" className="absolute inset-y-0 left-0 w-1" style={{ background: s.accent }} />
                   <p className="flex items-center gap-2 text-[14px] font-medium leading-snug text-slate-400">
                     <X size={13} strokeWidth={2.6} aria-hidden="true" className="shrink-0 text-slate-300" />
-                    <span className="line-through decoration-slate-300 decoration-[1.5px]">
+                    {/* Struck through once the row lands: the old way, crossed out */}
+                    <span data-reveal="strike" data-reveal-delay="450" className="rv-strike">
                       <span className="sr-only">Most courses: </span>
                       {s.from}
                     </span>
                   </p>
                   <div className="flex items-start gap-2.5">
                     <span
+                      data-reveal="pop"
+                      data-reveal-delay="700"
                       aria-hidden="true"
                       className="mt-[3px] flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-white"
                       style={{ background: s.accent }}
@@ -1782,7 +1772,7 @@ export function ProgramSpotlight() {
           </div>
 
           {/* The sum */}
-          <div className="relative isolate flex flex-col overflow-hidden rounded-[24px] bg-[#0D1222] p-6">
+          <div data-reveal="rise" className="relative isolate flex flex-col overflow-hidden rounded-[24px] bg-[#0D1222] p-6">
             <div
               aria-hidden="true"
               className="pointer-events-none absolute -right-24 -top-28 -z-10 h-[340px] w-[340px] rounded-full bg-[#1E3ABA]/55 blur-[100px]"
@@ -2068,6 +2058,18 @@ export function ComparisonTable() {
 }
 
 /* ---------------- 08. Batch Benefits ---------------- */
+const BENEFIT_INTERVAL_MS = 4500;
+
+// A slow camera move per benefit, so the photo shifts with each step.
+const BENEFIT_FRAMES = [
+  "scale(1.04) translate(0%, 0%)",
+  "scale(1.1) translate(-2%, 1%)",
+  "scale(1.08) translate(2%, -1%)",
+  "scale(1.12) translate(-1%, -2%)",
+  "scale(1.06) translate(1.5%, 1.5%)",
+  "scale(1.1) translate(0%, -1.5%)",
+];
+
 export function BatchBenefits() {
   const benefits = [
     {
@@ -2126,12 +2128,43 @@ export function BatchBenefits() {
     },
   ];
 
-  const [active, setActive] = useState(1);
-
+  const [active, setActive] = useState(0);
   const current = benefits[active];
+
+  // Step through the benefits on a timer while the section is on screen, so
+  // touch visitors (who can't hover) still see all six. Hover or focus pauses
+  // it; choosing one directly hands control to the visitor for good.
+  const sectionRef = useRef<HTMLElement>(null);
+  const [inView, setInView] = useState(false);
+  const [paused, setPaused] = useState(false);
+  const [userChose, setUserChose] = useState(false);
+  const [reducedMotion, setReducedMotion] = useState(false);
+
+  useEffect(() => {
+    setReducedMotion(window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+    const el = sectionRef.current;
+    if (!el) return;
+    const io = new IntersectionObserver(([entry]) => setInView(entry.isIntersecting), {
+      threshold: 0.35,
+    });
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
+  const autoPlaying = inView && !paused && !userChose && !reducedMotion;
+
+  useEffect(() => {
+    if (!autoPlaying) return;
+    const timer = setTimeout(
+      () => setActive((i) => (i + 1) % benefits.length),
+      BENEFIT_INTERVAL_MS
+    );
+    return () => clearTimeout(timer);
+  }, [autoPlaying, active, benefits.length]);
 
   return (
     <section
+      ref={sectionRef}
       id="batch-benefits"
       className="relative overflow-hidden bg-white py-14 lg:py-20"
     >
@@ -2153,22 +2186,23 @@ export function BatchBenefits() {
         <div className="flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
           <div className="max-w-3xl">
             <div className="mb-5 flex items-center gap-3">
-              <span className="h-px w-10 bg-[#1E3ABA]" />
+              <span data-reveal="draw" className="h-px w-10 bg-[#1E3ABA]" />
 
-              <span className="text-[13px] font-bold uppercase tracking-[0.2em] text-[#1E3ABA]">
+              <span data-reveal="rise" className="text-[13px] font-bold uppercase tracking-[0.2em] text-[#1E3ABA]">
                 The Batch 01 Experience
               </span>
             </div>
 
             <h2 className="text-[38px] font-extrabold leading-[1.05] tracking-[-0.045em] text-[#0D1222] sm:text-[48px] lg:text-[58px]">
-              A learning experience
-              <br />
-              <span className="text-slate-400">
-                that moves you forward.
+              <span data-reveal="line"><span>A learning experience</span></span>
+              <span data-reveal="line">
+                <span className="text-slate-400">
+                  that moves you forward.
+                </span>
               </span>
             </h2>
 
-            <p className="mt-6 max-w-2xl text-sm leading-7 text-slate-600 sm:text-base">
+            <p data-reveal="rise" className="mt-6 max-w-2xl text-sm leading-7 text-slate-600 sm:text-base">
               Practical skills, real projects and the right guidance —
               everything designed to help you build what's next.
             </p>
@@ -2176,20 +2210,20 @@ export function BatchBenefits() {
 
           {/* Journey */}
           <div className="shrink-0 lg:pb-1">
-            <div className="flex items-center gap-3">
-              <span className="font-mono text-[10px] font-bold tracking-[0.18em] text-[#1E3ABA]">
+            <div className="flex items-center gap-3" data-reveal-step="160">
+              <span data-reveal="rise" className="font-mono text-[10px] font-bold tracking-[0.18em] text-[#1E3ABA]">
                 LEARN
               </span>
 
-              <span className="text-slate-300">→</span>
+              <span data-reveal="fade" className="text-slate-300">→</span>
 
-              <span className="font-mono text-[10px] font-bold tracking-[0.18em] text-[#7C3AED]">
+              <span data-reveal="rise" className="font-mono text-[10px] font-bold tracking-[0.18em] text-[#7C3AED]">
                 BUILD
               </span>
 
-              <span className="text-slate-300">→</span>
+              <span data-reveal="fade" className="text-slate-300">→</span>
 
-              <span className="font-mono text-[10px] font-bold tracking-[0.18em] text-emerald-600">
+              <span data-reveal="rise" className="font-mono text-[10px] font-bold tracking-[0.18em] text-emerald-600">
                 GROW
               </span>
             </div>
@@ -2205,17 +2239,32 @@ export function BatchBenefits() {
               BENEFIT LIST
           ======================================================= */}
 
-          <div className="overflow-hidden rounded-[28px] border border-slate-200 bg-[#FAFBFF]">
+          <div
+            data-reveal="rise"
+            data-reveal-step="80"
+            className="overflow-hidden rounded-[28px] border border-slate-200 bg-[#FAFBFF]"
+            onMouseEnter={() => setPaused(true)}
+            onMouseLeave={() => setPaused(false)}
+            onFocus={() => setPaused(true)}
+            onBlur={(e) => {
+              if (!e.currentTarget.contains(e.relatedTarget as Node | null)) setPaused(false);
+            }}
+          >
             {benefits.map((benefit, index) => {
               const isActive = active === index;
 
               return (
                 <button
                   key={benefit.num}
+                  data-reveal="rise"
                   type="button"
+                  aria-pressed={isActive}
                   onMouseEnter={() => setActive(index)}
                   onFocus={() => setActive(index)}
-                  onClick={() => setActive(index)}
+                  onClick={() => {
+                    setActive(index);
+                    setUserChose(true);
+                  }}
                   className={`
                     group relative flex w-full
                     items-center gap-4 border-b
@@ -2378,7 +2427,11 @@ export function BatchBenefits() {
               VISUAL PANEL
           ======================================================= */}
 
-          <div className="relative min-h-[500px] overflow-hidden rounded-[30px] border border-slate-200 bg-[#F7F9FF]">
+          <div
+            data-reveal="image"
+            data-reveal-delay="150"
+            className="relative min-h-[500px] overflow-hidden rounded-[30px] border border-slate-200 bg-[#F7F9FF]"
+          >
             {/* Accent glow */}
             <div
               className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full opacity-40 blur-3xl transition-colors duration-700"
@@ -2399,14 +2452,19 @@ export function BatchBenefits() {
 
             {/* Image */}
             <div className="absolute inset-5 overflow-hidden rounded-[23px]">
-              <Image
-                src="/workspace-setup.png"
-                alt="Workspace with laptop, notebook and books"
-                fill
-                priority
-                className="object-cover object-center transition-transform duration-700"
-                sizes="(max-width: 1024px) 100vw, 45vw"
-              />
+              <div
+                className="absolute inset-0 transition-transform duration-[1800ms] ease-out motion-reduce:transition-none"
+                style={{ transform: reducedMotion ? undefined : BENEFIT_FRAMES[active % BENEFIT_FRAMES.length] }}
+              >
+                <Image
+                  src="/workspace-setup.png"
+                  alt="Workspace with laptop, notebook and books"
+                  fill
+                  priority
+                  className="object-cover object-center"
+                  sizes="(max-width: 1024px) 100vw, 45vw"
+                />
+              </div>
 
               {/* Image overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-[#0D1222]/75 via-transparent to-transparent" />
@@ -2435,7 +2493,8 @@ export function BatchBenefits() {
             </div>
 
             {/* Bottom content */}
-            <div className="absolute bottom-9 left-9 right-9 z-20 text-white">
+            <div className="absolute bottom-9 left-9 right-9 z-20 text-white" aria-live="polite">
+              <div key={active} className="rv-swap">
               <p
                 className="text-[13px] font-bold uppercase tracking-[0.18em]"
                 style={{
@@ -2452,21 +2511,27 @@ export function BatchBenefits() {
               <p className="mt-3 max-w-md text-xs leading-6 text-white/70">
                 {current.desc}
               </p>
+              </div>
 
-              {/* Progress */}
+              {/* Progress: the active pill fills over the auto-advance interval */}
               <div className="mt-6 flex items-center gap-2">
                 {benefits.map((item, index) => (
                   <span
                     key={item.num}
-                    className="h-1 rounded-full transition-all duration-500"
-                    style={{
-                      width: index === active ? "32px" : "10px",
-                      backgroundColor:
-                        index === active
-                          ? current.accent
-                          : "rgba(255,255,255,0.35)",
-                    }}
-                  />
+                    className="relative h-1 overflow-hidden rounded-full bg-white/35 transition-all duration-500"
+                    style={{ width: index === active ? "32px" : "10px" }}
+                  >
+                    {index === active && (
+                      <span
+                        key={`${active}-${autoPlaying}`}
+                        className={`absolute inset-0 rounded-full ${autoPlaying ? "rv-progress" : ""}`}
+                        style={{
+                          backgroundColor: current.accent,
+                          animationDuration: `${BENEFIT_INTERVAL_MS}ms`,
+                        }}
+                      />
+                    )}
+                  </span>
                 ))}
               </div>
             </div>
@@ -2477,8 +2542,8 @@ export function BatchBenefits() {
             BOTTOM STATEMENT
         ========================================================= */}
 
-        <div className="mt-12 grid gap-5 border-t border-slate-200 pt-7 sm:grid-cols-3">
-          <div>
+        <div className="mt-12 grid gap-5 border-t border-slate-200 pt-7 sm:grid-cols-3" data-reveal-step="140">
+          <div data-reveal="rise">
             <p className="font-mono text-[10px] font-bold tracking-[0.15em] text-[#1E3ABA]">
               01 / LEARN
             </p>
@@ -2488,7 +2553,7 @@ export function BatchBenefits() {
             </p>
           </div>
 
-          <div>
+          <div data-reveal="rise">
             <p className="font-mono text-[10px] font-bold tracking-[0.15em] text-[#7C3AED]">
               02 / BUILD
             </p>
@@ -2498,7 +2563,7 @@ export function BatchBenefits() {
             </p>
           </div>
 
-          <div>
+          <div data-reveal="rise">
             <p className="font-mono text-[10px] font-bold tracking-[0.15em] text-emerald-600">
               03 / GROW
             </p>
@@ -2546,17 +2611,21 @@ export function ToolStrip() {
         
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="mt-5 text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl lg:text-[46px] lg:leading-[1.14]">
-            Tools you’ll work with
+            <span data-reveal="line"><span>Tools you’ll work with</span></span>
           </h2>
-          <p className="mt-4 text-base text-slate-600 sm:text-lg">
+          <p data-reveal="rise" className="mt-4 text-base text-slate-600 sm:text-lg">
             Modern, industry-relevant tools to help you build, ship and grow.
           </p>
         </div>
 
-        <div className="mt-16 grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-10">
+        <div
+          className="mt-16 grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-10"
+          data-reveal-step="45"
+        >
           {toolList.map((tool) => (
             <div
               key={tool.name}
+              data-reveal="pop"
               className="group flex flex-col items-center justify-center text-center"
             >
               <div className="flex h-16 w-16 items-center justify-center rounded-[20px] border border-slate-200/80 bg-white shadow-sm shadow-slate-900/[0.04] transition-all duration-200 group-hover:-translate-y-1 group-hover:border-slate-300 group-hover:shadow-md sm:h-[72px] sm:w-[72px]">
@@ -2583,8 +2652,8 @@ export function ToolStrip() {
         </div>
 
         <div className="mt-20 flex flex-col items-center justify-center">
-          <div className="h-0.5 w-8 rounded-full bg-slate-200" />
-          <p className="mt-5 text-[11px] font-bold uppercase tracking-[0.25em] text-slate-400">
+          <div data-reveal="draw" className="h-0.5 w-8 origin-center rounded-full bg-slate-200" />
+          <p data-reveal="rise" className="mt-5 text-[11px] font-bold uppercase tracking-[0.25em] text-slate-400">
             Learn &nbsp;·&nbsp; Build &nbsp;·&nbsp; Ship &nbsp;·&nbsp; Grow
           </p>
         </div>
@@ -3163,7 +3232,7 @@ export function FinalCta() {
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
 
         {/* TOP LABEL */}
-        <div className="flex items-center justify-center gap-3 text-[10px] font-bold uppercase tracking-[0.22em] text-slate-500">
+        <div data-reveal="rise" className="flex items-center justify-center gap-3 text-[10px] font-bold uppercase tracking-[0.22em] text-slate-500">
           <span>Summate Learning</span>
           <span className="text-slate-700">·</span>
           <span>Batch 01</span>
@@ -3172,28 +3241,28 @@ export function FinalCta() {
         {/* MAIN COPY */}
         <div className="mx-auto mt-8 max-w-4xl text-center">
 
-          <p className="text-[13px] font-bold uppercase tracking-[0.18em] text-[#6E8AFF]">
+          <p data-reveal="rise" className="text-[13px] font-bold uppercase tracking-[0.18em] text-[#6E8AFF]">
             Your next chapter
           </p>
 
-          <h2 className="mt-5 text-4xl font-extrabold tracking-[-0.04em] text-white sm:text-5xl lg:text-[64px] lg:leading-[1.05]">
-            Learn something.
-            <br />
-            <span className="text-slate-500">
-              Build something.
+          <h2 className="mt-5 text-4xl font-extrabold tracking-[-0.04em] text-white sm:text-5xl lg:text-[64px] lg:leading-[1.05]" data-reveal-step="180">
+            <span data-reveal="line"><span>Learn something.</span></span>
+            <span data-reveal="line">
+              <span className="text-slate-500">
+                Build something.
+              </span>
             </span>
-            <br />
-            Take it forward.
+            <span data-reveal="line"><span>Take it forward.</span></span>
           </h2>
 
-          <p className="mx-auto mt-7 max-w-2xl text-sm leading-7 text-slate-400 sm:text-base">
+          <p data-reveal="rise" className="mx-auto mt-7 max-w-2xl text-sm leading-7 text-slate-400 sm:text-base">
             If you’re ready to turn what you’ve learned into something you
             can use, build and take forward, Batch 1 is where Summate Learning
             begins.
           </p>
 
           {/* CTA */}
-          <div className="mt-9">
+          <div data-reveal="pop" className="mt-9">
             <Link
               href="/apply"
               className="group inline-flex items-center gap-3 rounded-full bg-white px-7 py-3.5 text-sm font-bold text-[#0D1222] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#EEF2FF]"
@@ -3216,19 +3285,21 @@ export function FinalCta() {
 
           <div className="relative">
 
-            {/* Connecting line */}
-            <div className="absolute left-[16%] right-[16%] top-7 hidden h-px bg-slate-800 sm:block" />
+            {/* Connecting line: drawn left to right, each step lands as the line reaches it */}
+            <div data-reveal="draw" className="absolute left-[16%] right-[16%] top-7 hidden h-px bg-slate-800 sm:block" />
 
-            <div className="grid gap-4 sm:grid-cols-3">
+            <div className="grid gap-4 sm:grid-cols-3" data-reveal-step="500">
 
-              {journey.map((item, index) => (
+              {journey.map((item) => (
                 <div
                   key={item.num}
+                  data-reveal="rise"
+                  data-reveal-step="0"
                   className="group relative"
                 >
 
                   {/* Node */}
-                  <div className="relative z-10 mx-auto flex h-14 w-14 items-center justify-center rounded-full border-4 border-[#0D1222] bg-slate-900 shadow-[0_0_0_1px_rgba(255,255,255,0.08)] transition-transform duration-300 group-hover:scale-110">
+                  <div data-reveal="pop" className="relative z-10 mx-auto flex h-14 w-14 items-center justify-center rounded-full border-4 border-[#0D1222] bg-slate-900 shadow-[0_0_0_1px_rgba(255,255,255,0.08)] transition-transform duration-300 group-hover:scale-110">
                     <span
                       className="font-mono text-[10px] font-bold"
                       style={{ color: item.accent }}
@@ -3261,7 +3332,7 @@ export function FinalCta() {
         </div>
 
         {/* BOTTOM LINE */}
-        <div className="mx-auto mt-20 flex max-w-5xl flex-col gap-4 border-t border-slate-800 pt-7 text-center sm:flex-row sm:items-center sm:justify-between sm:text-left">
+        <div data-reveal="rise" className="mx-auto mt-20 flex max-w-5xl flex-col gap-4 border-t border-slate-800 pt-7 text-center sm:flex-row sm:items-center sm:justify-between sm:text-left">
 
           <p className="text-xs text-slate-500">
             LEARN · BUILD · GROW
