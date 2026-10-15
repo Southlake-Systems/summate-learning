@@ -6,7 +6,7 @@ import ApplyForm from "@/components/ApplyForm";
 export const metadata: Metadata = {
   title: "Apply for Batch 1 — Summate Learning",
   description:
-    "Apply to the founding batch of the AI-Augmented Full-Stack Developer Course. Live online, starting September 2026.",
+    "Apply to the founding batch of the AI-Augmented Full-Stack Developer Course. Live online, starting January 2027.",
 };
 
 export default function ApplyPage() {

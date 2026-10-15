@@ -3557,7 +3557,7 @@ export function EnquirySection({ children }: { children: React.ReactNode }) {
             <div className="mt-8 space-y-3 text-xs font-medium text-slate-600">
               <p>• Live online across Kerala, Tamil Nadu, Karnataka, Telangana & AP</p>
               <p>• Designed for early-career developers & career-switchers</p>
-              <p>• Cohort 1 commences September 2026</p>
+              <p>• Cohort 1 commences January 2027</p>
             </div>
           </div>
           <div className="rounded-2xl border border-slate-200 bg-white p-6 sm:p-8 shadow-sm">

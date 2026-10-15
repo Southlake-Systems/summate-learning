@@ -147,7 +147,7 @@ export default function AboutPage() {
 
       <CtaBand
         title="Batch 1 is where Summate begins."
-        body="Live online from September 2026. Seats in the founding cohort are limited."
+        body="Live online from January 2027. Seats in the founding cohort are limited."
         primary={{ label: "Apply for Batch 1", href: "/apply" }}
         secondary={{ label: "Talk to us", href: "/contact" }}
       />

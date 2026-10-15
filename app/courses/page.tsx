@@ -8,7 +8,7 @@ import { community } from "@/lib/siteContent";
 export const metadata: Metadata = {
   title: "Courses",
   description:
-    "Live online courses from Summate Learning, starting with the AI-Augmented Full-Stack Developer Course in September 2026.",
+    "Live online courses from Summate Learning, starting with the AI-Augmented Full-Stack Developer Course in January 2027.",
 };
 
 export default function CoursesPage() {
@@ -61,7 +61,7 @@ export default function CoursesPage() {
                 {[
                   { k: "Duration", v: featured.duration },
                   { k: "Format", v: featured.format },
-                  { k: "Starts", v: "Sept 2026" },
+                  { k: "Starts", v: "Jan 2027" },
                 ].map((m) => (
                   <div key={m.k} className="bg-[#0D1222]/60 p-4 backdrop-blur">
                     <dt className="text-[12px] font-medium text-slate-400">{m.k}</dt>

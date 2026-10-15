@@ -5,7 +5,7 @@
 
 export const site = {
   name: "Summate Learning",
-  tagline: "Founding Program: AI-Augmented Full-Stack Developer Course Live Online September 2026",
+  tagline: "Founding Program: AI-Augmented Full-Stack Developer Course Live Online January 2027",
   legalName: "Summate Learning LLP",
   email: "hello@summatelearning.com",
   phone: "+91 92928 38222",
@@ -63,7 +63,7 @@ export const nav: {
 export const banners = {
   announcement: {
     enabled: true,
-    text: "Founding Program: AI-Augmented Full-Stack Developer Course Live Online September 2026",
+    text: "Founding Program: AI-Augmented Full-Stack Developer Course Live Online January 2027",
     cta: "Apply now",
     href: "/apply",
   },
@@ -98,7 +98,7 @@ export const banners = {
  * HERO (Section 3)
  * ------------------------------------------------------------------ */
 export const hero = {
-  eyebrow: "FOUNDING BATCH LIVE ONLINE SEPTEMBER 2026",
+  eyebrow: "FOUNDING BATCH LIVE ONLINE JANUARY 2027",
   headline: "You are more than what you already know",
   body: [
     "You've finished a degree, picked up a few skills, watched a few tutorials and still find yourself wondering, “Am I actually ready?”",
@@ -115,7 +115,7 @@ export const hero = {
     "AI used as a tool, without handing over the thinking",
     "Mock interviews and interview readiness",
   ],
-  meta: { value: "12 weeks", label: "Live Online · September 2026" },
+  meta: { value: "12 weeks", label: "Live Online · January 2027" },
 };
 
 /* ------------------------------------------------------------------ *
@@ -239,7 +239,7 @@ export const program = {
   meta: [
     { label: "Duration", value: "12 Weeks" },
     { label: "Format", value: "Live Online" },
-    { label: "Cohort", value: "September 2026" },
+    { label: "Cohort", value: "January 2027" },
   ],
   comingSoon: [
     "Data & Analytics pathway",
@@ -517,7 +517,7 @@ export const finalCta = {
  * ------------------------------------------------------------------ */
 export const footer = {
   brand: "Summate Learning",
-  foundingNote: "Founding Program: AI-Augmented Full-Stack Developer Course · Live Online September 2026",
+  foundingNote: "Founding Program: AI-Augmented Full-Stack Developer Course · Live Online January 2027",
   copyright: "© 2026 Summate Learning. All rights reserved.",
   columns: [
     {
