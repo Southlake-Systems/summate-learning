@@ -945,20 +945,20 @@ export function TrackCatalog() {
       featured: true,
     },
     {
-      id: "data-eng",
+      id: "devops",
       number: "02",
       badge: "Coming Soon",
-      category: "Data",
-      title: "Modern Data Engineering",
+      category: "Infrastructure",
+      title: "DevOps Engineering",
       tagline:
-        "Build practical data systems and develop the engineering habits needed for production environments.",
+        "Learn to build, ship and run software reliably with the tooling and practices modern engineering teams depend on.",
       duration: "12 Weeks",
       format: "Live Online",
       accent: "#7C3AED",
       soft: "#F3EFFF",
       gradient:
         "linear-gradient(135deg, #5B21B6 0%, #8B5CF6 50%, #C084FC 100%)",
-      skills: ["Python", "Data Pipelines", "SQL", "Cloud", "Analytics"],
+      skills: ["Linux", "CI/CD", "Docker", "Kubernetes", "Cloud"],
       seats: "Coming Soon",
       featured: false,
     },
@@ -977,24 +977,6 @@ export function TrackCatalog() {
       gradient:
         "linear-gradient(135deg, #FF2D75 0%, #FF4D9A 50%, #FF8A00 100%)",
       skills: ["Analytics", "CRO", "Campaigns", "Attribution", "Growth"],
-      seats: "Coming Soon",
-      featured: false,
-    },
-    {
-      id: "ai-mech",
-      number: "04",
-      badge: "Coming Soon",
-      category: "AI + Hardware",
-      title: "AI & Embedded Systems",
-      tagline:
-        "Explore the intersection of intelligent software, hardware and real-world systems.",
-      duration: "12 Weeks",
-      format: "Live Online",
-      accent: "#FF8A00",
-      soft: "#FFF6E9",
-      gradient:
-        "linear-gradient(135deg, #FF8A00 0%, #FFB000 48%, #FFE066 100%)",
-      skills: ["Computer Vision", "Edge AI", "Embedded", "Sensors", "Python"],
       seats: "Coming Soon",
       featured: false,
     },
@@ -1082,9 +1064,8 @@ export function TrackCatalog() {
             {[
               "All Programs",
               "Technology",
-              "Data",
+              "Infrastructure",
               "Growth",
-              "AI + Hardware",
             ].map((item, index) => (
               <button
                 key={item}
@@ -1155,7 +1136,7 @@ export function TrackCatalog() {
                 xl:grid-cols-3
               "
             >
-              {tracks.slice(0, 3).map((track) => (
+              {tracks.map((track) => (
                 <Link
                   key={track.id}
                   href={track.featured ? "/courses/ai-augmented-full-stack-developer" : "/courses"}
@@ -1263,63 +1244,6 @@ export function TrackCatalog() {
                 </Link>
               ))}
             </div>
-          </div>
-
-          {/* =================================================
-              FOURTH PROGRAM
-          ================================================== */}
-
-          <div className="relative z-10 mt-4">
-            <Link
-              href="/courses"
-              className="
-                group flex items-center justify-between
-                rounded-[18px]
-                border border-white/50
-                bg-white/75
-                px-5 py-4
-                backdrop-blur-md
-                transition-all duration-300
-                hover:bg-white
-              "
-            >
-              <div className="flex items-center gap-4">
-
-                <span
-                  className="flex h-9 w-9 items-center justify-center rounded-xl text-white"
-                  style={{ backgroundColor: tracks[3].accent }}
-                >
-                  <span className="font-mono text-[10px] font-bold">
-                    04
-                  </span>
-                </span>
-
-                <div>
-                  <p className="text-[9px] font-bold uppercase tracking-[0.15em] text-[#FF8A00]">
-                    AI + Hardware
-                  </p>
-
-                  <p className="mt-0.5 text-sm font-bold text-[#0D1222]">
-                    AI & Embedded Systems
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-3">
-
-                <span className="hidden text-[10px] font-semibold text-slate-400 sm:block">
-                  Coming Soon
-                </span>
-
-                <span className="flex h-8 w-8 items-center justify-center rounded-full border border-slate-200 text-slate-400 transition-all duration-300 group-hover:border-[#FF8A00]/30 group-hover:bg-[#FFF6E9] group-hover:text-[#FF8A00]">
-                  <Icon
-                    name="ArrowUpRight"
-                    size={14}
-                    strokeWidth={2}
-                  />
-                </span>
-              </div>
-            </Link>
           </div>
 
         </div>
