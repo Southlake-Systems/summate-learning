@@ -99,7 +99,7 @@ export default function SiteFooter() {
                 alt="Summate Learning"
                 width={210}
                 height={70}
-                className="h-12 w-auto object-contain"
+                className="h-14 w-auto object-contain"
               />
             </Link>
 

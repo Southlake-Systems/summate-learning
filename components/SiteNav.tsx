@@ -75,7 +75,7 @@ export default function SiteNav() {
             width={200}
             height={52}
             priority
-            className="h-[42px] w-auto object-contain transition-transform duration-200 group-hover:scale-[1.015]"
+            className="h-[50px] w-auto object-contain transition-transform duration-200 group-hover:scale-[1.015]"
           />
         </Link>
 
