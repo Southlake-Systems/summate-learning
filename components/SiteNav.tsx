@@ -61,11 +61,11 @@ export default function SiteNav() {
     <header
       className={`sticky top-0 z-50 w-full border-b transition-all duration-300 ${
         scrolled
-          ? "border-slate-200 bg-white/95 shadow-[0_8px_30px_rgba(13,18,34,0.07)] backdrop-blur-xl"
+          ? "border-slate-200 bg-white/95 shadow-[0_8px_30px_rgba(15,42,48,0.07)] backdrop-blur-xl"
           : "border-slate-100 bg-white"
       }`}
     >
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#7C3AED]/25 to-transparent" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#55C9B8]/25 to-transparent" />
 
       <div className="mx-auto flex h-[76px] max-w-7xl items-center justify-between px-6 lg:px-8">
         <Link href="/" aria-label="Summate Learning home" className="group flex items-center">
@@ -84,7 +84,7 @@ export default function SiteNav() {
           {nav.links.map((link) => {
             const active = isActive(pathname, link);
             const base = `relative inline-flex items-center gap-1 rounded-full px-3.5 py-2 text-[14px] font-semibold transition-colors duration-200 ${
-              active ? "text-[#1E3ABA]" : "text-[#334155] hover:text-[#0D1222]"
+              active ? "text-[#1D5F6E]" : "text-[#334155] hover:text-[#0F2A30]"
             }`;
 
             if (!link.children) {
@@ -124,7 +124,7 @@ export default function SiteNav() {
                     open ? "visible translate-y-0 opacity-100" : "invisible -translate-y-1 opacity-0"
                   }`}
                 >
-                  <ul className="rounded-2xl border border-slate-200 bg-white p-2 shadow-[0_24px_60px_rgba(13,18,34,0.12)]">
+                  <ul className="rounded-2xl border border-slate-200 bg-white p-2 shadow-[0_24px_60px_rgba(15,42,48,0.12)]">
                     {link.children.map((child) => {
                       const childActive = pathname === child.href;
                       return (
@@ -133,10 +133,10 @@ export default function SiteNav() {
                             href={child.href}
                             aria-current={childActive ? "page" : undefined}
                             className={`block rounded-xl px-4 py-3 transition-colors ${
-                              childActive ? "bg-[#F2F4FF]" : "hover:bg-[#F8FAFF]"
+                              childActive ? "bg-[#EAF4F5]" : "hover:bg-[#F6FAFA]"
                             }`}
                           >
-                            <span className={`block text-[14px] font-semibold ${childActive ? "text-[#1E3ABA]" : "text-[#0D1222]"}`}>
+                            <span className={`block text-[14px] font-semibold ${childActive ? "text-[#1D5F6E]" : "text-[#0F2A30]"}`}>
                               {child.label}
                             </span>
                             {child.description && (
@@ -156,7 +156,7 @@ export default function SiteNav() {
         <div className="hidden lg:flex">
           <Link
             href={nav.primaryCta.href}
-            className="group inline-flex items-center gap-2 rounded-full bg-[#0D1222] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors duration-200 hover:bg-[#1E3ABA] hover:text-white"
+            className="group inline-flex items-center gap-2 rounded-full bg-[#EF6F51] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors duration-200 hover:bg-[#D9573A] hover:text-white"
           >
             {nav.primaryCta.label}
             <Icon
@@ -171,7 +171,7 @@ export default function SiteNav() {
         <button
           type="button"
           onClick={() => setMobileOpen((open) => !open)}
-          className="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-white text-[#0D1222] transition-colors hover:bg-slate-50 lg:hidden"
+          className="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-white text-[#0F2A30] transition-colors hover:bg-slate-50 lg:hidden"
           aria-label={mobileOpen ? "Close menu" : "Open menu"}
           aria-expanded={mobileOpen}
           aria-controls="mobile-nav"
@@ -200,7 +200,7 @@ export default function SiteNav() {
                           href={child.href}
                           aria-current={pathname === child.href ? "page" : undefined}
                           className={`block rounded-2xl px-4 py-3 text-[15px] font-semibold transition-colors ${
-                            pathname === child.href ? "bg-[#F2F4FF] text-[#1E3ABA]" : "text-slate-700 hover:bg-[#F8FAFF]"
+                            pathname === child.href ? "bg-[#EAF4F5] text-[#1D5F6E]" : "text-slate-700 hover:bg-[#F6FAFA]"
                           }`}
                         >
                           {child.label}
@@ -215,7 +215,7 @@ export default function SiteNav() {
                     href={link.href}
                     aria-current={isActive(pathname, link) ? "page" : undefined}
                     className={`block rounded-2xl px-4 py-3 text-[15px] font-semibold transition-colors ${
-                      isActive(pathname, link) ? "bg-[#F2F4FF] text-[#1E3ABA]" : "text-slate-700 hover:bg-[#F8FAFF]"
+                      isActive(pathname, link) ? "bg-[#EAF4F5] text-[#1D5F6E]" : "text-slate-700 hover:bg-[#F6FAFA]"
                     }`}
                   >
                     {link.label}
@@ -228,7 +228,7 @@ export default function SiteNav() {
           <div className="mt-4 border-t border-slate-100 pt-4">
             <Link
               href={nav.primaryCta.href}
-              className="flex w-full items-center justify-center gap-2 rounded-2xl bg-[#0D1222] py-3.5 text-[15px] font-semibold text-white hover:bg-[#1E3ABA] hover:text-white"
+              className="flex w-full items-center justify-center gap-2 rounded-2xl bg-[#0F2A30] py-3.5 text-[15px] font-semibold text-white hover:bg-[#1D5F6E] hover:text-white"
             >
               {nav.primaryCta.label}
               <Icon name="ArrowUpRight" size={15} strokeWidth={2.3} />

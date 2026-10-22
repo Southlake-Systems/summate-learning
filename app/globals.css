@@ -4,30 +4,29 @@
 @tailwind utilities;
 
 :root {
-  /* Brand Primary & Secondary Accents */
-  --su-primary: #1E3ABA;             /* Deep Cobalt */
-  --su-primary-active: #152885;
-  --su-primary-disabled: #9bb0ef;
-  --su-primary-soft: #F2F4FF;        /* Cool Ice Tint */
+  /* Brand palette — taken from the Summate Learning logo, plus two warm accents */
+  --su-primary: #1D5F6E;             /* Dark Teal — navbar, headings, footer, text accents */
+  --su-primary-active: #164B57;
+  --su-primary-disabled: #9DC3CA;
+  --su-primary-soft: #EAF4F5;        /* Teal Mist Tint */
 
-  --su-purple: #7C3AED;              /* Violet Iris */
-  --su-purple-soft: rgba(124, 58, 237, 0.1);
+  --su-secondary: #55C9B8;           /* Bright Aqua — icons, links, hover states, highlights */
+  --su-secondary-ink: #23857A;       /* Aqua dark enough for small text on white */
+  --su-secondary-soft: rgba(85, 201, 184, 0.12);
 
-  --su-magenta: #FF2D75;             /* Hot Pink */
-  --su-magenta-soft: rgba(255, 45, 117, 0.1);
+  --su-coral: #EF6F51;               /* Coral — main calls to action, sale / alert badges */
+  --su-coral-active: #D9573A;
+  --su-coral-soft: rgba(239, 111, 81, 0.1);
 
-  --su-orange: #FF8A00;              /* Tangelo Orange */
-  --su-orange-soft: rgba(255, 138, 0, 0.1);
+  --su-amber: #F4B942;               /* Warm Amber — ratings, small highlights, secondary badges */
+  --su-amber-soft: rgba(244, 185, 66, 0.12);
 
-  --su-teal: #00D4C8;                /* Deep Aqua */
-  --su-teal-soft: rgba(0, 212, 200, 0.12);
-
-  --su-sky: #00B4FF;                 /* Neon Sky */
+  --su-mint: #9FDEAF;                /* Logo mint — gradient tails, soft accents */
 
   /* Neutrals & Surfaces */
-  --su-ink: #0D1222;                 /* Primary Dark / Body Text */
+  --su-ink: #0F2A30;                 /* Deep Teal Ink / Body Text */
   --su-body: #475569;                /* Slate Subtext */
-  --su-body-strong: #0D1222;
+  --su-body-strong: #0F2A30;
   --su-muted: #64748B;
   --su-muted-soft: #94A3B8;
   --su-hairline: #E2E8F0;
@@ -36,8 +35,8 @@
   --su-canvas: #FFFFFF;
   --su-surface-soft: #F8FAFC;
   --su-surface-strong: #F1F5F9;
-  --su-surface-dark: #0D1222;
-  --su-surface-dark-elevated: #151D36;
+  --su-surface-dark: #0F2A30;
+  --su-surface-dark-elevated: #15363E;
 
   /* On-Color Labels */
   --su-on-primary: #FFFFFF;
@@ -45,12 +44,12 @@
   --su-on-dark-soft: #94A3B8;
 
   /* Functional Status */
-  --su-success: #00D4C8;
-  --su-success-soft: rgba(0, 212, 200, 0.12);
-  --su-warning: #FF8A00;
-  --su-warning-soft: rgba(255, 138, 0, 0.12);
-  --su-danger: #FF2D75;
-  --su-danger-soft: rgba(255, 45, 117, 0.12);
+  --su-success: #23857A;
+  --su-success-soft: rgba(85, 201, 184, 0.12);
+  --su-warning: #F4B942;
+  --su-warning-soft: rgba(244, 185, 66, 0.12);
+  --su-danger: #EF6F51;
+  --su-danger-soft: rgba(239, 111, 81, 0.12);
 
   /* Typography */
   --su-font-display: var(--font-display), 'Figtree', -apple-system, sans-serif;
@@ -79,10 +78,10 @@
   --su-radius-full: 9999px;
 
   /* Shadows */
-  --su-shadow-soft: 0 4px 20px -2px rgba(13, 18, 34, 0.06);
-  --su-shadow-card: 0 8px 30px -4px rgba(13, 18, 34, 0.08);
-  --su-shadow-focus: 0 0 0 3px rgba(30, 58, 186, 0.22);
-  --su-shadow-glow: 0 10px 30px -5px rgba(30, 58, 186, 0.35);
+  --su-shadow-soft: 0 4px 20px -2px rgba(15, 42, 48, 0.06);
+  --su-shadow-card: 0 8px 30px -4px rgba(15, 42, 48, 0.08);
+  --su-shadow-focus: 0 0 0 3px rgba(29, 95, 110, 0.22);
+  --su-shadow-glow: 0 10px 30px -5px rgba(29, 95, 110, 0.35);
 }
 
 * { box-sizing: border-box; }

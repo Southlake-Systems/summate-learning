@@ -94,7 +94,7 @@ export function ScrollProgress() {
   return (
     <div aria-hidden="true" className="pointer-events-none fixed inset-x-0 top-0 z-[60] h-[3px]">
       <div
-        className="h-full origin-left bg-gradient-to-r from-[#1E3ABA] via-[#7C3AED] to-[#FF2D75]"
+        className="h-full origin-left bg-gradient-to-r from-[#1D5F6E] via-[#55C9B8] to-[#9FDEAF]"
         style={{ transform: `scaleX(${progress})` }}
       />
     </div>
@@ -120,7 +120,7 @@ export function BackToTop() {
       onClick={() =>
         window.scrollTo({ top: 0, behavior: prefersReducedMotion() ? "auto" : "smooth" })
       }
-      className={`fixed bottom-5 right-5 z-40 flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white/90 text-[#0D1222] shadow-[0_10px_30px_rgba(13,18,34,0.12)] backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:text-[#1E3ABA] sm:bottom-7 sm:right-7 ${
+      className={`fixed bottom-5 right-5 z-40 flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white/90 text-[#0F2A30] shadow-[0_10px_30px_rgba(15,42,48,0.12)] backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:text-[#1D5F6E] sm:bottom-7 sm:right-7 ${
         visible ? "opacity-100" : "pointer-events-none translate-y-3 opacity-0"
       }`}
     >

@@ -29,12 +29,12 @@ export default function AboutPage() {
           <dl className="divide-y divide-slate-200 rounded-3xl border border-slate-200 bg-white/80 px-6 backdrop-blur">
             <div className="py-5">
               <dt className="text-[13px] font-medium text-slate-500">Founding program</dt>
-              <dd className="mt-1 font-display text-lg font-bold tracking-[-0.01em] text-[#0D1222]">{program.title}</dd>
+              <dd className="mt-1 font-display text-lg font-bold tracking-[-0.01em] text-[#0F2A30]">{program.title}</dd>
             </div>
             {program.meta.map((m) => (
               <div key={m.label} className="flex items-baseline justify-between gap-4 py-4">
                 <dt className="text-[13px] font-medium text-slate-500">{m.label}</dt>
-                <dd className="text-[15px] font-semibold text-[#0D1222]">{m.value}</dd>
+                <dd className="text-[15px] font-semibold text-[#0F2A30]">{m.value}</dd>
               </div>
             ))}
           </dl>
@@ -46,7 +46,7 @@ export default function AboutPage() {
         <Split title={whyIntro.title} lede="Summate is built around one gap: knowing something is not the same as knowing what to do with it.">
           <ul className="divide-y divide-slate-200 border-y border-slate-200">
             {whyIntro.gaps.map((gap) => (
-              <li key={gap} className="py-7 font-display text-[22px] font-semibold leading-[1.35] tracking-[-0.015em] text-[#0D1222] sm:text-[26px]">
+              <li key={gap} className="py-7 font-display text-[22px] font-semibold leading-[1.35] tracking-[-0.015em] text-[#0F2A30] sm:text-[26px]">
                 {gap}
               </li>
             ))}
@@ -64,8 +64,8 @@ export default function AboutPage() {
               className="grid gap-4 rounded-3xl border border-slate-200 bg-white p-7 sm:p-9 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-12"
             >
               <div>
-                <h3 className="font-display text-2xl font-bold leading-tight tracking-[-0.02em] text-[#0D1222]">{f.title}</h3>
-                <p className="mt-3 text-[15px] font-medium leading-[1.6] text-[#1E3ABA]">{f.subtitle}</p>
+                <h3 className="font-display text-2xl font-bold leading-tight tracking-[-0.02em] text-[#0F2A30]">{f.title}</h3>
+                <p className="mt-3 text-[15px] font-medium leading-[1.6] text-[#1D5F6E]">{f.subtitle}</p>
               </div>
               <p className="text-[17px] leading-[1.7] text-slate-600">{f.body}</p>
             </article>
@@ -85,10 +85,10 @@ export default function AboutPage() {
               <span
                 aria-hidden="true"
                 className="h-1.5 w-10 rounded-full"
-                style={{ background: ["#1E3ABA", "#7C3AED", "#FF2D75"][i] }}
+                style={{ background: ["#1D5F6E", "#55C9B8", "#EF6F51"][i] }}
               />
-              <h3 className="mt-6 font-display text-2xl font-bold tracking-[-0.02em] text-[#0D1222]">{p.title}</h3>
-              <p className="mt-2 text-[15px] font-medium text-[#0D1222]">{p.subtitle}</p>
+              <h3 className="mt-6 font-display text-2xl font-bold tracking-[-0.02em] text-[#0F2A30]">{p.title}</h3>
+              <p className="mt-2 text-[15px] font-medium text-[#0F2A30]">{p.subtitle}</p>
               <p className="mt-4 text-[15px] leading-[1.7] text-slate-600">{p.body}</p>
             </article>
           ))}
@@ -106,9 +106,9 @@ export default function AboutPage() {
               <li key={c.slug} className="flex items-center justify-between gap-4 rounded-2xl border border-slate-200 bg-white px-5 py-4">
                 <span className="flex items-center gap-3">
                   <span aria-hidden="true" className="h-2.5 w-2.5 shrink-0 rounded-full" style={{ background: c.accent }} />
-                  <span className="text-[15px] font-semibold text-[#0D1222]">{c.title}</span>
+                  <span className="text-[15px] font-semibold text-[#0F2A30]">{c.title}</span>
                 </span>
-                <span className={`shrink-0 text-[13px] font-medium ${c.status === "open" ? "text-[#1E3ABA]" : "text-slate-400"}`}>
+                <span className={`shrink-0 text-[13px] font-medium ${c.status === "open" ? "text-[#1D5F6E]" : "text-slate-400"}`}>
                   {c.status === "open" ? "Enrolling" : "Coming soon"}
                 </span>
               </li>
@@ -130,14 +130,14 @@ export default function AboutPage() {
             <li key={e.href}>
               <Link
                 href={e.href}
-                className="group flex h-full flex-col justify-between rounded-3xl border border-slate-200 bg-white p-7 transition-colors hover:border-[#1E3ABA]"
+                className="group flex h-full flex-col justify-between rounded-3xl border border-slate-200 bg-white p-7 transition-colors hover:border-[#1D5F6E]"
               >
-                <span className="font-display text-xl font-bold tracking-[-0.02em] text-[#0D1222] group-hover:text-[#1E3ABA]">
+                <span className="font-display text-xl font-bold tracking-[-0.02em] text-[#0F2A30] group-hover:text-[#1D5F6E]">
                   {e.label}
                 </span>
                 <span className="mt-8 flex items-end justify-between gap-3 text-[15px] text-slate-500">
                   {e.body}
-                  <ArrowUpRight size={18} aria-hidden="true" className="shrink-0 text-slate-400 group-hover:text-[#1E3ABA]" />
+                  <ArrowUpRight size={18} aria-hidden="true" className="shrink-0 text-slate-400 group-hover:text-[#1D5F6E]" />
                 </span>
               </Link>
             </li>

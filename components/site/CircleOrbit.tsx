@@ -4,7 +4,7 @@
  * slowly orbiting in between.
  */
 const C = 260; // centre
-const colors = ["#1E3ABA", "#7C3AED", "#FF2D75", "#FF8A00", "#00D4C8", "#00B4FF"];
+const colors = ["#1D5F6E", "#55C9B8", "#EF6F51", "#F4B942", "#55C9B8", "#55C9B8"];
 
 function point(r: number, deg: number) {
   const a = ((deg - 90) * Math.PI) / 180;
@@ -22,8 +22,8 @@ export default function CircleOrbit({ labels }: { labels: string[] }) {
     <svg viewBox="-60 0 640 520" className="h-auto w-full" role="img" aria-label="You at the centre of the Summate Circle">
       <defs>
         <radialGradient id="orbit-core" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stopColor="#7C3AED" stopOpacity="0.55" />
-          <stop offset="100%" stopColor="#7C3AED" stopOpacity="0" />
+          <stop offset="0%" stopColor="#55C9B8" stopOpacity="0.55" />
+          <stop offset="100%" stopColor="#55C9B8" stopOpacity="0" />
         </radialGradient>
       </defs>
 
@@ -49,7 +49,7 @@ export default function CircleOrbit({ labels }: { labels: string[] }) {
       </g>
 
       <circle cx={C} cy={C} r="44" fill="white" />
-      <text x={C} y={C + 7} textAnchor="middle" className="fill-[#0D1222] font-display" fontSize="22" fontWeight="700">
+      <text x={C} y={C + 7} textAnchor="middle" className="fill-[#0F2A30] font-display" fontSize="22" fontWeight="700">
         You
       </text>
 
@@ -58,7 +58,7 @@ export default function CircleOrbit({ labels }: { labels: string[] }) {
         const w = label.length * 8.4 + 26;
         return (
           <g key={label}>
-            <rect x={p.x - w / 2} y={p.y - 15} width={w} height="30" rx="15" fill="#151D36" stroke="white" strokeOpacity="0.18" />
+            <rect x={p.x - w / 2} y={p.y - 15} width={w} height="30" rx="15" fill="#15363E" stroke="white" strokeOpacity="0.18" />
             <text x={p.x} y={p.y + 5} textAnchor="middle" fill="white" fontSize="14" fontWeight="600" className="font-sans">
               {label}
             </text>

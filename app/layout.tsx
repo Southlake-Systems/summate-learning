@@ -37,7 +37,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${display.variable} ${body.variable} ${mono.variable}`}>
-      <body className="font-sans antialiased selection:bg-[#1E3ABA] selection:text-white">
+      <body className="font-sans antialiased selection:bg-[#1D5F6E] selection:text-white">
         {children}
       </body>
     </html>

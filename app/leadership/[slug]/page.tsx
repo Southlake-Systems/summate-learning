@@ -72,13 +72,13 @@ export default function DirectorPage({ params }: { params: { slug: string } }) {
   return (
     <PageShell>
       {/* Hero */}
-      <section className="relative isolate overflow-hidden bg-[#0A1640] text-white">
+      <section className="relative isolate overflow-hidden bg-[#0C2A31] text-white">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 -z-10"
           style={{
             backgroundImage:
-              "radial-gradient(60% 70% at 78% 40%, rgba(30,58,186,.55), transparent 70%), radial-gradient(40% 50% at 0% 0%, rgba(0,180,255,.12), transparent 70%)",
+              "radial-gradient(60% 70% at 78% 40%, rgba(29,95,110,.55), transparent 70%), radial-gradient(40% 50% at 0% 0%, rgba(85,201,184,.12), transparent 70%)",
           }}
         />
 
@@ -93,7 +93,7 @@ export default function DirectorPage({ params }: { params: { slug: string } }) {
               onDark
             />
 
-            <p className="mt-10 text-[16px] font-medium text-[#8FB4FF] lg:mt-14">
+            <p className="mt-10 text-[16px] font-medium text-[#8FDACD] lg:mt-14">
               {member.name}, {member.role}, Summate Learning
             </p>
             <h1 className="mt-4 max-w-[17ch] font-display text-[40px] font-bold leading-[1.05] tracking-[-0.035em] sm:text-[54px] lg:text-[62px]">
@@ -106,7 +106,7 @@ export default function DirectorPage({ params }: { params: { slug: string } }) {
             <div className="mt-9 flex flex-wrap items-center gap-x-6 gap-y-4">
               <Link
                 href="#profile"
-                className="group inline-flex h-12 items-center gap-2 rounded-full bg-[#2F5BFF] px-6 text-[15px] font-semibold text-white shadow-[0_10px_30px_rgba(47,91,255,.35)] transition-colors duration-200 hover:bg-white hover:text-[#0A1640] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+                className="group inline-flex h-12 items-center gap-2 rounded-full bg-[#2A7A88] px-6 text-[15px] font-semibold text-white shadow-[0_10px_30px_rgba(42,122,136,.35)] transition-colors duration-200 hover:bg-white hover:text-[#0C2A31] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
               >
                 Read his profile
                 <ArrowUpRight
@@ -136,9 +136,9 @@ export default function DirectorPage({ params }: { params: { slug: string } }) {
             {/* Outline block, echoing the brand's stacked shapes */}
             <div
               aria-hidden="true"
-              className="absolute -right-3 top-[4%] h-[38%] w-[46%] rounded-tr-[120px] border-r-[14px] border-t-[14px] border-[#8FB4FF]/70"
+              className="absolute -right-3 top-[4%] h-[38%] w-[46%] rounded-tr-[120px] border-r-[14px] border-t-[14px] border-[#8FDACD]/70"
             />
-            <div className="relative aspect-[4/5] overflow-hidden rounded-t-[200px] bg-gradient-to-b from-[#2F5BFF] to-[#1E3ABA] shadow-[0_20px_40px_rgba(5,10,35,.45)]">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-t-[200px] bg-gradient-to-b from-[#2A7A88] to-[#1D5F6E] shadow-[0_20px_40px_rgba(6,24,29,.45)]">
               {member.image && (
                 <Image
                   src={member.image}
@@ -157,7 +157,7 @@ export default function DirectorPage({ params }: { params: { slug: string } }) {
       {/* Highlights strip, overlapping the hero */}
       {member.highlights && (
         <div className="relative z-10 mx-auto -mt-10 max-w-7xl px-6 lg:-mt-16 lg:px-8">
-          <ul className="grid grid-cols-1 gap-px overflow-hidden rounded-[22px] bg-slate-200 min-[480px]:grid-cols-2 shadow-[0_24px_60px_-20px_rgba(10,22,64,.35)] lg:grid-cols-4">
+          <ul className="grid grid-cols-1 gap-px overflow-hidden rounded-[22px] bg-slate-200 min-[480px]:grid-cols-2 shadow-[0_24px_60px_-20px_rgba(12,42,49,.35)] lg:grid-cols-4">
             {member.highlights.map(({ title, body }, i) => {
               const Icon = icons[i] ?? Target;
               return (
@@ -165,11 +165,11 @@ export default function DirectorPage({ params }: { params: { slug: string } }) {
                   key={title}
                   className="flex items-start gap-4 bg-white px-5 py-5 min-[480px]:flex-col min-[480px]:gap-3 min-[480px]:py-6 sm:flex-row sm:gap-4 sm:px-7 sm:py-7"
                 >
-                  <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-[#EEF2FF] text-[#1E3ABA]">
+                  <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-[#E6F2F3] text-[#1D5F6E]">
                     <Icon size={20} strokeWidth={1.8} aria-hidden="true" />
                   </span>
                   <span>
-                    <span className="block font-display text-[17px] font-bold leading-tight tracking-[-0.01em] text-[#0A1640] sm:text-[19px]">
+                    <span className="block font-display text-[17px] font-bold leading-tight tracking-[-0.01em] text-[#0C2A31] sm:text-[19px]">
                       {title}
                     </span>
                     <span className="mt-1 block text-[14px] leading-snug text-slate-600">{body}</span>
@@ -198,12 +198,12 @@ export default function DirectorPage({ params }: { params: { slug: string } }) {
       {member.beyond && (
         <Section tone="mist">
           <Split title={member.beyond.title}>
-            <div className="relative overflow-hidden rounded-3xl bg-[#0A1640] p-8 text-white sm:p-10">
+            <div className="relative overflow-hidden rounded-3xl bg-[#0C2A31] p-8 text-white sm:p-10">
               <div
                 aria-hidden="true"
-                className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-[#2F5BFF]/40 blur-[70px]"
+                className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-[#2A7A88]/40 blur-[70px]"
               />
-              <BeyondIcon size={30} strokeWidth={1.6} aria-hidden="true" className="relative text-[#8FB4FF]" />
+              <BeyondIcon size={30} strokeWidth={1.6} aria-hidden="true" className="relative text-[#8FDACD]" />
               <ClampText className="relative mt-5" onDark>
                 <p className="max-w-[40ch] font-display text-[22px] font-semibold leading-[1.35] tracking-[-0.015em] sm:text-[28px]">
                   {member.beyond.body}
@@ -215,7 +215,7 @@ export default function DirectorPage({ params }: { params: { slug: string } }) {
       )}
 
       {/* At Summate */}
-      <section className="relative isolate overflow-hidden bg-[#EEF2FF] py-20 lg:py-28">
+      <section className="relative isolate overflow-hidden bg-[#E6F2F3] py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="flex items-center gap-4">
             {member.image && (
@@ -227,9 +227,9 @@ export default function DirectorPage({ params }: { params: { slug: string } }) {
                 className="h-14 w-14 rounded-full object-cover object-top"
               />
             )}
-            <h2 className="text-[16px] font-semibold text-[#1E3ABA]">{firstName} at Summate Learning</h2>
+            <h2 className="text-[16px] font-semibold text-[#1D5F6E]">{firstName} at Summate Learning</h2>
           </div>
-          <p className="mt-8 max-w-[24ch] font-display text-[32px] font-bold leading-[1.12] tracking-[-0.03em] text-[#0A1640] sm:text-[44px] lg:text-[54px]">
+          <p className="mt-8 max-w-[24ch] font-display text-[32px] font-bold leading-[1.12] tracking-[-0.03em] text-[#0C2A31] sm:text-[44px] lg:text-[54px]">
             {atSummateLead}
           </p>
           {atSummateRest && (
@@ -247,7 +247,7 @@ export default function DirectorPage({ params }: { params: { slug: string } }) {
             {member.areas.items.map((a) => (
               <li
                 key={a}
-                className="rounded-full border border-slate-200 bg-white px-5 py-3 text-[15px] font-medium text-[#0A1640]"
+                className="rounded-full border border-slate-200 bg-white px-5 py-3 text-[15px] font-medium text-[#0C2A31]"
               >
                 {a}
               </li>

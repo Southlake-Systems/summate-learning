@@ -27,14 +27,14 @@ export default function FacultyPage() {
             ))}
           </Prose>
           <div className="lg:col-span-6">
-            <h2 className="font-display text-xl font-bold tracking-[-0.01em] text-[#0D1222]">What you can expect</h2>
+            <h2 className="font-display text-xl font-bold tracking-[-0.01em] text-[#0F2A30]">What you can expect</h2>
             <dl className="mt-6 grid gap-px overflow-hidden rounded-3xl border border-slate-200 bg-slate-200 sm:grid-cols-2">
               {faculty.expect.map((e, i) => {
                 const I = expectIcons[i];
                 return (
                   <div key={e.title} className="bg-white p-6">
-                    <I size={22} strokeWidth={1.8} aria-hidden="true" className="text-[#1E3ABA]" />
-                    <dt className="mt-4 font-display text-[17px] font-bold text-[#0D1222]">{e.title}</dt>
+                    <I size={22} strokeWidth={1.8} aria-hidden="true" className="text-[#1D5F6E]" />
+                    <dt className="mt-4 font-display text-[17px] font-bold text-[#0F2A30]">{e.title}</dt>
                     <dd className="mt-1.5 text-[15px] leading-[1.6] text-slate-600">{e.body}</dd>
                   </div>
                 );

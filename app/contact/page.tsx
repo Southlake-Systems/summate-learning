@@ -37,24 +37,24 @@ export default function ContactPage({ searchParams }: { searchParams: { topic?: 
                 <li key={c.label}>
                   <a
                     href={c.href}
-                    className="group flex items-center gap-4 rounded-2xl border border-slate-200 bg-white p-5 transition-colors hover:border-[#1E3ABA]"
+                    className="group flex items-center gap-4 rounded-2xl border border-slate-200 bg-white p-5 transition-colors hover:border-[#1D5F6E]"
                   >
-                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#F2F4FF] text-[#1E3ABA]">
+                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#EAF4F5] text-[#1D5F6E]">
                       <c.icon size={19} aria-hidden="true" />
                     </span>
                     <span>
                       <span className="block text-[13px] font-medium text-slate-500">{c.label}</span>
-                      <span className="block text-[17px] font-semibold text-[#0D1222] group-hover:text-[#1E3ABA]">{c.value}</span>
+                      <span className="block text-[17px] font-semibold text-[#0F2A30] group-hover:text-[#1D5F6E]">{c.value}</span>
                     </span>
                   </a>
                 </li>
               ))}
             </ul>
 
-            <div className="rounded-2xl border border-slate-200 bg-[#F8FAFF] p-6">
+            <div className="rounded-2xl border border-slate-200 bg-[#F6FAFA] p-6">
               <div className="flex items-center gap-3">
-                <MapPin size={19} aria-hidden="true" className="text-[#1E3ABA]" />
-                <h2 className="font-display text-lg font-bold text-[#0D1222]">Registered office</h2>
+                <MapPin size={19} aria-hidden="true" className="text-[#1D5F6E]" />
+                <h2 className="font-display text-lg font-bold text-[#0F2A30]">Registered office</h2>
               </div>
               <address className="mt-4 text-[15px] not-italic leading-[1.7] text-slate-600">
                 {site.address.map((line) => (
@@ -74,7 +74,7 @@ export default function ContactPage({ searchParams }: { searchParams: { topic?: 
             </div>
 
             <div className="rounded-2xl border border-slate-200 p-6">
-              <h2 className="font-display text-lg font-bold text-[#0D1222]">Looking for something specific?</h2>
+              <h2 className="font-display text-lg font-bold text-[#0F2A30]">Looking for something specific?</h2>
               <ul className="mt-3 space-y-2 text-[15px]">
                 <li>
                   <Link href="/apply" className="font-semibold">Apply for Batch 1</Link>

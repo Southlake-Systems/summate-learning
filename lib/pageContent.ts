@@ -34,9 +34,9 @@ export const courses: Course[] = [
     format: "Live online",
     status: "open",
     skills: ["Next.js", "TypeScript", "Python", "APIs", "Testing", "AI workflows"],
-    accent: "#1E3ABA",
+    accent: "#1D5F6E",
     gradient:
-      "linear-gradient(135deg, #1E3ABA 0%, #6D4AFF 48%, #C43DFF 100%)",
+      "linear-gradient(135deg, #1D5F6E 0%, #3C8B90 48%, #55C9B8 100%)",
   },
   {
     slug: "devops-engineering",
@@ -48,9 +48,9 @@ export const courses: Course[] = [
     format: "Live online",
     status: "soon",
     skills: ["Linux", "Git", "CI/CD", "Docker", "Kubernetes", "Cloud"],
-    accent: "#7C3AED",
+    accent: "#55C9B8",
     gradient:
-      "linear-gradient(135deg, #5B21B6 0%, #8B5CF6 50%, #C084FC 100%)",
+      "linear-gradient(135deg, #1D5F6E 0%, #55C9B8 50%, #9FDEAF 100%)",
   },
   {
     slug: "performance-digital-marketing",
@@ -62,9 +62,9 @@ export const courses: Course[] = [
     format: "Live online",
     status: "soon",
     skills: ["Analytics", "CRO", "Campaigns", "Attribution"],
-    accent: "#FF2D75",
+    accent: "#EF6F51",
     gradient:
-      "linear-gradient(135deg, #FF2D75 0%, #FF4D9A 50%, #FF8A00 100%)",
+      "linear-gradient(135deg, #EF6F51 0%, #F28A6B 50%, #F4B942 100%)",
   },
 ];
 
@@ -487,10 +487,10 @@ export const circle = {
     { key: "grow", title: "Grow", lead: "The Circle is designed to grow with its members.", body: "As you move from learner to graduate, professional, mentor or community leader, your role within the network can grow with you." },
   ],
   groups: [
-    { name: "Technology", color: "#1E3ABA", tags: ["AI", "Robotics", "Software", "Electronics"] },
-    { name: "Business", color: "#7C3AED", tags: ["Entrepreneurship", "Marketing", "Finance"] },
-    { name: "Creative", color: "#FF2D75", tags: ["Design", "Photography", "Content", "Media"] },
-    { name: "Career", color: "#FF8A00", tags: ["Jobs", "Higher studies", "Research"] },
+    { name: "Technology", color: "#1D5F6E", tags: ["AI", "Robotics", "Software", "Electronics"] },
+    { name: "Business", color: "#55C9B8", tags: ["Entrepreneurship", "Marketing", "Finance"] },
+    { name: "Creative", color: "#EF6F51", tags: ["Design", "Photography", "Content", "Media"] },
+    { name: "Career", color: "#F4B942", tags: ["Jobs", "Higher studies", "Research"] },
   ],
   groupsNote:
     "Members can join smaller interest groups and connect with people working towards similar goals. The current plan envisions groups of around 6–10 people for more meaningful interaction.",

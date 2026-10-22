@@ -76,7 +76,7 @@ export function ClampText({
             "mt-2 text-[15px] font-semibold underline underline-offset-[5px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2",
             onDark
               ? "text-white decoration-white/40 focus-visible:outline-white"
-              : "text-[#1E3ABA] decoration-[#1E3ABA]/30 focus-visible:outline-[#1E3ABA]"
+              : "text-[#1D5F6E] decoration-[#1D5F6E]/30 focus-visible:outline-[#1D5F6E]"
           )}
         >
           {expanded ? "Show less" : "Read more"}

@@ -74,10 +74,10 @@ export default function SiteFooter() {
   const { email, phone, address } = site;
 
   return (
-    <footer className="relative overflow-hidden border-t border-slate-200 bg-[#F8FAFF] text-slate-600">
+    <footer className="relative overflow-hidden border-t border-slate-200 bg-[#F6FAFA] text-slate-600">
 
       {/* Subtle top transition */}
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#1E3ABA]/30 to-transparent" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#1D5F6E]/30 to-transparent" />
 
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8 lg:py-20">
 
@@ -110,11 +110,11 @@ export default function SiteFooter() {
 
             {/* Brand motif */}
             <div className="mt-7 flex items-center gap-3 text-[11px] font-bold tracking-[0.2em] text-slate-400">
-              <span className="text-[#1E3ABA]">LEARN</span>
+              <span className="text-[#1D5F6E]">LEARN</span>
               <span className="text-slate-300">•</span>
-              <span className="text-[#7C3AED]">APPLY</span>
+              <span className="text-[#23857A]">APPLY</span>
               <span className="text-slate-300">•</span>
-              <span className="bg-gradient-to-br from-[#3B5BFF] via-[#1E3ABA] to-[#0A1B6B] bg-clip-text text-transparent">ACHIEVE</span>
+              <span className="bg-gradient-to-br from-[#2A7A88] via-[#1D5F6E] to-[#12424D] bg-clip-text text-transparent">ACHIEVE</span>
             </div>
 
             {/* Contact */}
@@ -122,9 +122,9 @@ export default function SiteFooter() {
 
               <a
                 href={`mailto:${email}`}
-                className="group flex items-center gap-3 text-sm text-slate-500 transition-colors hover:text-[#1E3ABA]"
+                className="group flex items-center gap-3 text-sm text-slate-500 transition-colors hover:text-[#1D5F6E]"
               >
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-500 transition-colors group-hover:border-[#1E3ABA]/20 group-hover:text-[#1E3ABA]">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-500 transition-colors group-hover:border-[#1D5F6E]/20 group-hover:text-[#1D5F6E]">
                   <Icon name="Mail" size={15} />
                 </span>
 
@@ -133,9 +133,9 @@ export default function SiteFooter() {
 
               <a
                 href={`tel:${phone.replace(/\s/g, "")}`}
-                className="group flex items-center gap-3 text-sm text-slate-500 transition-colors hover:text-[#1E3ABA]"
+                className="group flex items-center gap-3 text-sm text-slate-500 transition-colors hover:text-[#1D5F6E]"
               >
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-500 transition-colors group-hover:border-[#1E3ABA]/20 group-hover:text-[#1E3ABA]">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-500 transition-colors group-hover:border-[#1D5F6E]/20 group-hover:text-[#1D5F6E]">
                   <Icon name="Phone" size={15} />
                 </span>
 
@@ -165,7 +165,7 @@ export default function SiteFooter() {
             {columns.map((column) => (
               <div key={column.title}>
 
-                <h3 className="text-xs font-bold uppercase tracking-[0.14em] text-[#0D1222]">
+                <h3 className="text-xs font-bold uppercase tracking-[0.14em] text-[#0F2A30]">
                   {column.title}
                 </h3>
 
@@ -176,7 +176,7 @@ export default function SiteFooter() {
 
                       <Link
                         href={link.href}
-                        className="group inline-flex items-center gap-1 text-sm text-slate-500 transition-colors hover:text-[#1E3ABA]"
+                        className="group inline-flex items-center gap-1 text-sm text-slate-500 transition-colors hover:text-[#1D5F6E]"
                       >
                         <span>{link.label}</span>
 
@@ -199,7 +199,7 @@ export default function SiteFooter() {
         {/* -------------------------------------------------
             FINAL CTA
         -------------------------------------------------- */}
-        <div className="relative mt-16 overflow-hidden rounded-[28px] border border-[#1E3ABA]/10 bg-white px-6 py-8 shadow-[0_12px_40px_rgba(13,18,34,0.05)] sm:px-10 sm:py-9">
+        <div className="relative mt-16 overflow-hidden rounded-[28px] border border-[#1D5F6E]/10 bg-white px-6 py-8 shadow-[0_12px_40px_rgba(15,42,48,0.05)] sm:px-10 sm:py-9">
 
           {/* Decorative numbers */}
           <div className="pointer-events-none absolute right-6 top-1/2 hidden -translate-y-1/2 select-none items-center gap-3 text-[11px] font-bold tracking-[0.2em] text-slate-200 md:flex">
@@ -213,11 +213,11 @@ export default function SiteFooter() {
           <div className="relative flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">
 
             <div className="max-w-xl">
-              <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#1E3ABA]">
+              <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#1D5F6E]">
                 Batch 01
               </p>
 
-              <h2 className="mt-2 text-xl font-extrabold tracking-tight text-[#0D1222] sm:text-2xl">
+              <h2 className="mt-2 text-xl font-extrabold tracking-tight text-[#0F2A30] sm:text-2xl">
                 Your next chapter can start here.
               </h2>
 
@@ -229,7 +229,7 @@ export default function SiteFooter() {
 
             <Link
               href="/apply"
-              className="group inline-flex shrink-0 items-center gap-3 rounded-full bg-[#0D1222] px-6 py-3.5 text-sm font-bold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#1E3ABA]"
+              className="group inline-flex shrink-0 items-center gap-3 rounded-full bg-[#EF6F51] px-6 py-3.5 text-sm font-bold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#D9573A]"
             >
               Apply for Batch 1
 
@@ -268,7 +268,7 @@ export default function SiteFooter() {
                     aria-label={social.label}
                     target="_blank"
                     rel="noreferrer"
-                    className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-500 transition-all duration-200 hover:-translate-y-0.5 hover:border-[#1E3ABA]/20 hover:text-[#1E3ABA]"
+                    className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-500 transition-all duration-200 hover:-translate-y-0.5 hover:border-[#1D5F6E]/20 hover:text-[#1D5F6E]"
                   >
                     <Icon
                       name={social.label}

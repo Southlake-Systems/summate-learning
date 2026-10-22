@@ -39,7 +39,7 @@ export default function LoadingScreen({
       }`}
     >
       {/* Centered Ambient Glow */}
-      <div className="pointer-events-none absolute h-72 w-72 rounded-full bg-gradient-to-tr from-blue-100/60 via-purple-100/40 to-transparent blur-3xl animate-pulse" />
+      <div className="pointer-events-none absolute h-72 w-72 rounded-full bg-gradient-to-tr from-cyan-100/60 via-teal-100/40 to-transparent blur-3xl animate-pulse" />
 
       <div className="relative z-10 flex flex-col items-center">
         {/* Logo Container with Subtle Breathing Scale */}
@@ -56,7 +56,7 @@ export default function LoadingScreen({
 
         {/* Minimal Linear Indeterminate Accent Line */}
         <div className="mt-8 h-[2px] w-36 overflow-hidden rounded-full bg-slate-100">
-          <div className="h-full w-1/2 rounded-full bg-gradient-to-r from-[#1E3ABA] via-[#7C3AED] to-[#FF2D75] animate-[shimmer_1.2s_infinite_ease-in-out]" />
+          <div className="h-full w-1/2 rounded-full bg-gradient-to-r from-[#1D5F6E] via-[#55C9B8] to-[#9FDEAF] animate-[shimmer_1.2s_infinite_ease-in-out]" />
         </div>
       </div>
     </aside>

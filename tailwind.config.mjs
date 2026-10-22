@@ -9,15 +9,14 @@ export default {
     extend: {
       colors: {
         summate: {
-          cobalt: "#1E3ABA",
-          purple: "#7C3AED",
-          magenta: "#FF2D75",
-          orange: "#FF8A00",
-          teal: "#00D4C8",
-          sky: "#00B4FF",
-          dark: "#0D1222",
-          elevated: "#151D36",
-          surface: "#111827",
+          teal: "#1D5F6E",
+          aqua: "#55C9B8",
+          coral: "#EF6F51",
+          amber: "#F4B942",
+          mint: "#9FDEAF",
+          dark: "#0F2A30",
+          elevated: "#15363E",
+          surface: "#102C33",
         },
       },
       fontFamily: {

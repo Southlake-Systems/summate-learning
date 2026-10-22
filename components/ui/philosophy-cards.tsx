@@ -132,8 +132,8 @@ export default function PhilosophyCards() {
                     transition-all duration-500
                     ${
                       isActive
-                        ? "border-[#1E3ABA]/30 shadow-[0_30px_80px_rgba(30,58,186,0.16)]"
-                        : "border-slate-200 shadow-[0_16px_40px_rgba(13,18,34,0.06)] group-hover:-translate-y-2 group-hover:shadow-[0_24px_55px_rgba(13,18,34,0.10)]"
+                        ? "border-[#1D5F6E]/30 shadow-[0_30px_80px_rgba(29,95,110,0.16)]"
+                        : "border-slate-200 shadow-[0_16px_40px_rgba(15,42,48,0.06)] group-hover:-translate-y-2 group-hover:shadow-[0_24px_55px_rgba(15,42,48,0.10)]"
                     }
                   `}
                 >
@@ -175,7 +175,7 @@ export default function PhilosophyCards() {
                       transition-colors duration-500
                       ${
                         isActive
-                          ? "text-[#EEF2FF]"
+                          ? "text-[#E6F2F3]"
                           : "text-slate-100"
                       }
                     `}
@@ -192,8 +192,8 @@ export default function PhilosophyCards() {
                       rounded-2xl transition-all duration-500
                       ${
                         isActive
-                          ? "bg-[#1E3ABA] text-white shadow-lg shadow-[#1E3ABA]/20"
-                          : "bg-[#EEF2FF] text-[#1E3ABA]"
+                          ? "bg-[#1D5F6E] text-white shadow-lg shadow-[#1D5F6E]/20"
+                          : "bg-[#E6F2F3] text-[#1D5F6E]"
                       }
                     `}
                   >
@@ -211,9 +211,9 @@ export default function PhilosophyCards() {
                     {/* Active state indicator */}
                     {isActive && (
                       <div className="mb-3 flex items-center gap-2">
-                        <span className="h-1.5 w-1.5 rounded-full bg-[#1E3ABA]" />
+                        <span className="h-1.5 w-1.5 rounded-full bg-[#1D5F6E]" />
 
-                        <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#1E3ABA]">
+                        <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#1D5F6E]">
                           Explore this idea
                         </span>
                       </div>
@@ -226,7 +226,7 @@ export default function PhilosophyCards() {
                     <h3
                       className={`
                         font-extrabold leading-[1.1] tracking-[-0.035em]
-                        text-[#0D1222]
+                        text-[#0F2A30]
                         ${
                           isActive
                             ? "text-[28px]"
@@ -261,8 +261,8 @@ export default function PhilosophyCards() {
                         transition-all duration-300
                         ${
                           isActive
-                            ? "border-[#1E3ABA] bg-[#1E3ABA] text-white"
-                            : "border-slate-200 text-slate-400 group-hover:border-[#1E3ABA]/30 group-hover:text-[#1E3ABA]"
+                            ? "border-[#1D5F6E] bg-[#1D5F6E] text-white"
+                            : "border-slate-200 text-slate-400 group-hover:border-[#1D5F6E]/30 group-hover:text-[#1D5F6E]"
                         }
                       `}
                     >
@@ -284,7 +284,7 @@ export default function PhilosophyCards() {
                   <div
                     className={`
                       absolute bottom-0 left-0 h-1
-                      bg-[#1E3ABA]
+                      bg-[#1D5F6E]
                       transition-all duration-500
                       ${isActive ? "w-full" : "w-0"}
                     `}
@@ -297,7 +297,7 @@ export default function PhilosophyCards() {
                 <div
                   className="
                     absolute inset-0 flex flex-col overflow-hidden
-                    rounded-[30px] bg-[#0D1222] p-8 text-left text-white
+                    rounded-[30px] bg-[#0F2A30] p-8 text-left text-white
                     [backface-visibility:hidden]
                     [transform:rotateY(180deg)]
                   "
@@ -307,14 +307,14 @@ export default function PhilosophyCards() {
                     className="
                       pointer-events-none absolute
                       -right-24 -top-24 h-64 w-64
-                      rounded-full bg-[#1E3ABA]
+                      rounded-full bg-[#1D5F6E]
                       opacity-40 blur-3xl
                     "
                   />
 
                   {/* Top */}
                   <div className="relative flex items-center justify-between">
-                    <span className="font-mono text-[11px] font-bold tracking-[0.15em] text-blue-300">
+                    <span className="font-mono text-[11px] font-bold tracking-[0.15em] text-[#8FDACD]">
                       IDEA {pillar.num}
                     </span>
 
@@ -329,7 +329,7 @@ export default function PhilosophyCards() {
 
                   {/* Body */}
                   <div className="relative mt-auto">
-                    <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.18em] text-blue-300">
+                    <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.18em] text-[#8FDACD]">
                       The idea behind it
                     </p>
 
@@ -392,8 +392,8 @@ export default function PhilosophyCards() {
                   transition-all duration-300
                   ${
                     isActive
-                      ? "border-[#1E3ABA]/30 bg-white shadow-xl shadow-[#1E3ABA]/10"
-                      : "border-slate-200 bg-[#FAFBFF]"
+                      ? "border-[#1D5F6E]/30 bg-white shadow-xl shadow-[#1D5F6E]/10"
+                      : "border-slate-200 bg-[#F7FBFB]"
                   }
                 `}
               >
@@ -427,8 +427,8 @@ export default function PhilosophyCards() {
                           rounded-2xl
                           ${
                             isActive
-                              ? "bg-[#1E3ABA] text-white"
-                              : "bg-[#EEF2FF] text-[#1E3ABA]"
+                              ? "bg-[#1D5F6E] text-white"
+                              : "bg-[#E6F2F3] text-[#1D5F6E]"
                           }
                         `}
                       >
@@ -447,16 +447,16 @@ export default function PhilosophyCards() {
                     {/* Active label */}
                     {isActive && (
                       <div className="mt-6 flex items-center gap-2">
-                        <span className="h-1.5 w-1.5 rounded-full bg-[#1E3ABA]" />
+                        <span className="h-1.5 w-1.5 rounded-full bg-[#1D5F6E]" />
 
-                        <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#1E3ABA]">
+                        <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#1D5F6E]">
                           Explore this idea
                         </span>
                       </div>
                     )}
 
                     {/* Title */}
-                    <h3 className="mt-8 text-2xl font-extrabold tracking-[-0.035em] text-[#0D1222]">
+                    <h3 className="mt-8 text-2xl font-extrabold tracking-[-0.035em] text-[#0F2A30]">
                       {pillar.title}
                     </h3>
 
@@ -481,8 +481,8 @@ export default function PhilosophyCards() {
                           rounded-full border
                           ${
                             isActive
-                              ? "border-[#1E3ABA] bg-[#1E3ABA] text-white"
-                              : "border-slate-200 text-[#1E3ABA]"
+                              ? "border-[#1D5F6E] bg-[#1D5F6E] text-white"
+                              : "border-slate-200 text-[#1D5F6E]"
                           }
                         `}
                       >
@@ -502,7 +502,7 @@ export default function PhilosophyCards() {
                   <>
                     {/* Back top */}
                     <div className="flex items-center justify-between">
-                      <span className="font-mono text-xs font-bold text-blue-300">
+                      <span className="font-mono text-xs font-bold text-[#8FDACD]">
                         IDEA {pillar.num}
                       </span>
 
@@ -516,11 +516,11 @@ export default function PhilosophyCards() {
                     </div>
 
                     {/* Back content */}
-                    <p className="mt-8 text-[10px] font-bold uppercase tracking-[0.18em] text-[#1E3ABA]">
+                    <p className="mt-8 text-[10px] font-bold uppercase tracking-[0.18em] text-[#1D5F6E]">
                       The idea behind it
                     </p>
 
-                    <h3 className="mt-3 text-2xl font-extrabold tracking-[-0.035em] text-[#0D1222]">
+                    <h3 className="mt-3 text-2xl font-extrabold tracking-[-0.035em] text-[#0F2A30]">
                       {pillar.title}
                     </h3>
 

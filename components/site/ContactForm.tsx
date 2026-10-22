@@ -35,11 +35,11 @@ export default function ContactForm({ defaultTopic = "course" }: { defaultTopic?
   }
 
   const field =
-    "mt-2 block w-full rounded-2xl border border-slate-300 bg-white px-4 py-3.5 text-[16px] text-[#0D1222] placeholder:text-slate-400 transition-colors focus:border-[#1E3ABA] focus:outline-none focus:ring-4 focus:ring-[#1E3ABA]/10";
-  const label = "text-[14px] font-semibold text-[#0D1222]";
+    "mt-2 block w-full rounded-2xl border border-slate-300 bg-white px-4 py-3.5 text-[16px] text-[#0F2A30] placeholder:text-slate-400 transition-colors focus:border-[#1D5F6E] focus:outline-none focus:ring-4 focus:ring-[#1D5F6E]/10";
+  const label = "text-[14px] font-semibold text-[#0F2A30]";
 
   return (
-    <form onSubmit={handleSubmit} className="rounded-[28px] border border-slate-200 bg-white p-7 shadow-[0_24px_70px_rgba(13,18,34,0.07)] sm:p-10">
+    <form onSubmit={handleSubmit} className="rounded-[28px] border border-slate-200 bg-white p-7 shadow-[0_24px_70px_rgba(15,42,48,0.07)] sm:p-10">
       <div className="grid gap-6 sm:grid-cols-2">
         <label className="block">
           <span className={label}>Your name</span>
@@ -86,7 +86,7 @@ export default function ContactForm({ defaultTopic = "course" }: { defaultTopic?
         </p>
         <button
           type="submit"
-          className="inline-flex h-12 shrink-0 items-center justify-center gap-2 rounded-full bg-[#0D1222] px-7 text-[15px] font-semibold text-white transition-colors hover:bg-[#1E3ABA]"
+          className="inline-flex h-12 shrink-0 items-center justify-center gap-2 rounded-full bg-[#0F2A30] px-7 text-[15px] font-semibold text-white transition-colors hover:bg-[#1D5F6E]"
         >
           <Mail size={17} aria-hidden="true" />
           Write the email
@@ -94,7 +94,7 @@ export default function ContactForm({ defaultTopic = "course" }: { defaultTopic?
       </div>
 
       {opened && (
-        <p role="status" className="mt-6 rounded-2xl bg-[#F2F4FF] px-5 py-4 text-[15px] leading-[1.6] text-[#0D1222]">
+        <p role="status" className="mt-6 rounded-2xl bg-[#EAF4F5] px-5 py-4 text-[15px] leading-[1.6] text-[#0F2A30]">
           Your email app should now be open with your message. Press send there to reach us. If nothing opened, email{" "}
           <a href={`mailto:${site.email}`} className="font-semibold">
             {site.email}

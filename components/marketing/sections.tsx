@@ -82,13 +82,13 @@ export function Hero() {
 
       {/* Blue glow */}
       <div
-        className="hero-glow pointer-events-none absolute -left-48 top-24 -z-10 h-[520px] w-[520px] rounded-full bg-[#1E3ABA]/10 blur-[120px]"
+        className="hero-glow pointer-events-none absolute -left-48 top-24 -z-10 h-[520px] w-[520px] rounded-full bg-[#1D5F6E]/10 blur-[120px]"
         aria-hidden="true"
       />
 
       {/* Purple / pink glow */}
       <div
-        className="hero-glow pointer-events-none absolute right-[8%] top-[-120px] -z-10 h-[500px] w-[500px] rounded-full bg-gradient-to-br from-[#7C3AED]/10 via-[#FF2D75]/10 to-[#FF8A00]/10 blur-[110px]"
+        className="hero-glow pointer-events-none absolute right-[8%] top-[-120px] -z-10 h-[500px] w-[500px] rounded-full bg-gradient-to-br from-[#55C9B8]/10 via-[#EF6F51]/10 to-[#F4B942]/10 blur-[110px]"
         aria-hidden="true"
       />
 
@@ -98,7 +98,7 @@ export function Hero() {
         aria-hidden="true"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(30,58,186,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(30,58,186,0.035) 1px, transparent 1px)",
+            "linear-gradient(rgba(29,95,110,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(29,95,110,0.035) 1px, transparent 1px)",
           backgroundSize: "64px 64px",
           maskImage:
             "linear-gradient(to bottom, black 0%, transparent 75%)",
@@ -125,23 +125,23 @@ export function Hero() {
               className="flex items-center gap-3 text-[13px] font-extrabold tracking-[0.2em]"
               data-reveal-step="90"
             >
-              <span data-reveal="rise" className="text-[#1E3ABA]">LEARN</span>
+              <span data-reveal="rise" className="text-[#1D5F6E]">LEARN</span>
               <span data-reveal="fade" className="text-slate-300">•</span>
-              <span data-reveal="rise" className="text-[#7C3AED]">APPLY</span>
+              <span data-reveal="rise" className="text-[#23857A]">APPLY</span>
               <span data-reveal="fade" className="text-slate-300">•</span>
-              <span data-reveal="rise" className="bg-gradient-to-br from-[#3B5BFF] via-[#1E3ABA] to-[#0A1B6B] bg-clip-text text-transparent">ACHIEVE</span>
+              <span data-reveal="rise" className="bg-gradient-to-br from-[#2A7A88] via-[#1D5F6E] to-[#12424D] bg-clip-text text-transparent">ACHIEVE</span>
             </div>
 
             {/* Heading */}
             <h1
-              className="mt-6 max-w-[650px] text-4xl font-extrabold leading-[1.02] tracking-[-0.045em] text-[#0D1222] sm:text-5xl lg:text-[60px] xl:text-[66px]"
+              className="mt-6 max-w-[650px] text-4xl font-extrabold leading-[1.02] tracking-[-0.045em] text-[#0F2A30] sm:text-5xl lg:text-[60px] xl:text-[66px]"
               data-reveal-step="90"
             >
               <span data-reveal="line"><span>You are more than</span></span>
               <span data-reveal="line"><span>what you already</span></span>
 
               <span data-reveal="line" className="-mb-3 pb-3"><span className="relative inline-block">
-                <span className="bg-gradient-to-r from-[#1E3ABA] via-[#7C3AED] to-[#FF6B2C] bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#1D5F6E] via-[#2A8C8C] to-[#55C9B8] bg-clip-text text-transparent">
                   know.
                 </span>
 
@@ -149,7 +149,7 @@ export function Hero() {
                 <span
                   data-reveal="draw"
                   data-reveal-delay="650"
-                  className="absolute -bottom-1 left-0 h-[4px] w-[90%] rounded-full bg-gradient-to-r from-[#1E3ABA] via-[#7C3AED] to-[#FF8A00]"
+                  className="absolute -bottom-1 left-0 h-[4px] w-[90%] rounded-full bg-gradient-to-r from-[#1D5F6E] via-[#55C9B8] to-[#9FDEAF]"
                 />
               </span></span>
             </h1>
@@ -168,7 +168,7 @@ export function Hero() {
               <Link
                 data-reveal="rise"
                 href="/apply"
-                className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-[#1E3ABA] via-[#7C3AED] to-[#FF2D75] px-7 py-3.5 text-sm font-bold text-white shadow-[0_10px_28px_rgba(30,58,186,0.22)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_36px_rgba(124,58,237,0.25)] active:scale-[0.98]"
+                className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-[#EF6F51] px-7 py-3.5 text-sm font-bold text-white shadow-[0_10px_28px_rgba(239,111,81,0.28)] transition-all duration-300 hover:-translate-y-1 hover:bg-[#D9573A] hover:shadow-[0_16px_36px_rgba(239,111,81,0.32)] active:scale-[0.98]"
               >
                 {/* Moving highlight */}
                 <span className="absolute inset-y-0 left-[-80px] w-16 skew-x-[-20deg] bg-white/20 transition-transform duration-700 group-hover:translate-x-[300px]" />
@@ -188,7 +188,7 @@ export function Hero() {
               <Link
                 data-reveal="rise"
                 href="/#programs"
-                className="group inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-6 py-3.5 text-sm font-semibold text-[#0D1222] shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-[#1E3ABA]/20 hover:shadow-md"
+                className="group inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-6 py-3.5 text-sm font-semibold text-[#0F2A30] shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-[#1D5F6E]/20 hover:shadow-md"
               >
                 Explore Programs
 
@@ -215,31 +215,31 @@ export function Hero() {
                   {
                     label: "Live Online",
                     icon: "Users",
-                    color: "#1E3ABA",
-                    bg: "#EEF2FF",
+                    color: "#1D5F6E",
+                    bg: "#E6F2F3",
                   },
                   {
                     label: "12 Weeks",
                     icon: "Calendar",
-                    color: "#7C3AED",
-                    bg: "#F3EFFF",
+                    color: "#55C9B8",
+                    bg: "#E9F8F5",
                   },
                   {
                     label: "Project Driven",
                     icon: "Laptop",
-                    color: "#FF8A00",
-                    bg: "#FFF5E8",
+                    color: "#F4B942",
+                    bg: "#FEF6E3",
                   },
                   {
                     label: "AI Assisted",
                     icon: "Sparkles",
-                    color: "#FF2D75",
-                    bg: "#FFF0F5",
+                    color: "#EF6F51",
+                    bg: "#FDEEEA",
                   },
                 ].map((item) => (
                   <div
                     key={item.label}
-                    className="group flex items-center gap-2 rounded-xl border border-slate-200/80 bg-white/80 px-3 py-2 shadow-[0_4px_16px_rgba(13,18,34,0.03)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
+                    className="group flex items-center gap-2 rounded-xl border border-slate-200/80 bg-white/80 px-3 py-2 shadow-[0_4px_16px_rgba(15,42,48,0.03)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
                   >
                     <span
                       className="flex h-7 w-7 items-center justify-center rounded-lg transition-transform duration-300 group-hover:scale-110"
@@ -272,19 +272,19 @@ export function Hero() {
 
             {/* Main glow behind visual */}
             <div
-              className="hero-glow pointer-events-none absolute left-1/2 top-1/2 h-[420px] w-[420px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-[#1E3ABA]/20 via-[#7C3AED]/20 to-[#FF2D75]/10 blur-[80px]"
+              className="hero-glow pointer-events-none absolute left-1/2 top-1/2 h-[420px] w-[420px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-[#1D5F6E]/20 via-[#55C9B8]/20 to-[#EF6F51]/10 blur-[80px]"
               aria-hidden="true"
             />
 
             {/* Geometric depth shape */}
             <div
-              className="hero-float pointer-events-none absolute right-[7%] top-[8%] h-[330px] w-[330px] rotate-[18deg] rounded-[72px] bg-gradient-to-br from-[#1E3ABA]/20 via-[#7C3AED]/20 to-[#FF2D75]/20 blur-[1px]"
+              className="hero-float pointer-events-none absolute right-[7%] top-[8%] h-[330px] w-[330px] rotate-[18deg] rounded-[72px] bg-gradient-to-br from-[#1D5F6E]/20 via-[#55C9B8]/20 to-[#EF6F51]/20 blur-[1px]"
               aria-hidden="true"
             />
 
             {/* Secondary geometric shape */}
             <div
-              className="hero-float-reverse pointer-events-none absolute bottom-[8%] left-[5%] h-[170px] w-[170px] rounded-full bg-gradient-to-br from-[#00B4FF]/15 to-[#00D4C8]/10 blur-[2px]"
+              className="hero-float-reverse pointer-events-none absolute bottom-[8%] left-[5%] h-[170px] w-[170px] rounded-full bg-gradient-to-br from-[#55C9B8]/15 to-[#55C9B8]/10 blur-[2px]"
               aria-hidden="true"
             />
 
@@ -292,14 +292,14 @@ export function Hero() {
             <div
               data-reveal="pop"
               data-reveal-delay="-700"
-              className="pointer-events-none absolute right-[8%] top-[13%] h-[190px] w-[190px] rounded-full border border-[#7C3AED]/20"
+              className="pointer-events-none absolute right-[8%] top-[13%] h-[190px] w-[190px] rounded-full border border-[#55C9B8]/20"
               aria-hidden="true"
             />
 
             <div
               data-reveal="pop"
               data-reveal-delay="-700"
-              className="pointer-events-none absolute right-[12%] top-[17%] h-[130px] w-[130px] rounded-full border border-[#FF2D75]/15"
+              className="pointer-events-none absolute right-[12%] top-[17%] h-[130px] w-[130px] rounded-full border border-[#EF6F51]/15"
               aria-hidden="true"
             />
 
@@ -311,7 +311,7 @@ export function Hero() {
                 width={600}
                 height={650}
                 priority
-                className="relative z-10 h-auto w-full object-contain drop-shadow-[0_30px_45px_rgba(13,18,34,0.12)]"
+                className="relative z-10 h-auto w-full object-contain drop-shadow-[0_30px_45px_rgba(15,42,48,0.12)]"
               />
             </div>
 
@@ -321,13 +321,13 @@ export function Hero() {
 
             {/* Build */}
             <div data-reveal="pop" className="absolute left-[-2%] top-[12%] z-20 hidden sm:block">
-              <div className="hero-float flex items-center gap-3 rounded-2xl border border-white/80 bg-white/95 px-4 py-3 shadow-[0_14px_35px_rgba(13,18,34,0.10)] backdrop-blur-md">
-                <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#EEF2FF] text-[#1E3ABA]">
+              <div className="hero-float flex items-center gap-3 rounded-2xl border border-white/80 bg-white/95 px-4 py-3 shadow-[0_14px_35px_rgba(15,42,48,0.10)] backdrop-blur-md">
+                <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#E6F2F3] text-[#1D5F6E]">
                   <Icon name="Code2" size={17} strokeWidth={2} />
                 </div>
 
                 <div className="leading-tight">
-                  <p className="text-xs font-bold text-[#0D1222]">
+                  <p className="text-xs font-bold text-[#0F2A30]">
                     Build
                   </p>
                   <p className="text-[11px] text-slate-500">
@@ -339,13 +339,13 @@ export function Hero() {
 
             {/* Learn */}
             <div data-reveal="pop" className="absolute bottom-[13%] left-[0%] z-20 hidden sm:block">
-              <div className="hero-float-reverse flex items-center gap-3 rounded-2xl border border-white/80 bg-white/95 px-4 py-3 shadow-[0_14px_35px_rgba(13,18,34,0.10)] backdrop-blur-md">
-                <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#EAFBF9] text-[#00A99D]">
+              <div className="hero-float-reverse flex items-center gap-3 rounded-2xl border border-white/80 bg-white/95 px-4 py-3 shadow-[0_14px_35px_rgba(15,42,48,0.10)] backdrop-blur-md">
+                <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#E8F8F5] text-[#23857A]">
                   <Icon name="Brain" size={17} strokeWidth={2} />
                 </div>
 
                 <div className="leading-tight">
-                  <p className="text-xs font-bold text-[#0D1222]">
+                  <p className="text-xs font-bold text-[#0F2A30]">
                     Learn with
                   </p>
                   <p className="text-[11px] text-slate-500">
@@ -357,13 +357,13 @@ export function Hero() {
 
             {/* Career */}
             <div data-reveal="pop" className="absolute right-[-1%] top-[22%] z-20 hidden sm:block">
-              <div className="hero-float-reverse flex items-center gap-3 rounded-2xl border border-white/80 bg-white/95 px-4 py-3 shadow-[0_14px_35px_rgba(13,18,34,0.10)] backdrop-blur-md">
-                <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#FFF0F5] text-[#FF2D75]">
+              <div className="hero-float-reverse flex items-center gap-3 rounded-2xl border border-white/80 bg-white/95 px-4 py-3 shadow-[0_14px_35px_rgba(15,42,48,0.10)] backdrop-blur-md">
+                <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#FDEEEA] text-[#EF6F51]">
                   <Icon name="TrendingUp" size={17} strokeWidth={2} />
                 </div>
 
                 <div className="leading-tight">
-                  <p className="text-xs font-bold text-[#0D1222]">
+                  <p className="text-xs font-bold text-[#0F2A30]">
                     Career
                   </p>
                   <p className="text-[11px] text-slate-500">
@@ -375,13 +375,13 @@ export function Hero() {
 
             {/* Future Ready */}
             <div data-reveal="pop" className="absolute bottom-[17%] right-[0%] z-20 hidden sm:block">
-              <div className="hero-float flex items-center gap-3 rounded-2xl border border-white/80 bg-white/95 px-4 py-3 shadow-[0_14px_35px_rgba(13,18,34,0.10)] backdrop-blur-md">
-                <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#FFF5E8] text-[#FF8A00]">
+              <div className="hero-float flex items-center gap-3 rounded-2xl border border-white/80 bg-white/95 px-4 py-3 shadow-[0_14px_35px_rgba(15,42,48,0.10)] backdrop-blur-md">
+                <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#FEF6E3] text-[#F4B942]">
                   <Icon name="Rocket" size={17} strokeWidth={2} />
                 </div>
 
                 <div className="leading-tight">
-                  <p className="text-xs font-bold text-[#0D1222]">
+                  <p className="text-xs font-bold text-[#0F2A30]">
                     Future Ready
                   </p>
                   <p className="text-[11px] text-slate-500">
@@ -396,7 +396,7 @@ export function Hero() {
               {Array.from({ length: 16 }).map((_, i) => (
                 <span
                   key={i}
-                  className="h-1 w-1 rounded-full bg-[#7C3AED]"
+                  className="h-1 w-1 rounded-full bg-[#55C9B8]"
                 />
               ))}
             </div>
@@ -411,10 +411,10 @@ export function Hero() {
         <div className="relative h-20 lg:h-24">
 
           {/* Soft color horizon */}
-          <div data-reveal="draw" className="absolute left-1/2 top-1/2 h-px w-[75%] origin-center -translate-x-1/2 bg-gradient-to-r from-transparent via-[#1E3ABA]/20 via-[#7C3AED]/30 to-transparent" />
+          <div data-reveal="draw" className="absolute left-1/2 top-1/2 h-px w-[75%] origin-center -translate-x-1/2 bg-gradient-to-r from-transparent via-[#1D5F6E]/20 via-[#55C9B8]/30 to-transparent" />
 
           {/* Transition glow */}
-          <div className="pointer-events-none absolute left-1/2 top-1/2 h-16 w-[55%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-r from-[#1E3ABA]/5 via-[#7C3AED]/10 to-[#FF8A00]/5 blur-2xl" />
+          <div className="pointer-events-none absolute left-1/2 top-1/2 h-16 w-[55%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-r from-[#1D5F6E]/5 via-[#55C9B8]/10 to-[#F4B942]/5 blur-2xl" />
 
         </div>
 
@@ -427,7 +427,7 @@ export function Hero() {
 // export function LogoMarquee() {
 //   const row = [...(partners?.logos ?? []), ...(partners?.logos ?? [])];
 //   return (
-//     <section className="border-y border-slate-100 bg-[#FAFBFF] py-8">
+//     <section className="border-y border-slate-100 bg-[#F7FBFB] py-8">
 //       <div className="mx-auto max-w-7xl px-6 lg:px-8">
 //         <p className="text-center text-xs font-medium text-slate-400">
 //           {partners?.label}
@@ -512,19 +512,19 @@ export function WhySummate() {
 
   {/* Soft top transition */}
   <div
-    className="pointer-events-none absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-[#F4F6FF] via-[#FAFBFF] to-transparent"
+    className="pointer-events-none absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-[#F1F8F8] via-[#F7FBFB] to-transparent"
     aria-hidden="true"
   />
 
   {/* Left ambient glow */}
   <div
-    className="pointer-events-none absolute -left-56 top-[28%] h-[520px] w-[520px] rounded-full bg-[#1E3ABA]/[0.045] blur-[120px]"
+    className="pointer-events-none absolute -left-56 top-[28%] h-[520px] w-[520px] rounded-full bg-[#1D5F6E]/[0.045] blur-[120px]"
     aria-hidden="true"
   />
 
   {/* Right ambient glow */}
   <div
-    className="pointer-events-none absolute -right-52 top-[10%] h-[620px] w-[620px] rounded-full bg-gradient-to-br from-[#7C3AED]/[0.05] via-[#FF2D75]/[0.035] to-[#FF8A00]/[0.025] blur-[130px]"
+    className="pointer-events-none absolute -right-52 top-[10%] h-[620px] w-[620px] rounded-full bg-gradient-to-br from-[#55C9B8]/[0.05] via-[#EF6F51]/[0.035] to-[#F4B942]/[0.025] blur-[130px]"
     aria-hidden="true"
   />
 
@@ -534,7 +534,7 @@ export function WhySummate() {
     aria-hidden="true"
     style={{
       backgroundImage:
-        "linear-gradient(rgba(30,58,186,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(30,58,186,0.035) 1px, transparent 1px)",
+        "linear-gradient(rgba(29,95,110,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(29,95,110,0.035) 1px, transparent 1px)",
       backgroundSize: "72px 72px",
       maskImage:
         "linear-gradient(to bottom, black 0%, rgba(0,0,0,.65) 45%, transparent 100%)",
@@ -558,16 +558,16 @@ export function WhySummate() {
       <div>
         {/* Section marker */}
         <div className="mb-6 flex items-center gap-3">
-          <span data-reveal="draw" className="relative h-px w-12 overflow-hidden bg-[#D9E0F5]">
-            <span className="absolute inset-y-0 left-0 w-7 bg-[#1E3ABA]" />
+          <span data-reveal="draw" className="relative h-px w-12 overflow-hidden bg-[#D3E6E8]">
+            <span className="absolute inset-y-0 left-0 w-7 bg-[#1D5F6E]" />
           </span>
 
-          <span data-reveal="rise" className="text-[13px] font-bold uppercase tracking-[0.2em] text-[#1E3ABA]">
+          <span data-reveal="rise" className="text-[13px] font-bold uppercase tracking-[0.2em] text-[#1D5F6E]">
             Why Summate
           </span>
         </div>
 
-        <h2 className="max-w-4xl text-4xl font-extrabold leading-[1.04] tracking-[-0.045em] text-[#0D1222] sm:text-5xl lg:text-[56px]">
+        <h2 className="max-w-4xl text-4xl font-extrabold leading-[1.04] tracking-[-0.045em] text-[#0F2A30] sm:text-5xl lg:text-[56px]">
           <span data-reveal="line"><span>Because learning shouldn't stop</span></span>
           <span data-reveal="line"><span>where the syllabus ends.</span></span>
         </h2>
@@ -575,7 +575,7 @@ export function WhySummate() {
 
       <div className="relative lg:pb-1">
         {/* Small vertical accent */}
-        <div className="absolute -left-5 top-1 hidden h-12 w-px bg-gradient-to-b from-[#1E3ABA] to-transparent lg:block" />
+        <div className="absolute -left-5 top-1 hidden h-12 w-px bg-gradient-to-b from-[#1D5F6E] to-transparent lg:block" />
 
         <p data-reveal="rise" className="max-w-lg text-[16px] font-medium leading-7 text-slate-500">
           There are courses, certificates, tutorials, bootcamps and
@@ -598,7 +598,7 @@ export function WhySummate() {
         </span>
       </div>
 
-      <div className="overflow-hidden rounded-[24px] border border-slate-200 bg-white shadow-[0_20px_60px_rgba(13,18,34,0.045)]">
+      <div className="overflow-hidden rounded-[24px] border border-slate-200 bg-white shadow-[0_20px_60px_rgba(15,42,48,0.045)]">
 
         <div className="grid lg:grid-cols-[230px_1fr]">
 
@@ -606,12 +606,12 @@ export function WhySummate() {
               LEFT LABEL
           ------------------------------------------------ */}
 
-          <div className="relative border-b border-slate-200 bg-[#FAFBFF] px-7 py-8 lg:border-b-0 lg:border-r">
+          <div className="relative border-b border-slate-200 bg-[#F7FBFB] px-7 py-8 lg:border-b-0 lg:border-r">
             {/* Vertical accent */}
-            <div className="absolute left-0 top-0 h-full w-[2px] bg-gradient-to-b from-[#1E3ABA] via-[#7C3AED] to-transparent" />
+            <div className="absolute left-0 top-0 h-full w-[2px] bg-gradient-to-b from-[#1D5F6E] via-[#55C9B8] to-transparent" />
 
         
-            <p className="mt-4 max-w-[180px] text-[15px] font-semibold leading-6 text-[#0D1222]">
+            <p className="mt-4 max-w-[180px] text-[15px] font-semibold leading-6 text-[#0F2A30]">
               Where knowing something isn't enough.
             </p>
 
@@ -629,7 +629,7 @@ export function WhySummate() {
                 className={`
                   group relative flex min-h-[150px] gap-5 px-6 py-7
                   transition-all duration-300
-                  hover:bg-[#FAFBFF]
+                  hover:bg-[#F7FBFB]
                   sm:px-7 sm:py-8
                   ${index < 2 ? "border-b border-slate-200" : ""}
                   ${index % 2 === 0 ? "sm:border-r border-slate-200" : ""}
@@ -640,15 +640,15 @@ export function WhySummate() {
                   <span
                     className="
                       font-mono text-[11px] font-semibold tracking-wider
-                      text-[#1E3ABA]
+                      text-[#1D5F6E]
                       transition-all duration-300
-                      group-hover:text-[#7C3AED]
+                      group-hover:text-[#23857A]
                     "
                   >
                     {gap.num}
                   </span>
 
-                  <span className="absolute -bottom-3 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-slate-200 transition-all duration-300 group-hover:bg-[#1E3ABA]" />
+                  <span className="absolute -bottom-3 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-slate-200 transition-all duration-300 group-hover:bg-[#1D5F6E]" />
                 </div>
 
                 {/* Content */}
@@ -657,14 +657,14 @@ export function WhySummate() {
                     className="
                       max-w-md text-sm font-semibold leading-6 text-slate-700
                       transition-colors duration-300
-                      group-hover:text-[#0D1222]
+                      group-hover:text-[#0F2A30]
                     "
                   >
                     {gap.text}
                   </p>
 
                   {/* Hover line */}
-                  <div className="mt-5 h-px w-0 bg-gradient-to-r from-[#1E3ABA] to-[#7C3AED] transition-all duration-500 group-hover:w-16" />
+                  <div className="mt-5 h-px w-0 bg-gradient-to-r from-[#1D5F6E] to-[#55C9B8] transition-all duration-500 group-hover:w-16" />
                 </div>
 
                 {/* Arrow */}
@@ -675,9 +675,9 @@ export function WhySummate() {
                     text-slate-300
                     transition-all duration-300
                     group-hover:-translate-y-0.5
-                    group-hover:border-[#1E3ABA]/20
-                    group-hover:bg-[#EEF3FF]
-                    group-hover:text-[#1E3ABA]
+                    group-hover:border-[#1D5F6E]/20
+                    group-hover:bg-[#E8F4F4]
+                    group-hover:text-[#1D5F6E]
                   "
                 >
                   <Icon
@@ -716,7 +716,7 @@ export function WhySummate() {
             What we believe
           </p>
 
-          <h3 className="mt-3 text-2xl font-extrabold tracking-[-0.03em] text-[#0D1222] sm:text-3xl">
+          <h3 className="mt-3 text-2xl font-extrabold tracking-[-0.03em] text-[#0F2A30] sm:text-3xl">
             Three ideas behind how we teach.
           </h3>
         </div>
@@ -750,16 +750,16 @@ export function WhySummate() {
 
       {/* Glow behind dark panel */}
       <div
-        className="pointer-events-none absolute -inset-x-12 -bottom-12 h-40 rounded-full bg-[#1E3ABA]/10 blur-[70px]"
+        className="pointer-events-none absolute -inset-x-12 -bottom-12 h-40 rounded-full bg-[#1D5F6E]/10 blur-[70px]"
         aria-hidden="true"
       />
 
       <div
         className="
           group relative overflow-hidden rounded-[28px]
-          bg-[#0D1222]
+          bg-[#0F2A30]
           px-7 py-10
-          shadow-[0_30px_80px_rgba(13,18,34,0.16)]
+          shadow-[0_30px_80px_rgba(15,42,48,0.16)]
           sm:px-10 sm:py-11
         "
       >
@@ -786,7 +786,7 @@ export function WhySummate() {
             -right-28 -top-32
             h-80 w-80
             rounded-full
-            bg-[#1E3ABA]/30
+            bg-[#1D5F6E]/30
             blur-[80px]
             transition-transform duration-1000
             group-hover:scale-110
@@ -801,7 +801,7 @@ export function WhySummate() {
             -bottom-40 left-[38%]
             h-72 w-72
             rounded-full
-            bg-[#7C3AED]/20
+            bg-[#55C9B8]/20
             blur-[80px]
           "
           aria-hidden="true"
@@ -814,7 +814,7 @@ export function WhySummate() {
         />
 
         <div
-          className="pointer-events-none absolute right-[57px] top-[57px] h-2 w-2 rounded-full bg-[#7C3AED]"
+          className="pointer-events-none absolute right-[57px] top-[57px] h-2 w-2 rounded-full bg-[#55C9B8]"
           aria-hidden="true"
         />
 
@@ -861,14 +861,14 @@ export function WhySummate() {
                 →
               </span>
 
-              <span data-reveal="rise" data-reveal-delay="300" className="bg-gradient-to-br from-[#A9BBFF] via-[#5B7BFF] to-[#2D4FE0] bg-clip-text text-transparent">
+              <span data-reveal="rise" data-reveal-delay="300" className="bg-gradient-to-br from-[#B9EDE4] via-[#45ACA8] to-[#1D5F6E] bg-clip-text text-transparent">
                 ACHIEVE
               </span>
 
             </div>
 
             {/* Signature underline, drawn after the three words */}
-            <div data-reveal="draw" data-reveal-delay="300" className="mt-3 h-px w-full bg-gradient-to-r from-[#1E3ABA] via-[#7C3AED] to-[#FF2D75]" />
+            <div data-reveal="draw" data-reveal-delay="300" className="mt-3 h-px w-full bg-gradient-to-r from-[#1D5F6E] via-[#55C9B8] to-[#9FDEAF]" />
 
           </div>
         </div>
@@ -883,9 +883,9 @@ export function WhySummate() {
       <div data-reveal="draw" className="h-px w-full origin-center bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
 
       <div className="absolute flex items-center gap-2 bg-white px-5">
-        <span data-reveal="pop" className="h-1.5 w-1.5 rounded-full bg-[#1E3ABA]" />
-        <span data-reveal="pop" className="h-1.5 w-1.5 rounded-full bg-[#7C3AED]" />
-        <span data-reveal="pop" className="h-1.5 w-1.5 rounded-full bg-[#FF2D75]" />
+        <span data-reveal="pop" className="h-1.5 w-1.5 rounded-full bg-[#1D5F6E]" />
+        <span data-reveal="pop" className="h-1.5 w-1.5 rounded-full bg-[#55C9B8]" />
+        <span data-reveal="pop" className="h-1.5 w-1.5 rounded-full bg-[#EF6F51]" />
       </div>
     </div>
 
@@ -913,12 +913,12 @@ export function TrackCatalog() {
       ====================================================== */}
 
       <div
-        className="pointer-events-none absolute -left-40 top-20 h-[420px] w-[420px] rounded-full bg-[#1E3ABA]/[0.035] blur-[110px]"
+        className="pointer-events-none absolute -left-40 top-20 h-[420px] w-[420px] rounded-full bg-[#1D5F6E]/[0.035] blur-[110px]"
         aria-hidden="true"
       />
 
       <div
-        className="pointer-events-none absolute -right-40 bottom-0 h-[460px] w-[460px] rounded-full bg-[#7C3AED]/[0.04] blur-[120px]"
+        className="pointer-events-none absolute -right-40 bottom-0 h-[460px] w-[460px] rounded-full bg-[#55C9B8]/[0.04] blur-[120px]"
         aria-hidden="true"
       />
 
@@ -930,14 +930,14 @@ export function TrackCatalog() {
 
         <div className="mb-8">
           <div className="mb-4 flex items-center gap-3">
-            <span data-reveal="draw" className="h-px w-10 bg-[#1E3ABA]" />
+            <span data-reveal="draw" className="h-px w-10 bg-[#1D5F6E]" />
 
-            <span data-reveal="rise" className="text-[13px] font-bold uppercase tracking-[0.2em] text-[#1E3ABA]">
+            <span data-reveal="rise" className="text-[13px] font-bold uppercase tracking-[0.2em] text-[#1D5F6E]">
               Programs
             </span>
           </div>
 
-          <h2 className="max-w-2xl text-4xl font-extrabold leading-[1.02] tracking-[-0.045em] text-[#0D1222] sm:text-5xl lg:text-[56px]">
+          <h2 className="max-w-2xl text-4xl font-extrabold leading-[1.02] tracking-[-0.045em] text-[#0F2A30] sm:text-5xl lg:text-[56px]">
             <span data-reveal="line">
               <span>
                 Learning that leads
@@ -967,7 +967,7 @@ export function TrackCatalog() {
           "
           style={{
             background:
-              "linear-gradient(120deg, #0B2A9E 0%, #1543D6 30%, #3F7BEA 60%, #7FB8E6 100%)",
+              "linear-gradient(120deg, #123F49 0%, #1D5F6E 30%, #3C8B90 60%, #7FD3C6 100%)",
           }}
         >
 
@@ -978,7 +978,7 @@ export function TrackCatalog() {
           />
 
           <div
-            className="pointer-events-none absolute -left-20 bottom-[-160px] h-96 w-96 rounded-full bg-[#7C3AED]/20 blur-[100px]"
+            className="pointer-events-none absolute -left-20 bottom-[-160px] h-96 w-96 rounded-full bg-[#55C9B8]/20 blur-[100px]"
             aria-hidden="true"
           />
 
@@ -997,8 +997,8 @@ export function TrackCatalog() {
                   transition-all duration-300
                   ${
                     index === 0
-                      ? "border-[#0D1222] bg-[#0D1222] text-white shadow-sm"
-                      : "border-white/60 bg-white/85 text-[#0D1222] hover:bg-white"
+                      ? "border-[#0F2A30] bg-[#0F2A30] text-white shadow-sm"
+                      : "border-white/60 bg-white/85 text-[#0F2A30] hover:bg-white"
                   }
                 `}
               >
@@ -1034,8 +1034,8 @@ export function TrackCatalog() {
                 className="
                   mt-6 inline-flex w-fit items-center gap-2
                   rounded-xl bg-white px-4 py-2.5
-                  text-xs font-bold text-[#1E3ABA]
-                  shadow-[0_8px_25px_rgba(13,18,34,0.12)]
+                  text-xs font-bold text-[#1D5F6E]
+                  shadow-[0_8px_25px_rgba(15,42,48,0.12)]
                   transition-all duration-300
                   hover:-translate-y-0.5 hover:shadow-lg
                 "
@@ -1069,10 +1069,10 @@ export function TrackCatalog() {
                     rounded-[20px]
                     border border-white/70
                     bg-white
-                    shadow-[0_12px_30px_rgba(13,18,34,0.08)]
+                    shadow-[0_12px_30px_rgba(15,42,48,0.08)]
                     transition-all duration-400
                     hover:-translate-y-1
-                    hover:shadow-[0_20px_40px_rgba(13,18,34,0.14)]
+                    hover:shadow-[0_20px_40px_rgba(15,42,48,0.14)]
                   "
                 >
 
@@ -1105,7 +1105,7 @@ export function TrackCatalog() {
                     </div>
 
                     {/* Status */}
-                    <span className="absolute right-4 top-4 rounded-full bg-white/90 px-2.5 py-1 text-[9px] font-bold uppercase tracking-[0.1em] text-[#0D1222]">
+                    <span className="absolute right-4 top-4 rounded-full bg-white/90 px-2.5 py-1 text-[9px] font-bold uppercase tracking-[0.1em] text-[#0F2A30]">
                       {track.featured ? "Featured" : "Coming Soon"}
                     </span>
                   </div>
@@ -1123,7 +1123,7 @@ export function TrackCatalog() {
                       {track.category}
                     </p>
 
-                    <h3 className="mt-2 min-h-[52px] text-[17px] font-extrabold leading-[1.15] tracking-[-0.025em] text-[#0D1222]">
+                    <h3 className="mt-2 min-h-[52px] text-[17px] font-extrabold leading-[1.15] tracking-[-0.025em] text-[#0F2A30]">
                       {track.title}
                     </h3>
 
@@ -1185,11 +1185,11 @@ export function TrackCatalog() {
 
           <Link
             href="/apply"
-            className="group inline-flex items-center gap-2 text-sm font-bold text-[#0D1222]"
+            className="group inline-flex items-center gap-2 text-sm font-bold text-[#0F2A30]"
           >
             Start with Batch 01
 
-            <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#1E3ABA] text-white transition-transform duration-300 group-hover:translate-x-1">
+            <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#1D5F6E] text-white transition-transform duration-300 group-hover:translate-x-1">
               <Icon
                 name="ArrowRight"
                 size={14}
@@ -1212,8 +1212,8 @@ export function PersonaCards() {
       desc: "You have the qualification. Now it's time to build what's next.",
       quote: "From learning to doing.",
       image: "/personalcard1.png",
-      accent: "#1E3ABA",
-      soft: "#EEF2FF",
+      accent: "#1D5F6E",
+      soft: "#E6F2F3",
       features: [
         {
           label: "Recent graduates",
@@ -1236,8 +1236,8 @@ export function PersonaCards() {
       desc: "You're working, but you want to grow, switch roles or stay ahead.",
       quote: "Better skills. Bigger opportunities.",
       image: "/personalcard2.png",
-      accent: "#7C3AED",
-      soft: "#F3EFFF",
+      accent: "#55C9B8",
+      soft: "#E9F8F5",
       features: [
         {
           label: "Working professionals",
@@ -1260,8 +1260,8 @@ export function PersonaCards() {
       desc: "A different direction is possible. It's never too late to start again.",
       quote: "New skills. New possibilities.",
       image: "/personalcard3.png",
-      accent: "#FF8A00",
-      soft: "#FFF5E8",
+      accent: "#F4B942",
+      soft: "#FEF6E3",
       features: [
         {
           label: "Career changers",
@@ -1289,9 +1289,9 @@ export function PersonaCards() {
       ========================================================= */}
 
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute left-[10%] top-32 h-72 w-72 rounded-full bg-[#1E3ABA]/[0.025] blur-3xl" />
+        <div className="absolute left-[10%] top-32 h-72 w-72 rounded-full bg-[#1D5F6E]/[0.025] blur-3xl" />
 
-        <div className="absolute bottom-20 right-[8%] h-80 w-80 rounded-full bg-[#7C3AED]/[0.025] blur-3xl" />
+        <div className="absolute bottom-20 right-[8%] h-80 w-80 rounded-full bg-[#55C9B8]/[0.025] blur-3xl" />
       </div>
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
@@ -1310,7 +1310,7 @@ export function PersonaCards() {
             <span data-reveal="draw" className="h-px w-8 bg-slate-300" />
           </div>
 
-          <h2 className="text-[38px] font-extrabold leading-[1.08] tracking-[-0.045em] text-[#0D1222] sm:text-[48px] lg:text-[56px]">
+          <h2 className="text-[38px] font-extrabold leading-[1.08] tracking-[-0.045em] text-[#0F2A30] sm:text-[48px] lg:text-[56px]">
             <span data-reveal="line"><span>There’s No Single</span></span>
             <span data-reveal="line"><span>Starting Point for Learning.</span></span>
           </h2>
@@ -1328,7 +1328,7 @@ export function PersonaCards() {
 
         <div className="mx-auto mt-12 hidden max-w-xl items-center justify-center md:flex">
           <div className="flex items-center" data-reveal-step="220">
-            <span data-reveal="rise" className="font-mono text-[10px] font-bold tracking-[0.15em] text-[#1E3ABA]">
+            <span data-reveal="rise" className="font-mono text-[10px] font-bold tracking-[0.15em] text-[#1D5F6E]">
               STARTING OUT
             </span>
 
@@ -1364,7 +1364,7 @@ export function PersonaCards() {
                   transition-all duration-500 ease-out
                   hover:-translate-y-2
                   hover:border-slate-300
-                  hover:shadow-[0_30px_70px_rgba(13,18,34,0.10)]
+                  hover:shadow-[0_30px_70px_rgba(15,42,48,0.10)]
                   ${
                     isMiddle
                       ? "lg:mt-[-20px]"
@@ -1407,7 +1407,7 @@ export function PersonaCards() {
                 ================================================= */}
 
                 <div className="relative px-7 pt-7 sm:px-8">
-                  <h3 className="text-[29px] font-extrabold leading-[1.05] tracking-[-0.045em] text-[#0D1222] transition-colors duration-300 group-hover:text-[#1E3ABA]">
+                  <h3 className="text-[29px] font-extrabold leading-[1.05] tracking-[-0.045em] text-[#0F2A30] transition-colors duration-300 group-hover:text-[#1D5F6E]">
                     {card.title}
                   </h3>
 
@@ -1479,7 +1479,7 @@ export function PersonaCards() {
                       absolute bottom-5 left-5 right-5
                       rounded-2xl border border-white/80
                       bg-white/90 px-4 py-3
-                      shadow-[0_10px_30px_rgba(13,18,34,0.08)]
+                      shadow-[0_10px_30px_rgba(15,42,48,0.08)]
                       backdrop-blur-md
                       transition-all duration-500
                       group-hover:-translate-y-1
@@ -1556,7 +1556,7 @@ export function PersonaCards() {
                       justify-between rounded-xl
                       border border-slate-200
                       bg-white px-4 py-3
-                      text-xs font-bold text-[#0D1222]
+                      text-xs font-bold text-[#0F2A30]
                       transition-all duration-300
                       hover:border-slate-300
                       hover:bg-slate-50
@@ -1610,7 +1610,7 @@ export function PersonaCards() {
 
         <div data-reveal="rise" className="mt-14 flex flex-col items-start justify-between gap-5 border-t border-slate-200 pt-7 sm:flex-row sm:items-center">
           <div className="flex items-center gap-3">
-            <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#EEF2FF] text-[#1E3ABA]">
+            <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#E6F2F3] text-[#1D5F6E]">
               <Icon
                 name="ArrowDownRight"
                 size={14}
@@ -1627,7 +1627,7 @@ export function PersonaCards() {
             href="/apply"
             className="
               group inline-flex items-center gap-2
-              text-sm font-bold text-[#0D1222]
+              text-sm font-bold text-[#0F2A30]
             "
           >
             <span>Find your starting point</span>
@@ -1648,11 +1648,11 @@ export function ProgramSpotlight() {
   // Each row is one shift in approach: what most courses do, and what Summate does instead.
   // Kept to one short line each so the whole comparison fits in a single screen.
   const shifts = [
-    { from: "Watching lessons", to: "Using what you learn", body: "Practise every concept yourself before reaching for AI.", accent: "#1E3ABA" },
-    { from: "Learning alone, on recordings", to: "Learning live, with your batch", body: "A small cohort, with questions and feedback in real time.", accent: "#7C3AED" },
-    { from: "Forum replies, if you're lucky", to: "Mentors who review your work", body: "Working professionals review your project at regular checkpoints.", accent: "#0284C7" },
-    { from: "A certificate at the end", to: "Work you can show and explain", body: "One 12-week project with Git, tests and deployment, plus mock interviews.", accent: "#FF2D75" },
-    { from: "Done when the course ends", to: "A network that keeps going", body: "Graduates join the Summate Circle of peers, mentors and professionals.", accent: "#0EA5A0", href: "/circle" },
+    { from: "Watching lessons", to: "Using what you learn", body: "Practise every concept yourself before reaching for AI.", accent: "#1D5F6E" },
+    { from: "Learning alone, on recordings", to: "Learning live, with your batch", body: "A small cohort, with questions and feedback in real time.", accent: "#55C9B8" },
+    { from: "Forum replies, if you're lucky", to: "Mentors who review your work", body: "Working professionals review your project at regular checkpoints.", accent: "#2A7A88" },
+    { from: "A certificate at the end", to: "Work you can show and explain", body: "One 12-week project with Git, tests and deployment, plus mock interviews.", accent: "#EF6F51" },
+    { from: "Done when the course ends", to: "A network that keeps going", body: "Graduates join the Summate Circle of peers, mentors and professionals.", accent: "#23857A", href: "/circle" },
   ];
 
   const sum = [
@@ -1694,7 +1694,7 @@ export function ProgramSpotlight() {
   return (
     <section
       id="program"
-      className="relative isolate flex scroll-mt-[76px] items-center overflow-hidden bg-[#F8FAFF] py-12 lg:min-h-[calc(100svh-76px)] lg:py-6 [@media(min-width:1024px)_and_(max-height:760px)]:py-3"
+      className="relative isolate flex scroll-mt-[76px] items-center overflow-hidden bg-[#F6FAFA] py-12 lg:min-h-[calc(100svh-76px)] lg:py-6 [@media(min-width:1024px)_and_(max-height:760px)]:py-3"
     >
       <div className="relative mx-auto w-full max-w-[1180px] px-6 sm:px-8 lg:px-0">
         {/* Header */}
@@ -1702,13 +1702,13 @@ export function ProgramSpotlight() {
           <div>
             <div className="mb-2 flex items-center gap-3">
               <span data-reveal="draw" className="relative h-px w-12 overflow-hidden bg-slate-200">
-                <span className="absolute inset-y-0 left-0 w-8 bg-[#1E3ABA]" />
+                <span className="absolute inset-y-0 left-0 w-8 bg-[#1D5F6E]" />
               </span>
-              <span data-reveal="rise" className="text-[13px] font-bold uppercase tracking-[0.2em] text-[#1E3ABA]">
+              <span data-reveal="rise" className="text-[13px] font-bold uppercase tracking-[0.2em] text-[#1D5F6E]">
                 The Summate Difference
               </span>
             </div>
-            <h2 className="font-display text-[34px] font-extrabold leading-[1.02] tracking-[-0.045em] text-[#0D1222] lg:text-[42px]">
+            <h2 className="font-display text-[34px] font-extrabold leading-[1.02] tracking-[-0.045em] text-[#0F2A30] lg:text-[42px]">
               <span data-reveal="line"><span>More than just courses.</span></span>
             </h2>
           </div>
@@ -1720,10 +1720,10 @@ export function ProgramSpotlight() {
 
         <div className="mt-5 [@media(min-width:1024px)_and_(max-height:760px)]:mt-3 grid gap-4 lg:grid-cols-[minmax(0,1.55fr)_minmax(0,1fr)]">
           {/* The five shifts */}
-          <div data-reveal="rise" className="overflow-hidden rounded-[24px] border border-slate-200 bg-white shadow-[0_20px_60px_rgba(13,18,34,0.06)]">
-            <div className="hidden grid-cols-[minmax(0,4fr)_minmax(0,7fr)] gap-6 border-b border-slate-200 bg-[#FBFCFF] px-6 py-3 [@media(min-width:1024px)_and_(max-height:760px)]:py-2 text-[13px] font-semibold sm:grid">
+          <div data-reveal="rise" className="overflow-hidden rounded-[24px] border border-slate-200 bg-white shadow-[0_20px_60px_rgba(15,42,48,0.06)]">
+            <div className="hidden grid-cols-[minmax(0,4fr)_minmax(0,7fr)] gap-6 border-b border-slate-200 bg-[#F9FCFC] px-6 py-3 [@media(min-width:1024px)_and_(max-height:760px)]:py-2 text-[13px] font-semibold sm:grid">
               <span className="text-slate-500">Most courses give you</span>
-              <span className="text-[#1E3ABA]">Summate gives you</span>
+              <span className="text-[#1D5F6E]">Summate gives you</span>
             </div>
             <ul className="divide-y divide-slate-100" data-reveal-step="130">
               {shifts.map((s) => (
@@ -1753,10 +1753,10 @@ export function ProgramSpotlight() {
                       <Check size={12} strokeWidth={3} />
                     </span>
                     <div className="min-w-0">
-                      <h3 className="font-display text-[18px] font-bold leading-tight tracking-[-0.02em] text-[#0D1222]">
+                      <h3 className="font-display text-[18px] font-bold leading-tight tracking-[-0.02em] text-[#0F2A30]">
                         <span className="sr-only">At Summate: </span>
                         {s.href ? (
-                          <Link href={s.href} className="text-[#0D1222] hover:text-[#1E3ABA]">
+                          <Link href={s.href} className="text-[#0F2A30] hover:text-[#1D5F6E]">
                             {s.to}
                           </Link>
                         ) : (
@@ -1772,14 +1772,14 @@ export function ProgramSpotlight() {
           </div>
 
           {/* The sum */}
-          <div data-reveal="rise" className="relative isolate flex flex-col overflow-hidden rounded-[24px] bg-[#0D1222] p-6">
+          <div data-reveal="rise" className="relative isolate flex flex-col overflow-hidden rounded-[24px] bg-[#0F2A30] p-6">
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute -right-24 -top-28 -z-10 h-[340px] w-[340px] rounded-full bg-[#1E3ABA]/55 blur-[100px]"
+              className="pointer-events-none absolute -right-24 -top-28 -z-10 h-[340px] w-[340px] rounded-full bg-[#1D5F6E]/55 blur-[100px]"
             />
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute -bottom-32 -left-10 -z-10 h-[280px] w-[280px] rounded-full bg-[#7C3AED]/25 blur-[100px]"
+              className="pointer-events-none absolute -bottom-32 -left-10 -z-10 h-[280px] w-[280px] rounded-full bg-[#55C9B8]/25 blur-[100px]"
             />
 
             <h3 className="font-display text-[26px] font-bold leading-tight tracking-[-0.03em] text-white">It all adds up.</h3>
@@ -1795,7 +1795,7 @@ export function ProgramSpotlight() {
                     className={`flex items-baseline gap-3 py-[3px] font-display text-[16px] font-semibold tracking-[-0.01em] text-slate-200 ${reveal}`}
                     style={delay(i)}
                   >
-                    <span aria-hidden="true" className="w-3 shrink-0 text-right text-[#6E8AFF]">
+                    <span aria-hidden="true" className="w-3 shrink-0 text-right text-[#6CCFC0]">
                       {i === 0 ? "" : "+"}
                     </span>
                     {item}
@@ -1813,7 +1813,7 @@ export function ProgramSpotlight() {
                 className={`flex items-baseline gap-3 font-display text-[21px] font-bold leading-[1.2] tracking-[-0.025em] text-white ${reveal}`}
                 style={delay(sum.length + 2)}
               >
-                <span aria-hidden="true" className="w-3 shrink-0 text-right text-[#6E8AFF]">
+                <span aria-hidden="true" className="w-3 shrink-0 text-right text-[#6CCFC0]">
                   =
                 </span>
                 <span>Skills you can use, show and build on.</span>
@@ -1822,7 +1822,7 @@ export function ProgramSpotlight() {
 
             <Link
               href="/courses/ai-augmented-full-stack-developer"
-              className="mt-auto inline-flex h-11 w-fit items-center gap-2 self-start rounded-full bg-white px-5 text-[14px] font-semibold text-[#0D1222] transition-colors hover:bg-[#F2F4FF] hover:text-[#1E3ABA] lg:mt-5"
+              className="mt-auto inline-flex h-11 w-fit items-center gap-2 self-start rounded-full bg-white px-5 text-[14px] font-semibold text-[#0F2A30] transition-colors hover:bg-[#EAF4F5] hover:text-[#1D5F6E] lg:mt-5"
             >
               See how the course works
               <Icon name="ArrowUpRight" size={15} strokeWidth={2.2} />
@@ -1876,19 +1876,19 @@ export function ComparisonTable() {
 
   return (
     <section className="relative overflow-hidden bg-white py-16 sm:py-12 lg:py-20" id="comparison">
-      <div className="pointer-events-none absolute -left-20 top-1/4 h-[350px] w-[350px] sm:h-[420px] sm:w-[420px] rounded-full bg-blue-100/40 blur-3xl" />
-      <div className="pointer-events-none absolute -right-20 bottom-10 h-[360px] w-[360px] sm:h-[460px] sm:w-[460px] rounded-full bg-indigo-100/35 blur-3xl" />
+      <div className="pointer-events-none absolute -left-20 top-1/4 h-[350px] w-[350px] sm:h-[420px] sm:w-[420px] rounded-full bg-cyan-100/40 blur-3xl" />
+      <div className="pointer-events-none absolute -right-20 bottom-10 h-[360px] w-[360px] sm:h-[460px] sm:w-[460px] rounded-full bg-teal-100/35 blur-3xl" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         
         <div className="relative mx-auto max-w-3xl text-center">
-          <div className="inline-flex items-center gap-2 rounded-full border border-blue-200/60 bg-blue-50/70 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-[#1E3ABA]">
-            <span className="h-1.5 w-1.5 rounded-full bg-[#1E3ABA]" />
+          <div className="inline-flex items-center gap-2 rounded-full border border-cyan-200/60 bg-cyan-50/70 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-[#1D5F6E]">
+            <span className="h-1.5 w-1.5 rounded-full bg-[#1D5F6E]" />
             A Clearer Difference
           </div>
 
-          <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-[#0F172A] sm:text-4xl lg:text-[46px] lg:leading-[1.15]">
-            More than just <span className="text-[#1E3ABA]">courses.</span>
+          <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-[#0F2A30] sm:text-4xl lg:text-[46px] lg:leading-[1.15]">
+            More than just <span className="text-[#1D5F6E]">courses.</span>
           </h2>
 
           <p className="mt-3 text-sm font-medium text-slate-500 sm:text-base">
@@ -1932,20 +1932,20 @@ export function ComparisonTable() {
                   </div>
                 </div>
 
-                <div className="rounded-2xl border border-blue-200/90 bg-[#F5F8FF] p-3.5">
+                <div className="rounded-2xl border border-cyan-200/90 bg-[#F3F9F9] p-3.5">
                   <div className="flex items-center justify-between gap-2 mb-1.5">
-                    <span className="text-[11px] font-extrabold text-[#1E3ABA] uppercase tracking-wide">
+                    <span className="text-[11px] font-extrabold text-[#1D5F6E] uppercase tracking-wide">
                       Summate Approach
                     </span>
-                    <span className="text-[10px] font-bold uppercase rounded bg-blue-100 px-1.5 py-0.5 text-[#1E3ABA]">
+                    <span className="text-[10px] font-bold uppercase rounded bg-cyan-100 px-1.5 py-0.5 text-[#1D5F6E]">
                       Our Way
                     </span>
                   </div>
                   <div className="flex items-start gap-2.5">
-                    <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-blue-100 text-[#1E3ABA] mt-0.5">
+                    <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-cyan-100 text-[#1D5F6E] mt-0.5">
                       <Icon name="Check" size={11} strokeWidth={3} />
                     </span>
-                    <p className="text-xs font-bold leading-relaxed text-[#0F172A]">
+                    <p className="text-xs font-bold leading-relaxed text-[#0F2A30]">
                       {r.summate}
                     </p>
                   </div>
@@ -1989,7 +1989,7 @@ export function ComparisonTable() {
                   <Icon name="GraduationCap" size={19} strokeWidth={2} />
                 </div>
                 <div>
-                  <h3 className="text-sm font-bold text-[#0F172A]">Traditional Courses</h3>
+                  <h3 className="text-sm font-bold text-[#0F2A30]">Traditional Courses</h3>
                   <p className="text-[11px] font-medium text-slate-500">Tutorial-style instruction</p>
                 </div>
               </div>
@@ -2016,19 +2016,19 @@ export function ComparisonTable() {
             </div>
           </div>
 
-          <div className="relative rounded-[32px] border border-blue-200/90 bg-[#F5F8FF] p-6 shadow-md shadow-blue-900/[0.04] lg:col-span-5">
-            <div className="flex h-[64px] items-center justify-between border-b border-blue-100 pb-4">
+          <div className="relative rounded-[32px] border border-cyan-200/90 bg-[#F3F9F9] p-6 shadow-md shadow-[#0F2A30]/[0.04] lg:col-span-5">
+            <div className="flex h-[64px] items-center justify-between border-b border-cyan-100 pb-4">
               <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-blue-100 text-[#1E3ABA] shadow-2xs">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-cyan-100 text-[#1D5F6E] shadow-2xs">
                   <Icon name="Zap" size={19} strokeWidth={2.3} />
                 </div>
                 <div>
-                  <h3 className="text-sm font-extrabold text-[#1E3ABA]">Summate Approach</h3>
-                  <p className="text-[11px] font-medium text-blue-600/70">Founding Batch 1</p>
+                  <h3 className="text-sm font-extrabold text-[#1D5F6E]">Summate Approach</h3>
+                  <p className="text-[11px] font-medium text-[#1D5F6E]/70">Founding Batch 1</p>
                 </div>
               </div>
 
-              <span className="rounded-md border border-blue-200 bg-blue-100/70 px-2 py-0.5 font-mono text-[10px] font-bold tracking-wider text-[#1E3ABA] uppercase">
+              <span className="rounded-md border border-cyan-200 bg-cyan-100/70 px-2 py-0.5 font-mono text-[10px] font-bold tracking-wider text-[#1D5F6E] uppercase">
                 Our Way
               </span>
             </div>
@@ -2037,12 +2037,12 @@ export function ComparisonTable() {
               {comparisonRows.map((r) => (
                 <div
                   key={r.area}
-                  className="flex h-[88px] items-center gap-3 rounded-2xl border border-blue-100/90 bg-white px-4 py-3 shadow-2xs"
+                  className="flex h-[88px] items-center gap-3 rounded-2xl border border-cyan-100/90 bg-white px-4 py-3 shadow-2xs"
                 >
-                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-blue-100 text-[#1E3ABA]">
+                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-cyan-100 text-[#1D5F6E]">
                     <Icon name="Check" size={12} strokeWidth={3} />
                   </span>
-                  <p className="text-xs font-bold leading-snug text-[#0F172A] xl:text-[13px]">
+                  <p className="text-xs font-bold leading-snug text-[#0F2A30] xl:text-[13px]">
                     {r.summate}
                   </p>
                 </div>
@@ -2078,8 +2078,8 @@ export function BatchBenefits() {
       title: "Live, Interactive Classes",
       desc: "Learn directly from practitioners in a focused, collaborative environment.",
       icon: "Laptop",
-      accent: "#1E3ABA",
-      soft: "#EEF2FF",
+      accent: "#1D5F6E",
+      soft: "#E6F2F3",
     },
     {
       num: "02",
@@ -2087,8 +2087,8 @@ export function BatchBenefits() {
       title: "Hands-on Projects",
       desc: "Build and ship real-world projects you can actually showcase.",
       icon: "FileCode2",
-      accent: "#7C3AED",
-      soft: "#F3EFFF",
+      accent: "#55C9B8",
+      soft: "#E9F8F5",
     },
     {
       num: "03",
@@ -2105,8 +2105,8 @@ export function BatchBenefits() {
       title: "Career Preparation",
       desc: "Resume reviews, portfolio support and interview preparation.",
       icon: "Briefcase",
-      accent: "#FF8A00",
-      soft: "#FFF5E8",
+      accent: "#F4B942",
+      soft: "#FEF6E3",
     },
     {
       num: "05",
@@ -2114,8 +2114,8 @@ export function BatchBenefits() {
       title: "A Focused Peer Community",
       desc: "Learn and grow with a motivated group of peers.",
       icon: "Users",
-      accent: "#FF2D75",
-      soft: "#FFF0F5",
+      accent: "#EF6F51",
+      soft: "#FDEEEA",
     },
     {
       num: "06",
@@ -2123,8 +2123,8 @@ export function BatchBenefits() {
       title: "Access to Resources",
       desc: "Revisit sessions, notes and resources beyond the program.",
       icon: "BookOpen",
-      accent: "#00A99D",
-      soft: "#EAFBF9",
+      accent: "#23857A",
+      soft: "#E8F8F5",
     },
   ];
 
@@ -2173,9 +2173,9 @@ export function BatchBenefits() {
       ========================================================= */}
 
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute left-[-160px] top-[20%] h-[500px] w-[500px] rounded-full bg-[#1E3ABA]/[0.025] blur-3xl" />
+        <div className="absolute left-[-160px] top-[20%] h-[500px] w-[500px] rounded-full bg-[#1D5F6E]/[0.025] blur-3xl" />
 
-        <div className="absolute right-[-140px] bottom-[-100px] h-[500px] w-[500px] rounded-full bg-[#7C3AED]/[0.025] blur-3xl" />
+        <div className="absolute right-[-140px] bottom-[-100px] h-[500px] w-[500px] rounded-full bg-[#55C9B8]/[0.025] blur-3xl" />
       </div>
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
@@ -2186,14 +2186,14 @@ export function BatchBenefits() {
         <div className="flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
           <div className="max-w-3xl">
             <div className="mb-5 flex items-center gap-3">
-              <span data-reveal="draw" className="h-px w-10 bg-[#1E3ABA]" />
+              <span data-reveal="draw" className="h-px w-10 bg-[#1D5F6E]" />
 
-              <span data-reveal="rise" className="text-[13px] font-bold uppercase tracking-[0.2em] text-[#1E3ABA]">
+              <span data-reveal="rise" className="text-[13px] font-bold uppercase tracking-[0.2em] text-[#1D5F6E]">
                 The Batch 01 Experience
               </span>
             </div>
 
-            <h2 className="text-[38px] font-extrabold leading-[1.05] tracking-[-0.045em] text-[#0D1222] sm:text-[48px] lg:text-[58px]">
+            <h2 className="text-[38px] font-extrabold leading-[1.05] tracking-[-0.045em] text-[#0F2A30] sm:text-[48px] lg:text-[58px]">
               <span data-reveal="line"><span>A learning experience</span></span>
               <span data-reveal="line">
                 <span className="text-slate-400">
@@ -2211,13 +2211,13 @@ export function BatchBenefits() {
           {/* Journey */}
           <div className="shrink-0 lg:pb-1">
             <div className="flex items-center gap-3" data-reveal-step="160">
-              <span data-reveal="rise" className="font-mono text-[10px] font-bold tracking-[0.18em] text-[#1E3ABA]">
+              <span data-reveal="rise" className="font-mono text-[10px] font-bold tracking-[0.18em] text-[#1D5F6E]">
                 LEARN
               </span>
 
               <span data-reveal="fade" className="text-slate-300">→</span>
 
-              <span data-reveal="rise" className="font-mono text-[10px] font-bold tracking-[0.18em] text-[#7C3AED]">
+              <span data-reveal="rise" className="font-mono text-[10px] font-bold tracking-[0.18em] text-[#23857A]">
                 BUILD
               </span>
 
@@ -2242,7 +2242,7 @@ export function BatchBenefits() {
           <div
             data-reveal="rise"
             data-reveal-step="80"
-            className="overflow-hidden rounded-[28px] border border-slate-200 bg-[#FAFBFF]"
+            className="overflow-hidden rounded-[28px] border border-slate-200 bg-[#F7FBFB]"
             onMouseEnter={() => setPaused(true)}
             onMouseLeave={() => setPaused(false)}
             onFocus={() => setPaused(true)}
@@ -2364,7 +2364,7 @@ export function BatchBenefits() {
                         sm:text-[15px]
                         ${
                           isActive
-                            ? "text-[#0D1222]"
+                            ? "text-[#0F2A30]"
                             : "text-slate-600"
                         }
                       `}
@@ -2430,7 +2430,7 @@ export function BatchBenefits() {
           <div
             data-reveal="image"
             data-reveal-delay="150"
-            className="relative min-h-[500px] overflow-hidden rounded-[30px] border border-slate-200 bg-[#F7F9FF]"
+            className="relative min-h-[500px] overflow-hidden rounded-[30px] border border-slate-200 bg-[#F5FAFA]"
           >
             {/* Accent glow */}
             <div
@@ -2467,7 +2467,7 @@ export function BatchBenefits() {
               </div>
 
               {/* Image overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0D1222]/75 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0F2A30]/75 via-transparent to-transparent" />
             </div>
 
             {/* Floating label */}
@@ -2498,7 +2498,7 @@ export function BatchBenefits() {
               <p
                 className="text-[13px] font-bold uppercase tracking-[0.18em]"
                 style={{
-                  color: "#CBD5FF",
+                  color: "#C6E8E6",
                 }}
               >
                 {current.phase}
@@ -2544,21 +2544,21 @@ export function BatchBenefits() {
 
         <div className="mt-12 grid gap-5 border-t border-slate-200 pt-7 sm:grid-cols-3" data-reveal-step="140">
           <div data-reveal="rise">
-            <p className="font-mono text-[10px] font-bold tracking-[0.15em] text-[#1E3ABA]">
+            <p className="font-mono text-[10px] font-bold tracking-[0.15em] text-[#1D5F6E]">
               01 / LEARN
             </p>
 
-            <p className="mt-2 text-sm font-semibold text-[#0D1222]">
+            <p className="mt-2 text-sm font-semibold text-[#0F2A30]">
               Understand the fundamentals.
             </p>
           </div>
 
           <div data-reveal="rise">
-            <p className="font-mono text-[10px] font-bold tracking-[0.15em] text-[#7C3AED]">
+            <p className="font-mono text-[10px] font-bold tracking-[0.15em] text-[#23857A]">
               02 / BUILD
             </p>
 
-            <p className="mt-2 text-sm font-semibold text-[#0D1222]">
+            <p className="mt-2 text-sm font-semibold text-[#0F2A30]">
               Turn knowledge into something real.
             </p>
           </div>
@@ -2568,7 +2568,7 @@ export function BatchBenefits() {
               03 / GROW
             </p>
 
-            <p className="mt-2 text-sm font-semibold text-[#0D1222]">
+            <p className="mt-2 text-sm font-semibold text-[#0F2A30]">
               Take it into your next opportunity.
             </p>
           </div>
@@ -2605,7 +2605,7 @@ export function ToolStrip() {
 
   return (
     <section className="relative overflow-hidden bg-white py-14 lg:py-20" id="tools">
-      <div className="pointer-events-none absolute left-1/2 top-0 h-[450px] w-[800px] -translate-x-1/2 -translate-y-1/3 rounded-full bg-blue-100/40 blur-3xl" />
+      <div className="pointer-events-none absolute left-1/2 top-0 h-[450px] w-[800px] -translate-x-1/2 -translate-y-1/3 rounded-full bg-cyan-100/40 blur-3xl" />
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         
@@ -2672,8 +2672,8 @@ export function StepPath() {
       phase: "START",
       body: "Tell us where you are, what you want to learn and where you want to go next.",
       icon: "FileText",
-      accent: "#1E3ABA",
-      soft: "#EEF2FF",
+      accent: "#1D5F6E",
+      soft: "#E6F2F3",
     },
     {
       num: "02",
@@ -2681,8 +2681,8 @@ export function StepPath() {
       phase: "LEARN",
       body: "Join live sessions, meet your cohort and build a strong foundation together.",
       icon: "Users",
-      accent: "#7C3AED",
-      soft: "#F3EFFF",
+      accent: "#55C9B8",
+      soft: "#E9F8F5",
     },
     {
       num: "03",
@@ -2699,8 +2699,8 @@ export function StepPath() {
       phase: "BUILD",
       body: "Turn your learning into work you understand, can explain and can showcase.",
       icon: "Laptop",
-      accent: "#FF8A00",
-      soft: "#FFF5E8",
+      accent: "#F4B942",
+      soft: "#FEF6E3",
     },
     {
       num: "05",
@@ -2708,8 +2708,8 @@ export function StepPath() {
       phase: "GROW",
       body: "Leave with greater confidence, practical experience and a clearer direction.",
       icon: "ArrowUpRight",
-      accent: "#00A99D",
-      soft: "#EAFBF9",
+      accent: "#23857A",
+      soft: "#E8F8F5",
     },
   ];
 
@@ -2724,11 +2724,11 @@ export function StepPath() {
         <div className="grid gap-8 lg:grid-cols-12 lg:items-end">
 
           <div className="lg:col-span-7">
-            <p className="text-[13px] font-bold uppercase tracking-[0.18em] text-[#1E3ABA]">
+            <p className="text-[13px] font-bold uppercase tracking-[0.18em] text-[#1D5F6E]">
               How It Works
             </p>
 
-            <h2 className="mt-4 max-w-3xl text-3xl font-extrabold tracking-[-0.03em] text-[#0D1222] sm:text-4xl lg:text-[52px] lg:leading-[1.08]">
+            <h2 className="mt-4 max-w-3xl text-3xl font-extrabold tracking-[-0.03em] text-[#0F2A30] sm:text-4xl lg:text-[52px] lg:leading-[1.08]">
               From where you are
               <br />
               <span className="text-slate-400">to what comes next.</span>
@@ -2760,7 +2760,7 @@ export function StepPath() {
                 {/* NUMBER NODE */}
                 <div className="relative z-10 flex items-center">
                   <div
-                    className="flex h-[68px] w-[68px] items-center justify-center rounded-full border-[6px] border-white shadow-[0_4px_20px_rgba(13,18,34,0.08)] transition-all duration-300 group-hover:scale-110"
+                    className="flex h-[68px] w-[68px] items-center justify-center rounded-full border-[6px] border-white shadow-[0_4px_20px_rgba(15,42,48,0.08)] transition-all duration-300 group-hover:scale-110"
                     style={{
                       backgroundColor: step.soft,
                       color: step.accent,
@@ -2791,7 +2791,7 @@ export function StepPath() {
                     {step.phase}
                   </p>
 
-                  <h3 className="mt-2 text-lg font-bold tracking-tight text-[#0D1222]">
+                  <h3 className="mt-2 text-lg font-bold tracking-tight text-[#0F2A30]">
                     {step.title}
                   </h3>
 
@@ -2856,7 +2856,7 @@ export function StepPath() {
                         {step.phase}
                       </p>
 
-                      <h3 className="mt-1 text-base font-bold text-[#0D1222]">
+                      <h3 className="mt-1 text-base font-bold text-[#0F2A30]">
                         {step.title}
                       </h3>
                     </div>
@@ -2899,7 +2899,7 @@ export function FoundersNote() {
   return (
     <section
       id="our-story"
-      className="relative overflow-hidden bg-[#F8FAFF] py-14 lg:py-20"
+      className="relative overflow-hidden bg-[#F6FAFA] py-14 lg:py-20"
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
 
@@ -2907,11 +2907,11 @@ export function FoundersNote() {
         <div className="grid gap-8 lg:grid-cols-12 lg:items-end">
 
           <div className="lg:col-span-7">
-            <p className="text-[13px] font-bold uppercase tracking-[0.18em] text-[#1E3ABA]">
+            <p className="text-[13px] font-bold uppercase tracking-[0.18em] text-[#1D5F6E]">
               06 · Our Story
             </p>
 
-            <h2 className="mt-4 max-w-3xl text-3xl font-extrabold tracking-[-0.03em] text-[#0D1222] sm:text-4xl lg:text-[52px] lg:leading-[1.08]">
+            <h2 className="mt-4 max-w-3xl text-3xl font-extrabold tracking-[-0.03em] text-[#0F2A30] sm:text-4xl lg:text-[52px] lg:leading-[1.08]">
               Why we started
               <br />
               <span className="text-slate-400">Summate.</span>
@@ -2936,7 +2936,7 @@ export function FoundersNote() {
 
               <div className="flex items-center gap-4">
 
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-[#1E3ABA] shadow-sm ring-1 ring-slate-200">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-[#1D5F6E] shadow-sm ring-1 ring-slate-200">
                   <Icon
                     name="Compass"
                     size={20}
@@ -2945,7 +2945,7 @@ export function FoundersNote() {
                 </div>
 
                 <div>
-                  <p className="text-sm font-bold text-[#0D1222]">
+                  <p className="text-sm font-bold text-[#0F2A30]">
                     The beginning
                   </p>
 
@@ -2961,15 +2961,15 @@ export function FoundersNote() {
                   LEARN
                 </p>
 
-                <div className="my-4 h-12 w-px bg-gradient-to-b from-[#1E3ABA] to-transparent" />
+                <div className="my-4 h-12 w-px bg-gradient-to-b from-[#1D5F6E] to-transparent" />
 
                 <p className="text-[13px] font-bold uppercase tracking-[0.16em] text-slate-600">
                   APPLY
                 </p>
 
-                <div className="my-4 h-12 w-px bg-gradient-to-b from-[#7C3AED] to-transparent" />
+                <div className="my-4 h-12 w-px bg-gradient-to-b from-[#55C9B8] to-transparent" />
 
-                <p className="bg-gradient-to-br from-[#3B5BFF] via-[#1E3ABA] to-[#0A1B6B] bg-clip-text text-[13px] font-bold uppercase tracking-[0.16em] text-transparent">
+                <p className="bg-gradient-to-br from-[#2A7A88] via-[#1D5F6E] to-[#12424D] bg-clip-text text-[13px] font-bold uppercase tracking-[0.16em] text-transparent">
                   ACHIEVE
                 </p>
               </div>
@@ -2980,7 +2980,7 @@ export function FoundersNote() {
           {/* RIGHT — FOUNDER NOTE */}
           <div className="lg:col-span-8">
 
-            <div className="relative overflow-hidden rounded-[32px] border border-slate-200 bg-white px-7 py-9 shadow-[0_12px_40px_rgba(13,18,34,0.04)] sm:px-10 sm:py-12 lg:px-14 lg:py-14">
+            <div className="relative overflow-hidden rounded-[32px] border border-slate-200 bg-white px-7 py-9 shadow-[0_12px_40px_rgba(15,42,48,0.04)] sm:px-10 sm:py-12 lg:px-14 lg:py-14">
 
               {/* Decorative quote */}
               <div className="pointer-events-none absolute -right-3 -top-10 select-none font-serif text-[180px] font-black leading-none text-slate-100">
@@ -2991,7 +2991,7 @@ export function FoundersNote() {
 
                 {/* Label */}
                 <div className="flex items-center gap-2">
-                  <span className="h-1.5 w-1.5 rounded-full bg-[#FF8A00]" />
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#F4B942]" />
 
                   <span className="text-[13px] font-bold uppercase tracking-[0.18em] text-slate-600">
                     A note from the founders
@@ -3001,7 +3001,7 @@ export function FoundersNote() {
                 {/* Main note */}
                 <div className="mt-8 max-w-2xl">
 
-                  <p className="text-xl font-medium leading-[1.65] tracking-[-0.01em] text-[#0D1222] sm:text-2xl sm:leading-[1.6]">
+                  <p className="text-xl font-medium leading-[1.65] tracking-[-0.01em] text-[#0F2A30] sm:text-2xl sm:leading-[1.6]">
                     {founders?.quote ||
                       "A simple note from the founders to be added here."}
                   </p>
@@ -3017,18 +3017,18 @@ export function FoundersNote() {
                 <div className="mt-12 flex flex-col gap-5 border-t border-slate-200 pt-7 sm:flex-row sm:items-end sm:justify-between">
 
                   <div>
-                    <p className="font-serif text-lg italic text-[#0D1222]">
+                    <p className="font-serif text-lg italic text-[#0F2A30]">
                       The Founders
                     </p>
 
-                    <p className="mt-1 text-xs font-semibold text-[#1E3ABA]">
+                    <p className="mt-1 text-xs font-semibold text-[#1D5F6E]">
                       {founders?.signoff || "The Founders, Summate Learning"}
                     </p>
                   </div>
 
                   <Link
                     href="/apply"
-                    className="group inline-flex items-center gap-2 self-start rounded-full bg-[#0D1222] px-5 py-3 text-xs font-bold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#1E3ABA]"
+                    className="group inline-flex items-center gap-2 self-start rounded-full bg-[#EF6F51] px-5 py-3 text-xs font-bold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#D9573A]"
                   >
                     Join Batch 1
 
@@ -3083,11 +3083,11 @@ export function MentorCards() {
         <div className="grid gap-8 lg:grid-cols-12 lg:items-end">
 
           <div className="lg:col-span-7">
-            <p className="text-[13px] font-bold uppercase tracking-[0.18em] text-[#1E3ABA]">
+            <p className="text-[13px] font-bold uppercase tracking-[0.18em] text-[#1D5F6E]">
               The People Behind It
             </p>
 
-            <h2 className="mt-4 max-w-3xl text-3xl font-extrabold tracking-[-0.03em] text-[#0D1222] sm:text-4xl lg:text-[52px] lg:leading-[1.08]">
+            <h2 className="mt-4 max-w-3xl text-3xl font-extrabold tracking-[-0.03em] text-[#0F2A30] sm:text-4xl lg:text-[52px] lg:leading-[1.08]">
               Learn with people
               <br />
               <span className="text-slate-400">
@@ -3106,11 +3106,11 @@ export function MentorCards() {
 
         {/* SMALL JOURNEY MARKER */}
         <div className="mt-12 flex items-center gap-3 text-[10px] font-bold tracking-[0.2em] text-slate-400">
-          <span className="text-[#1E3ABA]">KNOW</span>
+          <span className="text-[#1D5F6E]">KNOW</span>
           <span>→</span>
-          <span className="text-[#7C3AED]">APPLY</span>
+          <span className="text-[#23857A]">APPLY</span>
           <span>→</span>
-          <span className="text-[#00A99D]">GROW</span>
+          <span className="text-[#23857A]">GROW</span>
         </div>
 
         {/* MENTORS */}
@@ -3119,7 +3119,7 @@ export function MentorCards() {
           {mentors.people.map((m, i) => (
             <div
               key={i}
-              className="group relative overflow-hidden rounded-[28px] border border-slate-200 bg-[#F8FAFF] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-slate-300 hover:shadow-[0_16px_40px_rgba(13,18,34,0.07)]"
+              className="group relative overflow-hidden rounded-[28px] border border-slate-200 bg-[#F6FAFA] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-slate-300 hover:shadow-[0_16px_40px_rgba(15,42,48,0.07)]"
             >
 
               {/* Number */}
@@ -3129,7 +3129,7 @@ export function MentorCards() {
                   {String(i + 1).padStart(2, "0")}
                 </span>
 
-                <div className="flex h-8 w-8 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-400 transition-all duration-300 group-hover:border-[#1E3ABA]/20 group-hover:text-[#1E3ABA]">
+                <div className="flex h-8 w-8 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-400 transition-all duration-300 group-hover:border-[#1D5F6E]/20 group-hover:text-[#1D5F6E]">
                   <Icon
                     name="ArrowUpRight"
                     size={13}
@@ -3144,7 +3144,7 @@ export function MentorCards() {
                 <div className="relative">
 
                   {/* Accent ring */}
-                  <div className="absolute -inset-2 rounded-full border border-slate-200 transition-all duration-500 group-hover:scale-105 group-hover:border-[#1E3ABA]/20" />
+                  <div className="absolute -inset-2 rounded-full border border-slate-200 transition-all duration-500 group-hover:scale-105 group-hover:border-[#1D5F6E]/20" />
 
                   <Avatar initials={m.initials} />
 
@@ -3154,7 +3154,7 @@ export function MentorCards() {
               {/* Info */}
               <div className="mt-8 text-center">
 
-                <p className="text-base font-bold tracking-tight text-[#0D1222]">
+                <p className="text-base font-bold tracking-tight text-[#0F2A30]">
                   {m.name}
                 </p>
 
@@ -3166,7 +3166,7 @@ export function MentorCards() {
 
               {/* Bottom accent */}
               <div className="mt-7 flex justify-center">
-                <div className="h-1 w-8 rounded-full bg-slate-200 transition-all duration-300 group-hover:w-14 group-hover:bg-[#1E3ABA]" />
+                <div className="h-1 w-8 rounded-full bg-slate-200 transition-all duration-300 group-hover:w-14 group-hover:bg-[#1D5F6E]" />
               </div>
 
             </div>
@@ -3183,7 +3183,7 @@ export function MentorCards() {
           </p>
 
           <div className="flex shrink-0 items-center gap-2 text-xs font-bold text-slate-400">
-            <span className="h-2 w-2 rounded-full bg-[#FF8A00]" />
+            <span className="h-2 w-2 rounded-full bg-[#F4B942]" />
             Mentorship & guidance
           </div>
 
@@ -3201,33 +3201,33 @@ export function FinalCta() {
       num: "01",
       title: "LEARN",
       body: "Understand the fundamentals.",
-      accent: "#1E3ABA",
-      soft: "#EEF2FF",
+      accent: "#1D5F6E",
+      soft: "#E6F2F3",
     },
     {
       num: "02",
       title: "BUILD",
       body: "Turn knowledge into something real.",
-      accent: "#7C3AED",
-      soft: "#F3EFFF",
+      accent: "#55C9B8",
+      soft: "#E9F8F5",
     },
     {
       num: "03",
       title: "GROW",
       body: "Take it into your next opportunity.",
-      accent: "#00A99D",
-      soft: "#EAFBF9",
+      accent: "#23857A",
+      soft: "#E8F8F5",
     },
   ];
 
   return (
     <section
       id="apply"
-      className="relative overflow-hidden bg-[#0D1222] py-14 sm:py-16 lg:py-20"
+      className="relative overflow-hidden bg-[#0F2A30] py-14 sm:py-16 lg:py-20"
     >
       {/* Subtle background details */}
-      <div className="pointer-events-none absolute -left-40 top-1/2 h-[500px] w-[500px] -translate-y-1/2 rounded-full bg-[#1E3ABA]/10 blur-[120px]" />
-      <div className="pointer-events-none absolute -right-40 top-0 h-[500px] w-[500px] rounded-full bg-[#7C3AED]/10 blur-[120px]" />
+      <div className="pointer-events-none absolute -left-40 top-1/2 h-[500px] w-[500px] -translate-y-1/2 rounded-full bg-[#1D5F6E]/10 blur-[120px]" />
+      <div className="pointer-events-none absolute -right-40 top-0 h-[500px] w-[500px] rounded-full bg-[#55C9B8]/10 blur-[120px]" />
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
 
@@ -3241,7 +3241,7 @@ export function FinalCta() {
         {/* MAIN COPY */}
         <div className="mx-auto mt-8 max-w-4xl text-center">
 
-          <p data-reveal="rise" className="text-[13px] font-bold uppercase tracking-[0.18em] text-[#6E8AFF]">
+          <p data-reveal="rise" className="text-[13px] font-bold uppercase tracking-[0.18em] text-[#6CCFC0]">
             Your next chapter
           </p>
 
@@ -3265,11 +3265,11 @@ export function FinalCta() {
           <div data-reveal="pop" className="mt-9">
             <Link
               href="/apply"
-              className="group inline-flex items-center gap-3 rounded-full bg-white px-7 py-3.5 text-sm font-bold text-[#0D1222] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#EEF2FF]"
+              className="group inline-flex items-center gap-3 rounded-full bg-[#EF6F51] px-7 py-3.5 text-sm font-bold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#D9573A]"
             >
               Apply for Batch 1
 
-              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#1E3ABA] text-white transition-transform duration-200 group-hover:translate-x-0.5">
+              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-white/20 text-white transition-transform duration-200 group-hover:translate-x-0.5">
                 <Icon
                   name="ArrowUpRight"
                   size={13}
@@ -3299,7 +3299,7 @@ export function FinalCta() {
                 >
 
                   {/* Node */}
-                  <div data-reveal="pop" className="relative z-10 mx-auto flex h-14 w-14 items-center justify-center rounded-full border-4 border-[#0D1222] bg-slate-900 shadow-[0_0_0_1px_rgba(255,255,255,0.08)] transition-transform duration-300 group-hover:scale-110">
+                  <div data-reveal="pop" className="relative z-10 mx-auto flex h-14 w-14 items-center justify-center rounded-full border-4 border-[#0F2A30] bg-slate-900 shadow-[0_0_0_1px_rgba(255,255,255,0.08)] transition-transform duration-300 group-hover:scale-110">
                     <span
                       className="font-mono text-[10px] font-bold"
                       style={{ color: item.accent }}
@@ -3380,7 +3380,7 @@ export function CommunityStrip() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-wider text-[#1E3ABA]">{community.eyebrow}</p>
+            <p className="text-xs font-semibold uppercase tracking-wider text-[#1D5F6E]">{community.eyebrow}</p>
             <h2 className="mt-2 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
               {community.title}
             </h2>
@@ -3408,7 +3408,7 @@ export function PlacementBanner() {
   return (
     <section className="border-t border-slate-100 bg-white py-20" id="placements">
       <div className="mx-auto max-w-7xl px-6 text-center lg:px-8">
-        <span className="text-xs font-semibold uppercase tracking-wider text-[#1E3ABA]">{b.kicker}</span>
+        <span className="text-xs font-semibold uppercase tracking-wider text-[#1D5F6E]">{b.kicker}</span>
         <h2 className="mt-2 text-3xl font-bold text-slate-950 sm:text-4xl">{b.title}</h2>
         <p className="mx-auto mt-4 max-w-2xl text-sm text-slate-600 leading-relaxed">{b.body}</p>
         <div className="mt-8">
@@ -3428,7 +3428,7 @@ export function TestimonialsSection({ children }: { children: React.ReactNode })
   return (
     <section className="border-t border-slate-100 bg-white py-12 lg:py-20">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <p className="text-xs font-semibold uppercase tracking-wider text-[#1E3ABA]">Learner Stories</p>
+        <p className="text-xs font-semibold uppercase tracking-wider text-[#1D5F6E]">Learner Stories</p>
         <h2 className="mt-2 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
           The first stories begin with Batch 1.
         </h2>
@@ -3442,7 +3442,7 @@ export function InsightCards() {
   return (
     <section className="border-t border-slate-100 bg-slate-50/50 py-12 lg:py-20" id="insights">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <p className="text-xs font-semibold uppercase tracking-wider text-[#1E3ABA]">Field Notes</p>
+        <p className="text-xs font-semibold uppercase tracking-wider text-[#1D5F6E]">Field Notes</p>
         <h2 className="mt-2 text-3xl font-bold text-slate-950 sm:text-4xl">Articles & Perspectives</h2>
 
         <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
@@ -3473,7 +3473,7 @@ export function MentorRecruitBanner() {
           </div>
           <Link
             href={b.href}
-            className="rounded-xl bg-slate-950 px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#1E3ABA] shrink-0"
+            className="rounded-xl bg-slate-950 px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#1D5F6E] shrink-0"
           >
             {b.cta}
           </Link>
@@ -3485,11 +3485,11 @@ export function MentorRecruitBanner() {
 
 export function EnquirySection({ children }: { children: React.ReactNode }) {
   return (
-    <section className="border-t border-slate-100 bg-[#FAFBFF] py-12 lg:py-20" id="enquiry">
+    <section className="border-t border-slate-100 bg-[#F7FBFB] py-12 lg:py-20" id="enquiry">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-2">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-wider text-[#1E3ABA]">Get In Touch</p>
+            <p className="text-xs font-semibold uppercase tracking-wider text-[#1D5F6E]">Get In Touch</p>
             <h2 className="mt-2 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
               Have questions about Batch 1?
             </h2>
