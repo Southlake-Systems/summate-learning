@@ -3,6 +3,7 @@ import Link from "next/link";
 import Icon from "@/components/ui/Icon";
 import { courses } from "@/lib/pageContent";
 import PhilosophyCards from "@/components/ui/philosophy-cards";
+import GradientASCII from "@/components/GradientASCII";
 import { Avatar } from "@/components/ui/primitives";
 import { useEffect, useRef, useState } from "react";
 import { Check, X } from "lucide-react";
@@ -3226,14 +3227,31 @@ export function FinalCta() {
       id="apply"
       className="relative overflow-hidden bg-[#0F2A30] py-14 sm:py-16 lg:py-20"
     >
-      {/* Subtle background details */}
-      <div className="pointer-events-none absolute -left-40 top-1/2 h-[500px] w-[500px] -translate-y-1/2 rounded-full bg-[#1D5F6E]/10 blur-[120px]" />
-      <div className="pointer-events-none absolute -right-40 top-0 h-[500px] w-[500px] rounded-full bg-[#55C9B8]/10 blur-[120px]" />
+      {/* Animated ASCII horizon behind the closing copy */}
+      <div className="pointer-events-none absolute inset-0 motion-reduce:hidden" aria-hidden="true">
+        <GradientASCII
+          colors={["#0F2A30", "#1D5F6E", "#55C9B8", "#F4B942", "#EF6F51"]}
+          shape="horizon"
+          characters=" =+xX0S8#@"
+          cellSize={20}
+          density={0.65}
+          glyphOpacity={0.72}
+          gradientOpacity={0.9}
+          scale={1.2}
+          softness={0.6}
+          className="h-full w-full"
+        />
+
+        {/* Scrim: darkest behind the copy, so the field still shows at the edges */}
+        <div className="absolute inset-0 bg-[#0F2A30]/5" />
+        <div className="absolute inset-0 bg-[radial-gradient(120%_90%_at_50%_30%,rgba(15,42,48,0.5)_0%,rgba(15,42,48,0.34)_50%,rgba(15,42,48,0.10)_78%,transparent_100%)]" />
+        <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[#0F2A30] via-[#0F2A30]/80 to-transparent" />
+      </div>
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
 
         {/* TOP LABEL */}
-        <div data-reveal="rise" className="flex items-center justify-center gap-3 text-[10px] font-bold uppercase tracking-[0.22em] text-slate-500">
+        <div data-reveal="rise" className="flex items-center justify-center gap-3 text-[10px] font-bold uppercase tracking-[0.22em] text-slate-300">
           <span>Summate Learning</span>
           <span className="text-slate-700">·</span>
           <span>Batch 01</span>
@@ -3249,14 +3267,14 @@ export function FinalCta() {
           <h2 className="mt-5 text-4xl font-extrabold tracking-[-0.04em] text-white sm:text-5xl lg:text-[64px] lg:leading-[1.05]" data-reveal-step="180">
             <span data-reveal="line"><span>Learn something.</span></span>
             <span data-reveal="line">
-              <span className="text-slate-500">
+              <span className="text-slate-300">
                 Build something.
               </span>
             </span>
             <span data-reveal="line"><span>Take it forward.</span></span>
           </h2>
 
-          <p data-reveal="rise" className="mx-auto mt-7 max-w-2xl text-sm leading-7 text-slate-400 sm:text-base">
+          <p data-reveal="rise" className="mx-auto mt-7 max-w-2xl text-sm leading-7 text-slate-200 sm:text-base">
             If you’re ready to turn what you’ve learned into something you
             can use, build and take forward, Batch 1 is where Summate Learning
             begins.
@@ -3319,7 +3337,7 @@ export function FinalCta() {
                       {item.title}
                     </p>
 
-                    <p className="mx-auto mt-2 max-w-[220px] text-xs leading-5 text-slate-500">
+                    <p className="mx-auto mt-2 max-w-[220px] text-xs leading-5 text-slate-400">
                       {item.body}
                     </p>
 
@@ -3333,13 +3351,13 @@ export function FinalCta() {
         </div>
 
         {/* BOTTOM LINE */}
-        <div data-reveal="rise" className="mx-auto mt-20 flex max-w-5xl flex-col gap-4 border-t border-slate-800 pt-7 text-center sm:flex-row sm:items-center sm:justify-between sm:text-left">
+        <div data-reveal="rise" className="mx-auto mt-20 flex max-w-5xl flex-col gap-4 border-t border-white/10 pt-7 text-center sm:flex-row sm:items-center sm:justify-between sm:text-left">
 
-          <p className="text-xs text-slate-500">
+          <p className="text-xs text-slate-400">
             LEARN · BUILD · GROW
           </p>
 
-          <p className="text-xs text-slate-600">
+          <p className="text-xs text-slate-400">
             The journey starts with the next step.
           </p>
 
