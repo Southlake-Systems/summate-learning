@@ -22,10 +22,8 @@ const mono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: {
-    default: "Summate Learning — AI-Augmented Full-Stack Developer Course",
-    template: "%s — Summate Learning",
-  },
+  // Every tab shows just the brand; pages carry their own description.
+  title: "Summate Learning",
   description:
     "A 12-week live online program for Batch 1 — turn what you've learned into practical, demonstrable ability.",
 };

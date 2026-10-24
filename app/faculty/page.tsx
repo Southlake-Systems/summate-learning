@@ -4,7 +4,6 @@ import { PageShell, PageHero, Section, H2, Prose, PersonCard, CtaBand } from "@/
 import { faculty } from "@/lib/pageContent";
 
 export const metadata: Metadata = {
-  title: "Faculty & Mentors",
   description: faculty.lede,
 };
 

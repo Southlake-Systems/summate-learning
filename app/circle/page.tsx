@@ -6,7 +6,6 @@ import CircleOrbit from "@/components/site/CircleOrbit";
 import { circle } from "@/lib/pageContent";
 
 export const metadata: Metadata = {
-  title: "Summate Circle",
   description:
     "A community of students, graduates, mentors and professionals who learn, build and grow together, during and beyond a Summate course.",
 };

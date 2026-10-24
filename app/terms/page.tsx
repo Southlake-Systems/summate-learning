@@ -3,7 +3,6 @@ import LegalPage, { type LegalSection } from "@/components/site/LegalPage";
 import { site } from "@/lib/siteContent";
 
 export const metadata: Metadata = {
-  title: "Terms & Conditions",
   description: "The terms that apply when you use the Summate Learning website and enrol in our programs.",
 };
 

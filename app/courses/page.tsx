@@ -6,7 +6,6 @@ import { courses } from "@/lib/pageContent";
 import { APPLY_URL, community } from "@/lib/siteContent";
 
 export const metadata: Metadata = {
-  title: "Courses",
   description:
     "Live online courses from Summate Learning, starting with the AI-Augmented Full-Stack Developer Course in January 2027.",
 };

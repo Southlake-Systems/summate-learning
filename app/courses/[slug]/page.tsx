@@ -19,7 +19,7 @@ export const dynamicParams = false;
 export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
   const course = openCourses.find((c) => c.slug === params.slug);
   if (!course) return {};
-  return { title: course.title, description: program.subtitle };
+  return { description: program.subtitle };
 }
 
 const phaseColors = ["#1D5F6E", "#55C9B8", "#EF6F51", "#F4B942"];

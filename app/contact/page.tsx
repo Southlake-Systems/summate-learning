@@ -6,7 +6,6 @@ import ContactForm from "@/components/site/ContactForm";
 import { APPLY_URL, site } from "@/lib/siteContent";
 
 export const metadata: Metadata = {
-  title: "Contact",
   description: "Get in touch with Summate Learning about courses, the Summate Circle, teaching, careers or partnerships.",
 };
 

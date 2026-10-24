@@ -5,7 +5,6 @@ import { faqGroups } from "@/lib/pageContent";
 import { APPLY_URL } from "@/lib/siteContent";
 
 export const metadata: Metadata = {
-  title: "FAQ",
   description: "Answers to common questions about Summate Learning, our courses, the Summate Circle and working with us.",
 };
 

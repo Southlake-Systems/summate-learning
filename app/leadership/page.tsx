@@ -9,7 +9,6 @@ import { APPLY_URL } from "@/lib/siteContent";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "Leadership",
   description: leadership.lede,
 };
 

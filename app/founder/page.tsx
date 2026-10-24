@@ -16,7 +16,6 @@ import { PageShell, Breadcrumbs, Section, Split, Prose, H2, CtaBand } from "@/co
 import { founder } from "@/lib/pageContent";
 
 export const metadata: Metadata = {
-  title: "Managing Director",
   description: `${founder.name}, ${founder.role}. ${founder.summary}`,
 };
 

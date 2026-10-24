@@ -48,7 +48,6 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   const member = findDirector(params.slug);
   if (!member) return {};
   return {
-    title: member.name,
     description: `${member.name}, ${member.role}, Summate Learning. ${member.summary}`,
   };
 }

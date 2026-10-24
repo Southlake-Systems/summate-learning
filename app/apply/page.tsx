@@ -4,7 +4,6 @@ import SiteFooter from "@/components/SiteFooter";
 import ApplyForm from "@/components/ApplyForm";
 
 export const metadata: Metadata = {
-  title: "Apply for Batch 1 — Summate Learning",
   description:
     "Apply to the founding batch of the AI-Augmented Full-Stack Developer Course. Live online, starting January 2027.",
 };

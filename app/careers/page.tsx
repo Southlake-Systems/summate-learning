@@ -4,7 +4,6 @@ import { PageShell, PageHero, Section, Split, H2, Prose, CtaBand, ButtonLink } f
 import { careers } from "@/lib/pageContent";
 
 export const metadata: Metadata = {
-  title: "Careers",
   description: careers.lede,
 };
 

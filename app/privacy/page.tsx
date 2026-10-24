@@ -3,7 +3,6 @@ import LegalPage, { type LegalSection } from "@/components/site/LegalPage";
 import { site } from "@/lib/siteContent";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy",
   description: "How Summate Learning collects, uses and protects your personal data.",
 };
 

@@ -6,7 +6,6 @@ import { APPLY_URL, whyIntro, features, whoIsFor, personas, ecosystemVision, pro
 import { courses } from "@/lib/pageContent";
 
 export const metadata: Metadata = {
-  title: "About Summate",
   description:
     "Summate Learning is a new kind of learning institution that connects what you learn with what you can do with it.",
 };
