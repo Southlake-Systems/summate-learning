@@ -5,6 +5,7 @@ import { ArrowRight, Award, Linkedin } from "lucide-react";
 import { ClampText } from "@/components/site/ClampText";
 import { PageShell, Breadcrumbs, Section, Split, Prose, CtaBand } from "@/components/site/Page";
 import { leadership, type TeamMember } from "@/lib/pageContent";
+import { APPLY_URL } from "@/lib/siteContent";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
@@ -211,7 +212,7 @@ export default function LeadershipPage() {
       <CtaBand
         title="Learn from people who have built real things."
         body="Our first program, the AI-Augmented Full-Stack Developer course, starts online in January 2027."
-        primary={{ label: "Apply for Batch 1", href: "/apply" }}
+        primary={{ label: "Apply for Batch 1", href: APPLY_URL }}
         secondary={{ label: "Careers at Summate", href: "/careers" }}
       />
     </PageShell>

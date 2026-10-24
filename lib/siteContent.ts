@@ -3,6 +3,12 @@
  * Reconciled with Summate Learning Website Content - Draft.
  */
 
+/**
+ * Where every "Apply for Batch 1" action sends people.
+ * Batch 1 applications are collected through this external Google Form.
+ */
+export const APPLY_URL = "https://forms.gle/4eKQr8fet8eVJkUz9";
+
 export const site = {
   name: "Summate Learning",
   tagline: "Founding Program: AI-Augmented Full-Stack Developer Course Live Online January 2027",
@@ -52,7 +58,7 @@ export const nav: {
     { label: "FAQ", href: "/faq" },
     { label: "Contact", href: "/contact" },
   ],
-  primaryCta: { label: "Apply for Batch 1", href: "/apply" },
+  primaryCta: { label: "Apply for Batch 1", href: APPLY_URL },
   secondaryCta: { label: "Meet the team", href: "/leadership" },
 };
 
@@ -64,7 +70,7 @@ export const banners = {
     enabled: true,
     text: "Founding Program: AI-Augmented Full-Stack Developer Course Live Online January 2027",
     cta: "Apply now",
-    href: "/apply",
+    href: APPLY_URL,
   },
   promo: {
     enabled: true,
@@ -72,7 +78,7 @@ export const banners = {
     title: "Batch 1 is kept small on purpose.",
     body: "A close-knit first cohort means more attention, more feedback, and a stronger group to learn alongside. Seats are limited.",
     cta: "Apply for Batch 1",
-    href: "/apply",
+    href: APPLY_URL,
   },
   placement: {
     enabled: true,
@@ -105,7 +111,7 @@ export const hero = {
     "Summate Learning is for that next thing.",
     "We are kicking off with our founding program AI-Augmented Full-Stack Developer which is a 12-week, live online programme built around immersive, application-driven learning, and the judicious use of AI.",
   ],
-  primaryCta: { label: "Apply for Batch 1", href: "/apply" },
+  primaryCta: { label: "Apply for Batch 1", href: APPLY_URL },
   secondaryCta: { label: "Meet the team", href: "/leadership" },
   capabilities: [
     "Foundations of full-stack development",
@@ -190,21 +196,21 @@ export const personas = [
     title: "Starting Out",
     subtitle: "You have the qualification, and now you need direction.",
     body: "For graduates and early-career learners figuring out what comes after the classroom. Build practical skills, discover what you're capable of, and start turning what you've studied into something you can actually use.",
-    cta: { label: "Apply for Batch 1", href: "/apply" },
+    cta: { label: "Apply for Batch 1", href: APPLY_URL },
   },
   {
     icon: "TrendingUp",
     title: "Moving Forward",
     subtitle: "Having said that, your career has started but that doesn't mean your learning ends there.",
     body: "For working professionals who want to stay relevant, add new capabilities, move into a different role or even for the ones who refuse to be left behind as their industry changes.",
-    cta: { label: "Apply for Batch 1", href: "/apply" },
+    cta: { label: "Apply for Batch 1", href: APPLY_URL },
   },
   {
     icon: "Signpost",
     title: "Changing Course",
     subtitle: "Sometimes the next step is going in a different path.",
     body: "For anyone considering a new career, returning to learning after a break, or exploring a field they never had the opportunity to pursue before.",
-    cta: { label: "Apply for Batch 1", href: "/apply" },
+    cta: { label: "Apply for Batch 1", href: APPLY_URL },
   },
 ];
 
@@ -508,7 +514,7 @@ export const faqs = [
 export const finalCta = {
   title: "Your Next Chapter Can Start Here.",
   body: "If you're ready to turn what you've learned into something you can use, build and take forward, Batch 1 is where Summate Learning begins.",
-  cta: { label: "Apply for Batch 1", href: "/apply" },
+  cta: { label: "Apply for Batch 1", href: APPLY_URL },
 };
 
 /* ------------------------------------------------------------------ *
@@ -524,7 +530,7 @@ export const footer = {
       links: [
         { label: "All courses", href: "/courses" },
         { label: "AI-Augmented Full-Stack Developer", href: "/courses/ai-augmented-full-stack-developer" },
-        { label: "Apply for Batch 1", href: "/apply" },
+        { label: "Apply for Batch 1", href: APPLY_URL },
       ],
     },
     {

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { PageShell, PageHero, Section } from "@/components/site/Page";
 import ContactForm from "@/components/site/ContactForm";
-import { site } from "@/lib/siteContent";
+import { APPLY_URL, site } from "@/lib/siteContent";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -77,7 +77,7 @@ export default function ContactPage({ searchParams }: { searchParams: { topic?: 
               <h2 className="font-display text-lg font-bold text-[#0F2A30]">Looking for something specific?</h2>
               <ul className="mt-3 space-y-2 text-[15px]">
                 <li>
-                  <Link href="/apply" className="font-semibold">Apply for Batch 1</Link>
+                  <Link href={APPLY_URL} className="font-semibold">Apply for Batch 1</Link>
                 </li>
                 <li>
                   <Link href="/faq" className="font-semibold">Read the FAQ</Link>

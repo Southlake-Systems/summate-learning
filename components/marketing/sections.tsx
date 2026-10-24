@@ -8,6 +8,7 @@ import { useEffect, useRef, useState } from "react";
 import { Check, X } from "lucide-react";
 
 import {
+  APPLY_URL,
   hero,
   partners,
   community,
@@ -167,7 +168,7 @@ export function Hero() {
 
               <Link
                 data-reveal="rise"
-                href="/apply"
+                href={APPLY_URL}
                 className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-[#EF6F51] px-7 py-3.5 text-sm font-bold text-white shadow-[0_10px_28px_rgba(239,111,81,0.28)] transition-all duration-300 hover:-translate-y-1 hover:bg-[#D9573A] hover:shadow-[0_16px_36px_rgba(239,111,81,0.32)] active:scale-[0.98]"
               >
                 {/* Moving highlight */}
@@ -1030,7 +1031,7 @@ export function TrackCatalog() {
               </p>
 
               <Link
-                href="/apply"
+                href={APPLY_URL}
                 className="
                   mt-6 inline-flex w-fit items-center gap-2
                   rounded-xl bg-white px-4 py-2.5
@@ -1184,7 +1185,7 @@ export function TrackCatalog() {
           </p>
 
           <Link
-            href="/apply"
+            href={APPLY_URL}
             className="group inline-flex items-center gap-2 text-sm font-bold text-[#0F2A30]"
           >
             Start with Batch 01
@@ -1550,7 +1551,7 @@ export function PersonaCards() {
                   ================================================= */}
 
                   <Link
-                    href="/apply"
+                    href={APPLY_URL}
                     className="
                       mt-6 flex w-full items-center
                       justify-between rounded-xl
@@ -1624,7 +1625,7 @@ export function PersonaCards() {
           </div>
 
           <Link
-            href="/apply"
+            href={APPLY_URL}
             className="
               group inline-flex items-center gap-2
               text-sm font-bold text-[#0F2A30]
@@ -3027,7 +3028,7 @@ export function FoundersNote() {
                   </div>
 
                   <Link
-                    href="/apply"
+                    href={APPLY_URL}
                     className="group inline-flex items-center gap-2 self-start rounded-full bg-[#EF6F51] px-5 py-3 text-xs font-bold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#D9573A]"
                   >
                     Join Batch 1
@@ -3264,7 +3265,7 @@ export function FinalCta() {
           {/* CTA */}
           <div data-reveal="pop" className="mt-9">
             <Link
-              href="/apply"
+              href={APPLY_URL}
               className="group inline-flex items-center gap-3 rounded-full bg-[#EF6F51] px-7 py-3.5 text-sm font-bold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#D9573A]"
             >
               Apply for Batch 1

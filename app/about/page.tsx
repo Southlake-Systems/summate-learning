@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { PageShell, PageHero, Section, Split, H2, Prose, CtaBand, ButtonLink } from "@/components/site/Page";
-import { whyIntro, features, whoIsFor, personas, ecosystemVision, program } from "@/lib/siteContent";
+import { APPLY_URL, whyIntro, features, whoIsFor, personas, ecosystemVision, program } from "@/lib/siteContent";
 import { courses } from "@/lib/pageContent";
 
 export const metadata: Metadata = {
@@ -148,7 +148,7 @@ export default function AboutPage() {
       <CtaBand
         title="Batch 1 is where Summate begins."
         body="Live online from January 2027. Seats in the founding cohort are limited."
-        primary={{ label: "Apply for Batch 1", href: "/apply" }}
+        primary={{ label: "Apply for Batch 1", href: APPLY_URL }}
         secondary={{ label: "Talk to us", href: "/contact" }}
       />
     </PageShell>

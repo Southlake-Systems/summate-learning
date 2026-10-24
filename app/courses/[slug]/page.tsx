@@ -5,7 +5,7 @@ import { Check } from "lucide-react";
 import { PageShell, PageHero, Section, Split, H2, CtaBand, ButtonLink } from "@/components/site/Page";
 import FaqList from "@/components/site/FaqList";
 import { courses, faqGroups } from "@/lib/pageContent";
-import { program, hero, curriculum, comparison, tools, steps, batchBenefits } from "@/lib/siteContent";
+import { APPLY_URL, program, hero, curriculum, comparison, tools, steps, batchBenefits } from "@/lib/siteContent";
 
 // Only courses that are open for enrolment have a detail page.
 const openCourses = courses.filter((c) => c.status === "open");
@@ -49,7 +49,7 @@ export default function CoursePage({ params }: { params: { slug: string } }) {
             <p className="pt-5 text-[14px] leading-[1.6] text-slate-600">
               Founding batch. Seats are limited so every learner gets attention and feedback.
             </p>
-            <ButtonLink href="/apply" className="mt-5 w-full justify-center">
+            <ButtonLink href={APPLY_URL} className="mt-5 w-full justify-center">
               Apply for Batch 1
             </ButtonLink>
           </div>
@@ -203,7 +203,7 @@ export default function CoursePage({ params }: { params: { slug: string } }) {
       <CtaBand
         title="Your next chapter can start here."
         body="Apply for the founding batch. We review applications on a rolling basis and will get in touch with next steps."
-        primary={{ label: "Apply for Batch 1", href: "/apply" }}
+        primary={{ label: "Apply for Batch 1", href: APPLY_URL }}
         secondary={{ label: "Ask a question", href: "/contact?topic=course" }}
       />
     </PageShell>

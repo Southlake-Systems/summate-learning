@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowUpRight, Bell } from "lucide-react";
 import { PageShell, PageHero, Section, Split, H2, CtaBand, ButtonLink } from "@/components/site/Page";
 import { courses } from "@/lib/pageContent";
-import { community } from "@/lib/siteContent";
+import { APPLY_URL, community } from "@/lib/siteContent";
 
 export const metadata: Metadata = {
   title: "Courses",
@@ -48,7 +48,7 @@ export default function CoursesPage() {
                   View the course
                 </ButtonLink>
                 <Link
-                  href="/apply"
+                  href={APPLY_URL}
                   className="inline-flex h-12 items-center rounded-full border border-white/25 px-6 text-[15px] font-semibold text-white transition-colors hover:border-white hover:text-white"
                 >
                   Apply for Batch 1

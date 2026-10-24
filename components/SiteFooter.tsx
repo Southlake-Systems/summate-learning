@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Icon from "@/components/ui/Icon";
-import { footer, site } from "@/lib/siteContent";
+import { APPLY_URL, footer, site } from "@/lib/siteContent";
 
 export default function SiteFooter() {
   const columns = footer?.columns ?? [
@@ -18,7 +18,7 @@ export default function SiteFooter() {
         // },
         {
           label: "Apply for Batch 1",
-          href: "/apply",
+          href: APPLY_URL,
         },
       ],
     },
@@ -228,7 +228,7 @@ export default function SiteFooter() {
             </div>
 
             <Link
-              href="/apply"
+              href={APPLY_URL}
               className="group inline-flex shrink-0 items-center gap-3 rounded-full bg-[#EF6F51] px-6 py-3.5 text-sm font-bold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#D9573A]"
             >
               Apply for Batch 1

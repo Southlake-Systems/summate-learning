@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { PageShell, PageHero, Section, CtaBand } from "@/components/site/Page";
 import FaqList from "@/components/site/FaqList";
 import { faqGroups } from "@/lib/pageContent";
+import { APPLY_URL } from "@/lib/siteContent";
 
 export const metadata: Metadata = {
   title: "FAQ",
@@ -51,7 +52,7 @@ export default function FaqPage() {
         title="Still have a question?"
         body="Send us a message and we'll get back to you."
         primary={{ label: "Contact us", href: "/contact" }}
-        secondary={{ label: "Apply for Batch 1", href: "/apply" }}
+        secondary={{ label: "Apply for Batch 1", href: APPLY_URL }}
       />
     </PageShell>
   );
