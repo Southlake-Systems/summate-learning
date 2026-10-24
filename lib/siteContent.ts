@@ -539,7 +539,6 @@ export const footer = {
       title: "About",
       links: [
         { label: "About Summate", href: "/about" },
-        { label: "Managing Director", href: "/founder" },
         { label: "Leadership", href: "/leadership" },
         { label: "Faculty & Mentors", href: "/faculty" },
         { label: "Careers", href: "/careers" },

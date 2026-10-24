@@ -36,7 +36,6 @@ import {
   Instagram,
   Linkedin,
   Youtube,
-  Twitter,
   Facebook,
 } from "lucide-react";
 import type { ComponentType } from "react";
@@ -74,6 +73,29 @@ type IconComponent = ComponentType<{
   strokeWidth?: string | number;
   className?: string;
 }>;
+
+/** X's mark is a solid glyph, so lucide's old Twitter bird is replaced. */
+function XBrand({
+  size = 22,
+  className,
+}: {
+  size?: string | number;
+  strokeWidth?: string | number;
+  className?: string;
+}) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      width={size}
+      height={size}
+      fill="currentColor"
+      className={className}
+      aria-hidden="true"
+    >
+      <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z" />
+    </svg>
+  );
+}
 
 const MAP: Record<string, IconComponent> = {
   Layers,
@@ -113,7 +135,7 @@ const MAP: Record<string, IconComponent> = {
   Instagram,
   LinkedIn: Linkedin,
   YouTube: Youtube,
-  X: Twitter,
+  X: XBrand,
   Facebook,
   Threads,
 };
