@@ -5,6 +5,7 @@ import { ArrowUpRight, ChevronRight } from "lucide-react";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 import { cn } from "@/lib/utils";
+import Noise from "@/components/Noise";
 
 /* ------------------------------------------------------------------ *
  * Shell
@@ -273,6 +274,9 @@ export function CtaBand({
             aria-hidden="true"
             className="pointer-events-none absolute -right-24 -top-32 -z-10 h-[420px] w-[420px] rounded-full bg-gradient-to-br from-[#1D5F6E] via-[#55C9B8] to-[#9FDEAF] opacity-50 blur-[90px]"
           />
+
+          {/* Fine grain: keeps the dark surface from banding */}
+          <Noise opacity={0.055} blendMode="soft-light" fps={12} className="-z-10" />
           <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
             <div>
               <h2 className="max-w-[20ch] font-display text-[32px] font-bold leading-[1.08] tracking-[-0.03em] text-white sm:text-[44px]">

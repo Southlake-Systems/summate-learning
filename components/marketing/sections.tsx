@@ -4,6 +4,9 @@ import Icon from "@/components/ui/Icon";
 import { courses } from "@/lib/pageContent";
 import PhilosophyCards from "@/components/ui/philosophy-cards";
 import GradientASCII from "@/components/GradientASCII";
+import LogoLoop from "@/components/LogoLoop";
+import SpotlightCard from "@/components/SpotlightCard";
+import StarBorder from "@/components/StarBorder";
 import { Avatar } from "@/components/ui/primitives";
 import { useEffect, useRef, useState } from "react";
 import { Check, X } from "lucide-react";
@@ -167,25 +170,30 @@ export function Hero() {
             {/* CTA */}
             <div className="mt-8 flex flex-wrap items-center gap-3">
 
-              <Link
+              <StarBorder
+                as="a"
                 data-reveal="rise"
                 href={APPLY_URL}
-                className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-[#EF6F51] px-7 py-3.5 text-sm font-bold text-white shadow-[0_10px_28px_rgba(239,111,81,0.28)] transition-all duration-300 hover:-translate-y-1 hover:bg-[#D9573A] hover:shadow-[0_16px_36px_rgba(239,111,81,0.32)] active:scale-[0.98]"
+                radius={999}
+                thickness={1}
+                duration={5}
+                glow={0.3}
+                color="#F4B942"
+                trailColor="#55C9B8"
+                borderColor="rgba(255,255,255,0.22)"
+                backgroundColor="#EF6F51"
+                textColor="#FFFFFF"
+                className="group px-7 py-3.5 text-sm font-bold shadow-[0_10px_28px_rgba(239,111,81,0.28)] transition-transform duration-300 hover:-translate-y-1"
               >
-                {/* Moving highlight */}
-                <span className="absolute inset-y-0 left-[-80px] w-16 skew-x-[-20deg] bg-white/20 transition-transform duration-700 group-hover:translate-x-[300px]" />
-
-                <span className="relative">
-                  Apply for Batch 1
-                </span>
+                Apply for Batch 1
 
                 <Icon
                   name="ArrowRight"
                   size={15}
                   strokeWidth={2.4}
-                  className="relative transition-transform duration-200 group-hover:translate-x-1"
+                  className="transition-transform duration-200 group-hover:translate-x-1"
                 />
-              </Link>
+              </StarBorder>
 
               <Link
                 data-reveal="rise"
@@ -1062,21 +1070,21 @@ export function TrackCatalog() {
               data-reveal-step="140"
             >
               {tracks.map((track) => (
-                <Link
+                <SpotlightCard
                   key={track.slug}
-                  data-reveal="rise"
-                  href={track.featured ? `/courses/${track.slug}` : "/courses"}
-                  className="
-                    group relative overflow-hidden
-                    rounded-[20px]
-                    border border-white/70
-                    bg-white
-                    shadow-[0_12px_30px_rgba(15,42,48,0.08)]
-                    transition-all duration-400
-                    hover:-translate-y-1
-                    hover:shadow-[0_20px_40px_rgba(15,42,48,0.14)]
-                  "
+                  theme="light"
+                  spotlightColor="#55C9B8"
+                  intensity={0.65}
+                  spotlightSize={280}
+                  softness={0.55}
+                  proximity={120}
+                  className="group p-0 transition-transform duration-300 hover:-translate-y-1"
                 >
+                  <Link
+                    data-reveal="rise"
+                    href={track.featured ? `/courses/${track.slug}` : "/courses"}
+                    className="block h-full overflow-hidden rounded-[inherit]"
+                  >
 
                   {/* =========================================
                       VISUAL
@@ -1167,7 +1175,8 @@ export function TrackCatalog() {
                     className="absolute bottom-0 left-0 h-1 w-0 transition-all duration-500 group-hover:w-full"
                     style={{ backgroundColor: track.accent }}
                   />
-                </Link>
+                  </Link>
+                </SpotlightCard>
               ))}
             </div>
           </div>
@@ -2582,27 +2591,48 @@ export function BatchBenefits() {
 
 /* ---------------- 09. Tool Strip ---------------- */
 export function ToolStrip() {
-  const toolList = [
-    { name: "VS Code", slug: "vscode" },
-    { name: "Next.js", slug: "nextjs" },
-    { name: "React", slug: "react" },
-    { name: "Tailwind CSS", slug: "tailwindcss" },
-    { name: "Node.js", slug: "nodejs" },
-    { name: "Python", slug: "python" },
-    { name: "Django", slug: "django" },
-    { name: "PostgreSQL", slug: "postgresql" },
-    { name: "MongoDB", slug: "mongodb" },
-    { name: "Git", slug: "git" },
-    { name: "GitHub", slug: "github" },
-    { name: "AWS", slug: "amazonwebservices" },
-    { name: "Docker", slug: "docker" },
-    { name: "Figma", slug: "figma" },
-    { name: "Postman", slug: "postman" },
-    { name: "Linux", slug: "linux" },
-    { name: "Vercel", slug: "vercel" },
-    { name: "Firebase", slug: "firebase" },
-    { name: "OpenAI", slug: "openai" },
-    { name: "And more", isMore: true },
+  const devicon = (slug: string) =>
+    `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${slug}/${slug}-original.svg`;
+
+  // Django, AWS and OpenAI have no "-original" file on devicon, so they point
+  // at a working asset instead of rendering as a broken image.
+  const toolLogos = [
+    { title: "VS Code", src: devicon("vscode") },
+    { title: "Next.js", src: devicon("nextjs") },
+    { title: "React", src: devicon("react") },
+    { title: "Tailwind CSS", src: devicon("tailwindcss") },
+    { title: "Node.js", src: devicon("nodejs") },
+    { title: "Python", src: devicon("python") },
+    {
+      title: "Django",
+      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg",
+    },
+    { title: "PostgreSQL", src: devicon("postgresql") },
+    { title: "MongoDB", src: devicon("mongodb") },
+    { title: "Git", src: devicon("git") },
+    { title: "GitHub", src: devicon("github") },
+    {
+      title: "AWS",
+      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg",
+    },
+    { title: "Docker", src: devicon("docker") },
+    { title: "Figma", src: devicon("figma") },
+    { title: "Postman", src: devicon("postman") },
+    { title: "Linux", src: devicon("linux") },
+    { title: "Vercel", src: devicon("vercel") },
+    { title: "Firebase", src: devicon("firebase") },
+    {
+      title: "OpenAI",
+      src: "https://cdn.jsdelivr.net/npm/simple-icons@13/icons/openai.svg",
+    },
+    {
+      title: "And more",
+      node: (
+        <span className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 text-sm font-black tracking-widest text-slate-400">
+          •••
+        </span>
+      ),
+    },
   ];
 
   return (
@@ -2610,7 +2640,7 @@ export function ToolStrip() {
       <div className="pointer-events-none absolute left-1/2 top-0 h-[450px] w-[800px] -translate-x-1/2 -translate-y-1/3 rounded-full bg-cyan-100/40 blur-3xl" />
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-        
+
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="mt-5 text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl lg:text-[46px] lg:leading-[1.14]">
             <span data-reveal="line"><span>Tools you’ll work with</span></span>
@@ -2620,40 +2650,23 @@ export function ToolStrip() {
           </p>
         </div>
 
-        <div
-          className="mt-16 grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-10"
-          data-reveal-step="45"
-        >
-          {toolList.map((tool) => (
-            <div
-              key={tool.name}
-              data-reveal="pop"
-              className="group flex flex-col items-center justify-center text-center"
-            >
-              <div className="flex h-16 w-16 items-center justify-center rounded-[20px] border border-slate-200/80 bg-white shadow-sm shadow-slate-900/[0.04] transition-all duration-200 group-hover:-translate-y-1 group-hover:border-slate-300 group-hover:shadow-md sm:h-[72px] sm:w-[72px]">
-                {tool.isMore ? (
-                  <span className="flex items-center gap-1 text-slate-400 tracking-widest text-lg font-black">
-                    •••
-                  </span>
-                ) : (
-                  <Image
-                    src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tool.slug}/${tool.slug}-original.svg`}
-                    alt={tool.name}
-                    width={32}
-                    height={32}
-                    className="h-8 w-8 object-contain transition-transform duration-200 group-hover:scale-110"
-                    unoptimized
-                  />
-                )}
-              </div>
-              <span className="mt-3 text-xs font-medium text-slate-700 transition-colors group-hover:text-slate-950">
-                {tool.name}
-              </span>
-            </div>
-          ))}
+        <div className="mt-12" data-reveal="rise">
+          <LogoLoop
+            logos={toolLogos}
+            logoHeight={36}
+            gap={40}
+            speed={55}
+            pauseOnHover
+            hoverSpeed={0}
+            fadeOut
+            fadeOutColor="#ffffff"
+            scaleOnHover
+            labels="below"
+            ariaLabel="Tools covered in the programme"
+          />
         </div>
 
-        <div className="mt-20 flex flex-col items-center justify-center">
+        <div className="mt-14 flex flex-col items-center justify-center">
           <div data-reveal="draw" className="h-0.5 w-8 origin-center rounded-full bg-slate-200" />
           <p data-reveal="rise" className="mt-5 text-[11px] font-bold uppercase tracking-[0.25em] text-slate-400">
             Learn &nbsp;·&nbsp; Build &nbsp;·&nbsp; Ship &nbsp;·&nbsp; Grow
@@ -3282,9 +3295,19 @@ export function FinalCta() {
 
           {/* CTA */}
           <div data-reveal="pop" className="mt-9">
-            <Link
+            <StarBorder
+              as="a"
               href={APPLY_URL}
-              className="group inline-flex items-center gap-3 rounded-full bg-[#EF6F51] px-7 py-3.5 text-sm font-bold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#D9573A]"
+              radius={999}
+              thickness={1}
+              duration={5}
+              glow={0.3}
+              color="#F4B942"
+              trailColor="#55C9B8"
+              borderColor="rgba(255,255,255,0.22)"
+              backgroundColor="#EF6F51"
+              textColor="#FFFFFF"
+              className="group gap-3 px-7 py-3.5 text-sm font-bold transition-transform duration-200 hover:-translate-y-0.5"
             >
               Apply for Batch 1
 
@@ -3295,7 +3318,7 @@ export function FinalCta() {
                   strokeWidth={2.5}
                 />
               </span>
-            </Link>
+            </StarBorder>
           </div>
         </div>
 

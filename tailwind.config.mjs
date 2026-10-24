@@ -19,6 +19,12 @@ export default {
           surface: "#102C33",
         },
       },
+      zIndex: {
+        // React Bits components layer their glow/grain with negative z-index.
+        "1": "1",
+        "-1": "-1",
+        "-10": "-10",
+      },
       fontFamily: {
         sans: ["var(--su-font-body)", "sans-serif"],
         display: ["var(--su-font-display)", "sans-serif"],
