@@ -24,10 +24,12 @@ export const site = {
   ],
   regions: ["Kerala", "Tamil Nadu", "Karnataka", "Telangana", "Andhra Pradesh"],
   social: [
-    { label: "Instagram", href: "#" },
-    { label: "LinkedIn", href: "#" },
-    { label: "YouTube", href: "#" },
-    { label: "X", href: "#" },
+    { label: "Instagram", href: "https://www.instagram.com/summatelearning.official" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/company/summate-learning/" },
+    { label: "Threads", href: "https://www.threads.com/@summatelearning.official" },
+    { label: "Facebook", href: "https://www.facebook.com/share/1DRzqzX83K/" },
+    { label: "YouTube", href: "https://youtube.com/@summatelearning" },
+    { label: "X", href: "https://x.com/SummateLearning" },
   ],
 };
 
