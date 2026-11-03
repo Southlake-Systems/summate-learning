@@ -2,12 +2,16 @@ import type { Metadata } from "next";
 import type { CSSProperties } from "react";
 import {
   ArrowUpRight,
+  Briefcase,
+  CalendarClock,
   Check,
   Clapperboard,
   Cpu,
   GraduationCap,
   HeartHandshake,
   type LucideIcon,
+  Mail,
+  MapPin,
   Settings2,
   Sparkles,
   TrendingUp,
@@ -17,6 +21,7 @@ import { PageShell, PageHero, Section, Split, H2, Prose, CtaBand, ButtonLink } f
 import SpotlightCard from "@/components/SpotlightCard";
 import { ShineBorder } from "@/components/ShineBorder";
 import { careers } from "@/lib/pageContent";
+import { site } from "@/lib/siteContent";
 
 export const metadata: Metadata = {
   description: careers.lede,
@@ -191,33 +196,128 @@ export default function CareersPage() {
       </Section>
 
       <Section tone="mist" id="openings">
-        <Split title="Open positions">
-          {careers.openings.length ? (
-            <ul className="divide-y divide-slate-200 border-y border-slate-200">
-              {careers.openings.map((o) => (
-                <li key={o.title} className="flex flex-wrap items-baseline justify-between gap-3 py-6">
-                  <div>
-                    <h3 className="font-display text-xl font-bold text-[#0F2A30]">{o.title}</h3>
-                    <p className="mt-1 text-[15px] text-slate-500">{o.area}</p>
+        <div className="flex flex-wrap items-end justify-between gap-x-10 gap-y-3">
+          <H2>Open positions</H2>
+          <p className="text-[15px] text-slate-500">
+            {careers.openings.length} {careers.openings.length === 1 ? "role is" : "roles are"} open right now.
+          </p>
+        </div>
+
+        {careers.openings.length ? (
+          <ul className="mt-12 grid gap-6" data-reveal-step="120">
+            {careers.openings.map((role) => (
+              <li key={role.slug} id={role.slug} data-reveal="rise" className="scroll-mt-28">
+                <SpotlightCard
+                  theme="light"
+                  spotlightColor="#2A7A88"
+                  intensity={0.2}
+                  spotlightSize={420}
+                  softness={0.8}
+                  borderGlow={0.5}
+                  proximity={0}
+                  className="h-full"
+                >
+                  <ShineBorder
+                    shineColor={["#55C9B8", "#2A7A88"]}
+                    borderWidth={1.5}
+                    duration={16}
+                  />
+
+                  <div className="relative grid gap-9 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-14">
+                    <div className="flex flex-col">
+                      <span className="inline-flex w-fit items-center rounded-full bg-[#EAF4F5] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-[#1D5F6E]">
+                        {role.area}
+                      </span>
+                      <h3 className="mt-4 font-display text-[26px] font-bold leading-[1.12] tracking-[-0.025em] text-[#0F2A30] sm:text-[30px]">
+                        {role.title}
+                      </h3>
+
+                      <dl className="mt-6 space-y-2.5 text-[14px]">
+                        <div className="flex items-start gap-2.5">
+                          <MapPin size={16} strokeWidth={1.9} aria-hidden="true" className="mt-0.5 shrink-0 text-[#1D5F6E]" />
+                          <dt className="sr-only">Location</dt>
+                          <dd className="text-slate-600">{role.location}</dd>
+                        </div>
+                        <div className="flex items-start gap-2.5">
+                          <Briefcase size={16} strokeWidth={1.9} aria-hidden="true" className="mt-0.5 shrink-0 text-[#1D5F6E]" />
+                          <dt className="sr-only">Employment</dt>
+                          <dd className="text-slate-600">{role.employment}</dd>
+                        </div>
+                        <div className="flex items-start gap-2.5">
+                          <CalendarClock size={16} strokeWidth={1.9} aria-hidden="true" className="mt-0.5 shrink-0 text-[#1D5F6E]" />
+                          <dt className="sr-only">Joining</dt>
+                          <dd className="text-slate-600">Joining {role.joining.toLowerCase()}</dd>
+                        </div>
+                      </dl>
+
+                      <div className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-3 lg:mt-auto lg:pt-8">
+                        <ButtonLink href={careers.profile.cta.href}>Apply for this role</ButtonLink>
+                        <a
+                          href={`mailto:${site.email}?subject=${encodeURIComponent(role.subject)}`}
+                          className="group/mail inline-flex items-center gap-2 text-[14px] font-semibold text-[#1D5F6E] underline decoration-[#1D5F6E]/25 underline-offset-[5px] transition-colors hover:decoration-[#1D5F6E]"
+                        >
+                          <Mail size={15} strokeWidth={1.9} aria-hidden="true" />
+                          Email your application
+                        </a>
+                      </div>
+                      <p className="mt-3 text-[13px] leading-[1.6] text-slate-500">
+                        Use the subject line{" "}
+                        <span className="font-semibold text-[#0F2A30]">{role.subject}</span>.
+                      </p>
+                    </div>
+
+                    <div className="lg:border-l lg:border-slate-200 lg:pl-14">
+                      <h4 className="text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-500">
+                        What we&apos;re looking for
+                      </h4>
+                      <ul className="mt-4 grid gap-2.5">
+                        {role.lookingFor.map((item) => (
+                          <li key={item} className="flex gap-3 text-[15px] leading-[1.6] text-slate-700">
+                            <Check
+                              size={16}
+                              strokeWidth={2.4}
+                              aria-hidden="true"
+                              className="mt-1 shrink-0 text-[#55C9B8]"
+                            />
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+
+                      {role.competencies && (
+                        <div className="mt-7">
+                          <h4 className="text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-500">
+                            Core technical competencies
+                          </h4>
+                          <ul className="mt-3 flex flex-wrap gap-2">
+                            {role.competencies.map((skill) => (
+                              <li
+                                key={skill}
+                                className="rounded-full border border-slate-200 bg-[#F6FAFA] px-3 py-1.5 text-[13px] font-medium text-[#0F2A30]"
+                              >
+                                {skill}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+                    </div>
                   </div>
-                  <p className="text-[15px] text-slate-600">
-                    {o.type}, {o.location}
-                  </p>
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <div className="rounded-3xl border border-dashed border-slate-300 bg-white p-8 sm:p-10">
-              <p className="font-display text-2xl font-bold tracking-[-0.02em] text-[#0F2A30]">No roles are listed right now.</p>
-              <p className="mt-3 max-w-[56ch] text-[16px] leading-[1.7] text-slate-600">
-                We&apos;re still hiring as we grow. {careers.profile.body}
-              </p>
-              <ButtonLink href={careers.profile.cta.href} className="mt-7">
-                {careers.profile.cta.label}
-              </ButtonLink>
-            </div>
-          )}
-        </Split>
+                </SpotlightCard>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <div className="mt-10 rounded-3xl border border-dashed border-slate-300 bg-white p-8 sm:p-10">
+            <p className="font-display text-2xl font-bold tracking-[-0.02em] text-[#0F2A30]">No roles are listed right now.</p>
+            <p className="mt-3 max-w-[56ch] text-[16px] leading-[1.7] text-slate-600">
+              We&apos;re still hiring as we grow. {careers.profile.body}
+            </p>
+            <ButtonLink href={careers.profile.cta.href} className="mt-7">
+              {careers.profile.cta.label}
+            </ButtonLink>
+          </div>
+        )}
       </Section>
 
       <CtaBand

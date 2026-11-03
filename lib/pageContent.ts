@@ -429,6 +429,23 @@ export const faculty = {
 /* ------------------------------------------------------------------ *
  * CAREERS
  * ------------------------------------------------------------------ */
+export type JobOpening = {
+  /** Stable id, used for anchors and mail subjects. */
+  slug: string;
+  title: string;
+  /** Matches one of the "Areas we hire for" titles. */
+  area: string;
+  location: string;
+  employment: string;
+  joining: string;
+  /** Requirements shown as the "What we're looking for" list. */
+  lookingFor: string[];
+  /** Optional skill strip, e.g. core technical competencies. */
+  competencies?: string[];
+  /** Subject line candidates should use when they email their application. */
+  subject: string;
+};
+
 export const careers = {
   title: "Come build Summate with us",
   lede: "Summate is a growing education company, and we are looking for people who want to be part of the journey.",
@@ -456,8 +473,54 @@ export const careers = {
   ],
   valuesNote:
     "You don't need to have a perfect background or tick every box. If you think you can contribute to what we are building, we'd like to hear from you.",
-  // Add roles here as { title, area, type, location } to list them on the page.
-  openings: [] as { title: string; area: string; type: string; location: string }[],
+  // Add roles here as JobOpening entries to list them on the page.
+  openings: [
+    {
+      slug: "student-admissions-counsellor",
+      title: "Student Admissions Counsellor",
+      area: "Student Counsellors",
+      location: "Kochi, Kerala",
+      employment: "Full-time, work from office",
+      joining: "Within one month",
+      lookingFor: [
+        "Bachelor's degree in any discipline",
+        "Excellent communication skills in Malayalam and English",
+        "Strong interpersonal, listening and counselling skills",
+        "Basic computer proficiency and familiarity with digital communication tools",
+        "Freshers and experienced candidates are welcome",
+      ],
+      subject: "Application – Student Admissions Counsellor",
+    },
+    {
+      slug: "ai-software-engineering-trainer",
+      title: "AI Software Engineering Trainer",
+      area: "Faculty & Mentors",
+      location: "Remote initially, transitioning to hybrid (Kochi)",
+      employment: "Full-time",
+      joining: "Within one month",
+      lookingFor: [
+        "Degree in Computer Science, Information Technology or equivalent practical expertise",
+        "Strong programming fundamentals and hands-on software development experience",
+        "Practical experience with AI coding assistants and their limitations",
+        "Ability to evaluate AI-generated code for correctness, security, maintainability and performance",
+        "Strong understanding of debugging, testing, code review, APIs and databases",
+        "Familiarity with Git and modern software development workflows",
+        "Ability to explain technical concepts clearly to beginners and fresh graduates",
+        "A demonstrable GitHub profile, project portfolio or relevant professional experience",
+        "Teaching, mentoring or technical training experience is an advantage",
+      ],
+      competencies: [
+        "AI-Assisted Coding",
+        "Programming & Software Engineering",
+        "Debugging & Testing",
+        "Code Review",
+        "APIs & Databases",
+        "Git & Version Control",
+        "Project-Based Mentoring",
+      ],
+      subject: "Application – AI Software Engineering Trainer",
+    },
+  ] as JobOpening[],
   profile: {
     title: "Don't see a suitable opening?",
     body: "Send us your profile and tell us a little about yourself and what you would like to do at Summate.",
