@@ -5,6 +5,7 @@ import { ArrowUpRight, ChevronRight } from "lucide-react";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 import LineWaves from "@/components/LineWaves";
+import Choreography from "@/components/ui/Choreography";
 import { cn } from "@/lib/utils";
 import Noise from "@/components/Noise";
 
@@ -15,6 +16,7 @@ export function PageShell({ children }: { children: ReactNode }) {
   return (
     <>
       <SiteNav />
+      <Choreography ready />
       <main id="main" className="bg-white">
         {children}
       </main>

@@ -1,10 +1,35 @@
 import type { Metadata } from "next";
-import { Check } from "lucide-react";
+import type { CSSProperties } from "react";
+import {
+  ArrowUpRight,
+  Check,
+  Clapperboard,
+  Cpu,
+  GraduationCap,
+  HeartHandshake,
+  type LucideIcon,
+  Settings2,
+  Sparkles,
+  TrendingUp,
+  UsersRound,
+} from "lucide-react";
 import { PageShell, PageHero, Section, Split, H2, Prose, CtaBand, ButtonLink } from "@/components/site/Page";
+import SpotlightCard from "@/components/SpotlightCard";
+import { ShineBorder } from "@/components/ShineBorder";
 import { careers } from "@/lib/pageContent";
 
 export const metadata: Metadata = {
   description: careers.lede,
+};
+
+const areaIcons: Record<string, LucideIcon> = {
+  "Faculty & Mentors": GraduationCap,
+  "Student Counsellors": HeartHandshake,
+  "Content & Media": Clapperboard,
+  "Marketing & Growth": TrendingUp,
+  "Technology & Product": Cpu,
+  Operations: Settings2,
+  "Campus Ambassadors": UsersRound,
 };
 
 export default function CareersPage() {
@@ -35,20 +60,97 @@ export default function CareersPage() {
       </Section>
 
       <Section tone="mist">
-        <H2>Areas we hire for</H2>
-        <ul className="mt-12 grid gap-px overflow-hidden rounded-3xl border border-slate-200 bg-slate-200 sm:grid-cols-2 lg:grid-cols-3">
-          {careers.areas.map((a) => (
-            <li key={a.title} className="bg-white p-7">
-              <h3 className="font-display text-xl font-bold tracking-[-0.015em] text-[#0F2A30]">{a.title}</h3>
-              <p className="mt-2 text-[15px] leading-[1.65] text-slate-600">{a.body}</p>
-            </li>
-          ))}
+        <div className="flex flex-wrap items-end justify-between gap-x-10 gap-y-4">
+          <H2>Areas we hire for</H2>
+          <p className="max-w-[46ch] text-[15px] leading-[1.65] text-slate-500">
+            Pick the area that fits you best — every one of them goes to the same inbox.
+          </p>
+        </div>
+
+        <ul className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3" data-reveal-step="80">
+          {careers.areas.map((a, i) => {
+            const Icon = areaIcons[a.title] ?? Sparkles;
+            return (
+              <li key={a.title} data-reveal="pop">
+                <a
+                  href={careers.profile.cta.href}
+                  aria-label={`${a.title} — send us your profile`}
+                  className="group block h-full rounded-3xl transition-transform duration-300 ease-out hover:-translate-y-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1D5F6E]"
+                >
+                  <SpotlightCard
+                    theme="light"
+                    spotlightColor="#2A7A88"
+                    intensity={0.26}
+                    spotlightSize={300}
+                    softness={0.78}
+                    borderGlow={0.55}
+                    proximity={0}
+                    className="flex h-full flex-col"
+                  >
+                    <ShineBorder
+                      shineColor={["#55C9B8", "#2A7A88", "#EF6F51"]}
+                      borderWidth={1.5}
+                      duration={14}
+                      style={{ animationDelay: `${(i % 3) * 1.6}s` }}
+                    />
+
+                    <span className="grid h-12 w-12 place-items-center rounded-2xl bg-[#EAF4F5] text-[#1D5F6E] transition-transform duration-300 group-hover:-rotate-6 group-hover:scale-105">
+                      <Icon size={22} strokeWidth={1.9} aria-hidden="true" />
+                    </span>
+
+                    <h3 className="mt-5 font-display text-[19px] font-bold tracking-[-0.01em] text-[#0F2A30]">
+                      {a.title}
+                    </h3>
+                    <p className="mt-2 text-[15px] leading-[1.65] text-slate-600">{a.body}</p>
+
+                    <span
+                      aria-hidden="true"
+                      className="absolute right-7 top-7 grid h-9 w-9 place-items-center rounded-full border border-[#DCE7E9] text-[#1D5F6E] opacity-0 transition-all duration-300 group-hover:border-[#55C9B8] group-hover:opacity-100 group-focus-visible:opacity-100"
+                    >
+                      <ArrowUpRight size={16} strokeWidth={2.2} />
+                    </span>
+                  </SpotlightCard>
+                </a>
+              </li>
+            );
+          })}
+
           {/* Completes the last grid row: 8 cells at 2 columns, 3 + 3 + (1 + 2) at 3. */}
-          <li className="flex flex-col justify-between bg-[#0F2A30] p-7 text-white lg:col-span-2">
-            <p className="font-display text-xl font-bold tracking-[-0.015em]">Something else in mind?</p>
-            <a href={careers.profile.cta.href} className="mt-6 text-[15px] font-semibold text-white underline decoration-white/40 underline-offset-4 hover:text-white hover:decoration-white">
-              Tell us what you&apos;d like to do
-            </a>
+          <li data-reveal="pop" className="lg:col-span-2">
+            <SpotlightCard
+              theme="dark"
+              spotlightColor="#55C9B8"
+              intensity={0.3}
+              spotlightSize={360}
+              borderGlow={0.5}
+              proximity={0}
+              style={
+                {
+                  "--spotlight-card-surface": "#0F2A30",
+                  "--spotlight-card-border": "rgba(255,255,255,0.14)",
+                  "--spotlight-card-shadow": "0 26px 50px -28px rgba(6,24,29,0.7)",
+                } as CSSProperties
+              }
+              className="flex h-full flex-col justify-between gap-8"
+            >
+              <ShineBorder shineColor={["#EF6F51", "#55C9B8"]} borderWidth={1.5} duration={9} />
+
+              <p className="font-display text-[19px] font-bold tracking-[-0.01em] text-white">
+                Something else in mind?
+              </p>
+              <a
+                href={careers.profile.cta.href}
+                className="group/link inline-flex items-center gap-2 text-[15px] font-semibold text-white underline decoration-white/40 underline-offset-4 transition-colors hover:decoration-white"
+              >
+                Tell us what you&apos;d like to do
+                <ArrowUpRight
+                  size={15}
+                  strokeWidth={2.2}
+                  aria-hidden="true"
+                  className="transition-transform duration-200 group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5"
+                />
+              </a>
+            </SpotlightCard>
           </li>
         </ul>
       </Section>
