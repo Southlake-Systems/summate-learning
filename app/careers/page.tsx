@@ -94,34 +94,35 @@ export default function CareersPage() {
                       style={{ animationDelay: `${(i % 3) * 1.6}s` }}
                     />
 
-                    <span className="grid h-12 w-12 place-items-center rounded-2xl bg-[#EAF4F5] text-[#1D5F6E] transition-transform duration-300 group-hover:-rotate-6 group-hover:scale-105">
-                      <Icon size={22} strokeWidth={1.9} aria-hidden="true" />
-                    </span>
+                    <div className="flex items-start justify-between gap-4">
+                      <span className="grid h-12 w-12 place-items-center rounded-2xl bg-[#EAF4F5] text-[#1D5F6E] transition-transform duration-300 group-hover:-rotate-6 group-hover:scale-105">
+                        <Icon size={22} strokeWidth={1.9} aria-hidden="true" />
+                      </span>
+                      <span
+                        aria-hidden="true"
+                        className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-[#E3EBEC] text-[#1D5F6E]/55 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:border-[#55C9B8] group-hover:bg-[#EAF4F5] group-hover:text-[#1D5F6E]"
+                      >
+                        <ArrowUpRight size={16} strokeWidth={2.2} />
+                      </span>
+                    </div>
 
-                    <h3 className="mt-5 font-display text-[19px] font-bold tracking-[-0.01em] text-[#0F2A30]">
+                    <h3 className="mt-6 font-display text-[19px] font-bold tracking-[-0.01em] text-[#0F2A30]">
                       {a.title}
                     </h3>
                     <p className="mt-2 text-[15px] leading-[1.65] text-slate-600">{a.body}</p>
-
-                    <span
-                      aria-hidden="true"
-                      className="absolute right-7 top-7 grid h-9 w-9 place-items-center rounded-full border border-[#DCE7E9] text-[#1D5F6E] opacity-0 transition-all duration-300 group-hover:border-[#55C9B8] group-hover:opacity-100 group-focus-visible:opacity-100"
-                    >
-                      <ArrowUpRight size={16} strokeWidth={2.2} />
-                    </span>
                   </SpotlightCard>
                 </a>
               </li>
             );
           })}
 
-          {/* Completes the last grid row: 8 cells at 2 columns, 3 + 3 + (1 + 2) at 3. */}
+          {/* Completes the last grid row: 7 areas + this wide tile fill 3 columns evenly. */}
           <li data-reveal="pop" className="lg:col-span-2">
             <SpotlightCard
               theme="dark"
               spotlightColor="#55C9B8"
               intensity={0.3}
-              spotlightSize={360}
+              spotlightSize={420}
               borderGlow={0.5}
               proximity={0}
               style={
@@ -131,18 +132,39 @@ export default function CareersPage() {
                   "--spotlight-card-shadow": "0 26px 50px -28px rgba(6,24,29,0.7)",
                 } as CSSProperties
               }
-              className="flex h-full flex-col justify-between gap-8"
+              className="flex h-full flex-col justify-between gap-7"
             >
               <ShineBorder shineColor={["#EF6F51", "#55C9B8"]} borderWidth={1.5} duration={9} />
 
-              <p className="font-display text-[19px] font-bold tracking-[-0.01em] text-white">
-                Something else in mind?
-              </p>
+              {/* Soft brand glow, so the tile reads as a destination rather than a gap in the grid. */}
+              <span
+                aria-hidden="true"
+                className="pointer-events-none absolute -right-20 -top-24 h-64 w-64 rounded-full bg-[#55C9B8]/15 blur-3xl"
+              />
+              <span
+                aria-hidden="true"
+                className="pointer-events-none absolute -bottom-10 right-2 text-white/[0.06]"
+              >
+                <ArrowUpRight size={150} strokeWidth={1} />
+              </span>
+
+              <div className="relative">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#8FDACD]">
+                  Open application
+                </p>
+                <h3 className="mt-3 max-w-[22ch] font-display text-[26px] font-bold leading-[1.15] tracking-[-0.02em] text-white">
+                  Something else in mind?
+                </h3>
+                <p className="mt-3 max-w-[52ch] text-[15px] leading-[1.65] text-slate-300">
+                  {careers.profile.body}
+                </p>
+              </div>
+
               <a
                 href={careers.profile.cta.href}
-                className="group/link inline-flex items-center gap-2 text-[15px] font-semibold text-white underline decoration-white/40 underline-offset-4 transition-colors hover:decoration-white"
+                className="group/link relative inline-flex w-fit items-center gap-2 rounded-full bg-white px-5 py-2.5 text-[14px] font-semibold text-[#0F2A30] transition-colors duration-200 hover:bg-[#55C9B8] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
               >
-                Tell us what you&apos;d like to do
+                {careers.profile.cta.label}
                 <ArrowUpRight
                   size={15}
                   strokeWidth={2.2}
