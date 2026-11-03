@@ -265,7 +265,7 @@ export default function CareersPage() {
                       <div className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-3 lg:mt-auto lg:pt-8">
                         <ButtonLink href={`/careers/${role.slug}`}>View role and apply</ButtonLink>
                         <a
-                          href={`mailto:${site.email}?subject=${encodeURIComponent(role.subject)}`}
+                          href={`mailto:${site.careersEmail}?subject=${encodeURIComponent(role.subject)}`}
                           className="group/mail inline-flex items-center gap-2 text-[14px] font-semibold text-[#1D5F6E] underline decoration-[#1D5F6E]/25 underline-offset-[5px] transition-colors hover:decoration-[#1D5F6E]"
                         >
                           <Mail size={15} strokeWidth={1.9} aria-hidden="true" />

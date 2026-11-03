@@ -14,6 +14,8 @@ export const site = {
   tagline: "Founding Program: AI-Augmented Full-Stack Developer Course Live Online January 2027",
   legalName: "Summate Learning LLP",
   email: "hello@summatelearning.com",
+  /** Job applications go to their own inbox so they never sit in the general queue. */
+  careersEmail: "careers@summatelearning.com",
   phone: "+91 92928 38222",
   location: "Kochi, Kerala, India",
   address: [

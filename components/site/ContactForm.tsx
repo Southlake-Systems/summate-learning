@@ -12,11 +12,15 @@ import { site } from "@/lib/siteContent";
 export default function ContactForm({ defaultTopic = "course" }: { defaultTopic?: string }) {
   const [opened, setOpened] = useState(false);
   const initialTopic = contactTopics.some((t) => t.value === defaultTopic) ? defaultTopic : "course";
+  const [topicValue, setTopicValue] = useState(initialTopic);
+  const recipient = topicValue === "careers" ? site.careersEmail : site.email;
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const data = new FormData(e.currentTarget);
-    const topic = contactTopics.find((t) => t.value === data.get("topic"))?.label ?? "Enquiry";
+    const selected = String(data.get("topic") ?? "");
+    const topic = contactTopics.find((t) => t.value === selected)?.label ?? "Enquiry";
+    const to = selected === "careers" ? site.careersEmail : site.email;
     const name = String(data.get("name") ?? "").trim();
     const subject = `${topic}: ${name}`;
     const body = [
@@ -30,7 +34,7 @@ export default function ContactForm({ defaultTopic = "course" }: { defaultTopic?
       .filter((line, i) => i < 3 || line)
       .join("\n");
 
-    window.location.href = `mailto:${site.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     setOpened(true);
   }
 
@@ -58,7 +62,12 @@ export default function ContactForm({ defaultTopic = "course" }: { defaultTopic?
         <label className="block">
           <span className={label}>What&apos;s this about?</span>
           <span className="relative block">
-            <select name="topic" defaultValue={initialTopic} className={`${field} appearance-none pr-11`}>
+            <select
+              name="topic"
+              value={topicValue}
+              onChange={(event) => setTopicValue(event.target.value)}
+              className={`${field} appearance-none pr-11`}
+            >
             {contactTopics.map((t) => (
               <option key={t.value} value={t.value}>
                 {t.label}
@@ -82,7 +91,7 @@ export default function ContactForm({ defaultTopic = "course" }: { defaultTopic?
 
       <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <p className="max-w-[40ch] text-[14px] leading-[1.6] text-slate-500">
-          This opens your email app with your message ready to send to {site.email}.
+          This opens your email app with your message ready to send to {recipient}.
         </p>
         <button
           type="submit"
@@ -96,8 +105,8 @@ export default function ContactForm({ defaultTopic = "course" }: { defaultTopic?
       {opened && (
         <p role="status" className="mt-6 rounded-2xl bg-[#EAF4F5] px-5 py-4 text-[15px] leading-[1.6] text-[#0F2A30]">
           Your email app should now be open with your message. Press send there to reach us. If nothing opened, email{" "}
-          <a href={`mailto:${site.email}`} className="font-semibold">
-            {site.email}
+          <a href={`mailto:${recipient}`} className="font-semibold">
+            {recipient}
           </a>{" "}
           directly.
         </p>

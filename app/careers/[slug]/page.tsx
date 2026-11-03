@@ -65,7 +65,7 @@ export default function RolePage({ params }: { params: Params }) {
 
   const others = careers.openings.filter((r) => r.slug !== role.slug);
   const applyHref = careers.profile.cta.href;
-  const mailHref = `mailto:${site.email}?subject=${encodeURIComponent(role.subject)}`;
+  const mailHref = `mailto:${site.careersEmail}?subject=${encodeURIComponent(role.subject)}`;
 
   // JobPosting structured data — what lets Google Jobs list the role.
   const jobPosting = {
