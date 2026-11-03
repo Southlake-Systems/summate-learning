@@ -41,6 +41,11 @@ const areaIcons: Record<string, LucideIcon> = {
 };
 
 export default function CareersPage() {
+  // Every "send us your profile" action goes straight to the careers inbox.
+  const openApplicationHref = `mailto:${site.careersEmail}?subject=${encodeURIComponent(
+    "Application – Open application"
+  )}`;
+
   return (
     <PageShell>
       <PageHero
@@ -51,7 +56,7 @@ export default function CareersPage() {
       >
         <div className="flex flex-wrap gap-3">
           <ButtonLink href="#openings">View open positions</ButtonLink>
-          <ButtonLink href={careers.profile.cta.href} variant="secondary">
+          <ButtonLink href={openApplicationHref} variant="secondary">
             {careers.profile.cta.label}
           </ButtonLink>
         </div>
@@ -81,7 +86,7 @@ export default function CareersPage() {
             return (
               <li key={a.title} data-reveal="pop">
                 <a
-                  href={careers.profile.cta.href}
+                  href={openApplicationHref}
                   aria-label={`${a.title} — send us your profile`}
                   className="group block h-full rounded-3xl transition-transform duration-300 ease-out hover:-translate-y-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1D5F6E]"
                 >
@@ -169,7 +174,7 @@ export default function CareersPage() {
               </div>
 
               <a
-                href={careers.profile.cta.href}
+                href={openApplicationHref}
                 className="group/link relative inline-flex w-fit items-center gap-2 rounded-full bg-white px-5 py-2.5 text-[14px] font-semibold text-[#0F2A30] transition-colors duration-200 hover:bg-[#55C9B8] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
               >
                 {careers.profile.cta.label}
@@ -263,7 +268,7 @@ export default function CareersPage() {
                       </dl>
 
                       <div className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-3 lg:mt-auto lg:pt-8">
-                        <ButtonLink href={`/careers/${role.slug}`}>View role and apply</ButtonLink>
+                        <ButtonLink href={`/careers/${role.slug}`}>View role</ButtonLink>
                         <a
                           href={`mailto:${site.careersEmail}?subject=${encodeURIComponent(role.subject)}`}
                           className="group/mail inline-flex items-center gap-2 text-[14px] font-semibold text-[#1D5F6E] underline decoration-[#1D5F6E]/25 underline-offset-[5px] transition-colors hover:decoration-[#1D5F6E]"
@@ -335,7 +340,7 @@ export default function CareersPage() {
             <p className="mt-3 max-w-[56ch] text-[16px] leading-[1.7] text-slate-600">
               We&apos;re still hiring as we grow. {careers.profile.body}
             </p>
-            <ButtonLink href={careers.profile.cta.href} className="mt-7">
+            <ButtonLink href={openApplicationHref} className="mt-7">
               {careers.profile.cta.label}
             </ButtonLink>
           </div>
@@ -347,7 +352,7 @@ export default function CareersPage() {
       <CtaBand
         title={careers.profile.title}
         body={careers.profile.body}
-        primary={careers.profile.cta}
+        primary={{ label: careers.profile.cta.label, href: openApplicationHref }}
         secondary={{ label: "Teach or mentor", href: "/faculty" }}
       />
     </PageShell>

@@ -15,7 +15,6 @@ import {
   PageHero,
   Section,
   H2,
-  ButtonLink,
   CtaBand,
 } from "@/components/site/Page";
 import { HiringProcess, RoleLink } from "@/components/site/CareersHiring";
@@ -64,8 +63,9 @@ export default function RolePage({ params }: { params: Params }) {
   if (!role) notFound();
 
   const others = careers.openings.filter((r) => r.slug !== role.slug);
-  const applyHref = careers.profile.cta.href;
+  // Applications go straight to the careers inbox — no contact-form detour.
   const mailHref = `mailto:${site.careersEmail}?subject=${encodeURIComponent(role.subject)}`;
+  const openApplicationHref = `mailto:${site.careersEmail}?subject=${encodeURIComponent("Application – Open application")}`;
 
   // JobPosting structured data — what lets Google Jobs list the role.
   const jobPosting = {
@@ -136,15 +136,17 @@ export default function RolePage({ params }: { params: Params }) {
           </span>
         </div>
 
-        <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-3">
-          <ButtonLink href={applyHref}>Apply for this role</ButtonLink>
+        <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-3">
           <a
             href={mailHref}
-            className="inline-flex items-center gap-2 text-[14px] font-semibold text-[#1D5F6E] underline decoration-[#1D5F6E]/25 underline-offset-[5px] transition-colors hover:decoration-[#1D5F6E]"
+            className="inline-flex h-12 items-center gap-2 rounded-full bg-[#EF6F51] px-6 text-[15px] font-semibold text-white shadow-[0_8px_24px_rgba(239,111,81,0.28)] transition-colors duration-200 hover:bg-[#D9573A]"
           >
-            <Mail size={15} strokeWidth={1.9} aria-hidden="true" />
+            <Mail size={16} strokeWidth={2} aria-hidden="true" />
             Email your application
           </a>
+          <span className="text-[13px] text-slate-500">
+            Subject line: <span className="font-semibold text-[#0F2A30]">{role.subject}</span>
+          </span>
         </div>
       </PageHero>
 
@@ -237,17 +239,11 @@ export default function RolePage({ params }: { params: Params }) {
                   {role.title}
                 </p>
 
-                <div className="mt-5">
-                  <ButtonLink href={applyHref} className="w-full justify-center">
-                    Apply for this role
-                  </ButtonLink>
-                </div>
-
                 <a
                   href={mailHref}
-                  className="mt-3 flex w-full items-center justify-center gap-2 rounded-full border border-slate-300 bg-white px-5 py-2.5 text-[14px] font-semibold text-[#0F2A30] transition-colors hover:border-[#1D5F6E] hover:text-[#1D5F6E]"
+                  className="mt-5 flex w-full items-center justify-center gap-2 rounded-full bg-[#EF6F51] px-5 py-3 text-[15px] font-semibold text-white shadow-[0_8px_24px_rgba(239,111,81,0.28)] transition-colors hover:bg-[#D9573A]"
                 >
-                  <Mail size={15} strokeWidth={1.9} aria-hidden="true" />
+                  <Mail size={16} strokeWidth={2} aria-hidden="true" />
                   Email your application
                 </a>
 
@@ -304,7 +300,7 @@ export default function RolePage({ params }: { params: Params }) {
       <CtaBand
         title="Not quite the right fit?"
         body="Tell us what you would like to do at Summate and we will keep you in mind as the team grows."
-        primary={{ label: "Send your profile", href: applyHref }}
+        primary={{ label: "Send your profile", href: openApplicationHref }}
         secondary={{ label: "Back to careers", href: "/careers" }}
       />
     </PageShell>
