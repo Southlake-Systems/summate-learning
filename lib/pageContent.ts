@@ -75,6 +75,7 @@ export const founder = {
   name: "Remesan P L",
   firstName: "Remesan",
   role: "Managing Director, Summate Learning",
+  linkedin: "https://www.linkedin.com/in/remesan-p-l-6a081a448",
   image: "/founder.jpg",
   // Same portrait with the backdrop removed, for the dark hero.
   cutout: "/founder-cutout.webp",
@@ -259,6 +260,7 @@ export const leadership = {
       name: founder.name,
       role: "Managing Director",
       image: founder.image,
+      linkedin: founder.linkedin,
       href: "/founder",
       summary:
         "An education professional with over 32 years of teaching, curriculum development and academic leadership across ICSE, ISC, CBSE, HSC and SSLC, in India and in Muscat, Oman. He leads Summate's educational direction.",

@@ -7,6 +7,7 @@ import {
   BookOpen,
   ClipboardCheck,
   GraduationCap,
+  Linkedin,
   Mic,
   NotebookPen,
   Users,
@@ -75,6 +76,18 @@ export default function FounderPage() {
               >
                 Contact Summate
               </Link>
+              <a
+                href={founder.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-[15px] font-semibold text-[#8FDACD] underline decoration-[#8FDACD]/40 underline-offset-[6px] transition-colors hover:text-white hover:decoration-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+              >
+                <Linkedin size={16} strokeWidth={2} aria-hidden="true" />
+                LinkedIn
+                <span className="sr-only">
+                  profile of {founder.name} (opens in a new tab)
+                </span>
+              </a>
             </div>
           </div>
 
