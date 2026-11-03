@@ -72,8 +72,8 @@ export const courses: Course[] = [
  * MANAGING DIRECTOR (served at /founder)
  * ------------------------------------------------------------------ */
 export const founder = {
-  name: "Ramesan P. L.",
-  firstName: "Ramesan",
+  name: "Remesan P L",
+  firstName: "Remesan",
   role: "Managing Director, Summate Learning",
   image: "/founder.jpg",
   // Same portrait with the backdrop removed, for the dark hero.
@@ -88,16 +88,16 @@ export const founder = {
     { title: "Chief Editor", body: "ICSE and ISC Malayalam textbook committee" },
   ],
   profile: [
-    "Ramesan P. L. is an experienced education professional with over 32 years of teaching experience across school and higher-level academic settings. His career spans classroom teaching, academic coordination, curriculum and textbook development, teacher training, educational content creation, and competitive examination coaching. He has worked across multiple Indian education streams, including ICSE, ISC, CBSE, HSC, and SSLC, and has international teaching experience in Muscat, Oman.",
-    "A retired teacher of Loyola School, Thiruvananthapuram, Ramesan has contributed to academic development beyond the classroom. His responsibilities have included coordinating the ICSE and ISC Malayalam syllabus, serving on textbook committees as a coordinator and chief editor, working as a Chief Examiner in ICSE board examinations, and coordinating board examination preparation programmes.",
+    "Remesan P L is an experienced education professional with over 32 years of teaching experience across school and higher-level academic settings. His career spans classroom teaching, academic coordination, curriculum and textbook development, teacher training, educational content creation, and competitive examination coaching. He has worked across multiple Indian education streams, including ICSE, ISC, CBSE, HSC, and SSLC, and has international teaching experience in Muscat, Oman.",
+    "A retired teacher of Loyola School, Thiruvananthapuram, Remesan has contributed to academic development beyond the classroom. His responsibilities have included coordinating the ICSE and ISC Malayalam syllabus, serving on textbook committees as a coordinator and chief editor, working as a Chief Examiner in ICSE board examinations, and coordinating board examination preparation programmes.",
     "His professional journey reflects a longstanding commitment to education, academic standards, and the development of both teachers and students. Alongside his school teaching career, he has worked as an academic consultant, guest teacher, educational content writer, and tutor for Civil Services and Kerala Administrative Service (KAS) aspirants. He has also conducted motivational sessions for teachers and students and contributed to educational programmes through Doordarshan and Akashavani.",
-    "As Managing Director of Summate Learning, Ramesan brings decades of experience in education and academic leadership to the organisation. His background provides a strong foundation for an educational approach that values subject knowledge, effective teaching, learner development, and the practical application of knowledge.",
+    "As Managing Director of Summate Learning, Remesan brings decades of experience in education and academic leadership to the organisation. His background provides a strong foundation for an educational approach that values subject knowledge, effective teaching, learner development, and the practical application of knowledge.",
   ],
   experience: [
     {
       title: "Academic Consultant, Guest Teacher and Educational Content Writer",
       period: "2018–Present",
-      body: "Following his school teaching career, Ramesan continued contributing to education through academic consultancy, guest teaching, content development, and competitive examination coaching.",
+      body: "Following his school teaching career, Remesan continued contributing to education through academic consultancy, guest teaching, content development, and competitive examination coaching.",
       points: [
         "Serving as an academic consultant associated with the ICSE and ISC Council.",
         "Working as a guest teacher and educational content writer.",
@@ -109,7 +109,7 @@ export const founder = {
     {
       title: "Loyola School, Thiruvananthapuram",
       period: "2005–2017",
-      body: "During his tenure at Loyola School, Ramesan contributed to teaching and academic coordination.",
+      body: "During his tenure at Loyola School, Remesan contributed to teaching and academic coordination.",
       points: [
         "Coordinating the preparation of board examination classes.",
         "Supporting students preparing for major examinations.",
@@ -122,7 +122,7 @@ export const founder = {
     {
       title: "Indian School, Muscat, Oman",
       period: "2004–2005",
-      body: "Ramesan gained international teaching experience at the Indian School in Muscat, Oman, broadening his professional exposure beyond the Indian education system.",
+      body: "Remesan gained international teaching experience at the Indian School in Muscat, Oman, broadening his professional exposure beyond the Indian education system.",
     },
     {
       title: "Saraswathi Vidhyalaya, Thiruvananthapuram",
@@ -132,17 +132,17 @@ export const founder = {
     {
       title: "St. Thomas Residential School, Thiruvananthapuram",
       period: "1991–2003",
-      body: "Over more than a decade at St. Thomas Residential School, Ramesan developed extensive classroom teaching experience and worked with students in a structured school environment.",
+      body: "Over more than a decade at St. Thomas Residential School, Remesan developed extensive classroom teaching experience and worked with students in a structured school environment.",
     },
     {
       title: "Private Institute, Attingal",
       period: "1988–1991",
-      body: "Ramesan began his listed professional teaching career at a private institute in Attingal, where he handled degree and postgraduate classes.",
+      body: "Remesan began his listed professional teaching career at a private institute in Attingal, where he handled degree and postgraduate classes.",
     },
   ] as { title: string; period: string; body: string; points?: string[] }[],
   contributions: {
     intro:
-      "Beyond classroom instruction, Ramesan has held responsibilities involving curriculum development, textbook preparation, examination assessment, and teacher development.",
+      "Beyond classroom instruction, Remesan has held responsibilities involving curriculum development, textbook preparation, examination assessment, and teacher development.",
     groups: [
       {
         title: "Curriculum and textbook development",
@@ -184,7 +184,7 @@ export const founder = {
     main: {
       title: "Gurushrestha Award",
       year: "2024",
-      body: "Ramesan received the Gurushrestha Award in 2024 in recognition of his contribution to education.",
+      body: "Remesan received the Gurushrestha Award in 2024 in recognition of his contribution to education.",
     },
     others: [
       "Individual Sports Champion at his B.Ed. college affiliated with Calicut University.",
@@ -194,9 +194,9 @@ export const founder = {
     note: "These achievements reflect interests and accomplishments extending beyond his professional teaching responsibilities.",
   },
   leadership: [
-    "Education has been central to Ramesan's professional life for more than three decades. His experience across teaching, curriculum development, examination systems, teacher training, and educational media gives him a broad understanding of how learning is delivered and supported.",
+    "Education has been central to Remesan's professional life for more than three decades. His experience across teaching, curriculum development, examination systems, teacher training, and educational media gives him a broad understanding of how learning is delivered and supported.",
     "As Managing Director of Summate Learning, he is part of the leadership guiding the organisation's educational direction and development. His background brings an established academic perspective to Summate's work in creating learning opportunities for students, graduates, and aspiring professionals.",
-    "Summate aims to connect learning with practical application and continuous development. Ramesan's career in education provides valuable context for this mission, particularly in recognising the importance of strong foundations, effective instruction, and opportunities for learners to develop their abilities.",
+    "Summate aims to connect learning with practical application and continuous development. Remesan's career in education provides valuable context for this mission, particularly in recognising the importance of strong foundations, effective instruction, and opportunities for learners to develop their abilities.",
   ],
   areas: [
     "Educational Leadership and Academic Coordination",
@@ -255,7 +255,7 @@ export const leadership = {
   heading: "Meet the people behind Summate",
   members: [
     {
-      slug: "ramesan-p-l",
+      slug: "remesan-p-l",
       name: founder.name,
       role: "Managing Director",
       image: founder.image,
@@ -263,7 +263,7 @@ export const leadership = {
       summary:
         "An education professional with over 32 years of teaching, curriculum development and academic leadership across ICSE, ISC, CBSE, HSC and SSLC, in India and in Muscat, Oman. He leads Summate's educational direction.",
       bio: [
-        "Ramesan P. L. is an education professional with over 32 years of teaching experience across ICSE, ISC, CBSE, HSC and SSLC, in India and in Muscat, Oman. His career spans classroom teaching, academic coordination, curriculum and textbook development, and teacher training.",
+        "Remesan P L is an education professional with over 32 years of teaching experience across ICSE, ISC, CBSE, HSC and SSLC, in India and in Muscat, Oman. His career spans classroom teaching, academic coordination, curriculum and textbook development, and teacher training.",
         "A retired teacher of Loyola School, Thiruvananthapuram, he has coordinated the ICSE and ISC Malayalam syllabus, served as chief editor of its textbook committee and as a Chief Examiner in ICSE board examinations.",
         "As Managing Director of Summate Learning, he brings an established academic perspective to the organisation's educational direction, valuing strong foundations, effective teaching and the practical application of knowledge.",
       ],
