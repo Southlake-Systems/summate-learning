@@ -430,7 +430,7 @@ export const faculty = {
  * CAREERS
  * ------------------------------------------------------------------ */
 export type JobOpening = {
-  /** Stable id, used for anchors and mail subjects. */
+  /** Stable id, used for the role URL, anchors and mail subjects. */
   slug: string;
   title: string;
   /** Matches one of the "Areas we hire for" titles. */
@@ -438,12 +438,22 @@ export type JobOpening = {
   location: string;
   employment: string;
   joining: string;
+  /** One-paragraph pitch shown under the role title and in listings. */
+  summary: string;
+  /** ISO date the role went live, used by the JobPosting structured data. */
+  postedOn: string;
   /** Requirements shown as the "What we're looking for" list. */
   lookingFor: string[];
+  /** What the person will actually do, day to day. */
+  responsibilities: string[];
+  /** Optional "nice to have" list. */
+  niceToHave?: string[];
   /** Optional skill strip, e.g. core technical competencies. */
   competencies?: string[];
   /** Subject line candidates should use when they email their application. */
   subject: string;
+  /** Fully remote roles change the structured data and the meta copy. */
+  remote?: boolean;
 };
 
 export const careers = {
@@ -482,12 +492,28 @@ export const careers = {
       location: "Kochi, Kerala",
       employment: "Full-time, work from office",
       joining: "Within one month",
+      postedOn: "2026-11-04",
+      summary:
+        "Be the first person students and parents talk to. You will help them understand our programs, pick the right one, and get through admissions without confusion.",
+      responsibilities: [
+        "Answer enquiries over phone, WhatsApp, email and walk-ins, and get back the same day.",
+        "Understand each student's background, goals and eligibility before recommending a program.",
+        "Explain our programs, schedules and admission steps clearly to students and their parents.",
+        "Walk shortlisted candidates through the application and enrolment process end to end.",
+        "Follow up with applicants who go quiet, and keep the pipeline moving.",
+        "Keep enquiry, follow-up and enrolment records accurate in our sheets and CRM.",
+        "Pass what you hear from the market back to the marketing and academic teams.",
+      ],
       lookingFor: [
         "Bachelor's degree in any discipline",
         "Excellent communication skills in Malayalam and English",
         "Strong interpersonal, listening and counselling skills",
         "Basic computer proficiency and familiarity with digital communication tools",
         "Freshers and experienced candidates are welcome",
+      ],
+      niceToHave: [
+        "Experience in admissions, counselling or edtech sales",
+        "Comfort with a CRM or shared spreadsheets",
       ],
       subject: "Application – Student Admissions Counsellor",
     },
@@ -498,6 +524,19 @@ export const careers = {
       location: "Remote initially, transitioning to hybrid (Kochi)",
       employment: "Full-time",
       joining: "Within one month",
+      postedOn: "2026-11-04",
+      remote: true,
+      summary:
+        "Teach the AI-Augmented Full-Stack Developer program: live sessions, real projects and honest code review, for students who need to walk out employable.",
+      responsibilities: [
+        "Teach live online sessions across the technical curriculum.",
+        "Design project briefs and exercises that mirror real engineering work.",
+        "Review student code and give feedback on correctness, security and maintainability.",
+        "Mentor learners from their first commit to portfolio-ready projects.",
+        "Use AI coding assistants in your own workflow, and teach students when not to trust them.",
+        "Assess progress through code review, tests and project demos.",
+        "Keep the curriculum current as the tools and the work change.",
+      ],
       lookingFor: [
         "Degree in Computer Science, Information Technology or equivalent practical expertise",
         "Strong programming fundamentals and hands-on software development experience",
@@ -508,6 +547,10 @@ export const careers = {
         "Ability to explain technical concepts clearly to beginners and fresh graduates",
         "A demonstrable GitHub profile, project portfolio or relevant professional experience",
         "Teaching, mentoring or technical training experience is an advantage",
+      ],
+      niceToHave: [
+        "Open-source contributions or a public portfolio",
+        "Prior experience training freshers or career switchers",
       ],
       competencies: [
         "AI-Assisted Coding",
@@ -521,6 +564,44 @@ export const careers = {
       subject: "Application – AI Software Engineering Trainer",
     },
   ] as JobOpening[],
+
+  /* Shared hiring copy, used by the careers index and every role page. */
+  hiring: {
+    title: "How we hire",
+    lede: "Four steps, no take-home marathons, and an answer either way.",
+    steps: [
+      {
+        title: "Apply",
+        time: "5 minutes",
+        body: "Send your CV and a short note about the role you want. No cover-letter templates, no forms that ask the same thing twice.",
+      },
+      {
+        title: "Intro call",
+        time: "20–30 minutes",
+        body: "A conversation about your background, what you want next, and what the role actually involves day to day.",
+      },
+      {
+        title: "Practical round",
+        time: "45–60 minutes",
+        body: "A short demo class for teaching roles, or a counselling scenario and a live enquiry walkthrough for admissions roles.",
+      },
+      {
+        title: "Decision",
+        time: "Within a week",
+        body: "We come back with a clear yes or no, and feedback if you ask for it. Successful candidates get the offer in writing.",
+      },
+    ],
+    application: {
+      title: "What to send",
+      items: [
+        "Your CV, one or two pages.",
+        "A short note on why this role, in your own words.",
+        "For teaching roles, a GitHub profile, portfolio or a project you can walk us through.",
+        "The subject line we ask for on the role page, so your application reaches the right folder.",
+      ],
+      note: "We read every application ourselves and reply within a week. If you have not heard from us by then, follow up at",
+    },
+  },
   profile: {
     title: "Don't see a suitable opening?",
     body: "Send us your profile and tell us a little about yourself and what you would like to do at Summate.",

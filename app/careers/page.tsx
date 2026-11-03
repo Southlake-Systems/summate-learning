@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import type { CSSProperties } from "react";
 import {
+  ArrowRight,
   ArrowUpRight,
   Briefcase,
   CalendarClock,
@@ -18,6 +20,7 @@ import {
   UsersRound,
 } from "lucide-react";
 import { PageShell, PageHero, Section, Split, H2, Prose, CtaBand, ButtonLink } from "@/components/site/Page";
+import { HiringProcess } from "@/components/site/CareersHiring";
 import SpotlightCard from "@/components/SpotlightCard";
 import { ShineBorder } from "@/components/ShineBorder";
 import { careers } from "@/lib/pageContent";
@@ -229,8 +232,17 @@ export default function CareersPage() {
                         {role.area}
                       </span>
                       <h3 className="mt-4 font-display text-[26px] font-bold leading-[1.12] tracking-[-0.025em] text-[#0F2A30] sm:text-[30px]">
-                        {role.title}
+                        <Link
+                          href={`/careers/${role.slug}`}
+                          className="transition-colors hover:text-[#1D5F6E] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1D5F6E]"
+                        >
+                          {role.title}
+                        </Link>
                       </h3>
+
+                      <p className="mt-3 max-w-[54ch] text-[15px] leading-[1.65] text-slate-600">
+                        {role.summary}
+                      </p>
 
                       <dl className="mt-6 space-y-2.5 text-[14px]">
                         <div className="flex items-start gap-2.5">
@@ -251,7 +263,7 @@ export default function CareersPage() {
                       </dl>
 
                       <div className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-3 lg:mt-auto lg:pt-8">
-                        <ButtonLink href={careers.profile.cta.href}>Apply for this role</ButtonLink>
+                        <ButtonLink href={`/careers/${role.slug}`}>View role and apply</ButtonLink>
                         <a
                           href={`mailto:${site.email}?subject=${encodeURIComponent(role.subject)}`}
                           className="group/mail inline-flex items-center gap-2 text-[14px] font-semibold text-[#1D5F6E] underline decoration-[#1D5F6E]/25 underline-offset-[5px] transition-colors hover:decoration-[#1D5F6E]"
@@ -271,7 +283,7 @@ export default function CareersPage() {
                         What we&apos;re looking for
                       </h4>
                       <ul className="mt-4 grid gap-2.5">
-                        {role.lookingFor.map((item) => (
+                        {role.lookingFor.slice(0, 5).map((item) => (
                           <li key={item} className="flex gap-3 text-[15px] leading-[1.6] text-slate-700">
                             <Check
                               size={16}
@@ -283,6 +295,16 @@ export default function CareersPage() {
                           </li>
                         ))}
                       </ul>
+
+                      {role.lookingFor.length > 5 && (
+                        <Link
+                          href={`/careers/${role.slug}`}
+                          className="mt-4 inline-flex items-center gap-1.5 text-[13px] font-semibold text-[#1D5F6E] underline decoration-[#1D5F6E]/25 underline-offset-[5px] hover:decoration-[#1D5F6E]"
+                        >
+                          See all {role.lookingFor.length} requirements
+                          <ArrowRight size={14} strokeWidth={2.2} aria-hidden="true" />
+                        </Link>
+                      )}
 
                       {role.competencies && (
                         <div className="mt-7">
@@ -319,6 +341,8 @@ export default function CareersPage() {
           </div>
         )}
       </Section>
+
+      <HiringProcess tone="white" />
 
       <CtaBand
         title={careers.profile.title}
