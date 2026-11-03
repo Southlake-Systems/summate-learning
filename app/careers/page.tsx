@@ -14,6 +14,7 @@ export default function CareersPage() {
         crumbs={[{ label: "About", href: "/about" }, { label: "Careers" }]}
         title={careers.title}
         lede={careers.lede}
+        waves
       >
         <div className="flex flex-wrap gap-3">
           <ButtonLink href="#openings">View open positions</ButtonLink>

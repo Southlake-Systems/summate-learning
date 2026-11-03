@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ArrowUpRight, ChevronRight } from "lucide-react";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
+import LineWaves from "@/components/LineWaves";
 import { cn } from "@/lib/utils";
 import Noise from "@/components/Noise";
 
@@ -33,26 +34,63 @@ export function PageHero({
   lede,
   children,
   aside,
+  waves = false,
 }: {
   crumbs: Crumb[];
   title: ReactNode;
   lede?: ReactNode;
   children?: ReactNode;
   aside?: ReactNode;
+  /** Cover the hero with the animated LineWaves field instead of the grid. */
+  waves?: boolean;
 }) {
   return (
     <section className="relative isolate overflow-hidden border-b border-slate-200/70 bg-[#F6FAFA]">
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 -z-10 opacity-60"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(29,95,110,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(29,95,110,.05) 1px, transparent 1px)",
-          backgroundSize: "64px 64px",
-          maskImage: "radial-gradient(ellipse at 20% 0%, black 30%, transparent 75%)",
-          WebkitMaskImage: "radial-gradient(ellipse at 20% 0%, black 30%, transparent 75%)",
-        }}
-      />
+      {waves ? (
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 -z-10"
+          style={{
+            maskImage:
+              "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.45) 26%, black 68%)",
+            WebkitMaskImage:
+              "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.45) 26%, black 68%)",
+          }}
+        >
+          <LineWaves
+            color1="#55C9B8"
+            color2="#2A7A88"
+            color3="#1D5F6E"
+            lightMode
+            speed={0.22}
+            colorCycleSpeed={0.6}
+            lineCount={64}
+            lineWidth={1.25}
+            glow={0.55}
+            brightness={1.15}
+            highlight={0.55}
+            highlightWidth={1.4}
+            warpIntensity={0.85}
+            warpScale={1.15}
+            rotation={-22}
+            edgeFade={0.5}
+            opacity={0.9}
+            mouseInfluence={1.6}
+          />
+        </div>
+      ) : (
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 -z-10 opacity-60"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(29,95,110,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(29,95,110,.05) 1px, transparent 1px)",
+            backgroundSize: "64px 64px",
+            maskImage: "radial-gradient(ellipse at 20% 0%, black 30%, transparent 75%)",
+            WebkitMaskImage: "radial-gradient(ellipse at 20% 0%, black 30%, transparent 75%)",
+          }}
+        />
+      )}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute -right-40 -top-40 -z-10 h-[520px] w-[520px] rounded-full bg-gradient-to-br from-[#55C9B8]/[0.10] via-[#EF6F51]/[0.05] to-transparent blur-[100px]"
