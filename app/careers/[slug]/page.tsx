@@ -20,6 +20,7 @@ import {
 import { HiringProcess, RoleLink } from "@/components/site/CareersHiring";
 import { careers } from "@/lib/pageContent";
 import { site } from "@/lib/siteContent";
+import { pageMeta } from "@/lib/seo";
 
 type Params = { slug: string };
 
@@ -35,16 +36,11 @@ export function generateMetadata({ params }: { params: Params }): Metadata {
   const role = findRole(params.slug);
   if (!role) return {};
 
-  return {
-    title: `${role.title} · Careers at Summate Learning`,
+  return pageMeta({
+    title: `${role.title} — Careers`,
     description: `${role.title} — ${role.area}, ${role.location}. ${role.summary}`,
-    alternates: { canonical: `/careers/${role.slug}` },
-    openGraph: {
-      title: `${role.title} · Summate Learning`,
-      description: role.summary,
-      type: "article",
-    },
-  };
+    path: `/careers/${role.slug}`,
+  });
 }
 
 function Block({ title, children }: { title: string; children: ReactNode }) {
@@ -78,11 +74,18 @@ export default function RolePage({ params }: { params: Params }) {
       `What we're looking for: ${role.lookingFor.join(" ")}`,
     ].join("\n\n"),
     datePosted: role.postedOn,
+    validThrough: new Date(
+      new Date(role.postedOn).getTime() + 90 * 24 * 60 * 60 * 1000
+    )
+      .toISOString()
+      .slice(0, 10),
     employmentType: "FULL_TIME",
     hiringOrganization: {
       "@type": "Organization",
       name: site.legalName,
       sameAs: "https://www.summatelearning.com",
+      url: "https://www.summatelearning.com",
+      logo: "https://www.summatelearning.com/icon.png",
     },
     jobLocation: {
       "@type": "Place",
@@ -139,7 +142,7 @@ export default function RolePage({ params }: { params: Params }) {
         <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-3">
           <a
             href={mailHref}
-            className="inline-flex h-12 items-center gap-2 rounded-full bg-[#EF6F51] px-6 text-[15px] font-semibold text-white shadow-[0_8px_24px_rgba(239,111,81,0.28)] transition-colors duration-200 hover:bg-[#D9573A]"
+            className="inline-flex h-12 items-center gap-2 rounded-full bg-[#C24A2B] px-6 text-[15px] font-semibold text-white shadow-[0_8px_24px_rgba(239,111,81,0.28)] transition-colors duration-200 hover:bg-[#A93E1C]"
           >
             <Mail size={16} strokeWidth={2} aria-hidden="true" />
             Email your application
@@ -241,7 +244,7 @@ export default function RolePage({ params }: { params: Params }) {
 
                 <a
                   href={mailHref}
-                  className="mt-5 flex w-full items-center justify-center gap-2 rounded-full bg-[#EF6F51] px-5 py-3 text-[15px] font-semibold text-white shadow-[0_8px_24px_rgba(239,111,81,0.28)] transition-colors hover:bg-[#D9573A]"
+                  className="mt-5 flex w-full items-center justify-center gap-2 rounded-full bg-[#C24A2B] px-5 py-3 text-[15px] font-semibold text-white shadow-[0_8px_24px_rgba(239,111,81,0.28)] transition-colors hover:bg-[#A93E1C]"
                 >
                   <Mail size={16} strokeWidth={2} aria-hidden="true" />
                   Email your application

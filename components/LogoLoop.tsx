@@ -1230,7 +1230,7 @@ export const LogoLoop = memo<LogoLoopProps>(
                   sizes={item.sizes}
                   width={item.width}
                   height={item.height}
-                  alt={item.alt ?? ''}
+                  alt={labels === "none" ? item.alt ?? item.title ?? "" : item.alt ?? ""}
                   title={item.title}
                   loading="lazy"
                   decoding="async"

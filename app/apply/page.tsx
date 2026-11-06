@@ -1,12 +1,18 @@
 import type { Metadata } from "next";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
-import ApplyForm from "@/components/ApplyForm";
+import { APPLY_FORM_URL } from "@/lib/siteContent";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
+  title: "Apply: January 2027 Batch",
   description:
-    "Apply to the founding batch of the AI-Augmented Full-Stack Developer Course. Live online, starting January 2027.",
-};
+    "Apply to the founding batch of the AI-Augmented Full-Stack Developer Course. Live online, 12 weeks, starting January 2027. Applications are reviewed on a rolling basis.",
+  path: "/apply",
+});
+
+const APPLY_FORM_EMBED =
+  "https://docs.google.com/forms/d/e/1FAIpQLSd1W13bLcTW6CEOs_7rZ0R6sHQK5ukq8unAsbgImVe9irXe-Q/viewform?embedded=true";
 
 export default function ApplyPage() {
   return (
@@ -234,7 +240,25 @@ export default function ApplyPage() {
                   </div>
                 </div>
 
-                <ApplyForm />
+                <iframe
+                  src={APPLY_FORM_EMBED}
+                  title="Summate Learning Batch 1 application form"
+                  className="min-h-[1500px] w-full rounded-2xl border border-slate-200 bg-white"
+                  loading="lazy"
+                />
+
+                <p className="mt-4 text-center text-[13px] leading-6 text-slate-500">
+                  Form not loading?{" "}
+                  <a
+                    href={APPLY_FORM_URL}
+                    className="font-semibold text-[#1D5F6E] underline decoration-[#55C9B8] underline-offset-4"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Open the application in a new tab
+                  </a>
+                  .
+                </p>
 
               </div>
             </div>

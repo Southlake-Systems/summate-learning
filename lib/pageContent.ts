@@ -708,6 +708,14 @@ export const faqGroups = [
         a: "Yes. Batch 1 is fully live online, making the program accessible to learners across Kerala, Tamil Nadu, Karnataka, Telangana and Andhra Pradesh.",
       },
       {
+        q: "When does Batch 1 start?",
+        a: "Batch 1 is scheduled to start in January 2027. We confirm the exact start date, weekly schedule and session times with applicants in writing before enrolment.",
+      },
+      {
+        q: "What does the course cost?",
+        a: "Fees, instalment options and refund terms are shared in writing before you enrol and form part of the program terms. There are no hidden charges after that.",
+      },
+      {
         q: "Do I need prior coding experience?",
         a: "Basic familiarity with coding from your degree or previous learning is helpful. The program covers the foundations before moving into full-stack development and advanced practice.",
       },

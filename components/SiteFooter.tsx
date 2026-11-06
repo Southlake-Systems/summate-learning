@@ -215,7 +215,7 @@ export default function SiteFooter() {
 
               <Link
                 href={APPLY_URL}
-                className="group inline-flex h-10 shrink-0 items-center gap-2 self-start rounded-full bg-[#EF6F51] px-5 text-sm font-bold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#D9573A] sm:self-auto"
+                className="group inline-flex h-10 shrink-0 items-center gap-2 self-start rounded-full bg-[#C24A2B] px-5 text-sm font-bold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#A93E1C] sm:self-auto"
               >
                 Apply for Batch 1
 
@@ -232,7 +232,7 @@ export default function SiteFooter() {
             BOTTOM BAR — copyright, contact and sign-off share
             one line.
         -------------------------------------------------- */}
-        <div className="mt-8 flex flex-col gap-3 border-t border-slate-200 pt-5 text-xs text-slate-400 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-8 flex flex-col gap-3 border-t border-slate-200 pt-5 text-xs text-slate-600 sm:flex-row sm:items-center sm:justify-between">
 
           <p>© 2026 Summate Learning. All rights reserved.</p>
 

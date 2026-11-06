@@ -2,10 +2,13 @@ import type { Metadata } from "next";
 import { BookOpenCheck, Briefcase, MessageSquareText, Globe2 } from "lucide-react";
 import { PageShell, PageHero, Section, H2, Prose, PersonCard, CtaBand } from "@/components/site/Page";
 import { faculty } from "@/lib/pageContent";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
+  title: "Faculty & Mentors",
   description: faculty.lede,
-};
+  path: "/faculty",
+});
 
 const expectIcons = [BookOpenCheck, Briefcase, MessageSquareText, Globe2];
 

@@ -25,10 +25,13 @@ import SpotlightCard from "@/components/SpotlightCard";
 import { ShineBorder } from "@/components/ShineBorder";
 import { careers } from "@/lib/pageContent";
 import { site } from "@/lib/siteContent";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
+  title: "Careers at Summate",
   description: careers.lede,
-};
+  path: "/careers",
+});
 
 const areaIcons: Record<string, LucideIcon> = {
   "Faculty & Mentors": GraduationCap,

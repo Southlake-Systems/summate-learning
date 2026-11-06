@@ -4,11 +4,14 @@ import { ArrowLeftRight } from "lucide-react";
 import { PageShell, Breadcrumbs, Section, Split, H2, CtaBand, ButtonLink } from "@/components/site/Page";
 import CircleOrbit from "@/components/site/CircleOrbit";
 import { circle } from "@/lib/pageContent";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
+  title: "The Summate Circle Community",
   description:
     "A community of students, graduates, mentors and professionals who learn, build and grow together, during and beyond a Summate course.",
-};
+  path: "/circle",
+});
 
 const pathColors = ["#1D5F6E", "#3C8B90", "#55C9B8", "#F08A6B", "#EF6F51"];
 
@@ -148,7 +151,7 @@ export default function CirclePage() {
           <figure className="relative">
             <div className="rounded-[28px] border border-slate-200 bg-white p-7 shadow-[0_30px_80px_rgba(15,42,48,0.10)] sm:p-8">
               <div className="flex items-center gap-4">
-                <span aria-hidden="true" className="flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-[#EF6F51] to-[#F28A6B] font-display text-lg font-bold text-white">
+                <span aria-hidden="true" className="flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-[#C24A2B] to-[#D9573A] font-display text-lg font-bold text-white">
                   AK
                 </span>
                 <div>

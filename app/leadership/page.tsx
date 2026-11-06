@@ -7,10 +7,13 @@ import { PageShell, Breadcrumbs, Section, Split, Prose, CtaBand } from "@/compon
 import { leadership, type TeamMember } from "@/lib/pageContent";
 import { APPLY_URL } from "@/lib/siteContent";
 import { cn } from "@/lib/utils";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
+  title: "Leadership Team",
   description: leadership.lede,
-};
+  path: "/leadership",
+});
 
 // One tone per member so the initials portraits read as a set, not copies.
 const tones = [

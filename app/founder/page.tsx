@@ -15,10 +15,13 @@ import {
 import { ClampText } from "@/components/site/ClampText";
 import { PageShell, Breadcrumbs, Section, Split, Prose, H2, CtaBand } from "@/components/site/Page";
 import { founder } from "@/lib/pageContent";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
+  title: `${founder.name}, Managing Director`,
   description: `${founder.name}, ${founder.role}. ${founder.summary}`,
-};
+  path: "/founder",
+});
 
 const highlightIcons = [GraduationCap, Award, ClipboardCheck, BookOpen];
 const contributionIcons = [NotebookPen, ClipboardCheck, Users, Mic];

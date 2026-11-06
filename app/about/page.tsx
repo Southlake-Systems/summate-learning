@@ -4,11 +4,14 @@ import { ArrowUpRight } from "lucide-react";
 import { PageShell, PageHero, Section, Split, H2, Prose, CtaBand, ButtonLink } from "@/components/site/Page";
 import { APPLY_URL, whyIntro, features, whoIsFor, personas, ecosystemVision, program } from "@/lib/siteContent";
 import { courses } from "@/lib/pageContent";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
+  title: "About Summate Learning",
   description:
-    "Summate Learning is a new kind of learning institution that connects what you learn with what you can do with it.",
-};
+    "Summate Learning is a new kind of learning institution that connects what you learn with what you can do with it. Meet the people and the idea behind Batch 1.",
+  path: "/about",
+});
 
 const explore = [
   { label: "Managing Director", body: "Remesan P L on three decades in education.", href: "/founder" },

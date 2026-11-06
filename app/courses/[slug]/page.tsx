@@ -6,6 +6,8 @@ import { PageShell, PageHero, Section, Split, H2, CtaBand, ButtonLink } from "@/
 import FaqList from "@/components/site/FaqList";
 import { courses, faqGroups } from "@/lib/pageContent";
 import { APPLY_URL, program, hero, curriculum, comparison, tools, steps, batchBenefits } from "@/lib/siteContent";
+import { pageMeta, SITE_URL } from "@/lib/seo";
+import { JsonLd } from "@/components/seo/JsonLd";
 
 // Only courses that are open for enrolment have a detail page.
 const openCourses = courses.filter((c) => c.status === "open");
@@ -19,7 +21,11 @@ export const dynamicParams = false;
 export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
   const course = openCourses.find((c) => c.slug === params.slug);
   if (!course) return {};
-  return { description: program.subtitle };
+  return pageMeta({
+    title: `${course.title} Course`,
+    description: `${program.subtitle} Live online, 12 weeks, Batch 1 starts January 2027.`,
+    path: `/courses/${course.slug}`,
+  });
 }
 
 const phaseColors = ["#1D5F6E", "#55C9B8", "#EF6F51", "#F4B942"];
@@ -30,8 +36,33 @@ export default function CoursePage({ params }: { params: { slug: string } }) {
 
   const courseFaqs = faqGroups.find((g) => g.title === "The course")?.items ?? [];
 
+  const courseSchema = {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    name: course.title,
+    description: program.description,
+    url: `${SITE_URL}/courses/${course.slug}`,
+    provider: {
+      "@type": "EducationalOrganization",
+      name: "Summate Learning",
+      sameAs: SITE_URL,
+    },
+    hasCourseInstance: [
+      {
+        "@type": "CourseInstance",
+        courseMode: "online",
+        location: {
+          "@type": "VirtualLocation",
+          url: `${SITE_URL}/courses/${course.slug}`,
+        },
+      },
+    ],
+    teaches: course.skills,
+  };
+
   return (
     <PageShell>
+      <JsonLd data={courseSchema} />
       <PageHero
         crumbs={[{ label: "Courses", href: "/courses" }, { label: course.title }]}
         title={course.title}

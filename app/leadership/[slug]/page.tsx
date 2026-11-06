@@ -22,6 +22,7 @@ import {
 import { ClampText } from "@/components/site/ClampText";
 import { PageShell, Breadcrumbs, Section, Split, Prose, CtaBand } from "@/components/site/Page";
 import { leadership, type TeamMember } from "@/lib/pageContent";
+import { pageMeta } from "@/lib/seo";
 
 // Directors with their own page; the Managing Director lives at /founder.
 const directors = leadership.members.filter((m) => m.href === `/leadership/${m.slug}`);
@@ -47,9 +48,11 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
   const member = findDirector(params.slug);
   if (!member) return {};
-  return {
+  return pageMeta({
+    title: `${member.name} — ${member.role}`,
     description: `${member.name}, ${member.role}, Summate Learning. ${member.summary}`,
-  };
+    path: `/leadership/${member.slug}`,
+  });
 }
 
 export default function DirectorPage({ params }: { params: { slug: string } }) {

@@ -4,10 +4,12 @@
  */
 
 /**
- * Where every "Apply for Batch 1" action sends people.
- * Batch 1 applications are collected through this external Google Form.
+ * Where every "Apply for Batch 1" action sends people. The on-site /apply page
+ * embeds the form below, so applications stay on our own URL (and the page can
+ * be indexed, linked and measured).
  */
-export const APPLY_URL = "https://forms.gle/4eKQr8fet8eVJkUz9";
+export const APPLY_FORM_URL = "https://forms.gle/4eKQr8fet8eVJkUz9";
+export const APPLY_URL = "/apply";
 
 export const site = {
   name: "Summate Learning",
@@ -542,6 +544,7 @@ export const footer = {
       links: [
         { label: "About Summate", href: "/about" },
         { label: "Leadership", href: "/leadership" },
+        { label: "Managing Director", href: "/founder" },
         { label: "Faculty & Mentors", href: "/faculty" },
         { label: "Careers", href: "/careers" },
       ],

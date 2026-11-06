@@ -3,16 +3,32 @@ import { PageShell, PageHero, Section, CtaBand } from "@/components/site/Page";
 import FaqList from "@/components/site/FaqList";
 import { faqGroups } from "@/lib/pageContent";
 import { APPLY_URL } from "@/lib/siteContent";
+import { pageMeta } from "@/lib/seo";
+import { JsonLd } from "@/components/seo/JsonLd";
 
-export const metadata: Metadata = {
-  description: "Answers to common questions about Summate Learning, our courses, the Summate Circle and working with us.",
-};
+export const metadata: Metadata = pageMeta({
+  title: "Course FAQs: Fees, Format, Support",
+  description:
+    "Answers to common questions about Summate Learning, our courses, the Summate Circle and working with us.",
+  path: "/faq",
+});
 
 const slug = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-");
 
 export default function FaqPage() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqGroups.flatMap((group) => group.items).map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: { "@type": "Answer", text: item.a },
+    })),
+  };
+
   return (
     <PageShell>
+      <JsonLd data={faqSchema} />
       <PageHero
         crumbs={[{ label: "FAQ" }]}
         title="Frequently asked questions"

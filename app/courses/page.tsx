@@ -4,11 +4,14 @@ import { ArrowUpRight, Bell } from "lucide-react";
 import { PageShell, PageHero, Section, Split, H2, CtaBand, ButtonLink } from "@/components/site/Page";
 import { courses } from "@/lib/pageContent";
 import { APPLY_URL, community } from "@/lib/siteContent";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
+  title: "Live Online Full-Stack & AI Courses",
   description:
-    "Live online courses from Summate Learning, starting with the AI-Augmented Full-Stack Developer Course in January 2027.",
-};
+    "Live online courses from Summate Learning, starting with the AI-Augmented Full-Stack Developer Course in January 2027. 12 weeks, one real project, mentor-led reviews.",
+  path: "/courses",
+});
 
 export default function CoursesPage() {
   const [featured, ...upcoming] = courses;

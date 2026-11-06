@@ -8,6 +8,8 @@ import LineWaves from "@/components/LineWaves";
 import Choreography from "@/components/ui/Choreography";
 import { cn } from "@/lib/utils";
 import Noise from "@/components/Noise";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { SITE_URL } from "@/lib/seo";
 
 /* ------------------------------------------------------------------ *
  * Shell
@@ -126,8 +128,24 @@ export function PageHero({
 }
 
 export function Breadcrumbs({ crumbs, onDark }: { crumbs: Crumb[]; onDark?: boolean }) {
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` },
+      ...crumbs.map((crumb, index) => ({
+        "@type": "ListItem",
+        position: index + 2,
+        name: crumb.label,
+        ...(crumb.href ? { item: `${SITE_URL}${crumb.href}` } : {}),
+      })),
+    ],
+  };
+
   return (
-    <nav aria-label="Breadcrumb">
+    <>
+      <JsonLd data={breadcrumbSchema} />
+      <nav aria-label="Breadcrumb">
       <ol
         className={cn(
           "flex flex-wrap items-center gap-1.5 text-[13px] font-medium",
@@ -166,7 +184,8 @@ export function Breadcrumbs({ crumbs, onDark }: { crumbs: Crumb[]; onDark?: bool
           </li>
         ))}
       </ol>
-    </nav>
+      </nav>
+    </>
   );
 }
 

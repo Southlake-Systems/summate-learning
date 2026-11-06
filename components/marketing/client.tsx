@@ -19,7 +19,7 @@ export function AnnounceBar() {
           <span className="hidden text-slate-300 md:inline">Limited seats for Batch 1</span>
           <Link
             href={banners.announcement.href}
-            className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-[#EF6F51] to-[#F28A6B] px-3.5 py-1 font-semibold text-white shadow-sm transition-opacity hover:opacity-90 active:scale-95"
+            className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-[#A93E1C] to-[#C24A2B] px-3.5 py-1 font-semibold text-white shadow-sm transition-opacity hover:opacity-90 active:scale-95"
           >
             <span>{banners.announcement.cta}</span>
             <Icon name="ArrowRight" size={13} strokeWidth={2.5} />

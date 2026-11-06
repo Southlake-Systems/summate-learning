@@ -128,32 +128,28 @@ export function Hero() {
             {/* Brand motif */}
             <div
               className="flex items-center gap-3 text-[13px] font-extrabold tracking-[0.2em]"
-              data-reveal-step="90"
             >
-              <span data-reveal="rise" className="text-[#1D5F6E]">LEARN</span>
-              <span data-reveal="fade" className="text-slate-300">•</span>
-              <span data-reveal="rise" className="text-[#23857A]">APPLY</span>
-              <span data-reveal="fade" className="text-slate-300">•</span>
-              <span data-reveal="rise" className="bg-gradient-to-br from-[#2A7A88] via-[#1D5F6E] to-[#12424D] bg-clip-text text-transparent">ACHIEVE</span>
+              <span className="text-[#1D5F6E]">LEARN</span>
+              <span className="text-slate-300">•</span>
+              <span className="text-[#23857A]">APPLY</span>
+              <span className="text-slate-300">•</span>
+              <span className="bg-gradient-to-br from-[#2A7A88] via-[#1D5F6E] to-[#12424D] bg-clip-text text-transparent">ACHIEVE</span>
             </div>
 
             {/* Heading */}
             <h1
               className="mt-6 max-w-[650px] text-4xl font-extrabold leading-[1.02] tracking-[-0.045em] text-[#0F2A30] sm:text-5xl lg:text-[60px] xl:text-[66px]"
-              data-reveal-step="90"
             >
-              <span data-reveal="line"><span>You are more than</span></span>
-              <span data-reveal="line"><span>what you already</span></span>
+              <span><span>You are more than</span></span>
+              <span><span>what you already</span></span>
 
-              <span data-reveal="line" className="-mb-3 pb-3"><span className="relative inline-block">
+              <span className="-mb-3 pb-3"><span className="relative inline-block">
                 <span className="bg-gradient-to-r from-[#1D5F6E] via-[#2A8C8C] to-[#55C9B8] bg-clip-text text-transparent">
                   know.
                 </span>
 
                 {/* Small accent underline, drawn once the word has landed */}
                 <span
-                  data-reveal="draw"
-                  data-reveal-delay="650"
                   className="absolute -bottom-1 left-0 h-[4px] w-[90%] rounded-full bg-gradient-to-r from-[#1D5F6E] via-[#55C9B8] to-[#9FDEAF]"
                 />
               </span></span>
@@ -161,7 +157,6 @@ export function Hero() {
 
             {/* Description */}
             <p
-              data-reveal="rise"
               className="mt-7 max-w-xl text-[15px] leading-7 text-slate-600 sm:text-base lg:text-[17px]"
             >
               {hero.body[0]}
@@ -172,7 +167,6 @@ export function Hero() {
 
               <StarBorder
                 as="a"
-                data-reveal="rise"
                 href={APPLY_URL}
                 radius={999}
                 thickness={1}
@@ -181,7 +175,7 @@ export function Hero() {
                 color="#F4B942"
                 trailColor="#55C9B8"
                 borderColor="rgba(255,255,255,0.22)"
-                backgroundColor="#EF6F51"
+                backgroundColor="#C24A2B"
                 textColor="#FFFFFF"
                 className="group px-7 py-3.5 text-sm font-bold shadow-[0_10px_28px_rgba(239,111,81,0.28)] transition-transform duration-300 hover:-translate-y-1"
               >
@@ -196,7 +190,6 @@ export function Hero() {
               </StarBorder>
 
               <Link
-                data-reveal="rise"
                 href="/#programs"
                 className="group inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-6 py-3.5 text-sm font-semibold text-[#0F2A30] shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-[#1D5F6E]/20 hover:shadow-md"
               >
@@ -216,7 +209,6 @@ export function Hero() {
                 FEATURE STRIP
             ================================================== */}
             <div
-              data-reveal="draw"
               className="mt-10 border-t border-slate-200/80 pt-6"
             >
               {/* <div className="grid grid-cols-2 gap-2 sm:flex sm:flex-wrap sm:gap-2.5">
@@ -300,27 +292,25 @@ export function Hero() {
 
             {/* Decorative ring */}
             <div
-              data-reveal="pop"
-              data-reveal-delay="-700"
               className="pointer-events-none absolute right-[8%] top-[13%] h-[190px] w-[190px] rounded-full border border-[#55C9B8]/20"
               aria-hidden="true"
             />
 
             <div
-              data-reveal="pop"
-              data-reveal-delay="-700"
               className="pointer-events-none absolute right-[12%] top-[17%] h-[130px] w-[130px] rounded-full border border-[#EF6F51]/15"
               aria-hidden="true"
             />
 
             {/* Main image */}
-            <div data-reveal="image" data-reveal-delay="-700" className="relative z-10 w-full max-w-[530px]">
+            <div className="relative z-10 w-full max-w-[530px]">
               <Image
-                src="/hero_right.png"
+                src="/hero_right.webp"
                 alt="Summate Learning student building skills"
-                width={600}
-                height={650}
+                width={1200}
+                height={1000}
                 priority
+                quality={80}
+                sizes="(max-width: 1024px) 90vw, 530px"
                 className="relative z-10 h-auto w-full object-contain drop-shadow-[0_30px_45px_rgba(15,42,48,0.12)]"
               />
             </div>
@@ -330,8 +320,8 @@ export function Hero() {
             ================================================== */}
 
             {/* Build */}
-            <div data-reveal="pop" className="absolute left-[-2%] top-[12%] z-20 hidden sm:block">
-              <div className="hero-float flex items-center gap-3 rounded-2xl border border-white/80 bg-white/95 px-4 py-3 shadow-[0_14px_35px_rgba(15,42,48,0.10)] backdrop-blur-md">
+            <div className="absolute left-[-2%] top-[12%] z-20 hidden sm:block">
+              <div className="hero-float flex items-center gap-3 rounded-2xl border border-white/80 bg-white/95 backdrop-blur-md px-4 py-3 shadow-[0_14px_35px_rgba(15,42,48,0.10)]">
                 <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#E6F2F3] text-[#1D5F6E]">
                   <Icon name="Code2" size={17} strokeWidth={2} />
                 </div>
@@ -348,8 +338,8 @@ export function Hero() {
             </div>
 
             {/* Learn */}
-            <div data-reveal="pop" className="absolute bottom-[13%] left-[0%] z-20 hidden sm:block">
-              <div className="hero-float-reverse flex items-center gap-3 rounded-2xl border border-white/80 bg-white/95 px-4 py-3 shadow-[0_14px_35px_rgba(15,42,48,0.10)] backdrop-blur-md">
+            <div className="absolute bottom-[13%] left-[0%] z-20 hidden sm:block">
+              <div className="hero-float-reverse flex items-center gap-3 rounded-2xl border border-white/80 bg-white/95 backdrop-blur-md px-4 py-3 shadow-[0_14px_35px_rgba(15,42,48,0.10)]">
                 <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#E8F8F5] text-[#23857A]">
                   <Icon name="Brain" size={17} strokeWidth={2} />
                 </div>
@@ -366,8 +356,8 @@ export function Hero() {
             </div>
 
             {/* Career */}
-            <div data-reveal="pop" className="absolute right-[-1%] top-[22%] z-20 hidden sm:block">
-              <div className="hero-float-reverse flex items-center gap-3 rounded-2xl border border-white/80 bg-white/95 px-4 py-3 shadow-[0_14px_35px_rgba(15,42,48,0.10)] backdrop-blur-md">
+            <div className="absolute right-[-1%] top-[22%] z-20 hidden sm:block">
+              <div className="hero-float-reverse flex items-center gap-3 rounded-2xl border border-white/80 bg-white/95 backdrop-blur-md px-4 py-3 shadow-[0_14px_35px_rgba(15,42,48,0.10)]">
                 <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#FDEEEA] text-[#EF6F51]">
                   <Icon name="TrendingUp" size={17} strokeWidth={2} />
                 </div>
@@ -384,8 +374,8 @@ export function Hero() {
             </div>
 
             {/* Future Ready */}
-            <div data-reveal="pop" className="absolute bottom-[17%] right-[0%] z-20 hidden sm:block">
-              <div className="hero-float flex items-center gap-3 rounded-2xl border border-white/80 bg-white/95 px-4 py-3 shadow-[0_14px_35px_rgba(15,42,48,0.10)] backdrop-blur-md">
+            <div className="absolute bottom-[17%] right-[0%] z-20 hidden sm:block">
+              <div className="hero-float flex items-center gap-3 rounded-2xl border border-white/80 bg-white/95 backdrop-blur-md px-4 py-3 shadow-[0_14px_35px_rgba(15,42,48,0.10)]">
                 <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#FEF6E3] text-[#F4B942]">
                   <Icon name="Rocket" size={17} strokeWidth={2} />
                 </div>
@@ -402,7 +392,7 @@ export function Hero() {
             </div>
 
             {/* Tiny decorative dots */}
-            <div data-reveal="fade" className="pointer-events-none absolute right-[2%] top-[5%] grid grid-cols-4 gap-2 opacity-40">
+            <div className="pointer-events-none absolute right-[2%] top-[5%] grid grid-cols-4 gap-2 opacity-40">
               {Array.from({ length: 16 }).map((_, i) => (
                 <span
                   key={i}
@@ -421,7 +411,7 @@ export function Hero() {
         <div className="relative h-20 lg:h-24">
 
           {/* Soft color horizon */}
-          <div data-reveal="draw" className="absolute left-1/2 top-1/2 h-px w-[75%] origin-center -translate-x-1/2 bg-gradient-to-r from-transparent via-[#1D5F6E]/20 via-[#55C9B8]/30 to-transparent" />
+          <div className="absolute left-1/2 top-1/2 h-px w-[75%] origin-center -translate-x-1/2 bg-gradient-to-r from-transparent via-[#1D5F6E]/20 via-[#55C9B8]/30 to-transparent" />
 
           {/* Transition glow */}
           <div className="pointer-events-none absolute left-1/2 top-1/2 h-16 w-[55%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-r from-[#1D5F6E]/5 via-[#55C9B8]/10 to-[#F4B942]/5 blur-2xl" />
@@ -1222,7 +1212,7 @@ export function PersonaCards() {
       title: "Starting Out",
       desc: "You have the qualification. Now it's time to build what's next.",
       quote: "From learning to doing.",
-      image: "/personalcard1.png",
+      image: "/personalcard1.webp",
       accent: "#1D5F6E",
       soft: "#E6F2F3",
       features: [
@@ -1246,7 +1236,7 @@ export function PersonaCards() {
       title: "Moving Forward",
       desc: "You're working, but you want to grow, switch roles or stay ahead.",
       quote: "Better skills. Bigger opportunities.",
-      image: "/personalcard2.png",
+      image: "/personalcard2.webp",
       accent: "#55C9B8",
       soft: "#E9F8F5",
       features: [
@@ -1270,7 +1260,7 @@ export function PersonaCards() {
       title: "Changing Course",
       desc: "A different direction is possible. It's never too late to start again.",
       quote: "New skills. New possibilities.",
-      image: "/personalcard3.png",
+      image: "/personalcard3.webp",
       accent: "#F4B942",
       soft: "#FEF6E3",
       features: [
@@ -1478,7 +1468,6 @@ export function PersonaCards() {
                       fill
                       className="object-contain object-bottom"
                       sizes="(max-width: 768px) 100vw, 33vw"
-                      priority={index === 0}
                     />
                   </div>
 
@@ -2468,10 +2457,10 @@ export function BatchBenefits() {
                 style={{ transform: reducedMotion ? undefined : BENEFIT_FRAMES[active % BENEFIT_FRAMES.length] }}
               >
                 <Image
-                  src="/workspace-setup.png"
+                  src="/workspace-setup.webp"
                   alt="Workspace with laptop, notebook and books"
                   fill
-                  priority
+                  quality={75}
                   className="object-cover object-center"
                   sizes="(max-width: 1024px) 100vw, 45vw"
                 />
@@ -2591,40 +2580,27 @@ export function BatchBenefits() {
 
 /* ---------------- 09. Tool Strip ---------------- */
 export function ToolStrip() {
-  const devicon = (slug: string) =>
-    `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${slug}/${slug}-original.svg`;
-
-  // Django, AWS and OpenAI have no "-original" file on devicon, so they point
-  // at a working asset instead of rendering as a broken image.
+  // Self-hosted so the strip makes no third-party requests.
   const toolLogos = [
-    { title: "VS Code", src: devicon("vscode") },
-    { title: "Next.js", src: devicon("nextjs") },
-    { title: "React", src: devicon("react") },
-    { title: "Tailwind CSS", src: devicon("tailwindcss") },
-    { title: "Node.js", src: devicon("nodejs") },
-    { title: "Python", src: devicon("python") },
-    {
-      title: "Django",
-      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg",
-    },
-    { title: "PostgreSQL", src: devicon("postgresql") },
-    { title: "MongoDB", src: devicon("mongodb") },
-    { title: "Git", src: devicon("git") },
-    { title: "GitHub", src: devicon("github") },
-    {
-      title: "AWS",
-      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg",
-    },
-    { title: "Docker", src: devicon("docker") },
-    { title: "Figma", src: devicon("figma") },
-    { title: "Postman", src: devicon("postman") },
-    { title: "Linux", src: devicon("linux") },
-    { title: "Vercel", src: devicon("vercel") },
-    { title: "Firebase", src: devicon("firebase") },
-    {
-      title: "OpenAI",
-      src: "https://cdn.jsdelivr.net/npm/simple-icons@13/icons/openai.svg",
-    },
+    { title: "VS Code", src: "/tools/vscode.svg" },
+    { title: "Next.js", src: "/tools/nextjs.svg" },
+    { title: "React", src: "/tools/react.svg" },
+    { title: "Tailwind CSS", src: "/tools/tailwindcss.svg" },
+    { title: "Node.js", src: "/tools/nodejs.svg" },
+    { title: "Python", src: "/tools/python.svg" },
+    { title: "Django", src: "/tools/django.svg" },
+    { title: "PostgreSQL", src: "/tools/postgresql.svg" },
+    { title: "MongoDB", src: "/tools/mongodb.svg" },
+    { title: "Git", src: "/tools/git.svg" },
+    { title: "GitHub", src: "/tools/github.svg" },
+    { title: "AWS", src: "/tools/aws.svg" },
+    { title: "Docker", src: "/tools/docker.svg" },
+    { title: "Figma", src: "/tools/figma.svg" },
+    { title: "Postman", src: "/tools/postman.svg" },
+    { title: "Linux", src: "/tools/linux.svg" },
+    { title: "Vercel", src: "/tools/vercel.svg" },
+    { title: "Firebase", src: "/tools/firebase.svg" },
+    { title: "OpenAI", src: "/tools/openai.svg" },
     {
       title: "And more",
       node: (

@@ -4,10 +4,14 @@ import { Mail, MapPin, Phone } from "lucide-react";
 import { PageShell, PageHero, Section } from "@/components/site/Page";
 import ContactForm from "@/components/site/ContactForm";
 import { APPLY_URL, site } from "@/lib/siteContent";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  description: "Get in touch with Summate Learning about courses, the Summate Circle, teaching, careers or partnerships.",
-};
+export const metadata: Metadata = pageMeta({
+  title: "Contact Summate Learning",
+  description:
+    "Get in touch with Summate Learning about courses, the Summate Circle, teaching, careers or partnerships.",
+  path: "/contact",
+});
 
 export default function ContactPage({ searchParams }: { searchParams: { topic?: string } }) {
   const channels = [

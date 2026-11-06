@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
 import LegalPage, { type LegalSection } from "@/components/site/LegalPage";
 import { site } from "@/lib/siteContent";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
+  title: "Terms & Conditions",
   description: "The terms that apply when you use the Summate Learning website and enrol in our programs.",
-};
+  path: "/terms",
+});
 
 // DRAFT — have this reviewed by a legal adviser before launch.
 const sections: LegalSection[] = [

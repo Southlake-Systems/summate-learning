@@ -1,60 +1,14 @@
-"use client";
+import type { Metadata } from "next";
+import HomeView from "@/components/home/HomeView";
+import { pageMeta } from "@/lib/seo";
 
-import { useState } from "react";
-import LoadingScreen from "@/components/ui/LoadingScreen";
-import Choreography, { BackToTop, ScrollProgress } from "@/components/ui/Choreography";
-import {
-  Hero,
- // LogoMarquee,
-  WhySummate,
-  TrackCatalog,
-  PersonaCards,
-  ProgramSpotlight,
-  BatchBenefits,
-  ToolStrip,
- // StepPath,
- // FoundersNote,
- // MentorCards,
-  FinalCta,
-} from "@/components/marketing/sections";
-import SiteNav from "@/components/SiteNav";
-import SiteFooter from "@/components/SiteFooter";
+export const metadata: Metadata = pageMeta({
+  title: "AI-Augmented Full-Stack Developer Course | Summate Learning",
+  description:
+    "A 12-week live online full-stack developer course in India. Build one real project, practise Git, testing and deployment, and use AI as a tool — not a crutch. Batch 1 starts January 2027.",
+  path: "/",
+});
 
 export default function HomePage() {
-  const [isLoaded, setIsLoaded] = useState(false);
-
-  return (
-    <>
-      {/* Animated Screen with your Logo */}
-      <LoadingScreen
-        logoSrc="/logo.png"
-        minDuration={800}
-        onComplete={() => setIsLoaded(true)}
-      />
-
-      {/* Main Content: Fades in smoothly once loading completes */}
-      <main
-        className={`transition-opacity duration-700 ease-out ${
-          isLoaded ? "opacity-100" : "opacity-0"
-        }`}
-      >
-        <Choreography ready={isLoaded} />
-        <ScrollProgress />
-        <SiteNav />
-        <Hero />
-        <WhySummate />
-        <TrackCatalog />
-        <PersonaCards />
-        <ProgramSpotlight />
-        <BatchBenefits />
-        <ToolStrip />
-        {/* <StepPath /> */}
-        {/* <FoundersNote /> */}
-        {/* <MentorCards /> */}
-        <FinalCta />
-        <SiteFooter />
-        <BackToTop />
-      </main>
-    </>
-  );
+  return <HomeView />;
 }
