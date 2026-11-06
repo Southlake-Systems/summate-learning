@@ -13,26 +13,26 @@ export const metadata: Metadata = pageMeta({
   path: "/circle",
 });
 
-const pathColors = ["#1D5F6E", "#3C8B90", "#55C9B8", "#F08A6B", "#EF6F51"];
+const pathColors = ["#1C5E6E", "#24707F", "#9FDEAF", "#F7C879", "#F2A93B"];
 
 export default function CirclePage() {
   return (
     <PageShell>
       {/* Hero */}
-      <section className="relative isolate overflow-hidden bg-[#0F2A30] text-white">
+      <section className="relative isolate overflow-hidden bg-[#0F2A31] text-white">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 -z-10"
           style={{
             background:
-              "radial-gradient(700px 500px at 85% 40%, rgba(85,201,184,.35), transparent 65%), radial-gradient(600px 400px at 0% 100%, rgba(29,95,110,.35), transparent 60%)",
+              "radial-gradient(700px 500px at 85% 40%, rgba(159, 222, 175,.35), transparent 65%), radial-gradient(600px 400px at 0% 100%, rgba(28, 94, 110,.35), transparent 60%)",
           }}
         />
         <div className="mx-auto max-w-7xl px-6 pb-16 pt-10 lg:px-8 lg:pb-20 lg:pt-14">
           <Breadcrumbs crumbs={[{ label: "Summate Circle" }]} onDark />
           <div className="mt-10 grid items-center gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
             <div>
-              <p className="text-[15px] font-semibold text-[#A8E2D8]">{circle.kicker}</p>
+              <p className="text-[15px] font-semibold text-[#B7E8C6]">{circle.kicker}</p>
               <h1 className="mt-4 font-display text-[52px] font-bold leading-[0.98] tracking-[-0.045em] sm:text-[72px] lg:text-[88px]">
                 Summate Circle
               </h1>
@@ -66,7 +66,7 @@ export default function CirclePage() {
       {/* Statement */}
       <section className="border-b border-slate-200 bg-white py-16 lg:py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <p className="max-w-[30ch] font-display text-[30px] font-bold leading-[1.15] tracking-[-0.03em] text-[#0F2A30] sm:text-[44px] lg:text-[52px]">
+          <p className="max-w-[30ch] font-display text-[30px] font-bold leading-[1.15] tracking-[-0.03em] text-[#1C5E6E] sm:text-[44px] lg:text-[52px]">
             {circle.statement}
           </p>
         </div>
@@ -78,8 +78,8 @@ export default function CirclePage() {
         <div className="mt-12 grid gap-px overflow-hidden rounded-3xl border border-slate-200 bg-slate-200 sm:grid-cols-2 lg:grid-cols-4">
           {circle.pillars.map((p) => (
             <article key={p.key} className="bg-white p-7">
-              <h3 className="font-display text-2xl font-bold tracking-[-0.02em] text-[#0F2A30]">{p.title}</h3>
-              <p className="mt-3 text-[15px] font-semibold leading-[1.5] text-[#1D5F6E]">{p.lead}</p>
+              <h3 className="font-display text-2xl font-bold tracking-[-0.02em] text-[#1C5E6E]">{p.title}</h3>
+              <p className="mt-3 text-[15px] font-semibold leading-[1.5] text-[#1C5E6E]">{p.lead}</p>
               <p className="mt-2 text-[15px] leading-[1.65] text-slate-600">{p.body}</p>
             </article>
           ))}
@@ -126,9 +126,9 @@ export default function CirclePage() {
                 key={r.title}
                 className="grid gap-2 rounded-2xl border border-slate-200 bg-white p-6 sm:grid-cols-[150px_1fr] sm:gap-6"
               >
-                <p className="text-[14px] font-semibold text-[#23857A]">{r.cadence}</p>
+                <p className="text-[14px] font-semibold text-[#1C5E6E]">{r.cadence}</p>
                 <div>
-                  <h3 className="font-display text-xl font-bold tracking-[-0.015em] text-[#0F2A30]">{r.title}</h3>
+                  <h3 className="font-display text-xl font-bold tracking-[-0.015em] text-[#1C5E6E]">{r.title}</h3>
                   <p className="mt-1.5 text-[15px] leading-[1.65] text-slate-600">{r.body}</p>
                 </div>
               </li>
@@ -149,21 +149,21 @@ export default function CirclePage() {
           </div>
 
           <figure className="relative">
-            <div className="rounded-[28px] border border-slate-200 bg-white p-7 shadow-[0_30px_80px_rgba(15,42,48,0.10)] sm:p-8">
+            <div className="rounded-[28px] border border-slate-200 bg-white p-7 shadow-[0_30px_80px_rgba(15, 42, 49,0.10)] sm:p-8">
               <div className="flex items-center gap-4">
-                <span aria-hidden="true" className="flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-[#C24A2B] to-[#D9573A] font-display text-lg font-bold text-white">
+                <span aria-hidden="true" className="flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-[#F2A93B] to-[#D98A1F] font-display text-lg font-bold text-white">
                   AK
                 </span>
                 <div>
-                  <p className="font-display text-lg font-bold text-[#0F2A30]">A Circle member</p>
+                  <p className="font-display text-lg font-bold text-[#1C5E6E]">A Circle member</p>
                   <p className="text-[14px] text-slate-500">Batch 1, Technology circle</p>
                 </div>
               </div>
               <dl className="mt-6 space-y-3">
                 {circle.profilePrompts.map((p) => (
-                  <div key={p.label} className="rounded-2xl bg-[#F6FAFA] px-5 py-4">
-                    <dt className="text-[13px] font-semibold text-[#1D5F6E]">{p.label}</dt>
-                    <dd className="mt-0.5 text-[15px] font-medium text-[#0F2A30]">{p.example}</dd>
+                  <div key={p.label} className="rounded-2xl bg-[#F4FAF7] px-5 py-4">
+                    <dt className="text-[13px] font-semibold text-[#1C5E6E]">{p.label}</dt>
+                    <dd className="mt-0.5 text-[15px] font-medium text-[#0F2A31]">{p.example}</dd>
                   </div>
                 ))}
               </dl>
@@ -180,7 +180,7 @@ export default function CirclePage() {
             {circle.challenges.map((c) => (
               <li key={c.name} className="grid gap-1 py-6 sm:grid-cols-[1fr_auto] sm:items-baseline sm:gap-8">
                 <div>
-                  <h3 className="font-display text-xl font-bold tracking-[-0.015em] text-[#0F2A30]">{c.name}</h3>
+                  <h3 className="font-display text-xl font-bold tracking-[-0.015em] text-[#1C5E6E]">{c.name}</h3>
                   <p className="mt-1 text-[16px] text-slate-600">{c.body}</p>
                 </div>
                 <p className="text-[14px] font-semibold text-slate-500">{c.length}</p>
@@ -198,7 +198,7 @@ export default function CirclePage() {
           {circle.mentorship.map((m, i) => (
             <li key={m.name} className={`rounded-3xl border border-white/10 bg-white/[0.04] p-7 ${["", "md:mt-6", "md:mt-12"][i]}`}>
               <h3 className="font-display text-2xl font-bold tracking-[-0.02em] text-white">{m.name}</h3>
-              <p className="mt-4 flex flex-wrap items-center gap-2 text-[14px] font-semibold text-[#A8E2D8]">
+              <p className="mt-4 flex flex-wrap items-center gap-2 text-[14px] font-semibold text-[#B7E8C6]">
                 <span>{m.pair[0]}</span>
                 <ArrowLeftRight size={15} aria-label="with" />
                 <span>{m.pair[1]}</span>
@@ -225,12 +225,12 @@ export default function CirclePage() {
               />
               <span>
                 <span className="block text-[13px] font-semibold text-slate-400">Step {i + 1}</span>
-                <span className="block font-display text-2xl font-bold tracking-[-0.02em] text-[#0F2A30]">{step}</span>
+                <span className="block font-display text-2xl font-bold tracking-[-0.02em] text-[#1C5E6E]">{step}</span>
               </span>
             </li>
           ))}
         </ol>
-        <p className="mt-12 text-[17px] font-medium text-[#0F2A30]">{circle.pathClose}</p>
+        <p className="mt-12 text-[17px] font-medium text-[#0F2A31]">{circle.pathClose}</p>
       </Section>
 
       <CtaBand

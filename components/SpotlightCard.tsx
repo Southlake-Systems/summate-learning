@@ -37,18 +37,18 @@ type Settings = {
 
 const THEMES: Record<'dark' | 'light', Palette> = {
   dark: {
-    surface: '#111111',
+    surface: '#0F2A31',
     border: 'rgba(255, 255, 255, 0.08)',
     shadow: '0 24px 48px -24px rgba(0, 0, 0, 0.6)',
-    light: '#ffffff',
+    light: '#FFFFFF',
     fill: 1,
     edge: 1
   },
   light: {
-    surface: '#ffffff',
-    border: 'rgba(24, 24, 27, 0.1)',
-    shadow: '0 1px 2px rgba(24, 24, 27, 0.04), 0 18px 40px -20px rgba(24, 24, 27, 0.16)',
-    light: '#18181b',
+    surface: '#FFFFFF',
+    border: 'rgba(15, 42, 49, 0.1)',
+    shadow: '0 1px 2px rgba(15, 42, 49, 0.04), 0 18px 40px -20px rgba(15, 42, 49, 0.16)',
+    light: '#0F2A31',
     fill: 0.28,
     edge: 0.7
   }

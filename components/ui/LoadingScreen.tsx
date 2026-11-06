@@ -56,7 +56,7 @@ export default function LoadingScreen({
 
         {/* Minimal Linear Indeterminate Accent Line */}
         <div className="mt-8 h-[2px] w-36 overflow-hidden rounded-full bg-slate-100">
-          <div className="h-full w-1/2 rounded-full bg-gradient-to-r from-[#1D5F6E] via-[#55C9B8] to-[#9FDEAF] animate-[shimmer_1.2s_infinite_ease-in-out]" />
+          <div className="h-full w-1/2 rounded-full bg-gradient-to-r from-[#1C5E6E] via-[#9FDEAF] to-[#9FDEAF] animate-[shimmer_1.2s_infinite_ease-in-out]" />
         </div>
       </div>
     </aside>

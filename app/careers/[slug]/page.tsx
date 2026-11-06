@@ -46,7 +46,7 @@ export function generateMetadata({ params }: { params: Params }): Metadata {
 function Block({ title, children }: { title: string; children: ReactNode }) {
   return (
     <section>
-      <h2 className="font-display text-[22px] font-bold tracking-[-0.02em] text-[#0F2A30] sm:text-[24px]">
+      <h2 className="font-display text-[22px] font-bold tracking-[-0.02em] text-[#1C5E6E] sm:text-[24px]">
         {title}
       </h2>
       <div className="mt-4">{children}</div>
@@ -123,18 +123,18 @@ export default function RolePage({ params }: { params: Params }) {
       >
         <div className="flex flex-wrap items-center gap-x-6 gap-y-3 text-[14px] text-slate-600">
           <span className="inline-flex items-center gap-2">
-            <MapPin size={15} strokeWidth={1.9} aria-hidden="true" className="text-[#1D5F6E]" />
+            <MapPin size={15} strokeWidth={1.9} aria-hidden="true" className="text-[#1C5E6E]" />
             {role.location}
           </span>
           <span className="inline-flex items-center gap-2">
-            <Briefcase size={15} strokeWidth={1.9} aria-hidden="true" className="text-[#1D5F6E]" />
+            <Briefcase size={15} strokeWidth={1.9} aria-hidden="true" className="text-[#1C5E6E]" />
             {role.employment}
           </span>
           <span className="inline-flex items-center gap-2">
-            <CalendarClock size={15} strokeWidth={1.9} aria-hidden="true" className="text-[#1D5F6E]" />
+            <CalendarClock size={15} strokeWidth={1.9} aria-hidden="true" className="text-[#1C5E6E]" />
             Joining {role.joining.toLowerCase()}
           </span>
-          <span className="inline-flex items-center rounded-full bg-[#EAF4F5] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-[#1D5F6E]">
+          <span className="inline-flex items-center rounded-full bg-[#E9F4EF] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-[#1C5E6E]">
             {role.area}
           </span>
         </div>
@@ -142,13 +142,13 @@ export default function RolePage({ params }: { params: Params }) {
         <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-3">
           <a
             href={mailHref}
-            className="inline-flex h-12 items-center gap-2 rounded-full bg-[#C24A2B] px-6 text-[15px] font-semibold text-white shadow-[0_8px_24px_rgba(239,111,81,0.28)] transition-colors duration-200 hover:bg-[#A93E1C]"
+            className="inline-flex h-12 items-center gap-2 rounded-full bg-[#F2A93B] px-6 text-[15px] font-semibold text-[#0F2A31] shadow-[0_8px_24px_rgba(242, 169, 59,0.28)] transition-colors duration-200 hover:bg-[#D98A1F]"
           >
             <Mail size={16} strokeWidth={2} aria-hidden="true" />
             Email your application
           </a>
           <span className="text-[13px] text-slate-500">
-            Subject line: <span className="font-semibold text-[#0F2A30]">{role.subject}</span>
+            Subject line: <span className="font-semibold text-[#0F2A31]">{role.subject}</span>
           </span>
         </div>
       </PageHero>
@@ -165,7 +165,7 @@ export default function RolePage({ params }: { params: Params }) {
                         size={16}
                         strokeWidth={2.2}
                         aria-hidden="true"
-                        className="mt-[7px] shrink-0 text-[#2A7A88]"
+                        className="mt-[7px] shrink-0 text-[#1C5E6E]"
                       />
                       {item}
                     </li>
@@ -181,7 +181,7 @@ export default function RolePage({ params }: { params: Params }) {
                         size={16}
                         strokeWidth={2.4}
                         aria-hidden="true"
-                        className="mt-[7px] shrink-0 text-[#55C9B8]"
+                        className="mt-[7px] shrink-0 text-[#1C5E6E]"
                       />
                       {item}
                     </li>
@@ -198,7 +198,7 @@ export default function RolePage({ params }: { params: Params }) {
                           size={15}
                           strokeWidth={1.9}
                           aria-hidden="true"
-                          className="mt-[8px] shrink-0 text-[#EF6F51]"
+                          className="mt-[8px] shrink-0 text-[#A35F00]"
                         />
                         {item}
                       </li>
@@ -213,7 +213,7 @@ export default function RolePage({ params }: { params: Params }) {
                     {role.competencies.map((skill) => (
                       <li
                         key={skill}
-                        className="rounded-full border border-slate-200 bg-[#F6FAFA] px-3.5 py-1.5 text-[13px] font-medium text-[#0F2A30]"
+                        className="rounded-full border border-slate-200 bg-[#F4FAF7] px-3.5 py-1.5 text-[13px] font-medium text-[#0F2A31]"
                       >
                         {skill}
                       </li>
@@ -234,17 +234,17 @@ export default function RolePage({ params }: { params: Params }) {
 
           <aside className="lg:col-span-4">
             <div className="lg:sticky lg:top-28">
-              <div className="rounded-3xl border border-slate-200 bg-[#F6FAFA] p-7">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-[#1D5F6E]">
+              <div className="rounded-3xl border border-slate-200 bg-[#F4FAF7] p-7">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-[#1C5E6E]">
                   Apply
                 </p>
-                <p className="mt-3 font-display text-[19px] font-bold leading-snug tracking-[-0.01em] text-[#0F2A30]">
+                <p className="mt-3 font-display text-[19px] font-bold leading-snug tracking-[-0.01em] text-[#1C5E6E]">
                   {role.title}
                 </p>
 
                 <a
                   href={mailHref}
-                  className="mt-5 flex w-full items-center justify-center gap-2 rounded-full bg-[#C24A2B] px-5 py-3 text-[15px] font-semibold text-white shadow-[0_8px_24px_rgba(239,111,81,0.28)] transition-colors hover:bg-[#A93E1C]"
+                  className="mt-5 flex w-full items-center justify-center gap-2 rounded-full bg-[#F2A93B] px-5 py-3 text-[15px] font-semibold text-[#0F2A31] shadow-[0_8px_24px_rgba(242, 169, 59,0.28)] transition-colors hover:bg-[#D98A1F]"
                 >
                   <Mail size={16} strokeWidth={2} aria-hidden="true" />
                   Email your application
@@ -252,22 +252,22 @@ export default function RolePage({ params }: { params: Params }) {
 
                 <p className="mt-4 text-[13px] leading-[1.6] text-slate-500">
                   Subject line:{" "}
-                  <span className="font-semibold text-[#0F2A30]">{role.subject}</span>
+                  <span className="font-semibold text-[#0F2A31]">{role.subject}</span>
                 </p>
 
                 <dl className="mt-6 space-y-2.5 border-t border-slate-200 pt-5 text-[13px]">
                   <div className="flex items-start gap-2.5">
-                    <MapPin size={15} strokeWidth={1.9} aria-hidden="true" className="mt-0.5 shrink-0 text-[#1D5F6E]" />
+                    <MapPin size={15} strokeWidth={1.9} aria-hidden="true" className="mt-0.5 shrink-0 text-[#1C5E6E]" />
                     <dt className="sr-only">Location</dt>
                     <dd className="text-slate-600">{role.location}</dd>
                   </div>
                   <div className="flex items-start gap-2.5">
-                    <Briefcase size={15} strokeWidth={1.9} aria-hidden="true" className="mt-0.5 shrink-0 text-[#1D5F6E]" />
+                    <Briefcase size={15} strokeWidth={1.9} aria-hidden="true" className="mt-0.5 shrink-0 text-[#1C5E6E]" />
                     <dt className="sr-only">Employment</dt>
                     <dd className="text-slate-600">{role.employment}</dd>
                   </div>
                   <div className="flex items-start gap-2.5">
-                    <CalendarClock size={15} strokeWidth={1.9} aria-hidden="true" className="mt-0.5 shrink-0 text-[#1D5F6E]" />
+                    <CalendarClock size={15} strokeWidth={1.9} aria-hidden="true" className="mt-0.5 shrink-0 text-[#1C5E6E]" />
                     <dt className="sr-only">Joining</dt>
                     <dd className="text-slate-600">Joining {role.joining.toLowerCase()}</dd>
                   </div>

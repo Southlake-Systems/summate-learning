@@ -74,10 +74,10 @@ export default function SiteFooter() {
   const { email, phone, address } = site;
 
   return (
-    <footer className="relative overflow-hidden border-t border-slate-200 bg-[#F6FAFA] text-slate-600">
+    <footer className="relative overflow-hidden border-t border-white/10 bg-[#0F2A31] text-[#A9BDB8]">
 
       {/* Subtle top transition */}
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#1D5F6E]/30 to-transparent" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#9FDEAF]/40 to-transparent" />
 
       <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8 lg:py-14">
 
@@ -96,7 +96,7 @@ export default function SiteFooter() {
               className="inline-flex"
             >
               <Image
-                src="/logo.png"
+                src="/logo-light.png"
                 alt="Summate Learning"
                 width={210}
                 height={70}
@@ -104,16 +104,16 @@ export default function SiteFooter() {
               />
             </Link>
 
-            <p className="mt-4 max-w-sm text-sm leading-6 text-slate-500">
+            <p className="mt-4 max-w-sm text-sm leading-6 text-[#A9BDB8]">
               Learning designed to take you beyond what you already know —
               into what you can build, apply and become capable of.
             </p>
 
-            <div className="mt-4 flex items-start gap-2.5 text-[13px] leading-6 text-slate-500">
+            <div className="mt-4 flex items-start gap-2.5 text-[13px] leading-6 text-[#A9BDB8]">
               <Icon
                 name="MapPin"
                 size={15}
-                className="mt-1 shrink-0 text-[#1D5F6E]"
+                className="mt-1 shrink-0 text-[#9FDEAF]"
               />
 
               <address className="not-italic">
@@ -129,7 +129,7 @@ export default function SiteFooter() {
                 adding height to the footer. */}
             {site?.social?.length ? (
               <div className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-2">
-                <h3 className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#0F2A30]">
+                <h3 className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#F4FAF7]">
                   Follow us
                 </h3>
 
@@ -142,7 +142,7 @@ export default function SiteFooter() {
                         title={social.label}
                         target="_blank"
                         rel="noreferrer"
-                        className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-[#1D5F6E] shadow-[0_1px_2px_rgba(15,42,48,0.05)] transition-all duration-200 hover:-translate-y-0.5 hover:border-transparent hover:bg-[#1D5F6E] hover:text-white hover:shadow-[0_10px_22px_rgba(29,95,110,0.25)]"
+                        className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-white/5 text-[#9FDEAF] transition-all duration-200 hover:-translate-y-0.5 hover:border-transparent hover:bg-[#9FDEAF] hover:text-[#0F2A31]"
                       >
                         <Icon
                           name={social.label}
@@ -166,7 +166,7 @@ export default function SiteFooter() {
             {columns.map((column) => (
               <div key={column.title}>
 
-                <h3 className="text-xs font-bold uppercase tracking-[0.14em] text-[#0F2A30]">
+                <h3 className="text-xs font-bold uppercase tracking-[0.14em] text-[#F4FAF7]">
                   {column.title}
                 </h3>
 
@@ -177,7 +177,7 @@ export default function SiteFooter() {
 
                       <Link
                         href={link.href}
-                        className="group inline-flex items-center gap-1 text-sm text-slate-500 transition-colors hover:text-[#1D5F6E]"
+                        className="group inline-flex items-center gap-1 text-sm text-[#A9BDB8] transition-colors hover:text-[#F4FAF7]"
                       >
                         <span>{link.label}</span>
 
@@ -197,25 +197,25 @@ export default function SiteFooter() {
             </div>
 
             {/* FINAL CTA — a slim strip rather than a second hero block. */}
-            <div className="flex flex-col gap-4 rounded-2xl border border-[#1D5F6E]/10 bg-white px-5 py-4 shadow-[0_12px_40px_rgba(15,42,48,0.04)] sm:flex-row sm:items-center sm:justify-between sm:px-6">
+            <div className="flex flex-col gap-4 rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-6">
 
               <div className="min-w-0">
-                <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#1D5F6E]">
+                <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#9FDEAF]">
                   Batch 01
                 </p>
 
-                <p className="mt-1 text-[15px] font-extrabold tracking-tight text-[#0F2A30]">
+                <p className="mt-1 text-[15px] font-extrabold tracking-tight text-[#F4FAF7]">
                   Your next chapter can start here.
                 </p>
 
-                <p className="mt-0.5 text-xs leading-5 text-slate-500">
+                <p className="mt-0.5 text-xs leading-5 text-[#A9BDB8]">
                   Turn what you have learned into something you can use, build and take forward.
                 </p>
               </div>
 
               <Link
                 href={APPLY_URL}
-                className="group inline-flex h-10 shrink-0 items-center gap-2 self-start rounded-full bg-[#C24A2B] px-5 text-sm font-bold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#A93E1C] sm:self-auto"
+                className="group inline-flex h-10 shrink-0 items-center gap-2 self-start rounded-full bg-[#F2A93B] px-5 text-sm font-bold text-[#0F2A31] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#D98A1F] sm:self-auto"
               >
                 Apply for Batch 1
 
@@ -232,7 +232,7 @@ export default function SiteFooter() {
             BOTTOM BAR — copyright, contact and sign-off share
             one line.
         -------------------------------------------------- */}
-        <div className="mt-8 flex flex-col gap-3 border-t border-slate-200 pt-5 text-xs text-slate-600 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-8 flex flex-col gap-3 border-t border-white/10 pt-5 text-xs text-[#A9BDB8] sm:flex-row sm:items-center sm:justify-between">
 
           <p>© 2026 Summate Learning. All rights reserved.</p>
 
@@ -240,21 +240,21 @@ export default function SiteFooter() {
 
             <a
               href={`mailto:${email}`}
-              className="transition-colors hover:text-[#1D5F6E]"
+              className="text-[#A9BDB8] transition-colors hover:text-[#F4FAF7]"
             >
               {email}
             </a>
 
-            <span aria-hidden="true" className="text-slate-300">·</span>
+            <span aria-hidden="true" className="text-white/25">·</span>
 
             <a
               href={`tel:${phone.replace(/\s/g, "")}`}
-              className="transition-colors hover:text-[#1D5F6E]"
+              className="text-[#A9BDB8] transition-colors hover:text-[#F4FAF7]"
             >
               {phone}
             </a>
 
-            <span aria-hidden="true" className="hidden text-slate-300 sm:inline">·</span>
+            <span aria-hidden="true" className="hidden text-white/25 sm:inline">·</span>
 
             <p className="font-medium tracking-[0.08em]">Learn. Apply. Achieve.</p>
           </div>

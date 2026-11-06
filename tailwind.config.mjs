@@ -9,14 +9,14 @@ export default {
     extend: {
       colors: {
         summate: {
-          teal: "#1D5F6E",
-          aqua: "#55C9B8",
-          coral: "#EF6F51",
-          amber: "#F4B942",
+          teal: "#1C5E6E",
+          aqua: "#9FDEAF",
+          coral: "#F2A93B",
+          amber: "#F2A93B",
           mint: "#9FDEAF",
-          dark: "#0F2A30",
-          elevated: "#15363E",
-          surface: "#102C33",
+          dark: "#0F2A31",
+          elevated: "#14454F",
+          surface: "#123F49",
         },
       },
       zIndex: {

@@ -91,11 +91,11 @@ export default function CareersPage() {
                 <a
                   href={openApplicationHref}
                   aria-label={`${a.title} — send us your profile`}
-                  className="group block h-full rounded-3xl transition-transform duration-300 ease-out hover:-translate-y-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1D5F6E]"
+                  className="group block h-full rounded-3xl transition-transform duration-300 ease-out hover:-translate-y-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1C5E6E]"
                 >
                   <SpotlightCard
                     theme="light"
-                    spotlightColor="#2A7A88"
+                    spotlightColor="#1C5E6E"
                     intensity={0.26}
                     spotlightSize={300}
                     softness={0.78}
@@ -104,25 +104,25 @@ export default function CareersPage() {
                     className="flex h-full flex-col"
                   >
                     <ShineBorder
-                      shineColor={["#55C9B8", "#2A7A88", "#EF6F51"]}
+                      shineColor={["#9FDEAF", "#1C5E6E", "#F2A93B"]}
                       borderWidth={1.5}
                       duration={14}
                       style={{ animationDelay: `${(i % 3) * 1.6}s` }}
                     />
 
                     <div className="flex items-start justify-between gap-4">
-                      <span className="grid h-12 w-12 place-items-center rounded-2xl bg-[#EAF4F5] text-[#1D5F6E] transition-transform duration-300 group-hover:-rotate-6 group-hover:scale-105">
+                      <span className="grid h-12 w-12 place-items-center rounded-2xl bg-[#E9F4EF] text-[#1C5E6E] transition-transform duration-300 group-hover:-rotate-6 group-hover:scale-105">
                         <Icon size={22} strokeWidth={1.9} aria-hidden="true" />
                       </span>
                       <span
                         aria-hidden="true"
-                        className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-[#E3EBEC] text-[#1D5F6E]/55 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:border-[#55C9B8] group-hover:bg-[#EAF4F5] group-hover:text-[#1D5F6E]"
+                        className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-[#DCEBE4] text-[#1C5E6E]/55 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:border-[#9FDEAF] group-hover:bg-[#E9F4EF] group-hover:text-[#1C5E6E]"
                       >
                         <ArrowUpRight size={16} strokeWidth={2.2} />
                       </span>
                     </div>
 
-                    <h3 className="mt-6 font-display text-[19px] font-bold tracking-[-0.01em] text-[#0F2A30]">
+                    <h3 className="mt-6 font-display text-[19px] font-bold tracking-[-0.01em] text-[#1C5E6E]">
                       {a.title}
                     </h3>
                     <p className="mt-2 text-[15px] leading-[1.65] text-slate-600">{a.body}</p>
@@ -136,26 +136,26 @@ export default function CareersPage() {
           <li data-reveal="pop" className="lg:col-span-2">
             <SpotlightCard
               theme="dark"
-              spotlightColor="#55C9B8"
+              spotlightColor="#9FDEAF"
               intensity={0.3}
               spotlightSize={420}
               borderGlow={0.5}
               proximity={0}
               style={
                 {
-                  "--spotlight-card-surface": "#0F2A30",
+                  "--spotlight-card-surface": "#0F2A31",
                   "--spotlight-card-border": "rgba(255,255,255,0.14)",
                   "--spotlight-card-shadow": "0 26px 50px -28px rgba(6,24,29,0.7)",
                 } as CSSProperties
               }
               className="flex h-full flex-col justify-between gap-7"
             >
-              <ShineBorder shineColor={["#EF6F51", "#55C9B8"]} borderWidth={1.5} duration={9} />
+              <ShineBorder shineColor={["#F2A93B", "#9FDEAF"]} borderWidth={1.5} duration={9} />
 
               {/* Soft brand glow, so the tile reads as a destination rather than a gap in the grid. */}
               <span
                 aria-hidden="true"
-                className="pointer-events-none absolute -right-20 -top-24 h-64 w-64 rounded-full bg-[#55C9B8]/15 blur-3xl"
+                className="pointer-events-none absolute -right-20 -top-24 h-64 w-64 rounded-full bg-[#9FDEAF]/15 blur-3xl"
               />
               <span
                 aria-hidden="true"
@@ -165,7 +165,7 @@ export default function CareersPage() {
               </span>
 
               <div className="relative">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#8FDACD]">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#B7E8C6]">
                   Open application
                 </p>
                 <h3 className="mt-3 max-w-[22ch] font-display text-[26px] font-bold leading-[1.15] tracking-[-0.02em] text-white">
@@ -178,7 +178,7 @@ export default function CareersPage() {
 
               <a
                 href={openApplicationHref}
-                className="group/link relative inline-flex w-fit items-center gap-2 rounded-full bg-white px-5 py-2.5 text-[14px] font-semibold text-[#0F2A30] transition-colors duration-200 hover:bg-[#55C9B8] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+                className="group/link relative inline-flex w-fit items-center gap-2 rounded-full bg-white px-5 py-2.5 text-[14px] font-semibold text-[#0F2A31] transition-colors duration-200 hover:bg-[#9FDEAF] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
               >
                 {careers.profile.cta.label}
                 <ArrowUpRight
@@ -197,8 +197,8 @@ export default function CareersPage() {
         <Split title="What we look for" lede={careers.valuesNote}>
           <ul className="grid gap-x-8 sm:grid-cols-2">
             {careers.values.map((v) => (
-              <li key={v} className="flex items-center gap-3 border-b border-slate-200 py-4 text-[17px] font-medium text-[#0F2A30]">
-                <Check size={18} strokeWidth={2.4} aria-hidden="true" className="shrink-0 text-[#55C9B8]" />
+              <li key={v} className="flex items-center gap-3 border-b border-slate-200 py-4 text-[17px] font-medium text-[#0F2A31]">
+                <Check size={18} strokeWidth={2.4} aria-hidden="true" className="shrink-0 text-[#1C5E6E]" />
                 {v}
               </li>
             ))}
@@ -220,7 +220,7 @@ export default function CareersPage() {
               <li key={role.slug} id={role.slug} data-reveal="rise" className="scroll-mt-28">
                 <SpotlightCard
                   theme="light"
-                  spotlightColor="#2A7A88"
+                  spotlightColor="#1C5E6E"
                   intensity={0.2}
                   spotlightSize={420}
                   softness={0.8}
@@ -229,20 +229,20 @@ export default function CareersPage() {
                   className="h-full"
                 >
                   <ShineBorder
-                    shineColor={["#55C9B8", "#2A7A88"]}
+                    shineColor={["#9FDEAF", "#1C5E6E"]}
                     borderWidth={1.5}
                     duration={16}
                   />
 
                   <div className="relative grid gap-9 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-14">
                     <div className="flex flex-col">
-                      <span className="inline-flex w-fit items-center rounded-full bg-[#EAF4F5] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-[#1D5F6E]">
+                      <span className="inline-flex w-fit items-center rounded-full bg-[#E9F4EF] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-[#1C5E6E]">
                         {role.area}
                       </span>
-                      <h3 className="mt-4 font-display text-[26px] font-bold leading-[1.12] tracking-[-0.025em] text-[#0F2A30] sm:text-[30px]">
+                      <h3 className="mt-4 font-display text-[26px] font-bold leading-[1.12] tracking-[-0.025em] text-[#1C5E6E] sm:text-[30px]">
                         <Link
                           href={`/careers/${role.slug}`}
-                          className="transition-colors hover:text-[#1D5F6E] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1D5F6E]"
+                          className="transition-colors hover:text-[#1C5E6E] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1C5E6E]"
                         >
                           {role.title}
                         </Link>
@@ -254,17 +254,17 @@ export default function CareersPage() {
 
                       <dl className="mt-6 space-y-2.5 text-[14px]">
                         <div className="flex items-start gap-2.5">
-                          <MapPin size={16} strokeWidth={1.9} aria-hidden="true" className="mt-0.5 shrink-0 text-[#1D5F6E]" />
+                          <MapPin size={16} strokeWidth={1.9} aria-hidden="true" className="mt-0.5 shrink-0 text-[#1C5E6E]" />
                           <dt className="sr-only">Location</dt>
                           <dd className="text-slate-600">{role.location}</dd>
                         </div>
                         <div className="flex items-start gap-2.5">
-                          <Briefcase size={16} strokeWidth={1.9} aria-hidden="true" className="mt-0.5 shrink-0 text-[#1D5F6E]" />
+                          <Briefcase size={16} strokeWidth={1.9} aria-hidden="true" className="mt-0.5 shrink-0 text-[#1C5E6E]" />
                           <dt className="sr-only">Employment</dt>
                           <dd className="text-slate-600">{role.employment}</dd>
                         </div>
                         <div className="flex items-start gap-2.5">
-                          <CalendarClock size={16} strokeWidth={1.9} aria-hidden="true" className="mt-0.5 shrink-0 text-[#1D5F6E]" />
+                          <CalendarClock size={16} strokeWidth={1.9} aria-hidden="true" className="mt-0.5 shrink-0 text-[#1C5E6E]" />
                           <dt className="sr-only">Joining</dt>
                           <dd className="text-slate-600">Joining {role.joining.toLowerCase()}</dd>
                         </div>
@@ -274,7 +274,7 @@ export default function CareersPage() {
                         <ButtonLink href={`/careers/${role.slug}`}>View role</ButtonLink>
                         <a
                           href={`mailto:${site.careersEmail}?subject=${encodeURIComponent(role.subject)}`}
-                          className="group/mail inline-flex items-center gap-2 text-[14px] font-semibold text-[#1D5F6E] underline decoration-[#1D5F6E]/25 underline-offset-[5px] transition-colors hover:decoration-[#1D5F6E]"
+                          className="group/mail inline-flex items-center gap-2 text-[14px] font-semibold text-[#1C5E6E] underline decoration-[#1C5E6E]/25 underline-offset-[5px] transition-colors hover:decoration-[#1C5E6E]"
                         >
                           <Mail size={15} strokeWidth={1.9} aria-hidden="true" />
                           Email your application
@@ -282,7 +282,7 @@ export default function CareersPage() {
                       </div>
                       <p className="mt-3 text-[13px] leading-[1.6] text-slate-500">
                         Use the subject line{" "}
-                        <span className="font-semibold text-[#0F2A30]">{role.subject}</span>.
+                        <span className="font-semibold text-[#0F2A31]">{role.subject}</span>.
                       </p>
                     </div>
 
@@ -297,7 +297,7 @@ export default function CareersPage() {
                               size={16}
                               strokeWidth={2.4}
                               aria-hidden="true"
-                              className="mt-1 shrink-0 text-[#55C9B8]"
+                              className="mt-1 shrink-0 text-[#1C5E6E]"
                             />
                             {item}
                           </li>
@@ -307,7 +307,7 @@ export default function CareersPage() {
                       {role.lookingFor.length > 5 && (
                         <Link
                           href={`/careers/${role.slug}`}
-                          className="mt-4 inline-flex items-center gap-1.5 text-[13px] font-semibold text-[#1D5F6E] underline decoration-[#1D5F6E]/25 underline-offset-[5px] hover:decoration-[#1D5F6E]"
+                          className="mt-4 inline-flex items-center gap-1.5 text-[13px] font-semibold text-[#1C5E6E] underline decoration-[#1C5E6E]/25 underline-offset-[5px] hover:decoration-[#1C5E6E]"
                         >
                           See all {role.lookingFor.length} requirements
                           <ArrowRight size={14} strokeWidth={2.2} aria-hidden="true" />
@@ -323,7 +323,7 @@ export default function CareersPage() {
                             {role.competencies.map((skill) => (
                               <li
                                 key={skill}
-                                className="rounded-full border border-slate-200 bg-[#F6FAFA] px-3 py-1.5 text-[13px] font-medium text-[#0F2A30]"
+                                className="rounded-full border border-slate-200 bg-[#F4FAF7] px-3 py-1.5 text-[13px] font-medium text-[#0F2A31]"
                               >
                                 {skill}
                               </li>
@@ -339,7 +339,7 @@ export default function CareersPage() {
           </ul>
         ) : (
           <div className="mt-10 rounded-3xl border border-dashed border-slate-300 bg-white p-8 sm:p-10">
-            <p className="font-display text-2xl font-bold tracking-[-0.02em] text-[#0F2A30]">No roles are listed right now.</p>
+            <p className="font-display text-2xl font-bold tracking-[-0.02em] text-[#1C5E6E]">No roles are listed right now.</p>
             <p className="mt-3 max-w-[56ch] text-[16px] leading-[1.7] text-slate-600">
               We&apos;re still hiring as we grow. {careers.profile.body}
             </p>

@@ -69,16 +69,16 @@ const LIGHT = 'pointer-events-none absolute top-[-48px] left-[-48px] -z-1 h-[cal
 
 const THEMES: Record<StarBorderTheme, Palette> = {
   dark: {
-    surface: '#0c0c0f',
-    text: '#fafafa',
+    surface: '#0F2A31',
+    text: '#F7FAF8',
     track: 'rgba(255, 255, 255, 0.1)',
-    light: '#ffffff'
+    light: '#FFFFFF'
   },
   light: {
-    surface: '#ffffff',
-    text: '#18181b',
-    track: 'rgba(24, 24, 27, 0.12)',
-    light: '#18181b'
+    surface: '#FFFFFF',
+    text: '#0F2A31',
+    track: 'rgba(15, 42, 49, 0.12)',
+    light: '#0F2A31'
   }
 };
 

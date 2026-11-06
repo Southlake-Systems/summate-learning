@@ -36,13 +36,13 @@ export default function FounderPage() {
   return (
     <PageShell>
       {/* Hero */}
-      <section className="relative isolate overflow-hidden bg-[#0C2A31] text-white">
+      <section className="relative isolate overflow-hidden bg-[#123F49] text-white">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 -z-10"
           style={{
             backgroundImage:
-              "radial-gradient(60% 70% at 78% 40%, rgba(29,95,110,.55), transparent 70%), radial-gradient(40% 50% at 0% 0%, rgba(85,201,184,.12), transparent 70%)",
+              "radial-gradient(60% 70% at 78% 40%, rgba(28, 94, 110,.55), transparent 70%), radial-gradient(40% 50% at 0% 0%, rgba(159, 222, 175,.12), transparent 70%)",
           }}
         />
 
@@ -50,7 +50,7 @@ export default function FounderPage() {
           <div className="pb-6 lg:pb-36 lg:pt-6">
             <Breadcrumbs crumbs={[{ label: "About", href: "/about" }, { label: "Managing Director" }]} onDark />
 
-            <p className="mt-10 text-[16px] font-medium text-[#8FDACD] lg:mt-14">
+            <p className="mt-10 text-[16px] font-medium text-[#B7E8C6] lg:mt-14">
               {founder.name}, {founder.role}
             </p>
             <h1 className="mt-4 max-w-[17ch] font-display text-[40px] font-bold leading-[1.05] tracking-[-0.035em] sm:text-[54px] lg:text-[62px]">
@@ -63,7 +63,7 @@ export default function FounderPage() {
             <div className="mt-9 flex flex-wrap items-center gap-x-6 gap-y-4">
               <Link
                 href="#profile"
-                className="group inline-flex h-12 items-center gap-2 rounded-full bg-[#2A7A88] px-6 text-[15px] font-semibold text-white shadow-[0_10px_30px_rgba(42,122,136,.35)] transition-colors duration-200 hover:bg-white hover:text-[#0C2A31] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+                className="group inline-flex h-12 items-center gap-2 rounded-full bg-[#1C5E6E] px-6 text-[15px] font-semibold text-white shadow-[0_10px_30px_rgba(36, 112, 127,.35)] transition-colors duration-200 hover:bg-white hover:text-[#123F49] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
               >
                 Read his profile
                 <ArrowUpRight
@@ -83,7 +83,7 @@ export default function FounderPage() {
                 href={founder.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-[15px] font-semibold text-[#8FDACD] underline decoration-[#8FDACD]/40 underline-offset-[6px] transition-colors hover:text-white hover:decoration-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+                className="inline-flex items-center gap-2 text-[15px] font-semibold text-[#B7E8C6] underline decoration-[#B7E8C6]/40 underline-offset-[6px] transition-colors hover:text-white hover:decoration-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
               >
                 <Linkedin size={16} strokeWidth={2} aria-hidden="true" />
                 LinkedIn
@@ -99,11 +99,11 @@ export default function FounderPage() {
             {/* Backdrop blocks, echoing the brand's stacked shapes */}
             <div
               aria-hidden="true"
-              className="absolute bottom-0 left-[14%] right-0 top-[22%] rounded-t-[200px] bg-gradient-to-b from-[#2A7A88] to-[#1D5F6E]"
+              className="absolute bottom-0 left-[14%] right-0 top-[22%] rounded-t-[200px] bg-gradient-to-b from-[#1C5E6E] to-[#1C5E6E]"
             />
             <div
               aria-hidden="true"
-              className="absolute -right-3 top-[12%] h-[38%] w-[46%] rounded-tr-[120px] border-r-[14px] border-t-[14px] border-[#8FDACD]/70"
+              className="absolute -right-3 top-[12%] h-[38%] w-[46%] rounded-tr-[120px] border-r-[14px] border-t-[14px] border-[#B7E8C6]/70"
             />
             <Image
               src={founder.cutout}
@@ -120,7 +120,7 @@ export default function FounderPage() {
 
       {/* Highlights strip, overlapping the hero */}
       <div className="relative z-10 mx-auto -mt-10 max-w-7xl px-6 lg:-mt-16 lg:px-8">
-        <ul className="grid grid-cols-1 gap-px overflow-hidden rounded-[22px] bg-slate-200 min-[480px]:grid-cols-2 shadow-[0_24px_60px_-20px_rgba(12,42,49,.35)] lg:grid-cols-4">
+        <ul className="grid grid-cols-1 gap-px overflow-hidden rounded-[22px] bg-slate-200 min-[480px]:grid-cols-2 shadow-[0_24px_60px_-20px_rgba(15, 42, 49,.35)] lg:grid-cols-4">
           {founder.highlights.map(({ title, body }, i) => {
             const Icon = highlightIcons[i];
             return (
@@ -128,11 +128,11 @@ export default function FounderPage() {
                 key={title}
                 className="flex items-start gap-4 bg-white px-5 py-5 min-[480px]:flex-col min-[480px]:gap-3 min-[480px]:py-6 sm:flex-row sm:gap-4 sm:px-7 sm:py-7"
               >
-                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-[#E6F2F3] text-[#1D5F6E]">
+                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-[#E6F3EC] text-[#1C5E6E]">
                   <Icon size={20} strokeWidth={1.8} aria-hidden="true" />
                 </span>
                 <span>
-                  <span className="block font-display text-[17px] font-bold leading-tight tracking-[-0.01em] text-[#0C2A31] sm:text-[19px]">
+                  <span className="block font-display text-[17px] font-bold leading-tight tracking-[-0.01em] text-[#123F49] sm:text-[19px]">
                     {title}
                   </span>
                   <span className="mt-1 block text-[14px] leading-snug text-slate-600">{body}</span>
@@ -175,7 +175,7 @@ export default function FounderPage() {
                   {!last && (
                     <span
                       aria-hidden="true"
-                      className="absolute bottom-0 left-[5px] top-3 w-px bg-[#1D5F6E]/20 sm:left-[149px]"
+                      className="absolute bottom-0 left-[5px] top-3 w-px bg-[#1C5E6E]/20 sm:left-[149px]"
                     />
                   )}
                   <span
@@ -183,15 +183,15 @@ export default function FounderPage() {
                     className={
                       "absolute left-0 top-[7px] h-[11px] w-[11px] rounded-full border-2 sm:left-[144px] " +
                       (current
-                        ? "border-[#2A7A88] bg-[#2A7A88] ring-4 ring-[#2A7A88]/20"
-                        : "border-[#1D5F6E] bg-[#F6FAFA]")
+                        ? "border-[#1C5E6E] bg-[#1C5E6E] ring-4 ring-[#1C5E6E]/20"
+                        : "border-[#1C5E6E] bg-[#F4FAF7]")
                     }
                   />
-                  <p className="font-display text-[16px] font-bold tabular-nums text-[#1D5F6E] sm:text-right">
+                  <p className="font-display text-[16px] font-bold tabular-nums text-[#1C5E6E] sm:text-right">
                     {job.period}
                   </p>
                   <div className="sm:pl-12">
-                    <h3 className="font-display text-[21px] font-bold leading-snug tracking-[-0.015em] text-[#0C2A31]">
+                    <h3 className="font-display text-[21px] font-bold leading-snug tracking-[-0.015em] text-[#123F49]">
                       {job.title}
                     </h3>
                     <p className="mt-2 max-w-[62ch] text-[16px] leading-[1.7] text-slate-600">{job.body}</p>
@@ -201,7 +201,7 @@ export default function FounderPage() {
                           <li key={pt} className="flex gap-3 text-[15px] leading-[1.6] text-slate-700">
                             <span
                               aria-hidden="true"
-                              className="mt-[9px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#2A7A88]"
+                              className="mt-[9px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#1C5E6E]"
                             />
                             {pt}
                           </li>
@@ -224,8 +224,8 @@ export default function FounderPage() {
               const Icon = contributionIcons[i];
               return (
                 <div key={g.title} className="bg-white p-7">
-                  <Icon size={22} strokeWidth={1.8} aria-hidden="true" className="text-[#1D5F6E]" />
-                  <h3 className="mt-4 font-display text-[19px] font-bold leading-snug text-[#0C2A31]">{g.title}</h3>
+                  <Icon size={22} strokeWidth={1.8} aria-hidden="true" className="text-[#1C5E6E]" />
+                  <h3 className="mt-4 font-display text-[19px] font-bold leading-snug text-[#123F49]">{g.title}</h3>
                   <ul className="mt-3 grid gap-2">
                     {g.points.map((pt) => (
                       <li key={pt} className="text-[15px] leading-[1.6] text-slate-600">
@@ -251,8 +251,8 @@ export default function FounderPage() {
             <ul className="mt-8 divide-y divide-slate-200 border-y border-slate-200">
               {education.items.map((q) => (
                 <li key={q} className="flex items-center gap-4 py-5">
-                  <GraduationCap size={20} strokeWidth={1.8} aria-hidden="true" className="shrink-0 text-[#1D5F6E]" />
-                  <span className="font-display text-[19px] font-semibold text-[#0C2A31]">{q}</span>
+                  <GraduationCap size={20} strokeWidth={1.8} aria-hidden="true" className="shrink-0 text-[#1C5E6E]" />
+                  <span className="font-display text-[19px] font-semibold text-[#123F49]">{q}</span>
                 </li>
               ))}
             </ul>
@@ -263,20 +263,20 @@ export default function FounderPage() {
 
           <div className="lg:col-span-7">
             <H2>Awards and achievements</H2>
-            <div className="relative mt-8 overflow-hidden rounded-3xl bg-[#0C2A31] p-8 text-white sm:p-10">
+            <div className="relative mt-8 overflow-hidden rounded-3xl bg-[#123F49] p-8 text-white sm:p-10">
               <div
                 aria-hidden="true"
-                className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-[#2A7A88]/40 blur-[70px]"
+                className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-[#1C5E6E]/40 blur-[70px]"
               />
               <div className="relative flex flex-wrap items-end justify-between gap-6">
                 <div>
-                  <Award size={30} strokeWidth={1.6} aria-hidden="true" className="text-[#8FDACD]" />
+                  <Award size={30} strokeWidth={1.6} aria-hidden="true" className="text-[#B7E8C6]" />
                   <h3 className="mt-5 font-display text-[30px] font-bold leading-tight tracking-[-0.02em] sm:text-[36px]">
                     {awards.main.title}
                   </h3>
                   <p className="mt-3 max-w-[44ch] text-[16px] leading-[1.65] text-slate-300">{awards.main.body}</p>
                 </div>
-                <span className="font-display text-[64px] font-bold leading-none tracking-[-0.04em] text-[#8FDACD]/80 sm:text-[80px]">
+                <span className="font-display text-[64px] font-bold leading-none tracking-[-0.04em] text-[#B7E8C6]/80 sm:text-[80px]">
                   {awards.main.year}
                 </span>
               </div>
@@ -284,7 +284,7 @@ export default function FounderPage() {
             <ul className="mt-6 grid gap-3">
               {awards.others.map((a) => (
                 <li key={a} className="flex gap-3 text-[16px] leading-[1.6] text-slate-700">
-                  <span aria-hidden="true" className="mt-[10px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#2A7A88]" />
+                  <span aria-hidden="true" className="mt-[10px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#1C5E6E]" />
                   {a}
                 </li>
               ))}
@@ -297,7 +297,7 @@ export default function FounderPage() {
       </Section>
 
       {/* Leadership at Summate */}
-      <section className="relative isolate overflow-hidden bg-[#E6F2F3] py-20 lg:py-28">
+      <section className="relative isolate overflow-hidden bg-[#E6F3EC] py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="flex items-center gap-4">
             <Image
@@ -307,9 +307,9 @@ export default function FounderPage() {
               height={56}
               className="h-14 w-14 rounded-full object-cover object-top"
             />
-            <h2 className="text-[16px] font-semibold text-[#1D5F6E]">Leadership at Summate Learning</h2>
+            <h2 className="text-[16px] font-semibold text-[#1C5E6E]">Leadership at Summate Learning</h2>
           </div>
-          <p className="mt-8 max-w-[24ch] font-display text-[32px] font-bold leading-[1.12] tracking-[-0.03em] text-[#0C2A31] sm:text-[44px] lg:text-[54px]">
+          <p className="mt-8 max-w-[24ch] font-display text-[32px] font-bold leading-[1.12] tracking-[-0.03em] text-[#123F49] sm:text-[44px] lg:text-[54px]">
             {leadershipLead}
           </p>
           <div className="mt-12 grid gap-6 text-[16px] leading-[1.75] text-slate-700 lg:grid-cols-3 lg:gap-10">
@@ -329,7 +329,7 @@ export default function FounderPage() {
             {founder.areas.map((a) => (
               <li
                 key={a}
-                className="rounded-full border border-slate-200 bg-white px-5 py-3 text-[15px] font-medium text-[#0C2A31]"
+                className="rounded-full border border-slate-200 bg-white px-5 py-3 text-[15px] font-medium text-[#123F49]"
               >
                 {a}
               </li>

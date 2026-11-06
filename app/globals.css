@@ -4,57 +4,57 @@
 @tailwind utilities;
 
 :root {
-  /* Brand palette — taken from the Summate Learning logo, plus two warm accents */
-  --su-primary: #1D5F6E;             /* Dark Teal — navbar, headings, footer, text accents */
-  --su-primary-active: #164B57;
-  --su-primary-disabled: #9DC3CA;
-  --su-primary-soft: #EAF4F5;        /* Teal Mist Tint */
+  /* Brand palette — teal for trust, amber for action, mint for progress */
+  --su-primary: #1C5E6E;             /* Teal — nav, headings, links, footer accents */
+  --su-primary-active: #14454F;
+  --su-primary-disabled: #A9CFC9;
+  --su-primary-soft: #E9F4EF;        /* Teal Mist Tint */
 
-  --su-secondary: #55C9B8;           /* Bright Aqua — icons, links, hover states, highlights */
-  --su-secondary-ink: #23857A;       /* Aqua dark enough for small text on white */
-  --su-secondary-soft: rgba(85, 201, 184, 0.12);
+  --su-secondary: #9FDEAF;           /* Mint — badges, progress fill, soft accents */
+  --su-secondary-ink: #1C5E6E;       /* Mint text needs teal to stay readable */
+  --su-secondary-soft: rgba(159, 222, 175, 0.18);
 
-  --su-coral: #EF6F51;               /* Coral — main calls to action, sale / alert badges */
-  --su-coral-active: #D9573A;
-  --su-coral-soft: rgba(239, 111, 81, 0.1);
+  --su-coral: #F2A93B;               /* Amber — primary calls to action */
+  --su-coral-active: #D98A1F;
+  --su-coral-soft: rgba(242, 169, 59, 0.14);
 
-  --su-amber: #F4B942;               /* Warm Amber — ratings, small highlights, secondary badges */
-  --su-amber-soft: rgba(244, 185, 66, 0.12);
+  --su-amber: #F2A93B;               /* Amber — highlights, ratings, secondary badges */
+  --su-amber-soft: rgba(242, 169, 59, 0.14);
 
-  --su-mint: #9FDEAF;                /* Logo mint — gradient tails, soft accents */
+  --su-mint: #9FDEAF;                /* Logo mint — gradient tails, progress */
 
   /* Neutrals & Surfaces */
-  --su-ink: #0F2A30;                 /* Deep Teal Ink / Body Text */
-  --su-body: #475569;                /* Slate Subtext */
-  --su-body-strong: #0F2A30;
+  --su-ink: #0F2A31;                 /* Deep Teal Ink / Body Text */
+  --su-body: #3E555A;                /* Muted body copy */
+  --su-body-strong: #0F2A31;
   --su-muted: #64748B;
   --su-muted-soft: #94A3B8;
-  --su-hairline: #E2E8F0;
-  --su-hairline-soft: #F1F5F9;
+  --su-hairline: #DCEBE4;
+  --su-hairline-soft: #EDF4F0;
 
-  --su-canvas: #FFFFFF;
-  --su-surface-soft: #F8FAFC;
-  --su-surface-strong: #F1F5F9;
-  --su-surface-dark: #0F2A30;
-  --su-surface-dark-elevated: #15363E;
+  --su-canvas: #F4FAF7;              /* Page background */
+  --su-surface-soft: #F4FAF7;
+  --su-surface-strong: #E9F4EF;
+  --su-surface-dark: #0F2A31;
+  --su-surface-dark-elevated: #14454F;
 
   /* On-Color Labels */
-  --su-on-primary: #FFFFFF;
-  --su-on-dark: #F8FAFC;
-  --su-on-dark-soft: #94A3B8;
+  --su-on-primary: #F4FAF7;
+  --su-on-dark: #F4FAF7;
+  --su-on-dark-soft: #A9BDB8;
 
-  /* Functional Status */
-  --su-success: #23857A;
-  --su-success-soft: rgba(85, 201, 184, 0.12);
-  --su-warning: #F4B942;
-  --su-warning-soft: rgba(244, 185, 66, 0.12);
-  --su-danger: #EF6F51;
-  --su-danger-soft: rgba(239, 111, 81, 0.12);
+  /* Functional Status — kept outside the brand trio */
+  --su-success: #2F8F5B;
+  --su-success-soft: rgba(47, 143, 91, 0.12);
+  --su-warning: #F2A93B;
+  --su-warning-soft: rgba(242, 169, 59, 0.14);
+  --su-danger: #C0392B;
+  --su-danger-soft: rgba(192, 57, 43, 0.12);
 
   /* Typography */
   --su-font-display: var(--font-display), 'Figtree', -apple-system, sans-serif;
   --su-font-body: var(--font-body), -apple-system, sans-serif;
-  --su-font-mono: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+  --su-font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
 
   /* Spacing */
   --su-space-xxs: 4px;
@@ -78,10 +78,10 @@
   --su-radius-full: 9999px;
 
   /* Shadows */
-  --su-shadow-soft: 0 4px 20px -2px rgba(15, 42, 48, 0.06);
-  --su-shadow-card: 0 8px 30px -4px rgba(15, 42, 48, 0.08);
-  --su-shadow-focus: 0 0 0 3px rgba(29, 95, 110, 0.22);
-  --su-shadow-glow: 0 10px 30px -5px rgba(29, 95, 110, 0.35);
+  --su-shadow-soft: 0 4px 20px -2px rgba(15, 42, 49, 0.06);
+  --su-shadow-card: 0 8px 30px -4px rgba(15, 42, 49, 0.08);
+  --su-shadow-focus: 0 0 0 3px rgba(28, 94, 110, 0.22);
+  --su-shadow-glow: 0 10px 30px -5px rgba(28, 94, 110, 0.35);
 }
 
 * { box-sizing: border-box; }
@@ -162,7 +162,7 @@ h1, h2, h3 { text-wrap: balance; font-weight: 700; font-family: var(--su-font-di
   [data-reveal="line"] > * { display: inline-block; }
   .rv-strike {
     /* slate-300, matching the muted "most courses" text it crosses out */
-    background: linear-gradient(#CBD5E1, #CBD5E1) no-repeat 0 56% / 100% 1.5px;
+    background: linear-gradient(#CFE0D8, #CFE0D8) no-repeat 0 56% / 100% 1.5px;
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone;
   }

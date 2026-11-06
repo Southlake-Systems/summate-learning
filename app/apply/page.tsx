@@ -19,19 +19,19 @@ export default function ApplyPage() {
     <>
       <SiteNav />
 
-      <main className="relative isolate overflow-hidden bg-[#F6FAFA]">
+      <main className="relative isolate overflow-hidden bg-[#F4FAF7]">
 
         {/* =====================================================
             AMBIENT BACKGROUND
         ====================================================== */}
 
         <div
-          className="pointer-events-none absolute -left-48 top-24 h-[520px] w-[520px] rounded-full bg-[#1D5F6E]/[0.055] blur-[120px]"
+          className="pointer-events-none absolute -left-48 top-24 h-[520px] w-[520px] rounded-full bg-[#1C5E6E]/[0.055] blur-[120px]"
           aria-hidden="true"
         />
 
         <div
-          className="pointer-events-none absolute -right-48 top-10 h-[560px] w-[560px] rounded-full bg-gradient-to-br from-[#55C9B8]/[0.06] via-[#EF6F51]/[0.035] to-[#F4B942]/[0.035] blur-[130px]"
+          className="pointer-events-none absolute -right-48 top-10 h-[560px] w-[560px] rounded-full bg-gradient-to-br from-[#9FDEAF]/[0.06] via-[#F2A93B]/[0.035] to-[#F2A93B]/[0.035] blur-[130px]"
           aria-hidden="true"
         />
 
@@ -41,7 +41,7 @@ export default function ApplyPage() {
           aria-hidden="true"
           style={{
             backgroundImage:
-              "linear-gradient(rgba(29,95,110,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(29,95,110,.035) 1px, transparent 1px)",
+              "linear-gradient(rgba(28, 94, 110,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(28, 94, 110,.035) 1px, transparent 1px)",
             backgroundSize: "72px 72px",
             maskImage:
               "linear-gradient(to bottom, black, transparent 90%)",
@@ -61,9 +61,9 @@ export default function ApplyPage() {
           ================================================== */}
 
           <div className="mb-10 flex items-center gap-3">
-            <span className="h-px w-12 bg-[#1D5F6E]" />
+            <span className="h-px w-12 bg-[#1C5E6E]" />
 
-            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#1D5F6E]">
+            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#1C5E6E]">
               Apply · Batch 01
             </span>
 
@@ -81,11 +81,11 @@ export default function ApplyPage() {
           <div className="grid gap-10 lg:grid-cols-[1fr_340px] lg:items-end">
 
             <div>
-              <h1 className="max-w-4xl text-4xl font-extrabold leading-[1.02] tracking-[-0.05em] text-[#0F2A30] sm:text-5xl lg:text-[64px]">
+              <h1 className="max-w-4xl text-4xl font-extrabold leading-[1.02] tracking-[-0.05em] text-[#0F2A31] sm:text-5xl lg:text-[64px]">
                 Your next chapter
                 <br />
                 can start{" "}
-                <span className="bg-gradient-to-r from-[#1D5F6E] via-[#2A8C8C] to-[#55C9B8] bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#1C5E6E] via-[#24707F] to-[#9FDEAF] bg-clip-text text-transparent">
                   here.
                 </span>
               </h1>
@@ -99,7 +99,7 @@ export default function ApplyPage() {
 
             {/* Right side */}
             <div className="relative lg:pb-2">
-              <div className="absolute -left-5 top-0 hidden h-16 w-px bg-gradient-to-b from-[#1D5F6E] to-transparent lg:block" />
+              <div className="absolute -left-5 top-0 hidden h-16 w-px bg-gradient-to-b from-[#1C5E6E] to-transparent lg:block" />
 
               <p className="text-sm font-medium leading-6 text-slate-500">
                 Batch 01 is where Summate Learning begins — with a small
@@ -107,9 +107,9 @@ export default function ApplyPage() {
               </p>
 
               <div className="mt-5 flex items-center gap-3">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#1D5F6E]" />
+                <span className="h-1.5 w-1.5 rounded-full bg-[#1C5E6E]" />
                 <span className="h-px w-12 bg-slate-200" />
-                <span className="h-1.5 w-1.5 rounded-full bg-[#55C9B8]" />
+                <span className="h-1.5 w-1.5 rounded-full bg-[#9FDEAF]" />
               </div>
             </div>
           </div>
@@ -126,7 +126,7 @@ export default function ApplyPage() {
 
             <aside className="lg:sticky lg:top-28">
 
-              <div className="rounded-[24px] border border-slate-200 bg-white p-6 shadow-[0_15px_45px_rgba(15,42,48,0.045)]">
+              <div className="rounded-[24px] border border-slate-200 bg-white p-6 shadow-[0_15px_45px_rgba(15, 42, 49,0.045)]">
 
                 <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-slate-400">
                   Batch 01
@@ -135,12 +135,12 @@ export default function ApplyPage() {
                 <div className="mt-5 space-y-5">
 
                   <div className="flex gap-3">
-                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#E6F2F3] text-[#1D5F6E]">
+                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#E6F3EC] text-[#1C5E6E]">
                       <span className="text-xs font-bold">01</span>
                     </span>
 
                     <div>
-                      <p className="text-xs font-bold text-[#0F2A30]">
+                      <p className="text-xs font-bold text-[#0F2A31]">
                         Live Online
                       </p>
                       <p className="mt-1 text-[11px] leading-5 text-slate-400">
@@ -150,12 +150,12 @@ export default function ApplyPage() {
                   </div>
 
                   <div className="flex gap-3">
-                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#E9F8F5] text-[#23857A]">
+                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#E8F6EF] text-[#1C5E6E]">
                       <span className="text-xs font-bold">02</span>
                     </span>
 
                     <div>
-                      <p className="text-xs font-bold text-[#0F2A30]">
+                      <p className="text-xs font-bold text-[#0F2A31]">
                         12 Weeks
                       </p>
                       <p className="mt-1 text-[11px] leading-5 text-slate-400">
@@ -165,12 +165,12 @@ export default function ApplyPage() {
                   </div>
 
                   <div className="flex gap-3">
-                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#FDEEEA] text-[#EF6F51]">
+                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#FDF1DE] text-[#A35F00]">
                       <span className="text-xs font-bold">03</span>
                     </span>
 
                     <div>
-                      <p className="text-xs font-bold text-[#0F2A30]">
+                      <p className="text-xs font-bold text-[#0F2A31]">
                         Project Driven
                       </p>
                       <p className="mt-1 text-[11px] leading-5 text-slate-400">
@@ -187,11 +187,11 @@ export default function ApplyPage() {
                   </p>
 
                   <div className="mt-3 flex items-center gap-2 text-[9px] font-bold uppercase tracking-[0.13em]">
-                    <span className="text-[#1D5F6E]">Learn</span>
+                    <span className="text-[#1C5E6E]">Learn</span>
                     <span className="text-slate-300">→</span>
-                    <span className="text-[#23857A]">Build</span>
+                    <span className="text-[#1C5E6E]">Build</span>
                     <span className="text-slate-300">→</span>
-                    <span className="text-[#EF6F51]">Grow</span>
+                    <span className="text-[#A35F00]">Grow</span>
                   </div>
                 </div>
               </div>
@@ -213,20 +213,20 @@ export default function ApplyPage() {
 
               {/* glow */}
               <div
-                className="pointer-events-none absolute -inset-6 rounded-[40px] bg-[#1D5F6E]/[0.035] blur-2xl"
+                className="pointer-events-none absolute -inset-6 rounded-[40px] bg-[#1C5E6E]/[0.035] blur-2xl"
                 aria-hidden="true"
               />
 
-              <div className="relative rounded-[28px] border border-slate-200 bg-white p-5 shadow-[0_25px_80px_rgba(15,42,48,0.07)] sm:p-8 lg:p-10">
+              <div className="relative rounded-[28px] border border-slate-200 bg-white p-5 shadow-[0_25px_80px_rgba(15, 42, 49,0.07)] sm:p-8 lg:p-10">
 
                 <div className="mb-8 flex items-start justify-between gap-5 border-b border-slate-100 pb-7">
 
                   <div>
-                    <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#1D5F6E]">
+                    <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#1C5E6E]">
                       Application
                     </p>
 
-                    <h2 className="mt-2 text-2xl font-extrabold tracking-[-0.035em] text-[#0F2A30]">
+                    <h2 className="mt-2 text-2xl font-extrabold tracking-[-0.035em] text-[#1C5E6E]">
                       Tell us about yourself.
                     </h2>
 
@@ -235,7 +235,7 @@ export default function ApplyPage() {
                     </p>
                   </div>
 
-                  <div className="hidden shrink-0 sm:flex h-10 w-10 items-center justify-center rounded-full bg-[#E6F2F3] text-[#1D5F6E]">
+                  <div className="hidden shrink-0 sm:flex h-10 w-10 items-center justify-center rounded-full bg-[#E6F3EC] text-[#1C5E6E]">
                     <span className="text-xs font-bold">01</span>
                   </div>
                 </div>
@@ -251,7 +251,7 @@ export default function ApplyPage() {
                   Form not loading?{" "}
                   <a
                     href={APPLY_FORM_URL}
-                    className="font-semibold text-[#1D5F6E] underline decoration-[#55C9B8] underline-offset-4"
+                    className="font-semibold text-[#1C5E6E] underline decoration-[#9FDEAF] underline-offset-4"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -271,10 +271,10 @@ export default function ApplyPage() {
           <div className="relative mt-20 flex items-center justify-center">
             <div className="h-px w-full bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
 
-            <div className="absolute flex items-center gap-2 bg-[#F6FAFA] px-5">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#1D5F6E]" />
-              <span className="h-1.5 w-1.5 rounded-full bg-[#55C9B8]" />
-              <span className="h-1.5 w-1.5 rounded-full bg-[#EF6F51]" />
+            <div className="absolute flex items-center gap-2 bg-[#F4FAF7] px-5">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#1C5E6E]" />
+              <span className="h-1.5 w-1.5 rounded-full bg-[#9FDEAF]" />
+              <span className="h-1.5 w-1.5 rounded-full bg-[#F2A93B]" />
             </div>
           </div>
 

@@ -27,7 +27,7 @@ export default function LegalPage({
             <ol className="sticky top-28 space-y-1 text-[14px]">
               {sections.map((s, i) => (
                 <li key={s.title}>
-                  <a href={`#${slug(s.title)}`} className="block rounded-lg px-3 py-1.5 text-slate-500 hover:bg-[#F6FAFA] hover:text-[#1D5F6E]">
+                  <a href={`#${slug(s.title)}`} className="block rounded-lg px-3 py-1.5 text-slate-500 hover:bg-[#F4FAF7] hover:text-[#1C5E6E]">
                     {i + 1}. {s.title}
                   </a>
                 </li>
@@ -38,7 +38,7 @@ export default function LegalPage({
           <div className="max-w-[70ch] space-y-12 lg:col-span-9">
             {sections.map((s, i) => (
               <section key={s.title} id={slug(s.title)} className="scroll-mt-28">
-                <h2 className="font-display text-2xl font-bold tracking-[-0.02em] text-[#0F2A30]">
+                <h2 className="font-display text-2xl font-bold tracking-[-0.02em] text-[#1C5E6E]">
                   {i + 1}. {s.title}
                 </h2>
                 <div className="mt-4 space-y-4 text-[16px] leading-[1.75] text-slate-600">
