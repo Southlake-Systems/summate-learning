@@ -142,7 +142,7 @@ export default function SiteFooter() {
                         title={social.label}
                         target="_blank"
                         rel="noreferrer"
-                        className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-white/5 text-[#9FDEAF] transition-all duration-200 hover:-translate-y-0.5 hover:border-transparent hover:bg-[#9FDEAF] hover:text-[#0F2A31]"
+                        className="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/5 text-[#9FDEAF] transition-all duration-200 hover:-translate-y-0.5 hover:border-transparent hover:bg-[#9FDEAF] hover:text-[#0F2A31]"
                       >
                         <Icon
                           name={social.label}
@@ -170,14 +170,14 @@ export default function SiteFooter() {
                   {column.title}
                 </h3>
 
-                <ul className="mt-3 space-y-2">
+                <ul className="mt-2 space-y-0">
 
                   {column.links.map((link) => (
                     <li key={link.label}>
 
                       <Link
                         href={link.href}
-                        className="group inline-flex items-center gap-1 text-sm text-[#A9BDB8] transition-colors hover:text-[#F4FAF7]"
+                        className="group flex min-h-11 items-center gap-1 text-sm text-[#A9BDB8] transition-colors hover:text-[#F4FAF7]"
                       >
                         <span>{link.label}</span>
 
@@ -215,7 +215,7 @@ export default function SiteFooter() {
 
               <Link
                 href={APPLY_URL}
-                className="group inline-flex h-10 shrink-0 items-center gap-2 self-start rounded-full bg-[#F2A93B] px-5 text-sm font-bold text-[#0F2A31] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#D98A1F] sm:self-auto"
+                className="group inline-flex h-11 shrink-0 items-center gap-2 self-start rounded-full bg-[#F2A93B] px-5 text-sm font-bold text-[#0F2A31] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#D98A1F] sm:self-auto"
               >
                 Apply for Batch 1
 
@@ -240,7 +240,7 @@ export default function SiteFooter() {
 
             <a
               href={`mailto:${email}`}
-              className="text-[#A9BDB8] transition-colors hover:text-[#F4FAF7]"
+              className="inline-flex min-h-11 items-center text-[#A9BDB8] transition-colors hover:text-[#F4FAF7]"
             >
               {email}
             </a>
@@ -249,7 +249,7 @@ export default function SiteFooter() {
 
             <a
               href={`tel:${phone.replace(/\s/g, "")}`}
-              className="text-[#A9BDB8] transition-colors hover:text-[#F4FAF7]"
+              className="inline-flex min-h-11 items-center text-[#A9BDB8] transition-colors hover:text-[#F4FAF7]"
             >
               {phone}
             </a>

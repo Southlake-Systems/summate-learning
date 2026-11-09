@@ -70,7 +70,7 @@ export default function ContactPage({ searchParams }: { searchParams: { topic?: 
                 href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(site.address.slice(1).join(" "))}`}
                 target="_blank"
                 rel="noreferrer"
-                className="mt-4 inline-block text-[14px] font-semibold"
+                className="mt-4 inline-flex min-h-11 items-center text-[14px] font-semibold"
               >
                 Open in Google Maps
               </a>

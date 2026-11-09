@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
+import ApplicationEmbed from "@/components/site/ApplicationEmbed";
 import { APPLY_FORM_URL } from "@/lib/siteContent";
 import { pageMeta } from "@/lib/seo";
 
@@ -69,7 +70,7 @@ export default function ApplyPage() {
 
             <span className="text-slate-300">•</span>
 
-            <span className="text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-400">
+            <span className="text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-500">
               LEARN → BUILD → GROW
             </span>
           </div>
@@ -128,7 +129,7 @@ export default function ApplyPage() {
 
               <div className="rounded-[24px] border border-slate-200 bg-white p-6 shadow-[0_15px_45px_rgba(15, 42, 49,0.045)]">
 
-                <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-slate-400">
+                <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-slate-500">
                   Batch 01
                 </p>
 
@@ -143,7 +144,7 @@ export default function ApplyPage() {
                       <p className="text-xs font-bold text-[#0F2A31]">
                         Live Online
                       </p>
-                      <p className="mt-1 text-[11px] leading-5 text-slate-400">
+                      <p className="mt-1 text-[11px] leading-5 text-slate-500">
                         Learn from wherever you are.
                       </p>
                     </div>
@@ -158,14 +159,14 @@ export default function ApplyPage() {
                       <p className="text-xs font-bold text-[#0F2A31]">
                         12 Weeks
                       </p>
-                      <p className="mt-1 text-[11px] leading-5 text-slate-400">
+                      <p className="mt-1 text-[11px] leading-5 text-slate-500">
                         A focused, immersive journey.
                       </p>
                     </div>
                   </div>
 
                   <div className="flex gap-3">
-                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#FDF1DE] text-[#A35F00]">
+                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#FDF1DE] text-[#9A5A00]">
                       <span className="text-xs font-bold">03</span>
                     </span>
 
@@ -173,7 +174,7 @@ export default function ApplyPage() {
                       <p className="text-xs font-bold text-[#0F2A31]">
                         Project Driven
                       </p>
-                      <p className="mt-1 text-[11px] leading-5 text-slate-400">
+                      <p className="mt-1 text-[11px] leading-5 text-slate-500">
                         Learn by building something real.
                       </p>
                     </div>
@@ -182,7 +183,7 @@ export default function ApplyPage() {
                 </div>
 
                 <div className="mt-7 border-t border-slate-100 pt-5">
-                  <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-slate-400">
+                  <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-slate-500">
                     The journey
                   </p>
 
@@ -191,14 +192,14 @@ export default function ApplyPage() {
                     <span className="text-slate-300">→</span>
                     <span className="text-[#1C5E6E]">Build</span>
                     <span className="text-slate-300">→</span>
-                    <span className="text-[#A35F00]">Grow</span>
+                    <span className="text-[#9A5A00]">Grow</span>
                   </div>
                 </div>
               </div>
 
               {/* Small reassurance */}
               <div className="mt-4 px-2">
-                <p className="text-[11px] leading-5 text-slate-400">
+                <p className="text-[11px] leading-5 text-slate-500">
                   Take your time and answer honestly. Your application
                   helps us understand where you're starting from.
                 </p>
@@ -240,18 +241,16 @@ export default function ApplyPage() {
                   </div>
                 </div>
 
-                <iframe
-                  src={APPLY_FORM_EMBED}
-                  title="Summate Learning Batch 1 application form"
-                  className="min-h-[1500px] w-full rounded-2xl border border-slate-200 bg-white"
-                  loading="lazy"
+                <ApplicationEmbed
+                  embedUrl={APPLY_FORM_EMBED}
+                  fallbackUrl={APPLY_FORM_URL}
                 />
 
                 <p className="mt-4 text-center text-[13px] leading-6 text-slate-500">
                   Form not loading?{" "}
                   <a
                     href={APPLY_FORM_URL}
-                    className="font-semibold text-[#1C5E6E] underline decoration-[#9FDEAF] underline-offset-4"
+                    className="inline-flex min-h-11 items-center font-semibold text-[#1C5E6E] underline decoration-[#9FDEAF] underline-offset-4"
                     target="_blank"
                     rel="noopener noreferrer"
                   >

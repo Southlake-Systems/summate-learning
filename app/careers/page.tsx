@@ -178,7 +178,7 @@ export default function CareersPage() {
 
               <a
                 href={openApplicationHref}
-                className="group/link relative inline-flex w-fit items-center gap-2 rounded-full bg-white px-5 py-2.5 text-[14px] font-semibold text-[#0F2A31] transition-colors duration-200 hover:bg-[#9FDEAF] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+                className="group/link relative inline-flex min-h-11 w-fit items-center gap-2 rounded-full bg-white px-5 py-2.5 text-[14px] font-semibold text-[#0F2A31] transition-colors duration-200 hover:bg-[#9FDEAF] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
               >
                 {careers.profile.cta.label}
                 <ArrowUpRight
@@ -274,7 +274,7 @@ export default function CareersPage() {
                         <ButtonLink href={`/careers/${role.slug}`}>View role</ButtonLink>
                         <a
                           href={`mailto:${site.careersEmail}?subject=${encodeURIComponent(role.subject)}`}
-                          className="group/mail inline-flex items-center gap-2 text-[14px] font-semibold text-[#1C5E6E] underline decoration-[#1C5E6E]/25 underline-offset-[5px] transition-colors hover:decoration-[#1C5E6E]"
+                          className="group/mail inline-flex min-h-11 items-center gap-2 text-[14px] font-semibold text-[#1C5E6E] underline decoration-[#1C5E6E]/25 underline-offset-[5px] transition-colors hover:decoration-[#1C5E6E]"
                         >
                           <Mail size={15} strokeWidth={1.9} aria-hidden="true" />
                           Email your application
@@ -307,7 +307,7 @@ export default function CareersPage() {
                       {role.lookingFor.length > 5 && (
                         <Link
                           href={`/careers/${role.slug}`}
-                          className="mt-4 inline-flex items-center gap-1.5 text-[13px] font-semibold text-[#1C5E6E] underline decoration-[#1C5E6E]/25 underline-offset-[5px] hover:decoration-[#1C5E6E]"
+                          className="mt-2 inline-flex min-h-11 items-center gap-1.5 text-[13px] font-semibold text-[#1C5E6E] underline decoration-[#1C5E6E]/25 underline-offset-[5px] hover:decoration-[#1C5E6E]"
                         >
                           See all {role.lookingFor.length} requirements
                           <ArrowRight size={14} strokeWidth={2.2} aria-hidden="true" />

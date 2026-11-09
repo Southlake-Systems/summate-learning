@@ -55,7 +55,7 @@ export default function ContactForm({ defaultTopic = "course" }: { defaultTopic?
         </label>
         <label className="block">
           <span className={label}>
-            Phone <span className="font-normal text-slate-400">(optional)</span>
+            Phone <span className="font-normal text-slate-500">(optional)</span>
           </span>
           <input name="phone" type="tel" autoComplete="tel" className={field} />
         </label>

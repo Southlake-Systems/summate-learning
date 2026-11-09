@@ -66,13 +66,13 @@ export default function CoursesPage() {
                   { k: "Starts", v: "Jan 2027" },
                 ].map((m) => (
                   <div key={m.k} className="bg-[#0F2A31]/60 p-4 backdrop-blur">
-                    <dt className="text-[12px] font-medium text-slate-400">{m.k}</dt>
+                    <dt className="text-[12px] font-medium text-slate-500">{m.k}</dt>
                     <dd className="mt-1 text-[15px] font-semibold text-white">{m.v}</dd>
                   </div>
                 ))}
               </dl>
               <div>
-                <p className="text-[13px] font-medium text-slate-400">What you&apos;ll work with</p>
+                <p className="text-[13px] font-medium text-slate-500">What you&apos;ll work with</p>
                 <ul className="mt-3 flex flex-wrap gap-2">
                   {featured.skills.map((s) => (
                     <li key={s} className="rounded-full border border-white/15 px-3 py-1.5 text-[13px] font-medium text-slate-200">
@@ -100,7 +100,7 @@ export default function CoursesPage() {
               >
                 <span aria-hidden="true" className="absolute inset-y-0 left-0 w-1.5" style={{ background: c.accent }} />
                 <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1">
-                  <p className="text-[13px] font-semibold" style={{ color: c.accent }}>
+                  <p className="text-[13px] font-semibold text-[#1C5E6E]">
                     {c.category}
                   </p>
                   <p className="text-[13px] font-medium text-slate-500">
@@ -119,7 +119,7 @@ export default function CoursesPage() {
                   </ul>
                   <Link
                     href="/contact?topic=course-updates"
-                    className="inline-flex items-center gap-2 text-sm font-semibold text-[#1C5E6E] hover:text-[#14454F]"
+                    className="inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-[#1C5E6E] hover:text-[#14454F]"
                   >
                     <Bell size={15} aria-hidden="true" />
                     Get notified

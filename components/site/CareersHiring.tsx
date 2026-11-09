@@ -46,7 +46,7 @@ export function HiringProcess({ tone = "mist" }: { tone?: "mist" | "white" }) {
           <p className="mt-3 text-[13px] leading-[1.6] text-slate-500">{hiring.application.note}</p>
           <a
             href={`mailto:${site.careersEmail}`}
-            className="mt-2 inline-flex items-center gap-2 text-[14px] font-semibold text-[#1C5E6E] underline decoration-[#1C5E6E]/25 underline-offset-[5px] hover:decoration-[#1C5E6E]"
+            className="mt-2 inline-flex min-h-11 items-center gap-2 text-[14px] font-semibold text-[#1C5E6E] underline decoration-[#1C5E6E]/25 underline-offset-[5px] hover:decoration-[#1C5E6E]"
           >
             <Mail size={15} strokeWidth={1.9} aria-hidden="true" />
             {site.careersEmail}

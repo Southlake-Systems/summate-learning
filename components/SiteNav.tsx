@@ -83,7 +83,7 @@ export default function SiteNav() {
         <nav ref={navRef} className="hidden items-center gap-1 lg:flex" aria-label="Primary navigation">
           {nav.links.map((link) => {
             const active = isActive(pathname, link);
-            const base = `relative inline-flex items-center gap-1 rounded-full px-3.5 py-2 text-[14px] font-semibold transition-colors duration-200 ${
+            const base = `relative inline-flex min-h-11 items-center gap-1 rounded-full px-3.5 py-2 text-[14px] font-semibold transition-colors duration-200 ${
               active ? "text-[#1C5E6E]" : "text-[#2A444A] hover:text-[#0F2A31]"
             }`;
 
@@ -156,7 +156,7 @@ export default function SiteNav() {
         <div className="hidden lg:flex">
           <Link
             href={nav.primaryCta.href}
-            className="group inline-flex items-center gap-2 rounded-full bg-[#F2A93B] px-5 py-2.5 text-[14px] font-semibold text-[#0F2A31] transition-colors duration-200 hover:bg-[#D98A1F] hover:text-[#0F2A31]"
+            className="group inline-flex min-h-11 items-center gap-2 rounded-full bg-[#F2A93B] px-5 py-2.5 text-[14px] font-semibold text-[#0F2A31] transition-colors duration-200 hover:bg-[#D98A1F] hover:text-[#0F2A31]"
           >
             {nav.primaryCta.label}
             <Icon
@@ -171,7 +171,7 @@ export default function SiteNav() {
         <button
           type="button"
           onClick={() => setMobileOpen((open) => !open)}
-          className="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-white text-[#0F2A31] transition-colors hover:bg-slate-50 lg:hidden"
+          className="flex h-11 w-11 items-center justify-center rounded-xl border border-slate-200 bg-white text-[#0F2A31] transition-colors hover:bg-slate-50 lg:hidden"
           aria-label={mobileOpen ? "Close menu" : "Open menu"}
           aria-expanded={mobileOpen}
           aria-controls="mobile-nav"

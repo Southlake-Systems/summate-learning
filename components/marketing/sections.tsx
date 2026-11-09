@@ -118,7 +118,7 @@ export function Hero() {
             MAIN HERO
         ====================================================== */}
 
-        <div className="grid min-h-[750px] grid-cols-1 items-center gap-10 py-14 sm:py-16 lg:grid-cols-12 lg:gap-4 lg:py-20">
+        <div className="grid grid-cols-1 items-center gap-10 py-10 sm:py-14 lg:min-h-[720px] lg:grid-cols-12 lg:gap-4 lg:py-20">
 
           {/* =================================================
               LEFT CONTENT
@@ -140,10 +140,10 @@ export function Hero() {
             <h1
               className="mt-6 max-w-[650px] text-4xl font-extrabold leading-[1.02] tracking-[-0.045em] text-[#0F2A31] sm:text-5xl lg:text-[60px] xl:text-[66px]"
             >
-              <span><span>You are more than</span></span>
-              <span><span>what you already</span></span>
+              <span className="block" data-reveal="line"><span>You are more than</span></span>
+              <span className="block" data-reveal="line"><span>what you already</span></span>
 
-              <span className="-mb-3 pb-3"><span className="relative inline-block">
+              <span className="-mb-3 block pb-3" data-reveal="line"><span className="relative inline-block">
                 <span className="bg-gradient-to-r from-[#1C5E6E] via-[#24707F] to-[#9FDEAF] bg-clip-text text-transparent">
                   know.
                 </span>
@@ -270,7 +270,7 @@ export function Hero() {
           {/* =================================================
               RIGHT VISUAL
           ================================================== */}
-          <div className="relative flex min-h-[470px] items-center justify-center lg:col-span-6 lg:min-h-[560px]">
+          <div className="relative order-first flex min-h-[280px] items-center justify-center sm:min-h-[420px] lg:order-none lg:col-span-6 lg:min-h-[560px]">
 
             {/* Main glow behind visual */}
             <div
@@ -315,81 +315,8 @@ export function Hero() {
               />
             </div>
 
-            {/* =================================================
-                FLOATING CARDS
-            ================================================== */}
-
-            {/* Build */}
-            <div className="absolute left-[-2%] top-[12%] z-20 hidden sm:block">
-              <div className="hero-float flex items-center gap-3 rounded-2xl border border-white/80 bg-white/95 backdrop-blur-md px-4 py-3 shadow-[0_14px_35px_rgba(15, 42, 49,0.10)]">
-                <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#E6F3EC] text-[#1C5E6E]">
-                  <Icon name="Code2" size={17} strokeWidth={2} />
-                </div>
-
-                <div className="leading-tight">
-                  <p className="text-xs font-bold text-[#0F2A31]">
-                    Build
-                  </p>
-                  <p className="text-[11px] text-slate-500">
-                    Real Projects
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Learn */}
-            <div className="absolute bottom-[13%] left-[0%] z-20 hidden sm:block">
-              <div className="hero-float-reverse flex items-center gap-3 rounded-2xl border border-white/80 bg-white/95 backdrop-blur-md px-4 py-3 shadow-[0_14px_35px_rgba(15, 42, 49,0.10)]">
-                <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#E8F6EF] text-[#1C5E6E]">
-                  <Icon name="Brain" size={17} strokeWidth={2} />
-                </div>
-
-                <div className="leading-tight">
-                  <p className="text-xs font-bold text-[#0F2A31]">
-                    Learn with
-                  </p>
-                  <p className="text-[11px] text-slate-500">
-                    Industry Experts
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Career */}
-            <div className="absolute right-[-1%] top-[22%] z-20 hidden sm:block">
-              <div className="hero-float-reverse flex items-center gap-3 rounded-2xl border border-white/80 bg-white/95 backdrop-blur-md px-4 py-3 shadow-[0_14px_35px_rgba(15, 42, 49,0.10)]">
-                <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#FDF1DE] text-[#A35F00]">
-                  <Icon name="TrendingUp" size={17} strokeWidth={2} />
-                </div>
-
-                <div className="leading-tight">
-                  <p className="text-xs font-bold text-[#0F2A31]">
-                    Career
-                  </p>
-                  <p className="text-[11px] text-slate-500">
-                    Opportunities
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Future Ready */}
-            <div className="absolute bottom-[17%] right-[0%] z-20 hidden sm:block">
-              <div className="hero-float flex items-center gap-3 rounded-2xl border border-white/80 bg-white/95 backdrop-blur-md px-4 py-3 shadow-[0_14px_35px_rgba(15, 42, 49,0.10)]">
-                <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#FEF3DE] text-[#A35F00]">
-                  <Icon name="Rocket" size={17} strokeWidth={2} />
-                </div>
-
-                <div className="leading-tight">
-                  <p className="text-xs font-bold text-[#0F2A31]">
-                    Future Ready
-                  </p>
-                  <p className="text-[11px] text-slate-500">
-                    Skills
-                  </p>
-                </div>
-              </div>
-            </div>
+            {/* The info cards are part of the artwork itself (hero_right.webp),
+                so they are not duplicated here as overlaid markup. */}
 
             {/* Tiny decorative dots */}
             <div className="pointer-events-none absolute right-[2%] top-[5%] grid grid-cols-4 gap-2 opacity-40">
@@ -722,7 +649,7 @@ export function WhySummate() {
         </div>
 
         <div className="hidden items-center gap-3 sm:flex">
-          <span className="text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-400">
+          <span className="text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-500">
             01 — 03
           </span>
 
@@ -992,7 +919,7 @@ export function TrackCatalog() {
                 key={item}
                 data-reveal="pop"
                 className={`
-                  shrink-0 rounded-full border px-4 py-2
+                  inline-flex min-h-11 shrink-0 items-center rounded-full border px-4
                   text-[11px] font-semibold
                   transition-all duration-300
                   ${
@@ -1032,7 +959,7 @@ export function TrackCatalog() {
               <Link
                 href={APPLY_URL}
                 className="
-                  mt-6 inline-flex w-fit items-center gap-2
+                  mt-6 inline-flex min-h-11 w-fit items-center gap-2
                   rounded-xl bg-white px-4 py-2.5
                   text-xs font-bold text-[#1C5E6E]
                   shadow-[0_8px_25px_rgba(15, 42, 49,0.12)]
@@ -1186,7 +1113,7 @@ export function TrackCatalog() {
 
           <Link
             href={APPLY_URL}
-            className="group inline-flex items-center gap-2 text-sm font-bold text-[#0F2A31]"
+            className="group inline-flex min-h-11 items-center gap-2 text-sm font-bold text-[#0F2A31]"
           >
             Start with Batch 01
 
@@ -1335,13 +1262,13 @@ export function PersonaCards() {
 
             <span data-reveal="draw" className="mx-4 h-px w-16 bg-slate-200" />
 
-            <span data-reveal="rise" className="font-mono text-[10px] font-bold tracking-[0.15em] text-slate-400">
+            <span data-reveal="rise" className="font-mono text-[10px] font-bold tracking-[0.15em] text-slate-500">
               MOVING FORWARD
             </span>
 
             <span data-reveal="draw" className="mx-4 h-px w-16 bg-slate-200" />
 
-            <span data-reveal="rise" className="font-mono text-[10px] font-bold tracking-[0.15em] text-slate-400">
+            <span data-reveal="rise" className="font-mono text-[10px] font-bold tracking-[0.15em] text-slate-500">
               CHANGING COURSE
             </span>
           </div>
@@ -1626,7 +1553,7 @@ export function PersonaCards() {
           <Link
             href={APPLY_URL}
             className="
-              group inline-flex items-center gap-2
+              group inline-flex min-h-11 items-center gap-2
               text-sm font-bold text-[#0F2A31]
             "
           >
@@ -1756,7 +1683,7 @@ export function ProgramSpotlight() {
                       <h3 className="font-display text-[18px] font-bold leading-tight tracking-[-0.02em] text-[#1C5E6E]">
                         <span className="sr-only">At Summate: </span>
                         {s.href ? (
-                          <Link href={s.href} className="text-[#0F2A31] hover:text-[#1C5E6E]">
+                          <Link href={s.href} className="inline-flex min-h-11 items-center text-[#0F2A31] hover:text-[#1C5E6E]">
                             {s.to}
                           </Link>
                         ) : (
@@ -1960,7 +1887,7 @@ export function ComparisonTable() {
           
           <div className="flex flex-col lg:col-span-3">
             <div className="h-[64px] flex items-center px-4 border-b border-transparent">
-              <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-slate-400">
+              <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-slate-500">
                 Focus Area
               </span>
             </div>

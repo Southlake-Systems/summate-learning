@@ -4,7 +4,7 @@ import Link from "next/link";
 import { ArrowUpRight, ChevronRight } from "lucide-react";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
-import LineWaves from "@/components/LineWaves";
+import HeroWaves from "@/components/site/HeroWaves";
 import Choreography from "@/components/ui/Choreography";
 import { cn } from "@/lib/utils";
 import Noise from "@/components/Noise";
@@ -61,26 +61,7 @@ export function PageHero({
               "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.45) 26%, black 68%)",
           }}
         >
-          <LineWaves
-            color1="#9FDEAF"
-            color2="#1C5E6E"
-            color3="#1C5E6E"
-            lightMode
-            speed={0.22}
-            colorCycleSpeed={0.6}
-            lineCount={64}
-            lineWidth={1.25}
-            glow={0.55}
-            brightness={1.15}
-            highlight={0.55}
-            highlightWidth={1.4}
-            warpIntensity={0.85}
-            warpScale={1.15}
-            rotation={-22}
-            edgeFade={0.5}
-            opacity={0.9}
-            mouseInfluence={1.6}
-          />
+          <HeroWaves />
         </div>
       ) : (
         <div
@@ -156,7 +137,7 @@ export function Breadcrumbs({ crumbs, onDark }: { crumbs: Crumb[]; onDark?: bool
           <Link
             href="/"
             className={cn(
-              "transition-colors",
+              "inline-flex min-h-11 min-w-11 items-center transition-colors",
               onDark ? "text-slate-400 hover:text-white" : "text-slate-500 hover:text-[#1C5E6E]"
             )}
           >
@@ -170,7 +151,7 @@ export function Breadcrumbs({ crumbs, onDark }: { crumbs: Crumb[]; onDark?: bool
               <Link
                 href={c.href}
                 className={cn(
-                  "transition-colors",
+                  "inline-flex min-h-11 min-w-11 items-center transition-colors",
                   onDark ? "text-slate-400 hover:text-white" : "text-slate-500 hover:text-[#1C5E6E]"
                 )}
               >
