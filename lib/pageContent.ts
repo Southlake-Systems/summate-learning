@@ -6,6 +6,8 @@
  * UI can show a "to be announced" state instead of raw "[Name]" text.
  */
 
+import { CIRCLE_FORM_URL } from "./siteContent";
+
 /* ------------------------------------------------------------------ *
  * COURSES
  * ------------------------------------------------------------------ */
@@ -674,7 +676,7 @@ export const circle = {
   join: {
     title: "Become part of the Summate Circle",
     body: "Whether you're looking for people to learn with, a team for your next project, a mentor to guide you, or simply a community where you feel you belong, there's a place for you here.",
-    cta: { label: "Join the Summate Circle", href: "/contact?topic=circle" },
+    cta: { label: "Join the Summate Circle", href: CIRCLE_FORM_URL },
     signoff: "Learn together. Build together. Grow together.",
   },
 };
