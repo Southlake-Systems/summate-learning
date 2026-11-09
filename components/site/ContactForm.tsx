@@ -39,11 +39,11 @@ export default function ContactForm({ defaultTopic = "course" }: { defaultTopic?
   }
 
   const field =
-    "mt-2 block w-full rounded-2xl border border-slate-300 bg-white px-4 py-3.5 text-[16px] text-[#0F2A30] placeholder:text-slate-400 transition-colors focus:border-[#1D5F6E] focus:outline-none focus:ring-4 focus:ring-[#1D5F6E]/10";
-  const label = "text-[14px] font-semibold text-[#0F2A30]";
+    "mt-2 block w-full rounded-2xl border border-slate-300 bg-white px-4 py-3.5 text-[16px] text-[#0F2A31] placeholder:text-slate-400 transition-colors focus:border-[#1C5E6E] focus:outline-none focus:ring-4 focus:ring-[#1C5E6E]/10";
+  const label = "text-[14px] font-semibold text-[#0F2A31]";
 
   return (
-    <form onSubmit={handleSubmit} className="rounded-[28px] border border-slate-200 bg-white p-7 shadow-[0_24px_70px_rgba(15,42,48,0.07)] sm:p-10">
+    <form onSubmit={handleSubmit} className="rounded-[28px] border border-slate-200 bg-white p-7 shadow-[0_24px_70px_rgba(15, 42, 49,0.07)] sm:p-10">
       <div className="grid gap-6 sm:grid-cols-2">
         <label className="block">
           <span className={label}>Your name</span>
@@ -55,7 +55,7 @@ export default function ContactForm({ defaultTopic = "course" }: { defaultTopic?
         </label>
         <label className="block">
           <span className={label}>
-            Phone <span className="font-normal text-slate-400">(optional)</span>
+            Phone <span className="font-normal text-slate-500">(optional)</span>
           </span>
           <input name="phone" type="tel" autoComplete="tel" className={field} />
         </label>
@@ -95,7 +95,7 @@ export default function ContactForm({ defaultTopic = "course" }: { defaultTopic?
         </p>
         <button
           type="submit"
-          className="inline-flex h-12 shrink-0 items-center justify-center gap-2 rounded-full bg-[#0F2A30] px-7 text-[15px] font-semibold text-white transition-colors hover:bg-[#1D5F6E]"
+          className="inline-flex h-12 shrink-0 items-center justify-center gap-2 rounded-full bg-[#0F2A31] px-7 text-[15px] font-semibold text-white transition-colors hover:bg-[#1C5E6E]"
         >
           <Mail size={17} aria-hidden="true" />
           Write the email
@@ -103,7 +103,7 @@ export default function ContactForm({ defaultTopic = "course" }: { defaultTopic?
       </div>
 
       {opened && (
-        <p role="status" className="mt-6 rounded-2xl bg-[#EAF4F5] px-5 py-4 text-[15px] leading-[1.6] text-[#0F2A30]">
+        <p role="status" className="mt-6 rounded-2xl bg-[#E9F4EF] px-5 py-4 text-[15px] leading-[1.6] text-[#0F2A31]">
           Your email app should now be open with your message. Press send there to reach us. If nothing opened, email{" "}
           <a href={`mailto:${recipient}`} className="font-semibold">
             {recipient}

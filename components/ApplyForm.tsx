@@ -35,7 +35,7 @@ export default function ApplyForm() {
 
   if (submitted) {
     return (
-      <div className="relative overflow-hidden rounded-[32px] border border-slate-200 bg-white px-7 py-14 text-center shadow-[0_24px_80px_rgba(15,42,48,0.08)] sm:px-12">
+      <div className="relative overflow-hidden rounded-[32px] border border-slate-200 bg-white px-7 py-14 text-center shadow-[0_24px_80px_rgba(15, 42, 49,0.08)] sm:px-12">
 
         {/* Decorative glow */}
         <div className="pointer-events-none absolute left-1/2 top-0 h-48 w-48 -translate-x-1/2 rounded-full bg-emerald-100/60 blur-3xl" />
@@ -50,7 +50,7 @@ export default function ApplyForm() {
             Application Received
           </div>
 
-          <h3 className="mx-auto mt-6 max-w-lg text-3xl font-extrabold tracking-[-0.035em] text-[#123A43] sm:text-4xl">
+          <h3 className="mx-auto mt-6 max-w-lg text-3xl font-extrabold tracking-[-0.035em] text-[#14454F] sm:text-4xl">
             You&apos;re on the list for Batch 1.
           </h3>
 
@@ -62,7 +62,7 @@ export default function ApplyForm() {
 
           <Link
             href="/"
-            className="mt-9 inline-flex h-12 items-center gap-2 rounded-full border border-slate-200 bg-white px-6 text-sm font-bold text-[#123A43] shadow-sm transition hover:-translate-y-0.5 hover:border-slate-300 hover:bg-slate-50"
+            className="mt-9 inline-flex h-12 items-center gap-2 rounded-full border border-slate-200 bg-white px-6 text-sm font-bold text-[#14454F] shadow-sm transition hover:-translate-y-0.5 hover:border-slate-300 hover:bg-slate-50"
           >
             Return to Homepage
             <ArrowRight size={15} />
@@ -79,10 +79,10 @@ export default function ApplyForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="relative overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-[0_24px_80px_rgba(15,42,48,0.07)]"
+      className="relative overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-[0_24px_80px_rgba(15, 42, 49,0.07)]"
     >
       {/* Top accent */}
-      <div className="h-1.5 w-full bg-gradient-to-r from-[#1D5F6E] via-[#55C9B8] to-[#9FDEAF]" />
+      <div className="h-1.5 w-full bg-gradient-to-r from-[#1C5E6E] via-[#9FDEAF] to-[#9FDEAF]" />
 
       <div className="p-7 sm:p-10 lg:p-12">
 
@@ -90,16 +90,16 @@ export default function ApplyForm() {
         <div className="border-b border-slate-100 pb-8">
           <div className="flex items-center justify-between gap-4">
             <div>
-              <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#1D5F6E]">
+              <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#1C5E6E]">
                 Application
               </p>
 
-              <h2 className="mt-2 text-2xl font-extrabold tracking-[-0.025em] text-[#123A43] sm:text-3xl">
+              <h2 className="mt-2 text-2xl font-extrabold tracking-[-0.025em] text-[#14454F] sm:text-3xl">
                 Tell us about yourself.
               </h2>
             </div>
 
-            <div className="hidden h-11 w-11 items-center justify-center rounded-2xl bg-[#E6F2F3] text-[#1D5F6E] sm:flex">
+            <div className="hidden h-11 w-11 items-center justify-center rounded-2xl bg-[#E6F3EC] text-[#1C5E6E] sm:flex">
               <Sparkles size={20} />
             </div>
           </div>
@@ -212,7 +212,7 @@ export default function ApplyForm() {
                 type="checkbox"
                 checked={agreed}
                 onChange={(e) => setAgreed(e.target.checked)}
-                className="peer h-5 w-5 cursor-pointer appearance-none rounded-md border border-slate-300 bg-white transition checked:border-[#1D5F6E] checked:bg-[#1D5F6E]"
+                className="peer h-5 w-5 cursor-pointer appearance-none rounded-md border border-slate-300 bg-white transition checked:border-[#1C5E6E] checked:bg-[#1C5E6E]"
               />
 
               <Check
@@ -226,14 +226,14 @@ export default function ApplyForm() {
               I agree to the{" "}
               <Link
                 href="/terms"
-                className="font-semibold text-slate-800 underline underline-offset-2 hover:text-[#1D5F6E]"
+                className="font-semibold text-slate-800 underline underline-offset-2 hover:text-[#1C5E6E]"
               >
                 Terms of Service
               </Link>{" "}
               and{" "}
               <Link
                 href="/privacy"
-                className="font-semibold text-slate-800 underline underline-offset-2 hover:text-[#1D5F6E]"
+                className="font-semibold text-slate-800 underline underline-offset-2 hover:text-[#1C5E6E]"
               >
                 Privacy Policy
               </Link>
@@ -247,7 +247,7 @@ export default function ApplyForm() {
           <button
             type="submit"
             disabled={!agreed || loading}
-            className="group flex h-14 w-full items-center justify-center gap-3 rounded-full bg-[#123A43] px-6 text-sm font-bold text-white shadow-lg shadow-slate-900/10 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#1D5F6E] hover:shadow-xl hover:shadow-[#1D5F6E]/20 disabled:cursor-not-allowed disabled:translate-y-0 disabled:bg-slate-200 disabled:text-slate-400 disabled:shadow-none"
+            className="group flex h-14 w-full items-center justify-center gap-3 rounded-full bg-[#14454F] px-6 text-sm font-bold text-white shadow-lg shadow-slate-900/10 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#1C5E6E] hover:shadow-xl hover:shadow-[#1C5E6E]/20 disabled:cursor-not-allowed disabled:translate-y-0 disabled:bg-slate-200 disabled:text-slate-400 disabled:shadow-none"
           >
             {loading ? (
               <>
@@ -297,13 +297,13 @@ function Field({
     <div>
       <label
         htmlFor={htmlFor}
-        className="flex items-center gap-2 text-sm font-bold text-[#123A43]"
+        className="flex items-center gap-2 text-sm font-bold text-[#14454F]"
       >
         <span className="text-slate-400">{icon}</span>
         {label}
 
         {required && (
-          <span className="text-[#EF6F51]">*</span>
+          <span className="text-[#A35F00]">*</span>
         )}
       </label>
 
@@ -319,4 +319,4 @@ function Field({
 ------------------------------------------------- */
 
 const inputClass =
-  "w-full rounded-2xl border border-slate-200 bg-slate-50/60 px-4 py-3.5 text-sm font-medium text-slate-900 outline-none transition-all duration-200 placeholder:text-slate-400 hover:border-slate-300 focus:border-[#1D5F6E] focus:bg-white focus:ring-4 focus:ring-[#1D5F6E]/10";
+  "w-full rounded-2xl border border-slate-200 bg-slate-50/60 px-4 py-3.5 text-sm font-medium text-slate-900 outline-none transition-all duration-200 placeholder:text-slate-400 hover:border-slate-300 focus:border-[#1C5E6E] focus:bg-white focus:ring-4 focus:ring-[#1C5E6E]/10";

@@ -6,6 +6,8 @@
  * UI can show a "to be announced" state instead of raw "[Name]" text.
  */
 
+import { CIRCLE_FORM_URL } from "./siteContent";
+
 /* ------------------------------------------------------------------ *
  * COURSES
  * ------------------------------------------------------------------ */
@@ -34,9 +36,9 @@ export const courses: Course[] = [
     format: "Live online",
     status: "open",
     skills: ["Next.js", "TypeScript", "Python", "APIs", "Testing", "AI workflows"],
-    accent: "#1D5F6E",
+    accent: "#1C5E6E",
     gradient:
-      "linear-gradient(135deg, #1D5F6E 0%, #3C8B90 48%, #55C9B8 100%)",
+      "linear-gradient(135deg, #1C5E6E 0%, #24707F 48%, #9FDEAF 100%)",
   },
   {
     slug: "devops-engineering",
@@ -48,9 +50,9 @@ export const courses: Course[] = [
     format: "Live online",
     status: "soon",
     skills: ["Linux", "Git", "CI/CD", "Docker", "Kubernetes", "Cloud"],
-    accent: "#55C9B8",
+    accent: "#9FDEAF",
     gradient:
-      "linear-gradient(135deg, #1D5F6E 0%, #55C9B8 50%, #9FDEAF 100%)",
+      "linear-gradient(135deg, #1C5E6E 0%, #9FDEAF 50%, #9FDEAF 100%)",
   },
   {
     slug: "performance-digital-marketing",
@@ -62,9 +64,9 @@ export const courses: Course[] = [
     format: "Live online",
     status: "soon",
     skills: ["Analytics", "CRO", "Campaigns", "Attribution"],
-    accent: "#EF6F51",
+    accent: "#F2A93B",
     gradient:
-      "linear-gradient(135deg, #EF6F51 0%, #F28A6B 50%, #F4B942 100%)",
+      "linear-gradient(135deg, #F2A93B 0%, #F28A6B 50%, #F2A93B 100%)",
   },
 ];
 
@@ -633,10 +635,10 @@ export const circle = {
     { key: "grow", title: "Grow", lead: "The Circle is designed to grow with its members.", body: "As you move from learner to graduate, professional, mentor or community leader, your role within the network can grow with you." },
   ],
   groups: [
-    { name: "Technology", color: "#1D5F6E", tags: ["AI", "Robotics", "Software", "Electronics"] },
-    { name: "Business", color: "#55C9B8", tags: ["Entrepreneurship", "Marketing", "Finance"] },
-    { name: "Creative", color: "#EF6F51", tags: ["Design", "Photography", "Content", "Media"] },
-    { name: "Career", color: "#F4B942", tags: ["Jobs", "Higher studies", "Research"] },
+    { name: "Technology", color: "#1C5E6E", tags: ["AI", "Robotics", "Software", "Electronics"] },
+    { name: "Business", color: "#9FDEAF", tags: ["Entrepreneurship", "Marketing", "Finance"] },
+    { name: "Creative", color: "#F2A93B", tags: ["Design", "Photography", "Content", "Media"] },
+    { name: "Career", color: "#F2A93B", tags: ["Jobs", "Higher studies", "Research"] },
   ],
   groupsNote:
     "Members can join smaller interest groups and connect with people working towards similar goals. The current plan envisions groups of around 6–10 people for more meaningful interaction.",
@@ -674,7 +676,7 @@ export const circle = {
   join: {
     title: "Become part of the Summate Circle",
     body: "Whether you're looking for people to learn with, a team for your next project, a mentor to guide you, or simply a community where you feel you belong, there's a place for you here.",
-    cta: { label: "Join the Summate Circle", href: "/contact?topic=circle" },
+    cta: { label: "Join the Summate Circle", href: CIRCLE_FORM_URL },
     signoff: "Learn together. Build together. Grow together.",
   },
 };

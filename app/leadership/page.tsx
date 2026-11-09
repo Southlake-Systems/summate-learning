@@ -17,9 +17,9 @@ export const metadata: Metadata = pageMeta({
 
 // One tone per member so the initials portraits read as a set, not copies.
 const tones = [
-  "from-[#2A7A88] via-[#1D5F6E] to-[#0C2A31]",
-  "from-[#55C9B8] via-[#1D5F6E] to-[#0F2E36]",
-  "from-[#2A7A88] via-[#164B57] to-[#0E3139]",
+  "from-[#1C5E6E] via-[#1C5E6E] to-[#123F49]",
+  "from-[#9FDEAF] via-[#1C5E6E] to-[#123F49]",
+  "from-[#1C5E6E] via-[#14454F] to-[#123F49]",
 ];
 
 function initials(name: string) {
@@ -76,24 +76,24 @@ function PersonRow({ member, tone }: { member: TeamMember; tone: string }) {
           href={href}
           tabIndex={-1}
           aria-hidden="true"
-          className="relative block aspect-[4/5] w-24 shrink-0 overflow-hidden rounded-2xl bg-[#0C2A31] sm:w-full sm:max-w-[240px] sm:rounded-[22px]"
+          className="relative block aspect-[4/5] w-24 shrink-0 overflow-hidden rounded-2xl bg-[#123F49] sm:w-full sm:max-w-[240px] sm:rounded-[22px]"
         >
           <Portrait member={member} tone={tone} sizes="(min-width: 1024px) 240px, (min-width: 640px) 180px, 96px" />
         </Link>
         <div className="sm:hidden">
-          <h3 className="font-display text-[26px] font-bold leading-[1.05] tracking-[-0.03em] text-[#0F2A30]">
+          <h3 className="font-display text-[26px] font-bold leading-[1.05] tracking-[-0.03em] text-[#1C5E6E]">
             {member.name}
           </h3>
-          <p className="mt-1.5 text-[15px] font-medium text-[#1D5F6E]">{member.role}</p>
+          <p className="mt-1.5 text-[15px] font-medium text-[#1C5E6E]">{member.role}</p>
         </div>
       </div>
 
       <div className="mt-5 flex min-w-0 flex-col sm:mt-0">
         <div className="hidden sm:block">
-          <h3 className="font-display text-[30px] font-bold leading-[1.05] tracking-[-0.03em] text-[#0F2A30] lg:text-[34px]">
+          <h3 className="font-display text-[30px] font-bold leading-[1.05] tracking-[-0.03em] text-[#1C5E6E] lg:text-[34px]">
             {member.name}
           </h3>
-          <p className="mt-2 text-[15px] font-medium text-[#1D5F6E]">{member.role}</p>
+          <p className="mt-2 text-[15px] font-medium text-[#1C5E6E]">{member.role}</p>
         </div>
 
         <ClampText className="sm:mt-5">
@@ -104,9 +104,9 @@ function PersonRow({ member, tone }: { member: TeamMember; tone: string }) {
           {member.award && (
             <li
               title={member.award.body}
-              className="inline-flex items-center gap-1.5 rounded-full bg-[#0C2A31] px-3.5 py-1.5 text-[13px] font-semibold text-white"
+              className="inline-flex items-center gap-1.5 rounded-full bg-[#123F49] px-3.5 py-1.5 text-[13px] font-semibold text-white"
             >
-              <Award size={14} strokeWidth={2} aria-hidden="true" className="text-[#8FDACD]" />
+              <Award size={14} strokeWidth={2} aria-hidden="true" className="text-[#B7E8C6]" />
               {member.award.title} {member.award.year}
               <span className="sr-only">. {member.award.body}</span>
             </li>
@@ -114,7 +114,7 @@ function PersonRow({ member, tone }: { member: TeamMember; tone: string }) {
           {member.areas.items.map((a) => (
             <li
               key={a}
-              className="rounded-full border border-slate-200 bg-[#F6FAFA] px-3.5 py-1.5 text-[13px] font-medium text-slate-700"
+              className="rounded-full border border-slate-200 bg-[#F4FAF7] px-3.5 py-1.5 text-[13px] font-medium text-slate-700"
             >
               {a}
             </li>
@@ -124,7 +124,7 @@ function PersonRow({ member, tone }: { member: TeamMember; tone: string }) {
         <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-3">
           <Link
             href={href}
-            className="group inline-flex h-11 items-center gap-2 rounded-full bg-[#0C2A31] px-5 text-[15px] font-semibold text-white transition-colors hover:bg-[#1D5F6E] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1D5F6E]"
+            className="group inline-flex h-11 items-center gap-2 rounded-full bg-[#123F49] px-5 text-[15px] font-semibold text-white transition-colors hover:bg-[#1C5E6E] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1C5E6E]"
           >
             Full profile
             <span className="sr-only"> of {member.name}</span>
@@ -140,7 +140,7 @@ function PersonRow({ member, tone }: { member: TeamMember; tone: string }) {
               href={member.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-[15px] font-semibold text-[#0C2A31] underline decoration-slate-300 underline-offset-[6px] transition-colors hover:text-[#1D5F6E] hover:decoration-[#1D5F6E] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1D5F6E]"
+              className="inline-flex items-center gap-2 text-[15px] font-semibold text-[#123F49] underline decoration-slate-300 underline-offset-[6px] transition-colors hover:text-[#1C5E6E] hover:decoration-[#1C5E6E] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1C5E6E]"
             >
               <Linkedin size={16} strokeWidth={2} aria-hidden="true" />
               LinkedIn
@@ -157,13 +157,13 @@ export default function LeadershipPage() {
   return (
     <PageShell>
       {/* Hero: oversized title on deep navy, fading into a soft wash where the roster begins */}
-      <section className="relative isolate overflow-hidden bg-[#0C2A31] text-white">
+      <section className="relative isolate overflow-hidden bg-[#123F49] text-white">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 -z-10"
           style={{
             backgroundImage:
-              "radial-gradient(55% 80% at 85% 10%, rgba(42,122,136,.45), transparent 70%), radial-gradient(40% 60% at 10% 100%, rgba(85,201,184,.30), transparent 70%)",
+              "radial-gradient(55% 80% at 85% 10%, rgba(36, 112, 127,.45), transparent 70%), radial-gradient(40% 60% at 10% 100%, rgba(159, 222, 175,.30), transparent 70%)",
           }}
         />
         <div className="mx-auto max-w-7xl px-6 pb-16 pt-10 lg:px-8 lg:pb-24 lg:pt-14">
@@ -181,10 +181,10 @@ export default function LeadershipPage() {
       <section className="relative isolate overflow-hidden bg-white py-16 lg:py-24">
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[360px] bg-gradient-to-b from-[#EAF4F4] via-[#F0FAF8] to-white"
+          className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[360px] bg-gradient-to-b from-[#E9F4EF] via-[#EDF8F2] to-white"
         />
         <div className="mx-auto max-w-5xl px-6 lg:px-8">
-          <h2 className="max-w-[18ch] font-display text-[38px] font-bold leading-[1.02] tracking-[-0.04em] text-[#0F2A30] sm:text-[52px] lg:text-[60px]">
+          <h2 className="max-w-[18ch] font-display text-[38px] font-bold leading-[1.02] tracking-[-0.04em] text-[#1C5E6E] sm:text-[52px] lg:text-[60px]">
             {leadership.heading}
           </h2>
 
@@ -205,7 +205,7 @@ export default function LeadershipPage() {
               ))}
             </Prose>
           </ClampText>
-          <p className="mt-10 border-l-4 border-[#55C9B8] pl-6 font-display text-2xl font-semibold leading-[1.35] tracking-[-0.015em] text-[#0F2A30] sm:text-[28px]">
+          <p className="mt-10 border-l-4 border-[#9FDEAF] pl-6 font-display text-2xl font-semibold leading-[1.35] tracking-[-0.015em] text-[#1C5E6E] sm:text-[28px]">
             {leadership.closing}
           </p>
         </Split>

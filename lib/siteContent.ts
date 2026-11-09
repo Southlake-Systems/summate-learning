@@ -11,6 +11,10 @@
 export const APPLY_FORM_URL = "https://forms.gle/4eKQr8fet8eVJkUz9";
 export const APPLY_URL = "/apply";
 
+/** Membership form behind every "Join the Summate Circle" action. */
+export const CIRCLE_FORM_URL =
+  "https://docs.google.com/forms/d/e/1FAIpQLSe0FL62WtcfatImROrNSoiS_vjEpKin4bAKDIF4bxNle3yjIA/viewform?usp=header";
+
 export const site = {
   name: "Summate Learning",
   tagline: "Founding Program: AI-Augmented Full-Stack Developer Course Live Online January 2027",

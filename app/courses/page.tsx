@@ -26,19 +26,19 @@ export default function CoursesPage() {
 
       {/* Featured course */}
       <Section>
-        <article className="relative isolate overflow-hidden rounded-[32px] bg-[#0F2A30] text-white">
+        <article className="relative isolate overflow-hidden rounded-[32px] bg-[#0F2A31] text-white">
           <div
             aria-hidden="true"
             className="pointer-events-none absolute inset-0 -z-10"
             style={{
               background:
-                "radial-gradient(800px 400px at 100% 0%, rgba(85,201,184,.45), transparent 60%), radial-gradient(600px 400px at 0% 100%, rgba(29,95,110,.55), transparent 60%)",
+                "radial-gradient(800px 400px at 100% 0%, rgba(159, 222, 175,.45), transparent 60%), radial-gradient(600px 400px at 0% 100%, rgba(28, 94, 110,.55), transparent 60%)",
             }}
           />
           <div className="grid gap-10 p-8 sm:p-12 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] lg:gap-16 lg:p-16">
             <div>
               <p className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3.5 py-1.5 text-[13px] font-semibold text-white ring-1 ring-inset ring-white/15">
-                <span aria-hidden="true" className="h-2 w-2 rounded-full bg-[#55C9B8]" />
+                <span aria-hidden="true" className="h-2 w-2 rounded-full bg-[#9FDEAF]" />
                 Now enrolling for Batch 1
               </p>
               <h2 className="mt-6 max-w-[16ch] font-display text-[36px] font-bold leading-[1.04] tracking-[-0.035em] sm:text-[52px]">
@@ -65,14 +65,14 @@ export default function CoursesPage() {
                   { k: "Format", v: featured.format },
                   { k: "Starts", v: "Jan 2027" },
                 ].map((m) => (
-                  <div key={m.k} className="bg-[#0F2A30]/60 p-4 backdrop-blur">
-                    <dt className="text-[12px] font-medium text-slate-400">{m.k}</dt>
+                  <div key={m.k} className="bg-[#0F2A31]/60 p-4 backdrop-blur">
+                    <dt className="text-[12px] font-medium text-slate-500">{m.k}</dt>
                     <dd className="mt-1 text-[15px] font-semibold text-white">{m.v}</dd>
                   </div>
                 ))}
               </dl>
               <div>
-                <p className="text-[13px] font-medium text-slate-400">What you&apos;ll work with</p>
+                <p className="text-[13px] font-medium text-slate-500">What you&apos;ll work with</p>
                 <ul className="mt-3 flex flex-wrap gap-2">
                   {featured.skills.map((s) => (
                     <li key={s} className="rounded-full border border-white/15 px-3 py-1.5 text-[13px] font-medium text-slate-200">
@@ -100,14 +100,14 @@ export default function CoursesPage() {
               >
                 <span aria-hidden="true" className="absolute inset-y-0 left-0 w-1.5" style={{ background: c.accent }} />
                 <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1">
-                  <p className="text-[13px] font-semibold" style={{ color: c.accent }}>
+                  <p className="text-[13px] font-semibold text-[#1C5E6E]">
                     {c.category}
                   </p>
                   <p className="text-[13px] font-medium text-slate-500">
                     {c.duration}, {c.format.toLowerCase()}
                   </p>
                 </div>
-                <h3 className="mt-2 font-display text-2xl font-bold tracking-[-0.02em] text-[#0F2A30]">{c.title}</h3>
+                <h3 className="mt-2 font-display text-2xl font-bold tracking-[-0.02em] text-[#1C5E6E]">{c.title}</h3>
                 <p className="mt-2 max-w-[60ch] text-[15px] leading-[1.65] text-slate-600">{c.tagline}</p>
                 <div className="mt-5 flex flex-wrap items-center justify-between gap-4">
                   <ul className="flex flex-wrap gap-2">
@@ -119,7 +119,7 @@ export default function CoursesPage() {
                   </ul>
                   <Link
                     href="/contact?topic=course-updates"
-                    className="inline-flex items-center gap-2 text-sm font-semibold text-[#1D5F6E] hover:text-[#164B57]"
+                    className="inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-[#1C5E6E] hover:text-[#14454F]"
                   >
                     <Bell size={15} aria-hidden="true" />
                     Get notified
@@ -136,8 +136,8 @@ export default function CoursesPage() {
         <H2 className="max-w-[20ch]">What every Summate course includes</H2>
         <dl className="mt-12 grid gap-x-12 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
           {community.items.map((item) => (
-            <div key={item.title} className="border-t-2 border-[#0F2A30] pt-5">
-              <dt className="font-display text-lg font-bold tracking-[-0.01em] text-[#0F2A30]">{item.title}</dt>
+            <div key={item.title} className="border-t-2 border-[#0F2A31] pt-5">
+              <dt className="font-display text-lg font-bold tracking-[-0.01em] text-[#1C5E6E]">{item.title}</dt>
               <dd className="mt-2 text-[15px] leading-[1.65] text-slate-600">{item.body}</dd>
             </div>
           ))}

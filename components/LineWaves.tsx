@@ -280,9 +280,9 @@ type Settings = {
 };
 
 const LineWaves = ({
-  color1 = '#ffffff',
-  color2 = '#ffffff',
-  color3 = '#ffffff',
+  color1 = '#FFFFFF',
+  color2 = '#FFFFFF',
+  color3 = '#FFFFFF',
   colorCycleSpeed = 1,
   speed = 0.3,
   lineCount = 72,

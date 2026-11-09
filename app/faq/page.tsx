@@ -43,7 +43,7 @@ export default function FaqPage() {
                 <li key={g.title}>
                   <a
                     href={`#${slug(g.title)}`}
-                    className="block rounded-full border border-slate-200 px-4 py-2 text-[14px] font-semibold text-slate-600 transition-colors hover:border-[#1D5F6E] hover:text-[#1D5F6E] lg:rounded-xl lg:border-0 lg:px-3"
+                    className="block rounded-full border border-slate-200 px-4 py-2 text-[14px] font-semibold text-slate-600 transition-colors hover:border-[#1C5E6E] hover:text-[#1C5E6E] lg:rounded-xl lg:border-0 lg:px-3"
                   >
                     {g.title}
                   </a>
@@ -55,7 +55,7 @@ export default function FaqPage() {
           <div className="space-y-16 lg:col-span-9">
             {faqGroups.map((g) => (
               <section key={g.title} id={slug(g.title)} className="scroll-mt-28">
-                <h2 className="mb-4 font-display text-[26px] font-bold tracking-[-0.02em] text-[#0F2A30]">{g.title}</h2>
+                <h2 className="mb-4 font-display text-[26px] font-bold tracking-[-0.02em] text-[#1C5E6E]">{g.title}</h2>
                 <FaqList items={g.items} />
               </section>
             ))}

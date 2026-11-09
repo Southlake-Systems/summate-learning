@@ -4,7 +4,7 @@ import Link from "next/link";
 import { ArrowUpRight, ChevronRight } from "lucide-react";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
-import LineWaves from "@/components/LineWaves";
+import HeroWaves from "@/components/site/HeroWaves";
 import Choreography from "@/components/ui/Choreography";
 import { cn } from "@/lib/utils";
 import Noise from "@/components/Noise";
@@ -49,7 +49,7 @@ export function PageHero({
   waves?: boolean;
 }) {
   return (
-    <section className="relative isolate overflow-hidden border-b border-slate-200/70 bg-[#F6FAFA]">
+    <section className="relative isolate overflow-hidden border-b border-slate-200/70 bg-[#F4FAF7]">
       {waves ? (
         <div
           aria-hidden="true"
@@ -61,26 +61,7 @@ export function PageHero({
               "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.45) 26%, black 68%)",
           }}
         >
-          <LineWaves
-            color1="#55C9B8"
-            color2="#2A7A88"
-            color3="#1D5F6E"
-            lightMode
-            speed={0.22}
-            colorCycleSpeed={0.6}
-            lineCount={64}
-            lineWidth={1.25}
-            glow={0.55}
-            brightness={1.15}
-            highlight={0.55}
-            highlightWidth={1.4}
-            warpIntensity={0.85}
-            warpScale={1.15}
-            rotation={-22}
-            edgeFade={0.5}
-            opacity={0.9}
-            mouseInfluence={1.6}
-          />
+          <HeroWaves />
         </div>
       ) : (
         <div
@@ -88,7 +69,7 @@ export function PageHero({
           className="pointer-events-none absolute inset-0 -z-10 opacity-60"
           style={{
             backgroundImage:
-              "linear-gradient(rgba(29,95,110,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(29,95,110,.05) 1px, transparent 1px)",
+              "linear-gradient(rgba(28, 94, 110,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(28, 94, 110,.05) 1px, transparent 1px)",
             backgroundSize: "64px 64px",
             maskImage: "radial-gradient(ellipse at 20% 0%, black 30%, transparent 75%)",
             WebkitMaskImage: "radial-gradient(ellipse at 20% 0%, black 30%, transparent 75%)",
@@ -97,7 +78,7 @@ export function PageHero({
       )}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -right-40 -top-40 -z-10 h-[520px] w-[520px] rounded-full bg-gradient-to-br from-[#55C9B8]/[0.10] via-[#EF6F51]/[0.05] to-transparent blur-[100px]"
+        className="pointer-events-none absolute -right-40 -top-40 -z-10 h-[520px] w-[520px] rounded-full bg-gradient-to-br from-[#9FDEAF]/[0.10] via-[#F2A93B]/[0.05] to-transparent blur-[100px]"
       />
 
       <div className="mx-auto max-w-7xl px-6 pb-14 pt-10 lg:px-8 lg:pb-20 lg:pt-14">
@@ -110,7 +91,7 @@ export function PageHero({
           )}
         >
           <div>
-            <h1 className="max-w-[18ch] font-display text-[40px] font-bold leading-[1.02] tracking-[-0.035em] text-[#0F2A30] sm:text-[56px] lg:text-[68px]">
+            <h1 className="max-w-[18ch] font-display text-[40px] font-bold leading-[1.02] tracking-[-0.035em] text-[#0F2A31] sm:text-[56px] lg:text-[68px]">
               {title}
             </h1>
             {lede && (
@@ -156,8 +137,8 @@ export function Breadcrumbs({ crumbs, onDark }: { crumbs: Crumb[]; onDark?: bool
           <Link
             href="/"
             className={cn(
-              "transition-colors",
-              onDark ? "text-slate-400 hover:text-white" : "text-slate-500 hover:text-[#1D5F6E]"
+              "inline-flex min-h-11 min-w-11 items-center transition-colors",
+              onDark ? "text-slate-400 hover:text-white" : "text-slate-500 hover:text-[#1C5E6E]"
             )}
           >
             Home
@@ -170,14 +151,14 @@ export function Breadcrumbs({ crumbs, onDark }: { crumbs: Crumb[]; onDark?: bool
               <Link
                 href={c.href}
                 className={cn(
-                  "transition-colors",
-                  onDark ? "text-slate-400 hover:text-white" : "text-slate-500 hover:text-[#1D5F6E]"
+                  "inline-flex min-h-11 min-w-11 items-center transition-colors",
+                  onDark ? "text-slate-400 hover:text-white" : "text-slate-500 hover:text-[#1C5E6E]"
                 )}
               >
                 {c.label}
               </Link>
             ) : (
-              <span aria-current="page" className={onDark ? "text-white" : "text-[#0F2A30]"}>
+              <span aria-current="page" className={onDark ? "text-white" : "text-[#1C5E6E]"}>
                 {c.label}
               </span>
             )}
@@ -194,8 +175,8 @@ export function Breadcrumbs({ crumbs, onDark }: { crumbs: Crumb[]; onDark?: bool
  * ------------------------------------------------------------------ */
 const tones = {
   white: "bg-white",
-  mist: "bg-[#F6FAFA]",
-  ink: "bg-[#0F2A30] text-white",
+  mist: "bg-[#F4FAF7]",
+  ink: "bg-[#0F2A31] text-white",
 } as const;
 
 export function Section({
@@ -250,7 +231,7 @@ export function H2({ children, onDark, className }: { children: ReactNode; onDar
     <h2
       className={cn(
         "font-display text-[30px] font-bold leading-[1.1] tracking-[-0.03em] sm:text-[38px]",
-        onDark ? "text-white" : "text-[#0F2A30]",
+        onDark ? "text-white" : "text-[#1C5E6E]",
         className
       )}
     >
@@ -283,10 +264,10 @@ export function ButtonLink({
 }) {
   const styles = {
     primary:
-      "bg-[#EF6F51] text-white hover:bg-[#D9573A] hover:text-white shadow-[0_8px_24px_rgba(239,111,81,0.28)]",
+      "bg-[#F2A93B] text-[#0F2A31] hover:bg-[#D98A1F] hover:text-[#0F2A31] shadow-[0_8px_24px_rgba(242, 169, 59,0.28)]",
     secondary:
-      "border border-slate-300 bg-white text-[#0F2A30] hover:border-[#1D5F6E] hover:text-[#1D5F6E]",
-    light: "bg-white text-[#0F2A30] hover:bg-[#EAF4F5] hover:text-[#1D5F6E]",
+      "border border-slate-300 bg-white text-[#0F2A31] hover:border-[#1C5E6E] hover:text-[#1C5E6E]",
+    light: "bg-white text-[#0F2A31] hover:bg-[#E9F4EF] hover:text-[#1C5E6E]",
   }[variant];
 
   return (
@@ -328,10 +309,10 @@ export function CtaBand({
   return (
     <section className="bg-white py-16 lg:py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="relative isolate overflow-hidden rounded-[28px] bg-[#0F2A30] px-7 py-12 sm:px-12 lg:px-16 lg:py-16">
+        <div className="relative isolate overflow-hidden rounded-[28px] bg-[#0F2A31] px-7 py-12 sm:px-12 lg:px-16 lg:py-16">
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute -right-24 -top-32 -z-10 h-[420px] w-[420px] rounded-full bg-gradient-to-br from-[#1D5F6E] via-[#55C9B8] to-[#9FDEAF] opacity-50 blur-[90px]"
+            className="pointer-events-none absolute -right-24 -top-32 -z-10 h-[420px] w-[420px] rounded-full bg-gradient-to-br from-[#1C5E6E] via-[#9FDEAF] to-[#9FDEAF] opacity-50 blur-[90px]"
           />
 
           {/* Fine grain: keeps the dark surface from banding */}
@@ -344,7 +325,7 @@ export function CtaBand({
               {body && <p className="mt-4 max-w-[56ch] text-[17px] leading-[1.65] text-slate-300">{body}</p>}
             </div>
             <div className="flex flex-wrap gap-3">
-              <ButtonLink href={primary.href} variant="light">
+              <ButtonLink href={primary.href} variant="primary">
                 {primary.label}
               </ButtonLink>
               {secondary && (
@@ -398,7 +379,7 @@ export function PersonCard({
     <article
       className={cn(
         "flex h-full flex-col rounded-3xl border p-7",
-        pending ? "border-dashed border-slate-300 bg-[#F7FBFB]" : "border-slate-200 bg-white"
+        pending ? "border-dashed border-slate-300 bg-[#F6FBF8]" : "border-slate-200 bg-white"
       )}
     >
       {image ? (
@@ -416,14 +397,14 @@ export function PersonCard({
           "flex h-16 w-16 items-center justify-center rounded-2xl font-display text-2xl font-bold",
           pending
             ? "border border-dashed border-slate-300 text-slate-300"
-            : "bg-gradient-to-br from-[#1D5F6E] to-[#2A8C8C] text-white"
+            : "bg-gradient-to-br from-[#1C5E6E] to-[#24707F] text-white"
         )}
       >
         {pending ? "?" : initials}
       </div>
       )}
 
-      <h3 className={cn("mt-6 font-display text-xl font-bold tracking-[-0.02em]", pending ? "text-slate-400" : "text-[#0F2A30]")}>
+      <h3 className={cn("mt-6 font-display text-xl font-bold tracking-[-0.02em]", pending ? "text-slate-400" : "text-[#1C5E6E]")}>
         {name ?? "To be announced"}
       </h3>
       <p className="mt-1 text-sm font-medium text-slate-500">
@@ -436,14 +417,14 @@ export function PersonCard({
 
       {expertise && (
         <p className="mt-5 border-t border-slate-100 pt-4 text-sm text-slate-500">
-          <span className="font-semibold text-[#0F2A30]">Expertise:</span> {expertise}
+          <span className="font-semibold text-[#0F2A31]">Expertise:</span> {expertise}
         </p>
       )}
 
       {href && (
         <Link
           href={href}
-          className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-[#1D5F6E] hover:text-[#164B57]"
+          className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-[#1C5E6E] hover:text-[#14454F]"
         >
           Read profile
           <ArrowUpRight size={15} aria-hidden="true" />

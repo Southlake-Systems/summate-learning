@@ -29,7 +29,7 @@ export function CanvasText({
   text,
   className = "",
   backgroundClassName = "bg-white dark:bg-neutral-950",
-  colors = ["#1D5F6E", "#3C8B90", "#55C9B8", "#9FDEAF", "#F4B942", "#EF6F51"],
+  colors = ["#1C5E6E", "#24707F", "#9FDEAF", "#9FDEAF", "#F2A93B", "#F2A93B"],
   animationDuration = 5,
   lineWidth = 1.5,
   lineGap = 10,
@@ -41,7 +41,7 @@ export function CanvasText({
   const bgRef = useRef<HTMLSpanElement>(null);
   const animationRef = useRef<number>(0);
   const startTimeRef = useRef<number>(0);
-  const [bgColor, setBgColor] = useState("#0a0a0a");
+  const [bgColor, setBgColor] = useState("#0A0A0A");
   const [resolvedColors, setResolvedColors] = useState<string[]>([]);
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
   const [font, setFont] = useState("");
