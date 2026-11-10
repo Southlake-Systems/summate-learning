@@ -13,7 +13,6 @@ const STATIC_ROUTES = [
   "/faq",
   "/contact",
   "/careers",
-  "/apply",
   "/privacy",
   "/terms",
 ];
@@ -26,7 +25,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${SITE_URL}${path}`,
       lastModified: now,
       changeFrequency: path === "/" ? ("weekly" as const) : ("monthly" as const),
-      priority: path === "/" ? 1 : path === "/apply" ? 0.8 : 0.7,
+      priority: path === "/" ? 1 : 0.7,
     })),
     ...courses
       .filter((course) => course.status === "open")

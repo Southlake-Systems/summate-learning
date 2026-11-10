@@ -15,6 +15,8 @@ const nextConfig = {
         permanent: true,
       },
       { source: "/team", destination: "/leadership", permanent: true },
+      // Applications live on Google Forms; keep old /apply links working.
+      { source: "/apply", destination: "https://forms.gle/4eKQr8fet8eVJkUz9", permanent: false },
     ];
   },
 };

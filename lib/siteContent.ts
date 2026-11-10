@@ -4,12 +4,11 @@
  */
 
 /**
- * Where every "Apply for Batch 1" action sends people. The on-site /apply page
- * embeds the form below, so applications stay on our own URL (and the page can
- * be indexed, linked and measured).
+ * Where every "Apply for Batch 1" action sends people: straight to the Google
+ * Form, with no on-site step in between. /apply redirects here too.
  */
 export const APPLY_FORM_URL = "https://forms.gle/4eKQr8fet8eVJkUz9";
-export const APPLY_URL = "/apply";
+export const APPLY_URL = APPLY_FORM_URL;
 
 /** Membership form behind every "Join the Summate Circle" action. */
 export const CIRCLE_FORM_URL =
