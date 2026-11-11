@@ -529,9 +529,9 @@ export const careers = {
       postedOn: "2026-11-04",
       remote: true,
       summary:
-        "Teach the AI-Augmented Full-Stack Developer program: live sessions, real projects and honest code review, for students who need to walk out employable.",
+        "Teach the AI-Augmented Full-Stack Developer program: live online and in-person classes, real projects and honest code review, for students who need to walk out employable.",
       responsibilities: [
-        "Teach live online sessions across the technical curriculum.",
+        "Teach live classes across the technical curriculum, both online and in person (offline) in Kochi.",
         "Design project briefs and exercises that mirror real engineering work.",
         "Review student code and give feedback on correctness, security and maintainability.",
         "Mentor learners from their first commit to portfolio-ready projects.",
@@ -547,12 +547,14 @@ export const careers = {
         "Strong understanding of debugging, testing, code review, APIs and databases",
         "Familiarity with Git and modern software development workflows",
         "Ability to explain technical concepts clearly to beginners and fresh graduates",
+        "Ability to deliver engaging classes both online and offline: screen-shared live coding and interactive sessions online, and hands-on classroom teaching in person",
         "A demonstrable GitHub profile, project portfolio or relevant professional experience",
         "Teaching, mentoring or technical training experience is an advantage",
       ],
       niceToHave: [
         "Open-source contributions or a public portfolio",
         "Prior experience training freshers or career switchers",
+        "Experience teaching on Zoom, Google Meet or similar platforms, as well as in a physical classroom",
       ],
       competencies: [
         "AI-Assisted Coding",
