@@ -7,9 +7,9 @@ import { APPLY_URL, site } from "@/lib/siteContent";
 import { pageMeta } from "@/lib/seo";
 
 export const metadata: Metadata = pageMeta({
-  title: "Contact Summate Learning",
+  title: "Contact Us",
   description:
-    "Get in touch with Summate Learning about courses, the Summate Circle, teaching, careers or partnerships.",
+    "Get in touch with Summate Learning in Kochi, Kerala about courses, the Summate Circle, teaching, careers or partnerships.",
   path: "/contact",
 });
 

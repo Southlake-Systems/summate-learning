@@ -112,7 +112,7 @@ export const banners = {
  * HERO (Section 3)
  * ------------------------------------------------------------------ */
 export const hero = {
-  eyebrow: "FOUNDING BATCH LIVE ONLINE JANUARY 2027",
+  eyebrow: "Summate Learning · Founding Batch · Live Online · January 2027",
   headline: "You are more than what you already know",
   body: [
     "You've finished a degree, picked up a few skills, watched a few tutorials and still find yourself wondering, “Am I actually ready?”",
