@@ -23,7 +23,8 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   if (!course) return {};
   return pageMeta({
     title: `${course.title} Course`,
-    description: `${program.subtitle} Live online, 12 weeks, Batch 1 starts January 2027.`,
+    description:
+      "Live online from Kochi, Kerala: build one real project over 12 weeks, practise Git, testing and deployment, and use AI as a tool without handing over the thinking. Batch 1 starts January 2027.",
     path: `/courses/${course.slug}`,
   });
 }

@@ -21,11 +21,11 @@ const body = Figtree({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "AI-Augmented Full-Stack Developer Course | Summate Learning",
+    default: "Summate Learning — AI-Augmented Full-Stack Developer Course",
     template: "%s | Summate Learning",
   },
   description:
-    "A 12-week live online full-stack developer course. Build one real project, learn engineering workflows, and use AI as a tool without handing over the thinking.",
+    "A 12-week live online full-stack developer course from Kochi, Kerala. Build one real project, learn engineering workflows, and use AI as a tool without handing over the thinking.",
   applicationName: "Summate Learning",
   authors: [{ name: site.legalName, url: SITE_URL }],
   creator: site.legalName,
@@ -47,9 +47,9 @@ export const metadata: Metadata = {
     url: "/",
     siteName: "Summate Learning",
     locale: "en_IN",
-    title: "AI-Augmented Full-Stack Developer Course | Summate Learning",
+    title: "Summate Learning — AI-Augmented Full-Stack Developer Course",
     description:
-      "A 12-week live online full-stack developer course. Build one real project, learn engineering workflows, and use AI as a tool without handing over the thinking.",
+      "A 12-week live online full-stack developer course from Kochi, Kerala. Build one real project, learn engineering workflows, and use AI as a tool without handing over the thinking.",
     images: [
       {
         url: "/opengraph-image",
@@ -61,9 +61,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "AI-Augmented Full-Stack Developer Course | Summate Learning",
+    title: "Summate Learning — AI-Augmented Full-Stack Developer Course",
     description:
-      "A 12-week live online full-stack developer course. Build one real project, learn engineering workflows, and use AI as a tool without handing over the thinking.",
+      "A 12-week live online full-stack developer course from Kochi, Kerala. Build one real project, learn engineering workflows, and use AI as a tool without handing over the thinking.",
     images: ["/opengraph-image"],
   },
 };

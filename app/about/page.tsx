@@ -7,9 +7,9 @@ import { courses } from "@/lib/pageContent";
 import { pageMeta } from "@/lib/seo";
 
 export const metadata: Metadata = pageMeta({
-  title: "About Summate Learning",
+  title: "About Us",
   description:
-    "Summate Learning is a new kind of learning institution that connects what you learn with what you can do with it. Meet the people and the idea behind Batch 1.",
+    "Summate Learning is a new kind of learning institution in Kochi, Kerala, that connects what you learn with what you can do with it. Meet the people and the idea behind Batch 1.",
   path: "/about",
 });
 

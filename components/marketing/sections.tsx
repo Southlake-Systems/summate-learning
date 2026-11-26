@@ -125,6 +125,11 @@ export function Hero() {
           ================================================== */}
           <div className="relative z-20 lg:col-span-6">
 
+            {/* Brand kicker — keeps the brand name inside the H1 block */}
+            <p className="mb-4 text-[11px] font-extrabold uppercase tracking-[0.2em] text-[#1C5E6E]/80">
+              {hero.eyebrow}
+            </p>
+
             {/* Brand motif */}
             <div
               className="flex items-center gap-3 text-[13px] font-extrabold tracking-[0.2em]"

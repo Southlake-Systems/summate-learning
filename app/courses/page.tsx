@@ -9,7 +9,7 @@ import { pageMeta } from "@/lib/seo";
 export const metadata: Metadata = pageMeta({
   title: "Live Online Full-Stack & AI Courses",
   description:
-    "Live online courses from Summate Learning, starting with the AI-Augmented Full-Stack Developer Course in January 2027. 12 weeks, one real project, mentor-led reviews.",
+    "Live online courses from Summate Learning in Kochi, Kerala, starting with the AI-Augmented Full-Stack Developer Course in January 2027. 12 weeks, one real project, mentor-led reviews.",
   path: "/courses",
 });
 
