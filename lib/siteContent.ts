@@ -53,6 +53,7 @@ export const nav: {
 } = {
   links: [
     { label: "Courses", href: "/courses" },
+    { label: "Blog", href: "/blogs" },
     { label: "Summate Circle", href: "/circle" },
     {
       label: "About",
@@ -556,6 +557,7 @@ export const footer = {
       title: "Community",
       links: [
         { label: "Summate Circle", href: "/circle" },
+        { label: "Blog", href: "/blogs" },
         { label: "FAQ", href: "/faq" },
         { label: "Contact", href: "/contact" },
       ],

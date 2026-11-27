@@ -1,0 +1,55 @@
+[
+  {
+    "id": "seed-ai-augmented",
+    "title": "What “AI-augmented” actually means in a developer job",
+    "slug": "what-ai-augmented-means-in-a-developer-job",
+    "excerpt": "Using AI well is not about generating more code. It is about knowing which parts of the work to hand over, which parts to keep, and how to check the difference.",
+    "content": "Most people meet AI tools at the wrong end of the work: a blank file, a vague prompt, and a wall of generated code they cannot defend.\n\nThe job does not ask you to produce code faster. It asks you to make decisions that hold up when something breaks at 2am, when a customer reports a bug you cannot reproduce, and when the next person to open the file is not you.\n\n## The useful split\n\nA practical way to think about AI on a team is to separate the work into three buckets:\n\n- **Explore:** summarise unfamiliar code, suggest approaches, draft a first test, explain an error message.\n- **Decide:** choose the approach, define the contract, and decide what “done” means. This stays with you.\n- **Verify:** run it, read it, test it, and own the result. This also stays with you.\n\nAI is genuinely strong in the first bucket and genuinely dangerous in the second if you let it become the decision-maker.\n\n## What employers actually notice\n\nHiring managers are not impressed by the volume of code a candidate can generate. They notice whether a candidate can:\n\n1. Explain why a piece of code exists and what it trades off.\n2. Write a test that would fail if the code were wrong.\n3. Read an error and form a hypothesis before searching for an answer.\n4. Review a pull request without rewriting the whole thing in their head.\n\nNone of those skills disappear when AI gets better. They become the point.\n\n> The tool changes how fast you can try something. It does not change who is responsible for whether it works.\n\n## How we teach it\n\nIn the AI-Augmented Full-Stack Developer Course, AI shows up as a tool inside a normal engineering workflow: plan, build, test, review, deploy. You will use it to move faster on the parts it is good at, and you will be expected to explain and defend the parts you keep.\n\nThat is the difference between using AI and hiding behind it.",
+    "coverImage": "/hero_right.webp",
+    "author": "Summate Learning",
+    "tags": [
+      "AI",
+      "Careers",
+      "Engineering"
+    ],
+    "status": "published",
+    "publishedAt": "2026-11-20T00:00:00.000Z",
+    "createdAt": "2026-11-12T09:30:00.000Z",
+    "updatedAt": "2026-11-20T08:15:00.000Z"
+  },
+  {
+    "id": "seed-twelve-weeks",
+    "title": "A 12-week course won't make you senior. Here's what it can do.",
+    "slug": "what-a-12-week-course-can-do",
+    "excerpt": "A short course cannot compress years of experience into a quarter. It can give you a real project, a working process, and the feedback loop that makes the next year count.",
+    "content": "There is a version of this industry that sells shortcuts. Learn the framework, build a clone, get the job. It sounds clean because it leaves out the messy part: judgement takes reps.\n\nA 12-week course will not make you a senior engineer. Anyone who promises that is selling something else.\n\nHere is what a focused 12 weeks can do instead.\n\n## Give you a real project\n\nTutorials are designed to work. Real projects are designed to surprise you. A project with real requirements, real users, and real deployment constraints forces decisions you cannot skip.\n\nBy the end, you should be able to point at something and say: I built this, I broke this, I fixed this, and here is what I would change.\n\n## Give you a working process\n\nMost beginners do not have a process. They have a browser tab and hope. A good course makes the process visible:\n\n- Break work into small, reviewable pieces.\n- Write down what you expect before you run it.\n- Use Git as a record of thinking, not just a backup.\n- Test the parts that would hurt most if they broke.\n- Deploy early enough that deployment is boring.\n\nOnce the process is yours, every future project gets easier.\n\n## Give you feedback from someone who has shipped\n\nFeedback is the part self-study cannot fake. A mentor can look at your pull request and tell you the difference between code that works and code another engineer would be happy to maintain.\n\nThat feedback is uncomfortable in the best way. It shortens the loop between doing something and understanding why it should be done differently.\n\n## Give you people to learn with\n\nA small cohort is not a marketing detail. It is the difference between asking a question in a chat and asking it out loud, between reviewing one person's code and reviewing five people's code, and between finishing alone and finishing with a group that expects you to show up.\n\n## What it cannot do\n\nIt cannot replace months of professional responsibility. It cannot make you fast at everything. It cannot guarantee a job in a market that changes faster than any curriculum.\n\nWhat it can do is make the next 12 months of learning more deliberate. That is a modest promise, and it is the one we make.",
+    "coverImage": "/workspace-setup.webp",
+    "author": "Summate Learning",
+    "tags": [
+      "Learning",
+      "Courses",
+      "Careers"
+    ],
+    "status": "published",
+    "publishedAt": "2026-11-08T00:00:00.000Z",
+    "createdAt": "2026-10-30T11:00:00.000Z",
+    "updatedAt": "2026-11-08T07:40:00.000Z"
+  },
+  {
+    "id": "seed-batch-one-project",
+    "title": "Inside Batch 1: the project learners will ship",
+    "slug": "inside-batch-one-project",
+    "excerpt": "A draft look at the shape of the founding batch project, the constraints we are setting, and why it is deliberately not a clone.",
+    "content": "This is a draft post outlining the Batch 1 project.\n\n## The shape of the work\n\nLearners will take a product idea from a short brief to a deployed application, working in small review cycles rather than one big hand-in at the end.\n\n## Why not a clone\n\nClones are useful for learning syntax. They are less useful for learning decisions. The project will leave room for the kind of choices that show up in real work: scope, data modelling, trade-offs, and what to leave out.\n\nMore detail will be published before the batch starts.",
+    "coverImage": "",
+    "author": "Summate Learning",
+    "tags": [
+      "Courses",
+      "Batch 1"
+    ],
+    "status": "draft",
+    "publishedAt": "2026-11-26T00:00:00.000Z",
+    "createdAt": "2026-11-25T12:00:00.000Z",
+    "updatedAt": "2026-11-26T10:20:00.000Z"
+  }
+]

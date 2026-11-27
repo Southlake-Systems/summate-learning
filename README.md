@@ -27,6 +27,22 @@ placeholders: partner/hiring logos, stat figures, week-by-week curriculum, tool 
 mentor profiles, testimonials, blog posts, founders' note, pricing, contact details,
 social URLs.
 
+## Blog
+
+The public blog lives at `/blogs`, with individual posts at `/blogs/[slug]`. Posts are
+written and edited at `/blogs/admin` (the "blog studio").
+
+- Posts are stored in `data/blogs.json` locally. On Vercel, connect a Blob store to the
+  project: when `BLOB_READ_WRITE_TOKEN` is present, posts are read from and written to a
+  private JSON blob (`BLOG_BLOB_PATH`, default `blog/posts.json`). The seed file is used
+  until the first save.
+- Set `BLOG_DATA_FILE` to move the local JSON store, or `BLOG_BLOB_PATH` to change the
+  blob path.
+- The studio supports drafts, publish dates, cover image URLs, tags and Markdown-style
+  bodies (`## heading`, lists, quotes, `**bold**`, links).
+- Set `BLOG_ADMIN_PASSWORD` to require a password at the studio. Without it the studio is
+  open and shows a warning banner.
+
 ## Custom banners
 
 Four banners, all configured under `banners` in `lib/siteContent.ts`. Each has an

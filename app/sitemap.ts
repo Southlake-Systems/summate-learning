@@ -1,6 +1,9 @@
 import type { MetadataRoute } from "next";
 import { careers, courses, leadership } from "@/lib/pageContent";
+import { getPublishedPosts } from "@/lib/blogs";
 import { SITE_URL } from "@/lib/seo";
+
+export const dynamic = "force-dynamic";
 
 const STATIC_ROUTES = [
   "/",
@@ -10,6 +13,7 @@ const STATIC_ROUTES = [
   "/leadership",
   "/founder",
   "/circle",
+  "/blogs",
   "/faq",
   "/contact",
   "/careers",
@@ -17,8 +21,9 @@ const STATIC_ROUTES = [
   "/terms",
 ];
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date();
+  const posts = await getPublishedPosts();
 
   return [
     ...STATIC_ROUTES.map((path) => ({
@@ -49,5 +54,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
         changeFrequency: "yearly" as const,
         priority: 0.5,
       })),
+    ...posts.map((post) => ({
+      url: `${SITE_URL}/blogs/${post.slug}`,
+      lastModified: new Date(post.updatedAt),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
   ];
 }
